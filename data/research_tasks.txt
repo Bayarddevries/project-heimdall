@@ -1,0 +1,154 @@
+=== PROJECT HEIMDALL: RESEARCH TASKS ===
+Generated from 50 cases
+
+TIER A: 9 cases
+TIER B: 12 cases
+TIER C: 29 cases
+
+============================================================
+TIER A - DEEP RESEARCH NEEDED
+============================================================
+
+--- CAN-011 ---
+Location: Falcon Lake, MB
+Year: 1967
+Shape: Saucer/Bowl
+Contact: CE2
+Reasons: Close encounter with physical evidence
+Sources to check: CANADIAN_UFO_SURVEY, DND_DECLASSIFIED, NUFORC, RCMP_FILES
+
+Research Tasks:
+  [AUTO] Search NUFORC database for Falcon Lake, MB 1967
+  [AUTO] Check CADORS records for aviation-related incidents
+  [AUTO] Search Library and Archives Canada for government files
+  [MANUAL] Locate photographs/evidence for Falcon Lake, MB case
+  [MANUAL] Find newspaper clippings from era
+  [MANUAL] Verify witness accounts with primary sources
+
+--- CAN-012 ---
+Location: Shag Harbour, NS
+Year: 1967
+Shape: Row of Lights
+Contact: CE2
+Reasons: Close encounter with physical evidence
+Sources to check: CANADIAN_UFO_SURVEY, DND_DECLASSIFIED, NUFORC, RCMP_FILES
+
+Research Tasks:
+  [AUTO] Search NUFORC database for Shag Harbour, NS 1967
+  [AUTO] Check CADORS records for aviation-related incidents
+  [AUTO] Search Library and Archives Canada for government files
+  [MANUAL] Locate photographs/evidence for Shag Harbour, NS case
+  [MANUAL] Find newspaper clippings from era
+  [MANUAL] Verify witness accounts with primary sources
+
+--- CAN-017 ---
+Location: Duncan, BC
+Year: 1970
+Shape: Domed Saucer
+Contact: CE3
+Reasons: Close encounter with physical evidence
+Sources to check: CANADIAN_UFO_SURVEY, NUFORC
+
+Research Tasks:
+  [AUTO] Search NUFORC database for Duncan, BC 1970
+  [AUTO] Check CADORS records for aviation-related incidents
+  [AUTO] Search Library and Archives Canada for government files
+  [MANUAL] Locate photographs/evidence for Duncan, BC case
+  [MANUAL] Find newspaper clippings from era
+  [MANUAL] Verify witness accounts with primary sources
+
+--- CAN-020 ---
+Location: Granby, QC
+Year: 1973
+Shape: Glowing Oval
+Contact: CE3
+Reasons: Entity contact / abduction case
+Sources to check: CANADIAN_UFO_SURVEY, NUFORC
+
+Research Tasks:
+  [AUTO] Search NUFORC database for Granby, QC 1973
+  [AUTO] Check CADORS records for aviation-related incidents
+  [AUTO] Search Library and Archives Canada for government files
+  [MANUAL] Locate photographs/evidence for Granby, QC case
+  [MANUAL] Find newspaper clippings from era
+  [MANUAL] Verify witness accounts with primary sources
+
+--- CAN-021 ---
+Location: Langenburg, SK
+Year: 1974
+Shape: 5 Saucers
+Contact: CE2
+Reasons: Close encounter with physical evidence
+Sources to check: CANADIAN_UFO_SURVEY, DND_DECLASSIFIED, NUFORC, RCMP_FILES
+
+Research Tasks:
+  [AUTO] Search NUFORC database for Langenburg, SK 1974
+  [AUTO] Check CADORS records for aviation-related incidents
+  [AUTO] Search Library and Archives Canada for government files
+  [MANUAL] Locate photographs/evidence for Langenburg, SK case
+  [MANUAL] Find newspaper clippings from era
+  [MANUAL] Verify witness accounts with primary sources
+
+--- CAN-023 ---
+Location: Montreal, QC
+Year: 1977
+Shape: Saucer
+Contact: CE2
+Reasons: Close encounter with physical evidence
+Sources to check: CANADIAN_UFO_SURVEY, NUFORC
+
+Research Tasks:
+  [AUTO] Search NUFORC database for Montreal, QC 1977
+  [AUTO] Check CADORS records for aviation-related incidents
+  [AUTO] Search Library and Archives Canada for government files
+  [MANUAL] Locate photographs/evidence for Montreal, QC case
+  [MANUAL] Find newspaper clippings from era
+  [MANUAL] Verify witness accounts with primary sources
+
+--- CAN-032 ---
+Location: Carp, ON
+Year: 1991
+Shape: Red Flame/Craft
+Contact: CE3
+Reasons: Close encounter with physical evidence
+Sources to check: CANADIAN_UFO_SURVEY, MUFON, NUFORC
+
+Research Tasks:
+  [AUTO] Search NUFORC database for Carp, ON 1991
+  [AUTO] Check CADORS records for aviation-related incidents
+  [AUTO] Search Library and Archives Canada for government files
+  [MANUAL] Locate photographs/evidence for Carp, ON case
+  [MANUAL] Find newspaper clippings from era
+  [MANUAL] Verify witness accounts with primary sources
+
+--- CAN-034 ---
+Location: l'Annonciation, QC
+Year: 1992
+Shape: Craft
+Contact: CE3
+Reasons: Close encounter with physical evidence
+Sources to check: CANADIAN_UFO_SURVEY, NUFORC
+
+Research Tasks:
+  [AUTO] Search NUFORC database for l'Annonciation, QC 1992
+  [AUTO] Check CADORS records for aviation-related incidents
+  [AUTO] Search Library and Archives Canada for government files
+  [MANUAL] Locate photographs/evidence for l'Annonciation, QC case
+  [MANUAL] Find newspaper clippings from era
+  [MANUAL] Verify witness accounts with primary sources
+
+--- CAN-035 ---
+Location: Port Colborne, ON
+Year: 1993
+Shape: Bright Light
+Contact: CE4
+Reasons: Entity contact / abduction case
+Sources to check: CANADIAN_UFO_SURVEY, NUFORC
+
+Research Tasks:
+  [AUTO] Search NUFORC database for Port Colborne, ON 1993
+  [AUTO] Check CADORS records for aviation-related incidents
+  [AUTO] Search Library and Archives Canada for government files
+  [MANUAL] Locate photographs/evidence for Port Colborne, ON case
+  [MANUAL] Find newspaper clippings from era
+  [MANUAL] Verify witness accounts with primary sources
