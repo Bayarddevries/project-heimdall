@@ -1098,5 +1098,93 @@
     "tier_reasons": [
       "Standard sighting"
     ]
+  },
+  {
+    "caseId": "CAN-051",
+    "date": "February 4, 2023 (detected January 28, 2023)",
+    "year": "2023",
+    "location": "Surfside Beach / Myrtle Beach",
+    "coordinates": "33.6, -78.8",
+    "lat": 33.6,
+    "lng": -78.8,
+    "coords": [
+      33.6,
+      -78.8
+    ],
+    "shape": "High-Altitude Surveillance Balloon with rigid payload structure",
+    "contact": "CE1",
+    "witnesses": "Millions (viral video, live broadcast engagement); military personnel involved",
+    "evidence": "Debris recovered from ocean floor (~8,000 ft depth); SIGINT equipment, solar arrays, antennas confirmed by FBI Quantico forensic analysis",
+    "source": "2023 Flap Documentation",
+    "tier": "B",
+    "tier_reasons": [
+      "Military engagement; high-profile 2023 flap event"
+    ]
+  },
+  {
+    "caseId": "CAN-052",
+    "date": "February 10-11, 2023",
+    "year": "2023",
+    "location": "Deadhorse / Prudhoe Bay",
+    "coordinates": "70.2, -148.4",
+    "lat": 70.2,
+    "lng": -148.4,
+    "coords": [
+      70.2,
+      -148.4
+    ],
+    "shape": "Cylindrical with tether lines",
+    "contact": "CE1",
+    "witnesses": "F-22 pilot(s); NORAD radar operators",
+    "evidence": "None recovered; debris fell into ice-covered Beaufort Sea; recovery suspended due to extreme Arctic conditions (-20F, 12-foot ice ridges)",
+    "source": "2023 Flap Documentation",
+    "tier": "B",
+    "tier_reasons": [
+      "Military engagement; high-profile 2023 flap event"
+    ]
+  },
+  {
+    "caseId": "CAN-053",
+    "date": "February 11, 2023",
+    "year": "2023",
+    "location": "Yukon Territory",
+    "coordinates": "64.0, -137.5",
+    "lat": 64.0,
+    "lng": -137.5,
+    "coords": [
+      64.0,
+      -137.5
+    ],
+    "shape": "Small cylindrical",
+    "contact": "CE1",
+    "witnesses": "F-22 pilot(s); NORAD radar operators; Canadian Armed Forces recovery personnel",
+    "evidence": "Fragmented debris recovered by joint US-Canadian military team in Arctic wilderness; limited forensic analysis publicly released",
+    "source": "2023 Flap Documentation",
+    "tier": "B",
+    "tier_reasons": [
+      "Military engagement; high-profile 2023 flap event"
+    ]
+  },
+  {
+    "caseId": "CAN-054",
+    "date": "February 12, 2023",
+    "year": "2023",
+    "location": "Lake Huron (US-Canada border",
+    "coordinates": "45.2, -82.5",
+    "lat": 45.2,
+    "lng": -82.5,
+    "coords": [
+      45.2,
+      -82.5
+    ],
+    "shape": "Small cylinder",
+    "contact": "CE1",
+    "witnesses": "F-16 pilot; NORAD/FAA radar operators; possibly civilian witnesses near lake",
+    "evidence": "None recovered; object fell into ice-covered Lake Huron; recovery operations suspended due to hazardous ice conditions",
+    "source": "2023 Flap Documentation",
+    "tier": "B",
+    "tier_reasons": [
+      "Military engagement; high-profile 2023 flap event"
+    ]
   }
 ]
