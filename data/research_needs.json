@@ -1,0 +1,5891 @@
+[
+  {
+    "case_id": "CAN-001",
+    "year": "1662",
+    "location": "Montreal, QC",
+    "shape": "Fiery Serpents",
+    "contact_type": "NL",
+    "tier": "B",
+    "tier_reasons": [
+      "Historically significant case"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Montreal, QC case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Montreal, QC 1662",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-002",
+    "year": "1915",
+    "location": "Ottawa, ON",
+    "shape": "Ghost Plane",
+    "contact_type": "NL",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Ottawa, ON case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Ottawa, ON 1915",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-003",
+    "year": "1947",
+    "location": "Goose Bay, NL",
+    "shape": "Disc",
+    "contact_type": "RV",
+    "tier": "B",
+    "tier_reasons": [
+      "Historically significant case"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "DND_DECLASSIFIED",
+      "NUFORC",
+      "RCMP_FILES"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Goose Bay, NL case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Goose Bay, NL 1947",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-004",
+    "year": "1950",
+    "location": "Rivers, MB",
+    "shape": "Metallic Disc",
+    "contact_type": "RV",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "DND_DECLASSIFIED",
+      "NUFORC",
+      "RCMP_FILES"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Rivers, MB case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Rivers, MB 1950",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-005",
+    "year": "1951",
+    "location": "Gander, NL",
+    "shape": "Orange Circle",
+    "contact_type": "RV",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "DND_DECLASSIFIED",
+      "NUFORC",
+      "RCMP_FILES"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Gander, NL case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Gander, NL 1951",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-006",
+    "year": "1952",
+    "location": "North Bay, ON",
+    "shape": "Amber Orbs",
+    "contact_type": "RV",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC",
+      "PROJECT_MAGNET"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for North Bay, ON case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for North Bay, ON 1952",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-007",
+    "year": "1954",
+    "location": "Ennadai Lake, NU",
+    "shape": "Metallic Cylinder",
+    "contact_type": "DD",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "DND_DECLASSIFIED",
+      "NUFORC",
+      "RCMP_FILES"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Ennadai Lake, NU case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Ennadai Lake, NU 1954",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-008",
+    "year": "1960",
+    "location": "Clan Lake, NWT",
+    "shape": "Sphere",
+    "contact_type": "CE2",
+    "tier": "B",
+    "tier_reasons": [
+      "Physical evidence case"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "DND_DECLASSIFIED",
+      "NUFORC",
+      "RCMP_FILES"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Clan Lake, NWT case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Clan Lake, NWT 1960",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-009",
+    "year": "1960",
+    "location": "Yellowknife, NWT",
+    "shape": "Small Disc",
+    "contact_type": "CE2",
+    "tier": "B",
+    "tier_reasons": [
+      "Physical evidence case"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Yellowknife, NWT case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Yellowknife, NWT 1960",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-010",
+    "year": "1966",
+    "location": "Agassiz, BC",
+    "shape": "Light Ship",
+    "contact_type": "NL",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NEWSPAPER_ARCHIVES",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Agassiz, BC case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Agassiz, BC 1966",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-011",
+    "year": "1967",
+    "location": "Falcon Lake, MB",
+    "shape": "Saucer/Bowl",
+    "contact_type": "CE2",
+    "tier": "A",
+    "tier_reasons": [
+      "Close encounter with physical evidence"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "high"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "DND_DECLASSIFIED",
+      "NUFORC",
+      "RCMP_FILES"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Falcon Lake, MB case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Falcon Lake, MB 1967",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-012",
+    "year": "1967",
+    "location": "Shag Harbour, NS",
+    "shape": "Row of Lights",
+    "contact_type": "CE2",
+    "tier": "A",
+    "tier_reasons": [
+      "Close encounter with physical evidence"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "high"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "DND_DECLASSIFIED",
+      "NUFORC",
+      "RCMP_FILES"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Shag Harbour, NS case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Shag Harbour, NS 1967",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-013",
+    "year": "1967",
+    "location": "Shelburne, NS",
+    "shape": "Disc",
+    "contact_type": "CE1",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "DND_DECLASSIFIED",
+      "NUFORC",
+      "RCMP_FILES"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Shelburne, NS case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Shelburne, NS 1967",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-014",
+    "year": "1967",
+    "location": "St. Paul, AB",
+    "shape": "Cultural",
+    "contact_type": "N/A",
+    "tier": "B",
+    "tier_reasons": [
+      "Historically significant case"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for St. Paul, AB case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for St. Paul, AB 1967",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-015",
+    "year": "1968",
+    "location": "Rivers, MB",
+    "shape": "Glowing Ring",
+    "contact_type": "RV",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "DND_DECLASSIFIED",
+      "NUFORC",
+      "RCMP_FILES"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Rivers, MB case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Rivers, MB 1968",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-016",
+    "year": "1969",
+    "location": "Prince George, BC",
+    "shape": "Yellow Sphere",
+    "contact_type": "CE1",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "partial",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "DND_DECLASSIFIED",
+      "NUFORC",
+      "RCMP_FILES"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Prince George, BC case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Prince George, BC 1969",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-017",
+    "year": "1970",
+    "location": "Duncan, BC",
+    "shape": "Domed Saucer",
+    "contact_type": "CE3",
+    "tier": "A",
+    "tier_reasons": [
+      "Close encounter with physical evidence"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "high"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Duncan, BC case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Duncan, BC 1970",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-018",
+    "year": "1972",
+    "location": "Oromocto, NB",
+    "shape": "Silver Discs",
+    "contact_type": "CE1",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Oromocto, NB case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Oromocto, NB 1972",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-019",
+    "year": "1973",
+    "location": "Val-d'Or, QC",
+    "shape": "Multi-colored",
+    "contact_type": "CE1",
+    "tier": "B",
+    "tier_reasons": [
+      "Close encounter - multiple witnesses"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Val-d'Or, QC case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Val-d'Or, QC 1973",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-020",
+    "year": "1973",
+    "location": "Granby, QC",
+    "shape": "Glowing Oval",
+    "contact_type": "CE3",
+    "tier": "A",
+    "tier_reasons": [
+      "Entity contact / abduction case"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "high"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Granby, QC case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Granby, QC 1973",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-021",
+    "year": "1974",
+    "location": "Langenburg, SK",
+    "shape": "5 Saucers",
+    "contact_type": "CE2",
+    "tier": "A",
+    "tier_reasons": [
+      "Close encounter with physical evidence"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "high"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "DND_DECLASSIFIED",
+      "NUFORC",
+      "RCMP_FILES"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Langenburg, SK case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Langenburg, SK 1974",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-022",
+    "year": "1975",
+    "location": "Carman, MB",
+    "shape": "Red Light",
+    "contact_type": "NL",
+    "tier": "B",
+    "tier_reasons": [
+      "Historically significant case"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Carman, MB case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Carman, MB 1975",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-023",
+    "year": "1977",
+    "location": "Montreal, QC",
+    "shape": "Saucer",
+    "contact_type": "CE2",
+    "tier": "A",
+    "tier_reasons": [
+      "Close encounter with physical evidence"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "high"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Montreal, QC case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Montreal, QC 1977",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-024",
+    "year": "1978",
+    "location": "Clarenville, NL",
+    "shape": "Oval",
+    "contact_type": "CE1",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "DND_DECLASSIFIED",
+      "NUFORC",
+      "RCMP_FILES"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Clarenville, NL case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Clarenville, NL 1978",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-025",
+    "year": "1978",
+    "location": "Baskatong, QC",
+    "shape": "Saucer",
+    "contact_type": "DD",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC",
+      "PHOTOS_EVIDENCE"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Baskatong, QC case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Baskatong, QC 1978",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-026",
+    "year": "1979",
+    "location": "Saddle Lake, AB",
+    "shape": "Triangle",
+    "contact_type": "CE1",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Saddle Lake, AB case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Saddle Lake, AB 1979",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-027",
+    "year": "1980",
+    "location": "Nahanni Valley, NT",
+    "shape": "Glowing Orbs",
+    "contact_type": "NL",
+    "tier": "B",
+    "tier_reasons": [
+      "Historically significant case"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Nahanni Valley, NT case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Nahanni Valley, NT 1980",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-028",
+    "year": "1981",
+    "location": "Kelowna, BC",
+    "shape": "Silver Sphere",
+    "contact_type": "DD",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC",
+      "PHOTOS_EVIDENCE"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Kelowna, BC case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Kelowna, BC 1981",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-029",
+    "year": "1985",
+    "location": "Westmount, QC",
+    "shape": "Rectangle",
+    "contact_type": "NL",
+    "tier": "B",
+    "tier_reasons": [
+      "Mass sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NEWSPAPER_ARCHIVES",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Westmount, QC case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Westmount, QC 1985",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-030",
+    "year": "1989",
+    "location": "Shelburne, NS",
+    "shape": "Triangle",
+    "contact_type": "CE1",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Shelburne, NS case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Shelburne, NS 1989",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-031",
+    "year": "1990",
+    "location": "Montreal, QC",
+    "shape": "Oval/Luminous",
+    "contact_type": "CE1",
+    "tier": "B",
+    "tier_reasons": [
+      "Close encounter - multiple witnesses"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Montreal, QC case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Montreal, QC 1990",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-032",
+    "year": "1991",
+    "location": "Carp, ON",
+    "shape": "Red Flame/Craft",
+    "contact_type": "CE3",
+    "tier": "A",
+    "tier_reasons": [
+      "Close encounter with physical evidence"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "high"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "MUFON",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Carp, ON case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Carp, ON 1991",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-033",
+    "year": "1991",
+    "location": "St-Zotique, QC",
+    "shape": "Metallic Disc",
+    "contact_type": "DD",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC",
+      "PHOTOS_EVIDENCE"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for St-Zotique, QC case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for St-Zotique, QC 1991",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-034",
+    "year": "1992",
+    "location": "l'Annonciation, QC",
+    "shape": "Craft",
+    "contact_type": "CE3",
+    "tier": "A",
+    "tier_reasons": [
+      "Close encounter with physical evidence"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "high"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for l'Annonciation, QC case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for l'Annonciation, QC 1992",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-035",
+    "year": "1993",
+    "location": "Port Colborne, ON",
+    "shape": "Bright Light",
+    "contact_type": "CE4",
+    "tier": "A",
+    "tier_reasons": [
+      "Entity contact / abduction case"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "high"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Port Colborne, ON case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Port Colborne, ON 1993",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-036",
+    "year": "1994",
+    "location": "St-Jean-sur-Ric.",
+    "shape": "Oval",
+    "contact_type": "CE2",
+    "tier": "B",
+    "tier_reasons": [
+      "Physical evidence case"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for St-Jean-sur-Ric. case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for St-Jean-sur-Ric. 1994",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-037",
+    "year": "1996",
+    "location": "Fox Lake, YT",
+    "shape": "Mothership",
+    "contact_type": "CE1",
+    "tier": "B",
+    "tier_reasons": [
+      "Close encounter - multiple witnesses"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "high"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "high"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Fox Lake, YT case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Fox Lake, YT 1996",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-038",
+    "year": "2004",
+    "location": "Fort Erie, ON",
+    "shape": "Vibrating Lights",
+    "contact_type": "NL",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Fort Erie, ON case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Fort Erie, ON 2004",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-039",
+    "year": "2007",
+    "location": "St-Hilaire, QC",
+    "shape": "Glowing Orb",
+    "contact_type": "NL",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for St-Hilaire, QC case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for St-Hilaire, QC 2007",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-040",
+    "year": "2008",
+    "location": "Niagara Falls, ON",
+    "shape": "Orbs",
+    "contact_type": "CE1",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC",
+      "PHOTOS_EVIDENCE"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Niagara Falls, ON case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Niagara Falls, ON 2008",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-041",
+    "year": "2010",
+    "location": "Harbour Mille, NL",
+    "shape": "Missiles",
+    "contact_type": "CE1",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "DND_DECLASSIFIED",
+      "NUFORC",
+      "RCMP_FILES"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Harbour Mille, NL case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Harbour Mille, NL 2010",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-042",
+    "year": "2012",
+    "location": "Hamilton, ON",
+    "shape": "V-Formation",
+    "contact_type": "NL",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Hamilton, ON case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Hamilton, ON 2012",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-043",
+    "year": "2014",
+    "location": "Vancouver, BC",
+    "shape": "Mechanical",
+    "contact_type": "DD",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CADORS",
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Vancouver, BC case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Vancouver, BC 2014",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-044",
+    "year": "2015",
+    "location": "Oshawa, ON",
+    "shape": "Black Cube",
+    "contact_type": "DD",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC",
+      "PHOTOS_EVIDENCE"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Oshawa, ON case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Oshawa, ON 2015",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-045",
+    "year": "2016",
+    "location": "Ashmount, AB",
+    "shape": "Bright Orb",
+    "contact_type": "CE1",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Ashmount, AB case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Ashmount, AB 2016",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-046",
+    "year": "2021",
+    "location": "Gulf of St. Law.",
+    "shape": "Green Light",
+    "contact_type": "NL",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CADORS",
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Gulf of St. Law. case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Gulf of St. Law. 2021",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-047",
+    "year": "2024",
+    "location": "Hafford, SK",
+    "shape": "Domed Disc",
+    "contact_type": "CE1",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "MUFON",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Hafford, SK case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Hafford, SK 2024",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-048",
+    "year": "2025",
+    "location": "Sudbury, ON",
+    "shape": "Orange Diamond",
+    "contact_type": "NL",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "partial",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Sudbury, ON case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Sudbury, ON 2025",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-049",
+    "year": "2025",
+    "location": "N. Alberta",
+    "shape": "Cylinder",
+    "contact_type": "RV",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CADORS",
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for N. Alberta case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for N. Alberta 2025",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  },
+  {
+    "case_id": "CAN-050",
+    "year": "2025",
+    "location": "Sheridan Lake, BC",
+    "shape": "Pulsating Orb",
+    "contact_type": "NL",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ],
+    "research_gaps": [
+      {
+        "field": "narrative",
+        "description": "Full chronological story of the event",
+        "current_status": "summary_only",
+        "priority": "medium"
+      },
+      {
+        "field": "first_hand_accounts",
+        "description": "Direct quotes from witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "duration",
+        "description": "How long the sighting lasted",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "weather_conditions",
+        "description": "Sky state, visibility, temperature",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "witness_count_exact",
+        "description": "Specific number of witnesses",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "craft_dimensions",
+        "description": "Size estimates, distance from observer",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "behavior",
+        "description": "Movement patterns, sounds, light sequences",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "beings_description",
+        "description": "Appearance, actions, clothing",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "physical_traces",
+        "description": "Ground marks, radiation, EM interference, photos",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "official_response",
+        "description": "RCMP, RCAF, military, government investigation details",
+        "current_status": "partial",
+        "priority": "medium"
+      },
+      {
+        "field": "media_files",
+        "description": "Photos, newspaper clippings, video, audio",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "credibility_assessment",
+        "description": "Source reliability, corroboration",
+        "current_status": "none",
+        "priority": "medium"
+      },
+      {
+        "field": "cross_references",
+        "description": "Similar cases nearby or same era",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "historical_context",
+        "description": "What else was happening at that time/place",
+        "current_status": "none",
+        "priority": "low"
+      },
+      {
+        "field": "modern_analysis",
+        "description": "Any scientific explanations or debunking attempts",
+        "current_status": "none",
+        "priority": "medium"
+      }
+    ],
+    "suggested_sources": [
+      "CANADIAN_UFO_SURVEY",
+      "NUFORC"
+    ],
+    "manual_tasks": [
+      "Locate photographs/evidence for Sheridan Lake, BC case",
+      "Find newspaper clippings from era",
+      "Verify witness accounts with primary sources"
+    ],
+    "automated_tasks": [
+      "Search NUFORC database for Sheridan Lake, BC 2025",
+      "Check CADORS records for aviation-related incidents",
+      "Search Library and Archives Canada for government files"
+    ]
+  }
+]

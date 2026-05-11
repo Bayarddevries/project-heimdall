@@ -1,0 +1,1102 @@
+[
+  {
+    "caseId": "CAN-001",
+    "date": "1662",
+    "year": "1662",
+    "location": "Montreal, QC",
+    "coordinates": "45.5, -73.5",
+    "lat": 45.5,
+    "lng": -73.5,
+    "coords": [
+      45.5,
+      -73.5
+    ],
+    "shape": "Fiery Serpents",
+    "contact": "NL",
+    "witnesses": "Multiple settlers",
+    "evidence": "Celestial \"omens\"",
+    "source": "Jesuit Relations",
+    "tier": "B",
+    "tier_reasons": [
+      "Historically significant case"
+    ]
+  },
+  {
+    "caseId": "CAN-002",
+    "date": "1915",
+    "year": "1915",
+    "location": "Ottawa, ON",
+    "coordinates": "45.4, -75.7",
+    "lat": 45.4,
+    "lng": -75.7,
+    "coords": [
+      45.4,
+      -75.7
+    ],
+    "shape": "Ghost Plane",
+    "contact": "NL",
+    "witnesses": "Parliamentarians",
+    "evidence": "High-altitude lights during WWI",
+    "source": "Hansard Debates",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-003",
+    "date": "1947",
+    "year": "1947",
+    "location": "Goose Bay, NL",
+    "coordinates": "53.3, -60.4",
+    "lat": 53.3,
+    "lng": -60.4,
+    "coords": [
+      53.3,
+      -60.4
+    ],
+    "shape": "Disc",
+    "contact": "RV",
+    "witnesses": "Military Radar",
+    "evidence": "Detected at 9,000+ mph",
+    "source": "USAF Intel",
+    "tier": "B",
+    "tier_reasons": [
+      "Historically significant case"
+    ]
+  },
+  {
+    "caseId": "CAN-004",
+    "date": "1950",
+    "year": "1950",
+    "location": "Rivers, MB",
+    "coordinates": "50.0, -100.2",
+    "lat": 50.0,
+    "lng": -100.2,
+    "coords": [
+      50.0,
+      -100.2
+    ],
+    "shape": "Metallic Disc",
+    "contact": "RV",
+    "witnesses": "RCAF Pilot",
+    "evidence": "High-speed maneuvers",
+    "source": "RCAF Pilot Logs",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-005",
+    "date": "1951",
+    "year": "1951",
+    "location": "Gander, NL",
+    "coordinates": "48.9, -54.5",
+    "lat": 48.9,
+    "lng": -54.5,
+    "coords": [
+      48.9,
+      -54.5
+    ],
+    "shape": "Orange Circle",
+    "contact": "RV",
+    "witnesses": "U.S. Navy Pilot",
+    "evidence": "Close proximity flight",
+    "source": "U.S. Navy Records",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-006",
+    "date": "1952",
+    "year": "1952",
+    "location": "North Bay, ON",
+    "coordinates": "46.3, -79.4",
+    "lat": 46.3,
+    "lng": -79.4,
+    "coords": [
+      46.3,
+      -79.4
+    ],
+    "shape": "Amber Orbs",
+    "contact": "RV",
+    "witnesses": "RCAF Officers",
+    "evidence": "Radar-visual confirmation",
+    "source": "Project Magnet",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-007",
+    "date": "1954",
+    "year": "1954",
+    "location": "Ennadai Lake, NU",
+    "coordinates": "61.2, -100.9",
+    "lat": 61.2,
+    "lng": -100.9,
+    "coords": [
+      61.2,
+      -100.9
+    ],
+    "shape": "Metallic Cylinder",
+    "contact": "DD",
+    "witnesses": "Weather observers",
+    "evidence": "Metallic glint, no propulsion",
+    "source": "DND Declassified",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-008",
+    "date": "1960",
+    "year": "1960",
+    "location": "Clan Lake, NWT",
+    "coordinates": "62.7, -114.2",
+    "lat": 62.7,
+    "lng": -114.2,
+    "coords": [
+      62.7,
+      -114.2
+    ],
+    "shape": "Sphere",
+    "contact": "CE2",
+    "witnesses": "2 Prospectors",
+    "evidence": "Crashing sound; water disturbance",
+    "source": "RCMP Files",
+    "tier": "B",
+    "tier_reasons": [
+      "Physical evidence case"
+    ]
+  },
+  {
+    "caseId": "CAN-009",
+    "date": "1960",
+    "year": "1960",
+    "location": "Yellowknife, NWT",
+    "coordinates": "62.4, -114.3",
+    "lat": 62.4,
+    "lng": -114.3,
+    "coords": [
+      62.4,
+      -114.3
+    ],
+    "shape": "Small Disc",
+    "contact": "CE2",
+    "witnesses": "Single Prospector",
+    "evidence": "Radioactive readings at site",
+    "source": "Witness Account",
+    "tier": "B",
+    "tier_reasons": [
+      "Physical evidence case"
+    ]
+  },
+  {
+    "caseId": "CAN-010",
+    "date": "1966",
+    "year": "1966",
+    "location": "Agassiz, BC",
+    "coordinates": "49.2, -121.7",
+    "lat": 49.2,
+    "lng": -121.7,
+    "coords": [
+      49.2,
+      -121.7
+    ],
+    "shape": "Light Ship",
+    "contact": "NL",
+    "witnesses": "Local residents",
+    "evidence": "Hovering over Mt. Cheam",
+    "source": "Local Legend/Press",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-011",
+    "date": "May 20, 1967",
+    "year": "1967",
+    "location": "Falcon Lake, MB",
+    "coordinates": "49.6, -95.3",
+    "lat": 49.6,
+    "lng": -95.3,
+    "coords": [
+      49.6,
+      -95.3
+    ],
+    "shape": "Saucer/Bowl",
+    "contact": "CE2",
+    "witnesses": "Stefan Michalak",
+    "evidence": "Grid-pattern chest burns; radioactive soil",
+    "source": "RCMP Form 63",
+    "tier": "A",
+    "tier_reasons": [
+      "Close encounter with physical evidence"
+    ]
+  },
+  {
+    "caseId": "CAN-012",
+    "date": "Oct 4, 1967",
+    "year": "1967",
+    "location": "Shag Harbour, NS",
+    "coordinates": "43.4, -65.7",
+    "lat": 43.4,
+    "lng": -65.7,
+    "coords": [
+      43.4,
+      -65.7
+    ],
+    "shape": "Row of Lights",
+    "contact": "CE2",
+    "witnesses": "11+ Witnesses",
+    "evidence": "Yellow sulfurous foam; sonar hits",
+    "source": "RCAF/Coast Guard",
+    "tier": "A",
+    "tier_reasons": [
+      "Close encounter with physical evidence"
+    ]
+  },
+  {
+    "caseId": "CAN-013",
+    "date": "1967",
+    "year": "1967",
+    "location": "Shelburne, NS",
+    "coordinates": "43.7, -65.3",
+    "lat": 43.7,
+    "lng": -65.3,
+    "coords": [
+      43.7,
+      -65.3
+    ],
+    "shape": "Disc",
+    "contact": "CE1",
+    "witnesses": "Military personnel",
+    "evidence": "Object entered the water",
+    "source": "Navy Radar Logs",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-014",
+    "date": "1967",
+    "year": "1967",
+    "location": "St. Paul, AB",
+    "coordinates": "53.9, -111.3",
+    "lat": 53.9,
+    "lng": -111.3,
+    "coords": [
+      53.9,
+      -111.3
+    ],
+    "shape": "Cultural",
+    "contact": "N/A",
+    "witnesses": "Town Council",
+    "evidence": "Centennial UFO Landing Pad built",
+    "source": "Municipal Records",
+    "tier": "B",
+    "tier_reasons": [
+      "Historically significant case"
+    ]
+  },
+  {
+    "caseId": "CAN-015",
+    "date": "1968",
+    "year": "1968",
+    "location": "Rivers, MB",
+    "coordinates": "50.0, -100.2",
+    "lat": 50.0,
+    "lng": -100.2,
+    "coords": [
+      50.0,
+      -100.2
+    ],
+    "shape": "Glowing Ring",
+    "contact": "RV",
+    "witnesses": "Air Traffic Control",
+    "evidence": "Persistent radar track",
+    "source": "RCAF Base Records",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-016",
+    "date": "1969",
+    "year": "1969",
+    "location": "Prince George, BC",
+    "coordinates": "53.9, -122.7",
+    "lat": 53.9,
+    "lng": -122.7,
+    "coords": [
+      53.9,
+      -122.7
+    ],
+    "shape": "Yellow Sphere",
+    "contact": "CE1",
+    "witnesses": "3 Witnesses",
+    "evidence": "Hovering at low altitude",
+    "source": "RCMP Reports",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-017",
+    "date": "Jan 1, 1970",
+    "year": "1970",
+    "location": "Duncan, BC",
+    "coordinates": "48.7, -123.7",
+    "lat": 48.7,
+    "lng": -123.7,
+    "coords": [
+      48.7,
+      -123.7
+    ],
+    "shape": "Domed Saucer",
+    "contact": "CE3",
+    "witnesses": "Nurse Doreen Kendall",
+    "evidence": "2 Tall men in dark suits seen through glass",
+    "source": "Psychological Profile",
+    "tier": "A",
+    "tier_reasons": [
+      "Close encounter with physical evidence"
+    ]
+  },
+  {
+    "caseId": "CAN-018",
+    "date": "1972",
+    "year": "1972",
+    "location": "Oromocto, NB",
+    "coordinates": "45.8, -66.4",
+    "lat": 45.8,
+    "lng": -66.4,
+    "coords": [
+      45.8,
+      -66.4
+    ],
+    "shape": "Silver Discs",
+    "contact": "CE1",
+    "witnesses": "Military (CFB Gagetown)",
+    "evidence": "Multiple discs in formation",
+    "source": "CFB Gagetown",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-019",
+    "date": "1973",
+    "year": "1973",
+    "location": "Val-d'Or, QC",
+    "coordinates": "48.1, -77.7",
+    "lat": 48.1,
+    "lng": -77.7,
+    "coords": [
+      48.1,
+      -77.7
+    ],
+    "shape": "Multi-colored",
+    "contact": "CE1",
+    "witnesses": "Police/Public",
+    "evidence": "Massive regional \"wave\"",
+    "source": "Ufology Quebec",
+    "tier": "B",
+    "tier_reasons": [
+      "Close encounter - multiple witnesses"
+    ]
+  },
+  {
+    "caseId": "CAN-020",
+    "date": "1973",
+    "year": "1973",
+    "location": "Granby, QC",
+    "coordinates": "45.4, -72.7",
+    "lat": 45.4,
+    "lng": -72.7,
+    "coords": [
+      45.4,
+      -72.7
+    ],
+    "shape": "Glowing Oval",
+    "contact": "CE3",
+    "witnesses": "Anonymous",
+    "evidence": "Small humanoids reported",
+    "source": "Quebec Archives",
+    "tier": "A",
+    "tier_reasons": [
+      "Entity contact / abduction case"
+    ]
+  },
+  {
+    "caseId": "CAN-021",
+    "date": "1974",
+    "year": "1974",
+    "location": "Langenburg, SK",
+    "coordinates": "50.8, -101.4",
+    "lat": 50.8,
+    "lng": -101.4,
+    "coords": [
+      50.8,
+      -101.4
+    ],
+    "shape": "5 Saucers",
+    "contact": "CE2",
+    "witnesses": "Edwin Fuhr",
+    "evidence": "5 rings of flattened/swirled grass",
+    "source": "RCMP Report",
+    "tier": "A",
+    "tier_reasons": [
+      "Close encounter with physical evidence"
+    ]
+  },
+  {
+    "caseId": "CAN-022",
+    "date": "1975",
+    "year": "1975",
+    "location": "Carman, MB",
+    "coordinates": "49.5, -98.0",
+    "lat": 49.5,
+    "lng": -98.0,
+    "coords": [
+      49.5,
+      -98.0
+    ],
+    "shape": "Red Light",
+    "contact": "NL",
+    "witnesses": "\"Charlie Redstar\"",
+    "evidence": "1,000s of sightings over months",
+    "source": "Charlie Redstar (Grant)",
+    "tier": "B",
+    "tier_reasons": [
+      "Historically significant case"
+    ]
+  },
+  {
+    "caseId": "CAN-023",
+    "date": "1977",
+    "year": "1977",
+    "location": "Montreal, QC",
+    "coordinates": "45.5, -73.6",
+    "lat": 45.5,
+    "lng": -73.6,
+    "coords": [
+      45.5,
+      -73.6
+    ],
+    "shape": "Saucer",
+    "contact": "CE2",
+    "witnesses": "Florida Malboeuf",
+    "evidence": "Landing gear marks in snow",
+    "source": "Ufology Research",
+    "tier": "A",
+    "tier_reasons": [
+      "Close encounter with physical evidence"
+    ]
+  },
+  {
+    "caseId": "CAN-024",
+    "date": "1978",
+    "year": "1978",
+    "location": "Clarenville, NL",
+    "coordinates": "48.1, -53.9",
+    "lat": 48.1,
+    "lng": -53.9,
+    "coords": [
+      48.1,
+      -53.9
+    ],
+    "shape": "Oval",
+    "contact": "CE1",
+    "witnesses": "Cst. Jim Blackwood",
+    "evidence": "Hovering light for 1.5 hours",
+    "source": "RCMP Witness",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-025",
+    "date": "1978",
+    "year": "1978",
+    "location": "Baskatong, QC",
+    "coordinates": "46.8, -75.9",
+    "lat": 46.8,
+    "lng": -75.9,
+    "coords": [
+      46.8,
+      -75.9
+    ],
+    "shape": "Saucer",
+    "contact": "DD",
+    "witnesses": "Jacques Lavoie",
+    "evidence": "Detailed 35mm photograph",
+    "source": "Photo Analysis",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-026",
+    "date": "1979",
+    "year": "1979",
+    "location": "Saddle Lake, AB",
+    "coordinates": "53.9, -111.6",
+    "lat": 53.9,
+    "lng": -111.6,
+    "coords": [
+      53.9,
+      -111.6
+    ],
+    "shape": "Triangle",
+    "contact": "CE1",
+    "witnesses": "First Nations Community",
+    "evidence": "Silent, low-level flight",
+    "source": "Community Logs",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-027",
+    "date": "1980",
+    "year": "1980",
+    "location": "Nahanni Valley, NT",
+    "coordinates": "61.2, -124.0",
+    "lat": 61.2,
+    "lng": -124.0,
+    "coords": [
+      61.2,
+      -124.0
+    ],
+    "shape": "Glowing Orbs",
+    "contact": "NL",
+    "witnesses": "Adventurers",
+    "evidence": "Orbs following hikers",
+    "source": "\"Headless Valley\" Lore",
+    "tier": "B",
+    "tier_reasons": [
+      "Historically significant case"
+    ]
+  },
+  {
+    "caseId": "CAN-028",
+    "date": "1981",
+    "year": "1981",
+    "location": "Kelowna, BC",
+    "coordinates": "49.8, -119.4",
+    "lat": 49.8,
+    "lng": -119.4,
+    "coords": [
+      49.8,
+      -119.4
+    ],
+    "shape": "Silver Sphere",
+    "contact": "DD",
+    "witnesses": "Local resident",
+    "evidence": "Daylight photo of sphere",
+    "source": "Photographic Evidence",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-029",
+    "date": "1985",
+    "year": "1985",
+    "location": "Westmount, QC",
+    "coordinates": "45.4, -73.5",
+    "lat": 45.4,
+    "lng": -73.5,
+    "coords": [
+      45.4,
+      -73.5
+    ],
+    "shape": "Rectangle",
+    "contact": "NL",
+    "witnesses": "Thousands of locals",
+    "evidence": "Massive silent block of lights",
+    "source": "Montreal Gazetter",
+    "tier": "B",
+    "tier_reasons": [
+      "Mass sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-030",
+    "date": "1989",
+    "year": "1989",
+    "location": "Shelburne, NS",
+    "coordinates": "43.7, -65.3",
+    "lat": 43.7,
+    "lng": -65.3,
+    "coords": [
+      43.7,
+      -65.3
+    ],
+    "shape": "Triangle",
+    "contact": "CE1",
+    "witnesses": "Fishermen",
+    "evidence": "Large craft surfacing from water",
+    "source": "Maritime UFO Logs",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-031",
+    "date": "Nov 7, 1990",
+    "year": "1990",
+    "location": "Montreal, QC",
+    "coordinates": "45.5, -73.5",
+    "lat": 45.5,
+    "lng": -73.5,
+    "coords": [
+      45.5,
+      -73.5
+    ],
+    "shape": "Oval/Luminous",
+    "contact": "CE1",
+    "witnesses": "Police & 40+ people",
+    "evidence": "Seen over Place Bonaventure for 3 hours",
+    "source": "Montreal Police",
+    "tier": "B",
+    "tier_reasons": [
+      "Close encounter - multiple witnesses"
+    ]
+  },
+  {
+    "caseId": "CAN-032",
+    "date": "1991",
+    "year": "1991",
+    "location": "Carp, ON",
+    "coordinates": "45.3, -76.0",
+    "lat": 45.3,
+    "lng": -76.0,
+    "coords": [
+      45.3,
+      -76.0
+    ],
+    "shape": "Red Flame/Craft",
+    "contact": "CE3",
+    "witnesses": "Diane Labenek",
+    "evidence": "\"The Guardian\" VHS tapes; scorched field",
+    "source": "MUFON/Bob Oechsler",
+    "tier": "A",
+    "tier_reasons": [
+      "Close encounter with physical evidence"
+    ]
+  },
+  {
+    "caseId": "CAN-033",
+    "date": "1991",
+    "year": "1991",
+    "location": "St-Zotique, QC",
+    "coordinates": "45.2, -74.2",
+    "lat": 45.2,
+    "lng": -74.2,
+    "coords": [
+      45.2,
+      -74.2
+    ],
+    "shape": "Metallic Disc",
+    "contact": "DD",
+    "witnesses": "Multiple witnesses",
+    "evidence": "High-resolution daylight photo",
+    "source": "Photo Analysis",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-034",
+    "date": "1992",
+    "year": "1992",
+    "location": "l'Annonciation, QC",
+    "coordinates": "46.4, -74.8",
+    "lat": 46.4,
+    "lng": -74.8,
+    "coords": [
+      46.4,
+      -74.8
+    ],
+    "shape": "Craft",
+    "contact": "CE3",
+    "witnesses": "Snowmobilers",
+    "evidence": "Video of supposed \"corpse\" (likely hoax)",
+    "source": "Ufology Archives",
+    "tier": "A",
+    "tier_reasons": [
+      "Close encounter with physical evidence"
+    ]
+  },
+  {
+    "caseId": "CAN-035",
+    "date": "1993",
+    "year": "1993",
+    "location": "Port Colborne, ON",
+    "coordinates": "42.8, -79.2",
+    "lat": 42.8,
+    "lng": -79.2,
+    "coords": [
+      42.8,
+      -79.2
+    ],
+    "shape": "Bright Light",
+    "contact": "CE4",
+    "witnesses": "1 Witness",
+    "evidence": "Missing time; hypnotic regression",
+    "source": "Witness Account",
+    "tier": "A",
+    "tier_reasons": [
+      "Entity contact / abduction case"
+    ]
+  },
+  {
+    "caseId": "CAN-036",
+    "date": "1994",
+    "year": "1994",
+    "location": "St-Jean-sur-Ric.",
+    "coordinates": "45.3, -73.2",
+    "lat": 45.3,
+    "lng": -73.2,
+    "coords": [
+      45.3,
+      -73.2
+    ],
+    "shape": "Oval",
+    "contact": "CE2",
+    "witnesses": "Local farmer",
+    "evidence": "Dehydrated vegetation/ground marks",
+    "source": "Trace Case",
+    "tier": "B",
+    "tier_reasons": [
+      "Physical evidence case"
+    ]
+  },
+  {
+    "caseId": "CAN-037",
+    "date": "1996",
+    "year": "1996",
+    "location": "Fox Lake, YT",
+    "coordinates": "61.2, -135.4",
+    "lat": 61.2,
+    "lng": -135.4,
+    "coords": [
+      61.2,
+      -135.4
+    ],
+    "shape": "Mothership",
+    "contact": "CE1",
+    "witnesses": "31 Witnesses",
+    "evidence": "Massive craft (3 football fields wide)",
+    "source": "Yukon Govt Files",
+    "tier": "B",
+    "tier_reasons": [
+      "Close encounter - multiple witnesses"
+    ]
+  },
+  {
+    "caseId": "CAN-038",
+    "date": "2004",
+    "year": "2004",
+    "location": "Fort Erie, ON",
+    "coordinates": "42.9, -78.9",
+    "lat": 42.9,
+    "lng": -78.9,
+    "coords": [
+      42.9,
+      -78.9
+    ],
+    "shape": "Vibrating Lights",
+    "contact": "NL",
+    "witnesses": "Multi-witness",
+    "evidence": "Lights dancing over Lake Erie",
+    "source": "Ufology Research",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-039",
+    "date": "2007",
+    "year": "2007",
+    "location": "St-Hilaire, QC",
+    "coordinates": "45.5, -73.1",
+    "lat": 45.5,
+    "lng": -73.1,
+    "coords": [
+      45.5,
+      -73.1
+    ],
+    "shape": "Glowing Orb",
+    "contact": "NL",
+    "witnesses": "Residents",
+    "evidence": "Orb emerging from Mont St-Hilaire",
+    "source": "Local Reports",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-040",
+    "date": "2008",
+    "year": "2008",
+    "location": "Niagara Falls, ON",
+    "coordinates": "43.0, -79.0",
+    "lat": 43.0,
+    "lng": -79.0,
+    "coords": [
+      43.0,
+      -79.0
+    ],
+    "shape": "Orbs",
+    "contact": "CE1",
+    "witnesses": "Hotel Security",
+    "evidence": "Men in Black reported at Sheraton",
+    "source": "CCTV/Witness",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-041",
+    "date": "2010",
+    "year": "2010",
+    "location": "Harbour Mille, NL",
+    "coordinates": "47.6, -54.6",
+    "lat": 47.6,
+    "lng": -54.6,
+    "coords": [
+      47.6,
+      -54.6
+    ],
+    "shape": "Missiles",
+    "contact": "CE1",
+    "witnesses": "Multi-witness",
+    "evidence": "3 projectile-like objects from water",
+    "source": "PMO/RCMP Inquiry",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-042",
+    "date": "2012",
+    "year": "2012",
+    "location": "Hamilton, ON",
+    "coordinates": "43.2, -79.8",
+    "lat": 43.2,
+    "lng": -79.8,
+    "coords": [
+      43.2,
+      -79.8
+    ],
+    "shape": "V-Formation",
+    "contact": "NL",
+    "witnesses": "Dozens of witnesses",
+    "evidence": "High-quality YouTube video uploads",
+    "source": "Multi-source",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-043",
+    "date": "2014",
+    "year": "2014",
+    "location": "Vancouver, BC",
+    "coordinates": "49.2, -123.1",
+    "lat": 49.2,
+    "lng": -123.1,
+    "coords": [
+      49.2,
+      -123.1
+    ],
+    "shape": "Mechanical",
+    "contact": "DD",
+    "witnesses": "Commercial Pilot",
+    "evidence": "Near-miss at YVR airport",
+    "source": "CADORS",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-044",
+    "date": "2015",
+    "year": "2015",
+    "location": "Oshawa, ON",
+    "coordinates": "43.8, -78.8",
+    "lat": 43.8,
+    "lng": -78.8,
+    "coords": [
+      43.8,
+      -78.8
+    ],
+    "shape": "Black Cube",
+    "contact": "DD",
+    "witnesses": "Amateur Video",
+    "evidence": "Cube rotating in clear sky",
+    "source": "Video Evidence",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-045",
+    "date": "2016",
+    "year": "2016",
+    "location": "Ashmount, AB",
+    "coordinates": "53.9, -111.4",
+    "lat": 53.9,
+    "lng": -111.4,
+    "coords": [
+      53.9,
+      -111.4
+    ],
+    "shape": "Bright Orb",
+    "contact": "CE1",
+    "witnesses": "Oil workers",
+    "evidence": "Electromagnetic interference with trucks",
+    "source": "Field Reports",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-046",
+    "date": "2021",
+    "year": "2021",
+    "location": "Gulf of St. Law.",
+    "coordinates": "48.0, -62.0",
+    "lat": 48.0,
+    "lng": -62.0,
+    "coords": [
+      48.0,
+      -62.0
+    ],
+    "shape": "Green Light",
+    "contact": "NL",
+    "witnesses": "Military/Commercial",
+    "evidence": "Verified by two different aircraft",
+    "source": "CADORS 2021Q2032",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-047",
+    "date": "2024",
+    "year": "2024",
+    "location": "Hafford, SK",
+    "coordinates": "52.8, -107.3",
+    "lat": 52.8,
+    "lng": -107.3,
+    "coords": [
+      52.8,
+      -107.3
+    ],
+    "shape": "Domed Disc",
+    "contact": "CE1",
+    "witnesses": "Single witness",
+    "evidence": "Low altitude hover over field",
+    "source": "MUFON Case 13582",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-048",
+    "date": "2025",
+    "year": "2025",
+    "location": "Sudbury, ON",
+    "coordinates": "46.4, -80.9",
+    "lat": 46.4,
+    "lng": -80.9,
+    "coords": [
+      46.4,
+      -80.9
+    ],
+    "shape": "Orange Diamond",
+    "contact": "NL",
+    "witnesses": "4 Witnesses",
+    "evidence": "Pulsating orange light over mines",
+    "source": "2025 Ufology Report",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-049",
+    "date": "2025",
+    "year": "2025",
+    "location": "N. Alberta",
+    "coordinates": "56.0, -115.0",
+    "lat": 56.0,
+    "lng": -115.0,
+    "coords": [
+      56.0,
+      -115.0
+    ],
+    "shape": "Cylinder",
+    "contact": "RV",
+    "witnesses": "Pilot",
+    "evidence": "Incident at 39,000ft; high speed",
+    "source": "CADORS (Projected)",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  },
+  {
+    "caseId": "CAN-050",
+    "date": "2025",
+    "year": "2025",
+    "location": "Sheridan Lake, BC",
+    "coordinates": "51.5, -120.9",
+    "lat": 51.5,
+    "lng": -120.9,
+    "coords": [
+      51.5,
+      -120.9
+    ],
+    "shape": "Pulsating Orb",
+    "contact": "NL",
+    "witnesses": "Campers",
+    "evidence": "Interference with cell phones",
+    "source": "Canadian UFO Survey",
+    "tier": "C",
+    "tier_reasons": [
+      "Standard sighting"
+    ]
+  }
+]

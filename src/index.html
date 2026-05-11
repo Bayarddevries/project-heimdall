@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROJECT HEIMDALL — Canadian UFO Archive</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Caveat:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Source Sans 3', Arial, sans-serif;
+  background: #2c2825;
+  color: #3b3228;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* ===== MAP ===== */
+#map {
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  filter: saturate(0.3) brightness(0.85);
+}
+
+/* ===== TOP BAR ===== */
+.top-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: #f5eed6;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%%25' height='100%%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  border-bottom: 3px solid #8b7355;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.top-bar .logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.top-bar .stamp {
+  border: 3px solid #c41e3a;
+  color: #c41e3a;
+  font-family: 'Special Elite', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 4px 14px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transform: rotate(-2deg);
+  opacity: 0.85;
+}
+
+.top-bar h1 {
+  font-family: 'Special Elite', monospace;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: #2c2825;
+}
+
+.top-bar h1 span {
+  font-size: 13px;
+  display: block;
+  color: #6b5e50;
+  letter-spacing: 1px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 400;
+}
+
+.top-bar .stats {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  color: #6b5e50;
+}
+
+.top-bar .stats strong {
+  color: #2c2825;
+  font-weight: 700;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  position: fixed;
+  top: 62px;
+  left: 0;
+  bottom: 0;
+  width: 320px;
+  z-index: 999;
+  background: #f5eed6;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%%25' height='100%%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+  border-right: 3px solid #8b7355;
+  overflow-y: auto;
+  box-shadow: 3px 0 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.sidebar.collapsed {
+  transform: translateX(-320px);
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 76px;
+  left: 320px;
+  z-index: 1001;
+  background: #f5eed6;
+  border: 2px solid #8b7355;
+  border-left: none;
+  padding: 8px 6px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 0 4px 4px 0;
+  transition: left 0.3s ease;
+}
+
+.sidebar.collapsed + .sidebar-toggle {
+  left: 0;
+}
+
+.sidebar-header {
+  padding: 14px 16px 8px;
+  border-bottom: 2px dashed #c4b896;
+  margin: 0 12px;
+}
+
+.sidebar-header h2 {
+  font-family: 'Special Elite', monospace;
+  font-size: 15px;
+  color: #6b5e50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-header h2::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #8b7355;
+  border-radius: 50%;
+}
+
+/* Filter controls */
+.filter-bar {
+  display: flex;
+  gap: 6px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #d4c9a8;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 11px;
+  padding: 3px 10px;
+  border: 1px solid #b8a88a;
+  background: transparent;
+  color: #6b5e50;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.15s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: #8b7355;
+  color: #f5eed6;
+  border-color: #8b7355;
+}
+
+/* Case list */
+.case-list {
+  list-style: none;
+  padding: 8px 0;
+}
+
+.case-item {
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(196, 184, 150, 0.4);
+  cursor: pointer;
+  transition: background 0.15s;
+  position: relative;
+}
+
+.case-item:hover {
+  background: rgba(139, 115, 85, 0.08);
+}
+
+.case-item.active {
+  background: rgba(139, 115, 85, 0.12);
+  border-left: 3px solid #8b7355;
+}
+
+.case-item .case-id {
+  font-family: 'Special Elite', monospace;
+  font-size: 11px;
+  color: #c41e3a;
+  letter-spacing: 1px;
+}
+
+.case-item .case-year {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 11px;
+  color: #8b7355;
+  font-weight: 600;
+}
+
+.case-item .case-loc {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 2px 0 1px;
+}
+
+.case-item .case-shape {
+  font-size: 11px;
+  color: #8b7355;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.case-item .case-shape .badge {
+  font-family: 'Caveat', cursive;
+  font-size: 11px;
+  color: #0047ab;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.case-item .tier-A::after { content: '★'; color: #c41e3a; margin-left: 4px; }
+.case-item .tier-B::after { content: '☆'; color: #8b7355; margin-left: 4px; }
+
+/* ===== LEAFLET POPUP ===== */
+.leaflet-container {
+  font-family: 'Source Sans 3', sans-serif !important;
+}
+
+.case-popup {
+  font-family: 'Source Sans 3', sans-serif;
+  min-width: 300px;
+  max-width: 380px;
+  padding: 0;
+}
+
+.popup-folder {
+  background: #f5eed6;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%%25' height='100%%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+  border-radius: 2px;
+  position: relative;
+  overflow: visible;
+}
+
+/* Folder tab */
+.popup-tab {
+  position: absolute;
+  top: -14px;
+  left: 20px;
+  right: 80px;
+  background: #e8dfc0;
+  border: 2px solid #8b7355;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  padding: 2px 12px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #6b5e50;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Paperclip */
+.popup-paperclip {
+  position: absolute;
+  top: -4px;
+  right: 12px;
+  font-size: 22px;
+  color: #8b8b8b;
+  z-index: 3;
+  transform: rotate(15deg);
+}
+
+/* Staple */
+.popup-staple {
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  width: 18px;
+  height: 4px;
+  background: #a0a0a0;
+  border-radius: 1px;
+  z-index: 3;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Popup content */
+.popup-content {
+  padding: 16px 16px 12px;
+  border: 2px solid #8b7355;
+  border-bottom: 2px solid #6b5644;
+  box-shadow: inset 0 0 20px rgba(139,115,85,0.1);
+  clip-path: polygon(
+    0px 2px, 2px 0px, 4px 1px, 6px 0px, 8px 1px, 10px 0px,
+    calc(100% - 10px) 0px, calc(100% - 8px) 1px, calc(100% - 6px) 0px,
+    calc(100% - 4px) 1px, calc(100% - 2px) 0px, 100% 2px,
+    100% calc(100% - 2px), calc(100% - 1px) calc(100% - 4px),
+    100% calc(100% - 6px), calc(100% - 3px) 100%,
+    calc(100% - 8px) 100%, calc(100% - 10px) calc(100% - 1px),
+    10px 100%, 8px calc(100% - 1px), 3px 100%, 0px calc(100% - 3px),
+    0px calc(100% - 6px), 1px calc(100% - 8px), 0px calc(100% - 10px)
+  );
+}
+
+.popup-classification {
+  text-align: center;
+  border: 2px solid #c41e3a;
+  color: #c41e3a;
+  font-family: 'Special Elite', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  padding: 2px 8px;
+  margin-bottom: 10px;
+  transform: rotate(-0.5deg);
+  display: inline-block;
+}
+
+.popup-title {
+  font-family: 'Special Elite', monospace;
+  font-size: 18px;
+  color: #2c2825;
+  margin-bottom: 2px;
+  margin-top: 6px;
+}
+
+.popup-subtitle {
+  font-size: 11px;
+  color: #8b7355;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.popup-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 12px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #c4b896;
+}
+
+.popup-meta .label {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #6b5e50;
+  grid-column: 1;
+}
+
+.popup-meta .value {
+  color: #3b3228;
+  grid-column: 2;
+}
+
+.popup-evidence {
+  margin-bottom: 8px;
+  padding: 8px;
+  background: rgba(139,115,85,0.06);
+  border-left: 3px solid #8b7355;
+  font-size: 12px;
+  transform: rotate(0.2deg);
+}
+
+.popup-evidence .label {
+  font-weight: 700;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6b5e50;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.popup-source {
+  font-size: 11px;
+  color: #6b5e50;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.popup-note {
+  font-family: 'Caveat', cursive;
+  font-size: 14px;
+  color: #0047ab;
+  transform: rotate(-1.5deg);
+  text-align: right;
+  margin-top: 4px;
+}
+
+.popup-expand-btn {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  background: none;
+  border: none;
+  border-top: 1px solid #c4b896;
+  color: #8b7355;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+
+.popup-expand-btn:hover {
+  color: #c41e3a;
+  background: rgba(196,30,58,0.05);
+}
+
+.leaflet-popup-content-wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 18px 8px 8px !important;
+}
+
+.leaflet-popup-tip {
+  background: #f5eed6 !important;
+  border: 1px solid #8b7355 !important;
+  border-top: none !important;
+  border-left: none !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+}
+
+/* ===== DETAIL PANEL ===== */
+.detail-panel {
+  position: fixed;
+  top: 62px;
+  right: 0;
+  bottom: 0;
+  width: 440px;
+  z-index: 999;
+  background: #f5eed6;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%%25' height='100%%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+  border-left: 3px solid #8b7355;
+  overflow-y: auto;
+  box-shadow: -3px 0 12px rgba(0,0,0,0.2);
+  transform: translateX(440px);
+  transition: transform 0.3s ease;
+}
+
+.detail-panel.open {
+  transform: translateX(0);
+}
+
+.detail-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #6b5e50;
+  z-index: 10;
+}
+
+.detail-content {
+  padding: 16px;
+}
+
+.detail-stamp {
+  display: inline-block;
+  border: 3px solid #c41e3a;
+  color: #c41e3a;
+  font-family: 'Special Elite', monospace;
+  font-size: 12px;
+  padding: 4px 12px;
+  letter-spacing: 3px;
+  transform: rotate(-3deg);
+  margin-bottom: 8px;
+}
+
+.detail-title {
+  font-family: 'Special Elite', monospace;
+  font-size: 24px;
+  margin-bottom: 2px;
+}
+
+.detail-year {
+  font-size: 14px;
+  color: #8b7355;
+}
+
+.detail-section {
+  margin-top: 16px;
+}
+
+.detail-section h3 {
+  font-family: 'Special Elite', monospace;
+  font-size: 14px;
+  color: #2c2825;
+  border-bottom: 1px solid #c4b896;
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.detail-section h3 .staple {
+  display: inline-block;
+  width: 14px;
+  height: 3px;
+  background: #a0a0a0;
+  border-radius: 1px;
+}
+
+.detail-section p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .sidebar { width: 280px; }
+  .sidebar-toggle { left: 280px; }
+  .detail-panel { width: 100vw; }
+  .top-bar { flex-direction: column; gap: 6px; padding: 8px 12px; }
+  .top-bar h1 { font-size: 16px; }
+}
+
+/* ===== TIMELINE BAR ===== */
+.timeline-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: #f5eed6;
+  border-top: 3px solid #8b7355;
+  padding: 8px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.timeline-bar label {
+  font-family: 'Special Elite', monospace;
+  font-size: 12px;
+  color: #6b5e50;
+  white-space: nowrap;
+}
+
+.timeline-slider {
+  flex: 1;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #c4b896;
+  border-radius: 3px;
+  outline: none;
+}
+
+.timeline-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #8b7355;
+  border: 2px solid #f5eed6;
+  cursor: pointer;
+}
+
+.timeline-range {
+  font-family: 'Special Elite', monospace;
+  font-size: 12px;
+  color: #2c2825;
+  white-space: nowrap;
+  min-width: 100px;
+  text-align: right;
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="logo">
+    <div class="stamp">CONFIDENTIAL</div>
+    <h1><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%238b7355' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%238b7355'/%3E%3Cline x1='16' y1='2' x2='16' y2='8' stroke='%238b7355' stroke-width='1.5'/%3E%3Cline x1='16' y1='24' x2='16' y2='30' stroke='%238b7355' stroke-width='1.5'/%3E%3Cline x1='2' y1='16' x2='8' y2='16' stroke='%238b7355' stroke-width='1.5'/%3E%3Cline x1='24' y1='16' x2='30' y2='16' stroke='%238b7355' stroke-width='1.5'/%3E%3C/svg%3E" width="32" height="32" alt="Heimdall">PROJECT HEIMDALL<span>Canadian UFO Sightings Archive</span></h1>
+  </div>
+  <div class="stats">
+    <div>Cases: <strong id="total-cases">50</strong></div>
+    <div>Range: <strong>1662–2025</strong></div>
+    <div>Visible: <strong id="visible-count">50</strong></div>
+  </div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h2>Case Files</h2>
+  </div>
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="A">Tier A</button>
+    <button class="filter-btn" data-filter="B">Tier B</button>
+    <button class="filter-btn" data-filter="C">Tier C</button>
+    <button class="filter-btn" data-filter="CE2">CE2</button>
+    <button class="filter-btn" data-filter="CE3">CE3</button>
+    <button class="filter-btn" data-filter="CE4">CE4</button>
+  </div>
+  <ul class="case-list" id="case-list"></ul>
+</div>
+<button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+
+<!-- DETAIL PANEL -->
+<div class="detail-panel" id="detail-panel">
+  <button class="detail-close" id="detail-close">✕</button>
+  <div class="detail-content" id="detail-content">
+    <!-- populated dynamically -->
+  </div>
+</div>
+
+<!-- MAP -->
+<div id="map"></div>
+
+<!-- TIMELINE -->
+<div class="timeline-bar">
+  <label>YEAR RANGE</label>
+  <input type="range" class="timeline-slider" id="year-start" min="1662" max="2025" value="1662" step="1">
+  <span class="timeline-range" id="year-display">1662 – 2025</span>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+// ===== CASE DATA =====
+const casesData = [
+  // Populated from CSV - 50 entries
+];
+
+// We'll load from JSON
+let cases = [];
+let markers = {};
+let activeFilter = 'all';
+let yearRange = [1662, 2025];
+
+// ===== INIT =====
+async function init() {
+  const response = await fetch('data/cases.json');
+  cases = await response.json();
+
+  initMap();
+  renderSidebar();
+  initFilters();
+  initTimeline();
+  updateMarkers();
+}
+
+// ===== MAP =====
+let map;
+function initMap() {
+  map = L.map('map', {
+    center: [56, -100],
+    zoom: 4,
+    minZoom: 3,
+    maxZoom: 10,
+    zoomControl: false
+  });
+
+  // Muted satellite-style basemap
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  L.control.zoom({ position: 'topright' }).addTo(map);
+}
+
+// ===== CUSTOM MARKERS =====
+function createMarkerIcon(tier, contact) {
+  let color = '#6b5e50';
+  let size = 10;
+  if (tier === 'A') { color = '#c41e3a'; size = 14; }
+  else if (tier === 'B') { color = '#8b7355'; size = 12; }
+  if (contact && ['CE3', 'CE4'].includes(contact)) color = '#6b2fa0';
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${size*2}" height="${size*2}">
+    <circle cx="${size}" cy="${size}" r="${size-2}" fill="${color}" opacity="0.25"/>
+    <circle cx="${size}" cy="${size}" r="${size-4}" fill="${color}" opacity="0.5"/>
+    <circle cx="${size}" cy="${size}" r="${Math.max(size-7,2)}" fill="${color}" stroke="#f5eed6" stroke-width="1.5"/>
+  </svg>`;
+
+  return L.divIcon({
+    html: svg,
+    className: 'heimdall-marker',
+    iconSize: [size*2, size*2],
+    iconAnchor: [size, size]
+  });
+}
+
+// ===== POPUP =====
+function createPopupContent(c) {
+  const tierBadge = c.tier === 'A' ? '★★ PRIORITY' :
+                   c.tier === 'B' ? '★ MODERATE' : 'ROUTINE';
+  const contactLabel = {
+    'NL': 'Nocturnal Lights',
+    'RV': 'Radar-Visual',
+    'CE1': 'Close Encounter 1',
+    'CE2': 'Close Encounter 2',
+    'CE3': 'Close Encounter 3',
+    'CE4': 'Close Encounter 4',
+    'DD': 'Daylight Disc',
+    'N/A': 'N/A'
+  }[c.contact] || c.contact;
+
+  const notes = {
+    'A': ['Flag for deep research', 'Verify with primary sources', 'Cross-reference NUFORC'],
+    'B': ['Check local archives', 'Seek witness accounts'],
+    'C': ['Standard classification']
+  };
+  const note = notes[c.tier][Math.floor(Math.random() * notes[c.tier].length)];
+
+  return `
+    <div class="case-popup">
+      <div class="popup-folder">
+        <div class="popup-tab">CASE FILE — ${c.caseId}</div>
+        <div class="popup-paperclip">📎</div>
+        <div class="popup-staple"></div>
+        <div class="popup-content">
+          <div class="popup-classification">CLASSIFIED — ${tierBadge}</div>
+          <div class="popup-title">${c.location}</div>
+          <div class="popup-subtitle">${c.shape} · ${contactLabel}</div>
+          <div class="popup-meta">
+            <span class="label">Date</span><span class="value">${c.date}</span>
+            <span class="label">Coordinates</span><span class="value">${c.coordinates}</span>
+            <span class="label">Witnesses</span><span class="value">${c.witnesses}</span>
+            <span class="label">Evidence</span><span class="value">${c.evidence.substring(0, 80)}...</span>
+          </div>
+          <div class="popup-evidence">
+            <span class="label">Evidence / Physical Impact</span>
+            ${c.evidence}
+          </div>
+          <div class="popup-source">Primary Source: ${c.source}</div>
+          <button class="popup-expand-btn" onclick="openDetail('${c.caseId}')">
+            Open Full Case File ▸
+          </button>
+          <div class="popup-note">${note}</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ===== MARKERS =====
+function updateMarkers() {
+  Object.values(markers).forEach(m => map.removeLayer(m));
+  markers = {};
+
+  const visible = cases.filter(c => {
+    if (activeFilter !== 'all') {
+      if (['A','B','C'].includes(activeFilter) && c.tier !== activeFilter) return false;
+      if (!['A','B','C'].includes(activeFilter) && c.contact !== activeFilter) return false;
+    }
+    const year = parseInt(c.year);
+    if (year < yearRange[0] || year > yearRange[1]) return false;
+    return true;
+  });
+
+  visible.forEach(c => {
+    if (!c.coords) return;
+    const marker = L.marker(c.coords, {
+      icon: createMarkerIcon(c.tier, c.contact)
+    }).addTo(map);
+
+    marker.bindPopup(createPopupContent(c), {
+      maxWidth: 420,
+      closeButton: true
+    });
+
+    markers[c.caseId] = marker;
+  });
+
+  document.getElementById('visible-count').textContent = visible.length;
+}
+
+// ===== SIDEBAR =====
+function renderSidebar() {
+  const list = document.getElementById('case-list');
+  list.innerHTML = '';
+
+  const sorted = cases.filter(c => {
+    if (activeFilter !== 'all') {
+      if (['A','B','C'].includes(activeFilter) && c.tier !== activeFilter) return false;
+      if (!['A','B','C'].includes(activeFilter) && c.contact !== activeFilter) return false;
+    }
+    const year = parseInt(c.year);
+    if (year < yearRange[0] || year > yearRange[1]) return false;
+    return true;
+  }).sort((a, b) => parseInt(a.year) - parseInt(b.year));
+
+  sorted.forEach(c => {
+    const li = document.createElement('li');
+    li.className = `case-item tier-${c.tier}`;
+    li.dataset.id = c.caseId;
+    li.innerHTML = `
+      <span class="case-id">${c.caseId}</span>
+      <span class="case-year">${c.year}</span>
+      <div class="case-loc">${c.location}</div>
+      <div class="case-shape">${c.shape} <span class="badge">${c.contact}</span></div>
+    `;
+    li.addEventListener('click', () => {
+      map.setView(c.coords, 8);
+      if (markers[c.caseId]) markers[c.caseId].openPopup();
+      document.querySelectorAll('.case-item').forEach(el => el.classList.remove('active'));
+      li.classList.add('active');
+    });
+    list.appendChild(li);
+  });
+}
+
+// ===== FILTERS =====
+function initFilters() {
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      updateMarkers();
+      renderSidebar();
+    });
+  });
+}
+
+// ===== TIMELINE =====
+function initTimeline() {
+  const slider = document.getElementById('year-start');
+  const display = document.getElementById('year-display');
+  
+  slider.min = 1662;
+  slider.max = 2025;
+  
+  slider.addEventListener('input', () => {
+    yearRange[0] = parseInt(slider.value);
+    yearRange[1] = 2025;
+    display.textContent = `${yearRange[0]} – ${yearRange[1]}`;
+    updateMarkers();
+    renderSidebar();
+  });
+}
+
+// ===== DETAIL PANEL =====
+window.openDetail = function(caseId) {
+  const c = cases.find(x => x.caseId === caseId);
+  if (!c) return;
+
+  const panel = document.getElementById('detail-panel');
+  const content = document.getElementById('detail-content');
+  
+  const tierBadge = c.tier === 'A' ? '★★ PRIORITY' :
+                   c.tier === 'B' ? '★ MODERATE' : 'ROUTINE';
+
+  content.innerHTML = `
+    <div class="detail-stamp">CLASSIFIED — ${tierBadge}</div>
+    <div class="detail-title">${c.location}</div>
+    <div class="detail-year">${c.date} · Case ${c.caseId}</div>
+    
+    <div class="detail-section">
+      <h3><span class="staple"></span> Case Summary</h3>
+      <p>${c.evidence}</p>
+    </div>
+
+    <div class="detail-section">
+      <h3><span class="staple"></span> Classification Data</h3>
+      <div class="popup-meta">
+        <span class="label">Shape</span><span class="value">${c.shape}</span>
+        <span class="label">Contact</span><span class="value">${c.contact}</span>
+        <span class="label">Witnesses</span><span class="value">${c.witnesses}</span>
+        <span class="label">Source</span><span class="value">${c.source}</span>
+        <span class="label">Coordinates</span><span class="value">${c.coordinates}</span>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <h3><span class="staple"></span> Research Status</h3>
+      <p>Tier: <strong>${c.tier}</strong></p>
+      <p>Depth required: ${c.tier === 'A' ? 'Full investigation with primary sources' : c.tier === 'B' ? 'Enhanced documentation' : 'Basic documentation'}</p>
+    </div>
+
+    <div class="detail-section">
+      <h3><span class="staple"></span> Research Notes</h3>
+      <p style="font-family: 'Caveat', cursive; font-size: 16px; color: #0047ab; transform: rotate(-1deg);">
+        — pending full narrative, witness quotes, media assets
+      </p>
+    </div>
+
+    <div style="margin-top: 24px; padding-top: 12px; border-top: 2px solid #8b7355; text-align: center;">
+      <button class="popup-expand-btn" onclick="window.open('${c.source ? `https://www.google.com/search?q=${encodeURIComponent(c.location + ' UFO ' + c.year)}` : '#'}', '_blank')">
+        Search External Sources ▸
+      </button>
+    </div>
+  `;
+
+  panel.classList.add('open');
+};
+
+document.getElementById('detail-close').addEventListener('click', () => {
+  document.getElementById('detail-panel').classList.remove('open');
+});
+
+document.getElementById('sidebar-toggle').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.toggle('collapsed');
+});
+
+// ===== LAUNCH =====
+init();
+</script>
+</body>
+</html>

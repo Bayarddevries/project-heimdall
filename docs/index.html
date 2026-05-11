@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROJECT HEIMDALL — Canadian UFO Archive</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Caveat:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: 'Source Sans 3', Arial, sans-serif;
+  background: #2c2825;
+  color: #3b3228;
+  overflow: hidden;
+}
+
+/* ===== MAP ===== */
+#map {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+  filter: saturate(0.3) brightness(0.85) contrast(1.05);
+}
+
+/* Paper grain overlay */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ===== TOP BAR ===== */
+.top-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1100;
+  height: 56px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23f5eed6'/%3E%3Crect width='1' height='1' fill='%23e8dfc0' opacity='0.5'/%3E%3C/svg%3E") #f5eed6;
+  border-bottom: 3px solid #8b7355;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 16px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+}
+
+.top-bar .logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stamp-badge {
+  border: 3px solid #c41e3a;
+  color: #c41e3a;
+  font-family: 'Special Elite', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transform: rotate(-2deg);
+  opacity: 0.9;
+  flex-shrink: 0;
+}
+
+.top-bar h1 {
+  font-family: 'Special Elite', monospace;
+  font-size: 20px;
+  letter-spacing: 1.5px;
+  color: #2c2825;
+}
+.top-bar h1 span {
+  font-size: 11px;
+  display: block;
+  color: #6b5e50;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.top-bar .stats-area {
+  display: flex;
+  gap: 18px;
+  margin-left: auto;
+  font-size: 12px;
+  color: #6b5e50;
+}
+.top-bar .stats-area strong { color: #2c2825; font-weight: 700; }
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  bottom: 36px;
+  width: 300px;
+  z-index: 1050;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23f5eed6'/%3E%3Crect width='1' height='1' fill='%23e8dfc0' opacity='0.5'/%3E%3C/svg%3E") #f5eed6;
+  border-right: 3px solid #8b7355;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+.sidebar.collapsed { transform: translateX(-300px); }
+.sidebar-toggle {
+  position: fixed;
+  top: 68px;
+  left: 300px;
+  z-index: 1060;
+  background: #f5eed6;
+  border: 2px solid #8b7355;
+  border-left: none;
+  padding: 8px 5px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 0 4px 4px 0;
+  transition: left 0.3s ease;
+  color: #6b5e50;
+}
+.sidebar.collapsed ~ .sidebar-toggle { left: 0; }
+
+.sidebar-header {
+  padding: 12px 14px 10px;
+  border-bottom: 2px dashed #c4b896;
+}
+.sidebar-header h2 {
+  font-family: 'Special Elite', monospace;
+  font-size: 14px;
+  color: #6b5e50;
+}
+
+/* Filter bar */
+.filter-bar {
+  display: flex;
+  gap: 5px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #d4c9a8;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 10px;
+  padding: 3px 8px;
+  border: 1px solid #b8a88a;
+  background: transparent;
+  color: #6b5e50;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.15s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+.filter-btn:hover, .filter-btn.active {
+  background: #8b7355;
+  color: #f5eed6;
+  border-color: #8b7355;
+}
+
+/* Case list */
+.case-list-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 6px 0;
+}
+.case-list { list-style: none; }
+.case-item {
+  padding: 8px 14px;
+  border-bottom: 1px solid rgba(196,184,150,0.3);
+  cursor: pointer;
+  transition: background 0.12s;
+  position: relative;
+}
+.case-item:hover { background: rgba(139,115,85,0.07); }
+.case-item.active {
+  background: rgba(139,115,85,0.12);
+  border-left: 3px solid #8b7355;
+}
+.case-item .cid {
+  font-family: 'Special Elite', monospace;
+  font-size: 10px;
+  color: #c41e3a;
+  letter-spacing: 1px;
+}
+.case-item .cyear {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  font-size: 10px;
+  color: #8b7355;
+  font-weight: 700;
+}
+.case-item .cloc {
+  font-size: 12px;
+  font-weight: 700;
+  margin: 2px 0 1px;
+}
+.case-item .cshape {
+  font-size: 10px;
+  color: #8b7355;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.case-item .cshape .mnote {
+  font-family: 'Caveat', cursive;
+  color: #0047ab;
+  font-size: 12px;
+}
+
+/* ===== DETAIL PANEL ===== */
+.detail-panel {
+  position: fixed;
+  top: 56px;
+  right: 0;
+  bottom: 36px;
+  width: 420px;
+  z-index: 1050;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23f5eed6'/%3E%3Crect width='1' height='1' fill='%23e8dfc0' opacity='0.5'/%3E%3C/svg%3E") #f5eed6;
+  border-left: 3px solid #8b7355;
+  overflow-y: auto;
+  box-shadow: -4px 0 16px rgba(0,0,0,0.2);
+  transform: translateX(420px);
+  transition: transform 0.3s ease;
+}
+.detail-panel.open { transform: translateX(0); }
+.detail-close {
+  position: sticky;
+  top: 8px;
+  float: right;
+  margin-right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #6b5e50;
+  z-index: 10;
+}
+
+.detail-inner {
+  padding: 16px 18px;
+  position: relative;
+}
+
+/* File folder tab on detail */
+.detail-tab {
+  background: #e8dfc0;
+  border: 2px solid #8b7355;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  padding: 6px 14px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #6b5e50;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 0; left: 10px; right: 80px;
+  text-align: center;
+}
+
+.detail-stamp {
+  display: inline-block;
+  border: 2.5px solid #c41e3a;
+  color: #c41e3a;
+  font-family: 'Special Elite', monospace;
+  font-size: 10px;
+  padding: 3px 10px;
+  letter-spacing: 3px;
+  transform: rotate(-2deg);
+  margin: 32px 0 10px;
+}
+
+.detail-title {
+  font-family: 'Special Elite', monospace;
+  font-size: 22px;
+  margin-bottom: 2px;
+}
+.detail-subtitle {
+  font-size: 13px;
+  color: #8b7355;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.detail-section {
+  margin-top: 14px;
+  position: relative;
+}
+.detail-section h3 {
+  font-family: 'Special Elite', monospace;
+  font-size: 13px;
+  color: #2c2825;
+  border-bottom: 1px solid #c4b896;
+  padding-bottom: 3px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.detail-section h3 .staple-mark {
+  display: inline-block;
+  width: 12px; height: 3px;
+  background: linear-gradient(90deg, #888, #bbb, #888);
+  border-radius: 1px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.detail-section p {
+  font-size: 13px;
+  line-height: 1.55;
+  margin-bottom: 4px;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 4px 10px;
+  font-size: 12px;
+}
+.meta-grid .ml {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #6b5e50;
+  padding-top: 2px;
+}
+.meta-grid .mv { color: #3b3228; }
+
+.evidence-block {
+  margin: 6px 0;
+  padding: 8px;
+  background: rgba(139,115,85,0.06);
+  border-left: 3px solid #8b7355;
+  font-size: 12px;
+  line-height: 1.5;
+  transform: rotate(0.2deg);
+}
+
+.handnote {
+  font-family: 'Caveat', cursive;
+  font-size: 15px;
+  color: #0047ab;
+  transform: rotate(-1.5deg);
+  text-align: right;
+  margin-top: 8px;
+}
+
+.search-link-btn {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-top: 14px;
+  background: none;
+  border: none;
+  border-top: 1px solid #c4b896;
+  color: #6b5e50;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+.search-link-btn:hover { color: #c41e3a; }
+
+/* ===== LEAFLET POPUP ===== */
+.leaflet-container {
+  font-family: 'Source Sans 3', sans-serif !important;
+}
+
+.heimdall-popup {
+  min-width: 280px;
+  max-width: 360px;
+  padding: 0;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.heimdall-popup .popup-folder {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23f5eed6'/%3E%3Crect width='1' height='1' fill='%23e8dfc0' opacity='0.5'/%3E%3C/svg%3E") #f5eed6;
+  border-radius: 2px;
+  position: relative;
+  overflow: visible;
+}
+
+.heimdall-popup .p-tab {
+  position: absolute;
+  top: -12px; left: 16px; right: 70px;
+  background: #e8dfc0;
+  border: 2px solid #8b7355;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  padding: 2px 10px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  color: #6b5e50;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  z-index: 2;
+}
+
+.heimdall-popup .p-clip {
+  position: absolute;
+  top: -2px; right: 8px;
+  font-size: 20px; color: #888;
+  z-index: 3;
+  transform: rotate(15deg);
+}
+.heimdall-popup .p-staple {
+  position: absolute;
+  top: 3px; left: 6px;
+  width: 16px; height: 3px;
+  background: linear-gradient(90deg, #888, #aaa, #888);
+  border-radius: 1px;
+  z-index: 3;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.heimdall-popup .p-content {
+  padding: 14px 14px 10px;
+  border: 2px solid #8b7355;
+  border-bottom: 2px solid #6b5644;
+  box-shadow: inset 0 0 15px rgba(139,115,85,0.08);
+}
+
+.heimdall-popup .p-class {
+  text-align: center;
+  border: 2px solid #c41e3a;
+  color: #c41e3a;
+  font-family: 'Special Elite', monospace;
+  font-size: 8px;
+  letter-spacing: 3px;
+  padding: 2px 6px;
+  margin-bottom: 8px;
+  transform: rotate(-0.5deg);
+  display: inline-block;
+}
+.heimdall-popup .p-title {
+  font-family: 'Special Elite', monospace;
+  font-size: 16px;
+  color: #2c2825;
+  margin-bottom: 2px;
+}
+.heimdall-popup .p-sub {
+  font-size: 11px;
+  color: #8b7355;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+.heimdall-popup .p-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px 10px;
+  font-size: 11px;
+  margin-bottom: 8px;
+  padding-bottom: 7px;
+  border-bottom: 1px dashed #c4b896;
+}
+.heimdall-popup .p-ml {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #6b5e50;
+}
+.heimdall-popup .p-mv { color: #3b3228; }
+
+.heimdall-popup .p-ev {
+  margin-bottom: 6px;
+  padding: 7px;
+  background: rgba(139,115,85,0.06);
+  border-left: 3px solid #8b7355;
+  font-size: 11px;
+  line-height: 1.45;
+  transform: rotate(0.2deg);
+}
+
+.heimdall-popup .p-src {
+  font-size: 10px;
+  color: #6b5e50;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+.heimdall-popup .p-btn {
+  display: block;
+  width: 100%;
+  padding: 7px;
+  margin-top: 8px;
+  background: none;
+  border: none;
+  border-top: 1px solid #c4b896;
+  color: #6b5e50;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+.heimdall-popup .p-btn:hover { color: #c41e3a; }
+
+.heimdall-popup .p-note {
+  font-family: 'Caveat', cursive;
+  font-size: 13px;
+  color: #0047ab;
+  transform: rotate(-1deg);
+  text-align: right;
+  margin-top: 3px;
+}
+
+.leaflet-popup-content-wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 14px 6px 6px !important;
+}
+.leaflet-popup-tip {
+  background: #f5eed6 !important;
+  border: 1px solid #8b7355 !important;
+  border-top: none !important;
+  border-left: none !important;
+}
+.leaflet-popup-content { margin: 0 !important; }
+
+/* ===== TIMELINE BAR ===== */
+.timeline-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 1100;
+  height: 36px;
+  background: #f5eed6;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23f5eed6'/%3E%3Crect width='1' height='1' fill='%23e8dfc0' opacity='0.5'/%3E%3C/svg%3E");
+  border-top: 3px solid #8b7355;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.timeline-bar label {
+  font-family: 'Special Elite', monospace;
+  font-size: 11px;
+  color: #6b5e50;
+  white-space: nowrap;
+}
+.timeline-slider {
+  flex: 1;
+  height: 5px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #c4b896;
+  border-radius: 3px;
+  outline: none;
+}
+.timeline-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: #8b7355;
+  border: 2px solid #f5eed6;
+  cursor: pointer;
+}
+.timeline-range {
+  font-family: 'Special Elite', monospace;
+  font-size: 11px;
+  color: #2c2825;
+  white-space: nowrap;
+  min-width: 90px;
+  text-align: right;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .sidebar { width: 260px; }
+  .sidebar-toggle { left: 260px; }
+  .detail-panel { width: 100vw; }
+  .top-bar { flex-wrap: wrap; height: auto; padding: 6px 12px; }
+  .top-bar h1 { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+
+<div class="grain-overlay"></div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="logo-area">
+    <div class="stamp-badge">CLASSIFIED</div>
+    <h1>
+      PROJECT HEIMDALL
+      <span>Canadian UFO Sightings Archive — All data sourced from declassified files, RCMP reports, and public records.</span>
+    </h1>
+  </div>
+  <div class="stats-area">
+    <div>Total: <strong id="stat-total">50</strong></div>
+    <div>Showing: <strong id="stat-visible">50</strong></div>
+    <div>YEARS: <strong>1662 – 2025</strong></div>
+  </div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header"><h2>▤ CASE FILES</h2></div>
+  <div class="filter-bar">
+    <button class="filter-btn active" data-f="all">All</button>
+    <button class="filter-btn" data-f="A">★★ A</button>
+    <button class="filter-btn" data-f="B">★ B</button>
+    <button class="filter-btn" data-f="C">C</button>
+    <button class="filter-btn" data-f="CE2">CE2</button>
+    <button class="filter-btn" data-f="CE3">CE3</button>
+    <button class="filter-btn" data-f="CE4">CE4</button>
+  </div>
+  <div class="case-list-area">
+    <ul class="case-list" id="case-list"></ul>
+  </div>
+</div>
+<button class="sidebar-toggle" id="sidebar-toggle" title="Toggle sidebar">☰</button>
+
+<!-- DETAIL PANEL -->
+<div class="detail-panel" id="detail-panel">
+  <button class="detail-close" id="detail-close">✕</button>
+  <div class="detail-inner" id="detail-content"></div>
+</div>
+
+<!-- MAP -->
+<div id="map"></div>
+
+<!-- TIMELINE -->
+<div class="timeline-bar">
+  <label>SHOW FROM:</label>
+  <input type="range" class="timeline-slider" id="year-slider" min="1662" max="2025" value="1662" step="1">
+  <span class="timeline-range" id="year-label">1662 – 2025</span>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+
+/* ==============================================================
+   PROJECT HEIMDALL — Data
+   ============================================================== */
+var CASES = [
+  { id: "CAN-001", date: "1662", year: 1662, location: "Montreal, QC", coords: [45.5, -73.5], shape: "Fiery Serpents", contact: "NL", witnesses: "Multiple settlers", evidence: "Celestial \"omens\"", source: "Jesuit Relations", tier: "B" },
+  { id: "CAN-002", date: "1915", year: 1915, location: "Ottawa, ON", coords: [45.4, -75.7], shape: "Ghost Plane", contact: "NL", witnesses: "Parliamentarians", evidence: "High-altitude lights during WWI", source: "Hansard Debates", tier: "C" },
+  { id: "CAN-003", date: "1947", year: 1947, location: "Goose Bay, NL", coords: [53.3, -60.4], shape: "Disc", contact: "RV", witnesses: "Military Radar", evidence: "Detected at 9,000+ mph", source: "USAF Intel", tier: "B" },
+  { id: "CAN-004", date: "1950", year: 1950, location: "Rivers, MB", coords: [50.0, -100.2], shape: "Metallic Disc", contact: "RV", witnesses: "RCAF Pilot", evidence: "High-speed maneuvers", source: "RCAF Pilot Logs", tier: "C" },
+  { id: "CAN-005", date: "1951", year: 1951, location: "Gander, NL", coords: [48.9, -54.5], shape: "Orange Circle", contact: "RV", witnesses: "U.S. Navy Pilot", evidence: "Close proximity flight", source: "U.S. Navy Records", tier: "C" },
+  { id: "CAN-006", date: "1952", year: 1952, location: "North Bay, ON", coords: [46.3, -79.4], shape: "Amber Orbs", contact: "RV", witnesses: "RCAF Officers", evidence: "Radar-visual confirmation", source: "Project Magnet", tier: "C" },
+  { id: "CAN-007", date: "1954", year: 1954, location: "Ennadai Lake, NU", coords: [61.2, -100.9], shape: "Metallic Cylinder", contact: "DD", witnesses: "Weather observers", evidence: "Metallic glint, no propulsion", source: "DND Declassified", tier: "C" },
+  { id: "CAN-008", date: "1960", year: 1960, location: "Clan Lake, NWT", coords: [62.7, -114.2], shape: "Sphere", contact: "CE2", witnesses: "2 Prospectors", evidence: "Crashing sound; water disturbance", source: "RCMP Files", tier: "B" },
+  { id: "CAN-009", date: "1960", year: 1960, location: "Yellowknife, NWT", coords: [62.4, -114.3], shape: "Small Disc", contact: "CE2", witnesses: "Single Prospector", evidence: "Radioactive readings at site", source: "Witness Account", tier: "B" },
+  { id: "CAN-010", date: "1966", year: 1966, location: "Agassiz, BC", coords: [49.2, -121.7], shape: "Light Ship", contact: "NL", witnesses: "Local residents", evidence: "Hovering over Mt. Cheam", source: "Local Legend/Press", tier: "C" },
+  { id: "CAN-011", date: "May 20, 1967", year: 1967, location: "Falcon Lake, MB", coords: [49.6, -95.3], shape: "Saucer/Bowl", contact: "CE2", witnesses: "Stefan Michalak", evidence: "Grid-pattern chest burns; radioactive soil", source: "RCMP Form 63", tier: "A" },
+  { id: "CAN-012", date: "Oct 4, 1967", year: 1967, location: "Shag Harbour, NS", coords: [43.4, -65.7], shape: "Row of Lights", contact: "CE2", witnesses: "11+ Witnesses", evidence: "Yellow sulfurous foam; sonar hits", source: "RCAF/Coast Guard", tier: "A" },
+  { id: "CAN-013", date: "1967", year: 1967, location: "Shelburne, NS", coords: [43.7, -65.3], shape: "Disc", contact: "CE1", witnesses: "Military personnel", evidence: "Object entered the water", source: "Navy Radar Logs", tier: "C" },
+  { id: "CAN-014", date: "1967", year: 1967, location: "St. Paul, AB", coords: [53.9, -111.3], shape: "Cultural", contact: "N/A", witnesses: "Town Council", evidence: "Centennial UFO Landing Pad built", source: "Municipal Records", tier: "B" },
+  { id: "CAN-015", date: "1968", year: 1968, location: "Rivers, MB", coords: [50.0, -100.2], shape: "Glowing Ring", contact: "RV", witnesses: "Air Traffic Control", evidence: "Persistent radar track", source: "RCAF Base Records", tier: "C" },
+  { id: "CAN-016", date: "1969", year: 1969, location: "Prince George, BC", coords: [53.9, -122.7], shape: "Yellow Sphere", contact: "CE1", witnesses: "3 Witnesses", evidence: "Hovering at low altitude", source: "RCMP Reports", tier: "C" },
+  { id: "CAN-017", date: "Jan 1, 1970", year: 1970, location: "Duncan, BC", coords: [48.7, -123.7], shape: "Domed Saucer", contact: "CE3", witnesses: "Nurse Doreen Kendall", evidence: "2 Tall men in dark suits seen through glass", source: "Psychological Profile", tier: "A" },
+  { id: "CAN-018", date: "1972", year: 1972, location: "Oromocto, NB", coords: [45.8, -66.4], shape: "Silver Discs", contact: "CE1", witnesses: "Military (CFB Gagetown)", evidence: "Multiple discs in formation", source: "CFB Gagetown", tier: "C" },
+  { id: "CAN-019", date: "1973", year: 1973, location: "Val-d'Or, QC", coords: [48.1, -77.7], shape: "Multi-colored", contact: "CE1", witnesses: "Police/Public", evidence: "Massive regional \"wave\"", source: "Ufology Quebec", tier: "B" },
+  { id: "CAN-020", date: "1973", year: 1973, location: "Granby, QC", coords: [45.4, -72.7], shape: "Glowing Oval", contact: "CE3", witnesses: "Anonymous", evidence: "Small humanoids reported", source: "Quebec Archives", tier: "A" },
+  { id: "CAN-021", date: "1974", year: 1974, location: "Langenburg, SK", coords: [50.8, -101.4], shape: "5 Saucers", contact: "CE2", witnesses: "Edwin Fuhr", evidence: "5 rings of flattened/swirled grass", source: "RCMP Report", tier: "A" },
+  { id: "CAN-022", date: "1975", year: 1975, location: "Carman, MB", coords: [49.5, -98.0], shape: "Red Light", contact: "NL", witnesses: "\"Charlie Redstar\"", evidence: "1,000s of sightings over months", source: "Charlie Redstar (Grant)", tier: "B" },
+  { id: "CAN-023", date: "1977", year: 1977, location: "Montreal, QC", coords: [45.5, -73.6], shape: "Saucer", contact: "CE2", witnesses: "Florida Malboeuf", evidence: "Landing gear marks in snow", source: "Ufology Research", tier: "A" },
+  { id: "CAN-024", date: "1978", year: 1978, location: "Clarenville, NL", coords: [48.1, -53.9], shape: "Oval", contact: "CE1", witnesses: "Cst. Jim Blackwood", evidence: "Hovering light for 1.5 hours", source: "RCMP Witness", tier: "C" },
+  { id: "CAN-025", date: "1978", year: 1978, location: "Baskatong, QC", coords: [46.8, -75.9], shape: "Saucer", contact: "DD", witnesses: "Jacques Lavoie", evidence: "Detailed 35mm photograph", source: "Photo Analysis", tier: "C" },
+  { id: "CAN-026", date: "1979", year: 1979, location: "Saddle Lake, AB", coords: [53.9, -111.6], shape: "Triangle", contact: "CE1", witnesses: "First Nations Community", evidence: "Silent, low-level flight", source: "Community Logs", tier: "C" },
+  { id: "CAN-027", date: "1980", year: 1980, location: "Nahanni Valley, NT", coords: [61.2, -124.0], shape: "Glowing Orbs", contact: "NL", witnesses: "Adventurers", evidence: "Orbs following hikers", source: "\"Headless Valley\" Lore", tier: "B" },
+  { id: "CAN-028", date: "1981", year: 1981, location: "Kelowna, BC", coords: [49.8, -119.4], shape: "Silver Sphere", contact: "DD", witnesses: "Local resident", evidence: "Daylight photo of sphere", source: "Photographic Evidence", tier: "C" },
+  { id: "CAN-029", date: "1985", year: 1985, location: "Westmount, QC", coords: [45.4, -73.5], shape: "Rectangle", contact: "NL", witnesses: "Thousands of locals", evidence: "Massive silent block of lights", source: "Montreal Gazetter", tier: "C" },
+  { id: "CAN-030", date: "1989", year: 1989, location: "Shelburne, NS", coords: [43.7, -65.3], shape: "Triangle", contact: "CE1", witnesses: "Fishermen", evidence: "Large craft surfacing from water", source: "Maritime UFO Logs", tier: "C" },
+  { id: "CAN-031", date: "Nov 7, 1990", year: 1990, location: "Montreal, QC", coords: [45.5, -73.5], shape: "Oval/Luminous", contact: "CE1", witnesses: "Police & 40+ people", evidence: "Seen over Place Bonaventure for 3 hours", source: "Montreal Police", tier: "B" },
+  { id: "CAN-032", date: "1991", year: 1991, location: "Carp, ON", coords: [45.3, -76.0], shape: "Red Flame/Craft", contact: "CE3", witnesses: "Diane Labenek", evidence: "\"The Guardian\" VHS tapes; scorched field", source: "MUFON/Bob Oechsler", tier: "A" },
+  { id: "CAN-033", date: "1991", year: 1991, location: "St-Zotique, QC", coords: [45.2, -74.2], shape: "Metallic Disc", contact: "DD", witnesses: "Multiple witnesses", evidence: "High-resolution daylight photo", source: "Photo Analysis", tier: "C" },
+  { id: "CAN-034", date: "1992", year: 1992, location: "l'Annonciation, QC", coords: [46.4, -74.8], shape: "Craft", contact: "CE3", witnesses: "Snowmobilers", evidence: "Video of supposed \"corpse\" (likely hoax)", source: "Ufology Archives", tier: "A" },
+  { id: "CAN-035", date: "1993", year: 1993, location: "Port Colborne, ON", coords: [42.8, -79.2], shape: "Bright Light", contact: "CE4", witnesses: "1 Witness", evidence: "Missing time; hypnotic regression", source: "Witness Account", tier: "A" },
+  { id: "CAN-036", date: "1994", year: 1994, location: "St-Jean-sur-Richelieu, QC", coords: [45.3, -73.2], shape: "Oval", contact: "CE2", witnesses: "Local farmer", evidence: "Dehydrated vegetation/ground marks", source: "Trace Case", tier: "B" },
+  { id: "CAN-037", date: "1996", year: 1996, location: "Fox Lake, YT", coords: [61.2, -135.4], shape: "Mothership", contact: "CE1", witnesses: "31 Witnesses", evidence: "Massive craft (3 football fields wide)", source: "Yukon Govt Files", tier: "B" },
+  { id: "CAN-038", date: "2004", year: 2004, location: "Fort Erie, ON", coords: [42.9, -78.9], shape: "Vibrating Lights", contact: "NL", witnesses: "Multi-witness", evidence: "Lights dancing over Lake Erie", source: "Ufology Research", tier: "C" },
+  { id: "CAN-039", date: "2007", year: 2007, location: "St-Hilaire, QC", coords: [45.5, -73.1], shape: "Glowing Orb", contact: "NL", witnesses: "Residents", evidence: "Orb emerging from Mont St-Hilaire", source: "Local Reports", tier: "C" },
+  { id: "CAN-040", date: "2008", year: 2008, location: "Niagara Falls, ON", coords: [43.0, -79.0], shape: "Orbs", contact: "CE1", witnesses: "Hotel Security", evidence: "Men in Black reported at Sheraton", source: "CCTV/Witness", tier: "C" },
+  { id: "CAN-041", date: "2010", year: 2010, location: "Harbour Mille, NL", coords: [47.6, -54.6], shape: "Missiles", contact: "CE1", witnesses: "Multi-witness", evidence: "3 projectile-like objects from water", source: "PMO/RCMP Inquiry", tier: "C" },
+  { id: "CAN-042", date: "2012", year: 2012, location: "Hamilton, ON", coords: [43.2, -79.8], shape: "V-Formation", contact: "NL", witnesses: "Dozens of witnesses", evidence: "High-quality YouTube video uploads", source: "Multi-source", tier: "C" },
+  { id: "CAN-043", date: "2014", year: 2014, location: "Vancouver, BC", coords: [49.2, -123.1], shape: "Mechanical", contact: "DD", witnesses: "Commercial Pilot", evidence: "Near-miss at YVR airport", source: "CADORS", tier: "C" },
+  { id: "CAN-044", date: "2015", year: 2015, location: "Oshawa, ON", coords: [43.8, -78.8], shape: "Black Cube", contact: "DD", witnesses: "Amateur Video", evidence: "Cube rotating in clear sky", source: "Video Evidence", tier: "C" },
+  { id: "CAN-045", date: "2016", year: 2016, location: "Ashmount, AB", coords: [53.9, -111.4], shape: "Bright Orb", contact: "CE1", witnesses: "Oil workers", evidence: "Electromagnetic interference with trucks", source: "Field Reports", tier: "C" },
+  { id: "CAN-046", date: "2021", year: 2021, location: "Gulf of St. Lawrence", coords: [48.0, -62.0], shape: "Green Light", contact: "NL", witnesses: "Military/Commercial", evidence: "Verified by two different aircraft", source: "CADORS 2021Q2032", tier: "C" },
+  { id: "CAN-047", date: "2024", year: 2024, location: "Hafford, SK", coords: [52.8, -107.3], shape: "Domed Disc", contact: "CE1", witnesses: "Single witness", evidence: "Low altitude hover over field", source: "MUFON Case 13582", tier: "C" },
+  { id: "CAN-048", date: "2025", year: 2025, location: "Sudbury, ON", coords: [46.4, -80.9], shape: "Orange Diamond", contact: "NL", witnesses: "4 Witnesses", evidence: "Pulsating orange light over mines", source: "2025 Ufology Report", tier: "C" },
+  { id: "CAN-049", date: "2025", year: 2025, location: "N. Alberta", coords: [56.0, -115.0], shape: "Cylinder", contact: "RV", witnesses: "Pilot", evidence: "Incident at 39,000ft; high speed", source: "CADORS (Projected)", tier: "C" },
+  { id: "CAN-050", date: "2025", year: 2025, location: "Sheridan Lake, BC", coords: [51.5, -120.9], shape: "Pulsating Orb", contact: "NL", witnesses: "Campers", evidence: "Interference with cell phones", source: "Canadian UFO Survey", tier: "C" }
+];
+
+/* ==============================================================
+   CONTACT LABELS
+   ============================================================== */
+var CONTACT_LABELS = {
+  'NL': 'Nocturnal Lights', 'RV': 'Radar-Visual', 'CE1': 'Close Encounter 1',
+  'CE2': 'Close Encounter 2', 'CE3': 'Close Encounter 3', 'CE4': 'Close Encounter 4',
+  'DD': 'Daylight Disc', 'N/A': 'N/A'
+};
+
+/* ==============================================================
+   STATE
+   ============================================================== */
+var map, markers = {}, activeFilter = 'all', minYear = 1662;
+var allCases = CASES.slice();
+
+/* ==============================================================
+   INIT
+   ============================================================== */
+function init() {
+  createMap();
+  buildSidebar();
+  bindFilters();
+  bindTimeline();
+  updateView();
+}
+
+/* ==============================================================
+   MAP
+   ============================================================== */
+function createMap() {
+  map = L.map('map', { center: [56, -100], zoom: 4, minZoom: 3, maxZoom: 10 });
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; CARTO &copy; OSM',
+    subdomains: 'abcd', maxZoom: 19
+  }).addTo(map);
+  L.control.zoom({ position: 'topright' }).addTo(map);
+}
+
+function markerIcon(tier, contact) {
+  var color, size;
+  if (tier === 'A') { color = '#c41e3a'; size = 16; }
+  else if (tier === 'B') { color = '#d4a843'; size = 13; }
+  else { color = '#6b5e50'; size = 10; }
+  if (['CE3','CE4'].includes(contact)) color = '#6b2fa0';
+  var s = '<svg xmlns="http://www.w3.org/2000/svg" width="'+(size*2.2)+'" height="'+(size*2.2)+'">'+
+    '<circle cx="'+(size*1.1)+'" cy="'+(size*1.1)+'" r="'+(size-3)+'" fill="'+color+'" opacity="0.18"/>' +
+    '<circle cx="'+(size*1.1)+'" cy="'+(size*1.1)+'" r="'+(size-5)+'" fill="'+color+'" opacity="0.45"/>' +
+    '<circle cx="'+(size*1.1)+'" cy="'+(size*1.1)+'" r="'+Math.max(size-8,2)+'" fill="'+color+'" stroke="#f5eed6" stroke-width="1.5"/>'+
+    '</svg>';
+  return L.divIcon({ html: s, className: '', iconSize: [size*2.2, size*2.2], iconAnchor: [size*1.1, size*1.1] });
+}
+
+function popupHTML(c) {
+  var tierLabel = c.tier==='A'?'★★ PRIORITY':c.tier==='B'?'★ MODERATE':'ROUTINE';
+  var cl = CONTACT_LABELS[c.contact]||c.contact;
+  var notes = {A:['Flag for deep research','Verify primary sources','Cross-reference NUFORC'],B:['Check local archives','Seek witness accounts'],C:['Standard classification']};
+  var note = notes[c.tier][Math.floor(Math.random()*notes[c.tier].length)];
+  return '<div class="heimdall-popup"><div class="popup-folder">'+
+    '<div class="p-tab">CASE FILE — '+c.id+'</div>'+
+    '<div class="p-clip">&#128206;</div>'+
+    '<div class="p-staple"></div>'+
+    '<div class="p-content">'+
+    '<div class="p-class">'+tierLabel+'</div>'+
+    '<div class="p-title">'+c.location+'</div>'+
+    '<div class="p-sub">'+c.shape+' \u00b7 '+cl+'</div>'+
+    '<div class="p-meta">'+
+      '<span class="p-ml">Date</span><span class="p-mv">'+c.date+'</span>'+
+      '<span class="p-ml">Witnesses</span><span class="p-mv">'+c.witnesses+'</span>'+
+    '</div>'+
+    '<div class="p-ev"><strong>Evidence:</strong> '+c.evidence+'</div>'+
+    '<div class="p-src">Source: '+c.source+'</div>'+
+    '<button class="p-btn" onclick="openDetail(\''+c.id+'\')">Open Full Case File &#9654;</button>'+
+    '<div class="p-note">— '+note+'</div>'+
+    '</div></div></div>';
+}
+
+/* ==============================================================
+   VIEW UPDATE
+   ============================================================== */
+function updateView() {
+  Object.values(markers).forEach(function(m){ map.removeLayer(m); });
+  markers = {};
+
+  var visible = allCases.filter(function(c) {
+    if (activeFilter !== 'all') {
+      if (['A','B','C'].indexOf(activeFilter) >= 0 && c.tier !== activeFilter) return false;
+      if (['A','B','C'].indexOf(activeFilter) < 0 && c.contact !== activeFilter) return false;
+    }
+    return c.year >= minYear;
+  });
+
+  visible.forEach(function(c) {
+    var m = L.marker(c.coords, { icon: markerIcon(c.tier, c.contact) }).addTo(map);
+    m.bindPopup(popupHTML(c), { maxWidth: 380 });
+    markers[c.id] = m;
+  });
+
+  document.getElementById('stat-visible').textContent = visible.length;
+  buildSidebar();
+}
+
+/* ==============================================================
+   SIDEBAR
+   ============================================================== */
+function buildSidebar() {
+  var list = document.getElementById('case-list');
+  list.innerHTML = '';
+  var sorted = allCases.filter(function(c) {
+    if (activeFilter !== 'all') {
+      if (['A','B','C'].indexOf(activeFilter) >= 0 && c.tier !== activeFilter) return false;
+      if (['A','B','C'].indexOf(activeFilter) < 0 && c.contact !== activeFilter) return false;
+    }
+    return c.year >= minYear;
+  }).sort(function(a,b){ return a.year - b.year; });
+
+  sorted.forEach(function(c) {
+    var li = document.createElement('li');
+    li.className = 'case-item';
+    li.innerHTML = '<span class="cid">'+c.id+'</span><span class="cyear">'+c.year+'</span>'+
+      '<div class="cloc">'+c.location+'</div>'+
+      '<div class="cshape">'+c.shape+' <span class="mnote">['+c.contact+']</span></div>';
+    li.addEventListener('click', function() {
+      map.setView(c.coords, 7);
+      if (markers[c.id]) markers[c.id].openPopup();
+      document.querySelectorAll('.case-item').forEach(function(el){ el.classList.remove('active'); });
+      li.classList.add('active');
+    });
+    list.appendChild(li);
+  });
+}
+
+/* ==============================================================
+   DETAIL PANEL
+   ============================================================== */
+window.openDetail = function(caseId) {
+  var c = allCases.find(function(x){ return x.id === caseId; });
+  if (!c) return;
+  map.closePopup();
+  var panel = document.getElementById('detail-panel');
+  var content = document.getElementById('detail-content');
+  var tierLabel = c.tier==='A'?'★★ PRIORITY':c.tier==='B'?'★ MODERATE':'ROUTINE';
+  var cl = CONTACT_LABELS[c.contact]||c.contact;
+  var tierDesc = c.tier==='A'?'Full investigation with primary sources':c.tier==='B'?'Enhanced documentation':'Basic documentation';
+  var searchUrl = 'https://www.google.com/search?q='+encodeURIComponent(c.location+' UFO '+c.year);
+
+  content.innerHTML = '<div class="detail-tab">CASE FILE — '+c.id+'</div>'+
+    '<div class="detail-stamp">'+tierLabel+'</div>'+
+    '<div class="detail-title">'+c.location+'</div>'+
+    '<div class="detail-subtitle">'+c.date+' \u00b7 '+cl+' \u00b7 '+c.shape+'</div>'+
+
+    '<div class="detail-section">'+
+      '<h3><span class="staple-mark"></span> Case Summary</h3>'+
+      '<p><strong>What was reported:</strong> '+c.evidence+'</p>'+
+    '</div>'+
+
+    '<div class="detail-section">'+
+      '<h3><span class="staple-mark"></span> Classification Data</h3>'+
+      '<div class="meta-grid">'+
+        '<span class="ml">CASE ID</span><span class="mv">'+c.id+'</span>'+
+        '<span class="ml">DATE</span><span class="mv">'+c.date+'</span>'+
+        '<span class="ml">YEAR</span><span class="mv">'+c.year+'</span>'+
+        '<span class="ml">SHAPE</span><span class="mv">'+c.shape+'</span>'+
+        '<span class="ml">CONTACT</span><span class="mv">'+cl+' ('+c.contact+')</span>'+
+        '<span class="ml">WITNESSES</span><span class="mv">'+c.witnesses+'</span>'+
+        '<span class="ml">COORDS</span><span class="mv">'+c.coords[0]+', '+c.coords[1]+'</span>'+
+        '<span class="ml">SOURCE</span><span class="mv">'+c.source+'</span>'+
+      '</div>'+
+    '</div>'+
+
+    '<div class="detail-section">'+
+      '<h3><span class="staple-mark"></span> Evidence & Impact</h3>'+
+      '<div class="evidence-block">'+c.evidence+'</div>'+
+    '</div>'+
+
+    '<div class="detail-section">'+
+      '<h3><span class="staple-mark"></span> Research Status</h3>'+
+      '<p>Tier: <strong>'+c.tier+'</strong> — '+tierDesc+'</p>'+
+    '</div>'+
+
+    '<div class="detail-section">'+
+      '<h3><span class="staple-mark"></span> Research Notes</h3>'+
+      '<p class="handnote">— pending full narrative, witness quotes, media assets</p>'+
+    '</div>'+
+
+    '<button class="search-link-btn" onclick="window.open(\''+searchUrl+'\', \'_blank\')">Search External Sources &#9654;</button>';
+
+  panel.classList.add('open');
+};
+
+document.getElementById('detail-close').addEventListener('click', function() {
+  document.getElementById('detail-panel').classList.remove('open');
+});
+
+/* ==============================================================
+   FILTERS
+   ============================================================== */
+function bindFilters() {
+  document.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeFilter = btn.dataset.f;
+      updateView();
+    });
+  });
+}
+
+/* ==============================================================
+   TIMELINE
+   ============================================================== */
+function bindTimeline() {
+  var slider = document.getElementById('year-slider');
+  var label = document.getElementById('year-label');
+  slider.addEventListener('input', function() {
+    minYear = parseInt(slider.value);
+    label.textContent = minYear + ' \u2013 2025';
+    updateView();
+  });
+}
+
+/* ==============================================================
+   SIDEBAR TOGGLE
+   ============================================================== */
+document.getElementById('sidebar-toggle').addEventListener('click', function() {
+  document.getElementById('sidebar').classList.toggle('collapsed');
+});
+
+/* ==============================================================
+   BOOT
+   ============================================================== */
+init();
+
+</script>
+</body>
+</html>
