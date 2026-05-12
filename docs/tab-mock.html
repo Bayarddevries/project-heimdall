@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tab Mock</title>
+<style>
+  body { font-family: 'Source Sans 3', Arial, sans-serif; background: #2c2825; margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh; }
+  
+  .cabinet {
+    display: flex;
+    height: 360px;
+    width: 480px;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  }
+
+  .tab-strip {
+    display: flex;
+    flex-direction: column;
+    width: 48px;
+    background: #3b3228;
+    padding: 8px 0;
+    gap: 4px;
+    box-shadow: inset -2px 0 4px rgba(0,0,0,0.3);
+  }
+
+  .folder-tab {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    background: #d4c5a0;
+    border: 1.5px solid #8b7355;
+    border-right: none;
+    padding: 12px 8px;
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #6b5e50;
+    transition: all 0.15s;
+    border-radius: 3px 0 0 3px;
+    text-align: center;
+  }
+
+  .folder-tab:hover { background: #e0d4b0; }
+  .folder-tab.active {
+    background: #f5eed6;
+    color: #2c2825;
+    font-weight: bold;
+    box-shadow: inset -3px 0 0 #c41e3a;
+    padding-left: 12px;
+  }
+  
+  .folder-tab.redacted {
+    background: #5a5045;
+    color: #4a4035;
+    border-color: #4a4035;
+    cursor: not-allowed;
+    opacity: 0.6;
+    text-decoration: line-through;
+  }
+
+  .file-content {
+    flex: 1;
+    background: #f5eed6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23f5eed6'/%3E%3Crect width='1' height='1' fill='%23e8dfc0' opacity='0.5'/%3E%3C/svg%3E");
+    padding: 20px;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .file-content::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 10px; bottom: 10px;
+    width: 2px;
+    background: repeating-linear-gradient(0deg, #888 0px, #888 3px, transparent 3px, transparent 8px);
+    opacity: 0.3;
+  }
+
+  .stamp {
+    display: inline-block;
+    border: 2.5px solid #c41e3a;
+    color: #c41e3a;
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    padding: 3px 10px;
+    letter-spacing: 3px;
+    transform: rotate(-2deg);
+    margin-bottom: 12px;
+    opacity: 0.85;
+  }
+
+  h2 { font-family: 'Special Elite', monospace; font-size: 20px; margin: 0 0 4px; color: #2c2825; }
+  .sub { font-size: 12px; color: #8b7355; font-style: italic; margin-bottom: 14px; }
+  
+  .meta-row { display: flex; font-size: 12px; margin-bottom: 4px; }
+  .meta-label { font-weight: 700; text-transform: uppercase; font-size: 9px; letter-spacing: 1px; color: #6b5e50; min-width: 110px; }
+  
+  .handnote { font-family: 'Caveat', cursive; color: #0047ab; font-size: 15px; transform: rotate(-1.5deg); margin-top: 14px; text-align: right; }
+
+  .polaroid {
+    display: inline-block;
+    background: #fff;
+    padding: 8px 8px 28px;
+    box-shadow: 2px 3px 8px rgba(0,0,0,0.2);
+    transform: rotate(1.2deg);
+    margin: 14px 8px 0 0;
+    position: relative;
+  }
+  
+  .polaroid img { display: block; width: 140px; height: 100px; object-fit: cover; filter: contrast(1.15) brightness(0.92) saturate(0.85); }
+  .polaroid .caption { font-family: 'Caveat', cursive; font-size: 12px; color: #666; position: absolute; bottom: 4px; left: 0; right: 0; text-align: center; }
+
+  /* Tape corners */
+  .tape { position: absolute; width: 28px; height: 10px; background: rgba(255,255,200,0.55); border: 0.5px solid rgba(200,200,180,0.4); box-shadow: 0 1px 2px rgba(0,0,0,0.08); }
+  .tape-tl { top: -4px; left: 6px; transform: rotate(-8deg); }
+  .tape-tr { top: -4px; right: 6px; transform: rotate(5deg); }
+  .tape-bl { bottom: 18px; left: 4px; transform: rotate(3deg); }
+  .tape-br { bottom: 18px; right: 4px; transform: rotate(-6deg); }
+
+  .postit {
+    display: inline-block;
+    background: #FEFF9C;
+    padding: 10px 14px;
+    box-shadow: 2px 3px 6px rgba(0,0,0,0.15);
+    transform: rotate(-0.5deg);
+    font-size: 12px;
+    border-radius: 0 0 0 2px;
+    cursor: pointer;
+  }
+  .postit::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 0 12px 12px 0;
+    border-color: transparent #d4c5a0 transparent transparent;
+    box-shadow: -1px 1px 2px rgba(0,0,0,0.1);
+  }
+  .postit:hover { transform: rotate(-0.5deg) translateY(-2px); }
+  .search-link-btn { border: none; padding: 10px 16px; font-family: 'Special Elite', monospace; font-size: 12px; background: #FEFF9C; cursor: pointer; position: relative; transform: rotate(-0.5deg); margin-top: 10px; }
+
+  .redacted-line {
+    background: #4a4035;
+    color: transparent;
+    display: inline;
+    user-select: none;
+    font-size: 13px;
+    line-height: 1.8;
+    padding: 0 2px;
+    border-radius: 1px;
+  }
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Caveat:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+<div class="cabinet">
+  <div class="tab-strip">
+    <div class="folder-tab active" onclick="switchTab(this, 0)">INCIDENT</div>
+    <div class="folder-tab" onclick="switchTab(this, 1)">WITNESS</div>
+    <div class="folder-tab" onclick="switchTab(this, 2)">EVIDENCE</div>
+    <div class="folder-tab" onclick="switchTab(this, 3)">OFFICIAL</div>
+    <div class="folder-tab redacted">AFTERMATH</div>
+  </div>
+  
+  <div class="file-content" id="tab-content-0">
+    <div class="stamp">★★ PRIORITY</div>
+    <h2>Shag Harbour</h2>
+    <div class="sub">October 4, 1967 · CE3 · Unknown</div>
+    <div class="meta-row"><span class="meta-label">LOCATION</span><span>Shag Harbour, Nova Scotia</span></div>
+    <div class="meta-row"><span class="meta-label">DATE</span><span>October 4, 1967, ~23:00 AST</span></div>
+    <div class="meta-row"><span class="meta-label">SHAPE</span><span>Multiple lights, object in water</span></div>
+    <div class="meta-row"><span class="meta-label">DURATION</span><span>Object recovered by military; timeline spans multiple days</span></div>
+    <div class="meta-row"><span class="meta-label">CONTACT</span><span>CE-3 (Entity contact)</span></div>
+    <div class="meta-row"><span class="meta-label">DESCRIPTION</span><span>Four orange lights in formation descended over the Atlantic, crashed into the water. Coast Guard and Navy dispatched. Official log listed it as a "flying object" — not a plane. No aircraft missing. Scale: estimated 60ft across.</span></div>
+    <div class="handnote">— One of only 3 Canadian cases with military recovery ops. See Ref NAD-1967-10-4</div>
+  </div>
+
+  <div class="file-content" id="tab-content-1" style="display:none">
+    <div class="stamp">WITNESS FILE</div>
+    <h2>Witness Statements</h2>
+    <div class="meta-row"><span class="meta-label">WITNESS COUNT</span><span>12+ primary, dozens of secondary</span></div>
+    <div class="meta-row"><span class="meta-label">CREDIBILITY</span><span>High — RCMP, Coast Guard, military</span></div>
+    <div class="meta-row"><span class="meta-label">KEY WITNESSES</span></div>
+    <ul style="font-size:12px; margin: 4px 0 8px 20px;">
+      <li>Chris Styles — RCMP officer, first responder</li>
+      <li>Laurel Betts — witness from shore</li>
+      <li>RCAF rescue team — dispatched to site</li>
+    </ul>
+    <div class="meta-row"><span class="meta-label">BEINGS</span><span>Reports of humanoid figures seen near crash site</span></div>
+    <div class="handnote">— RCMP log #67-10-04 sealed for 24hrs under "national security"</div>
+  </div>
+
+  <div class="file-content" id="tab-content-2" style="display:none">
+    <div class="stamp">EVIDENCE</div>
+    <h2>Physical Evidence</h2>
+    <div class="meta-row"><span class="meta-label">PHYSICAL</span><span>Yellow foam-like substance recovered from water. No official lab analysis completed.</span></div>
+    <div class="meta-row"><span class="meta-label">RADIO</span><span>Intercepted low-frequency signal on emergency band</span></div>
+    <div class="meta-row"><span class="meta-label">MEDICAL</span><span>No documented effects on witnesses</span></div>
+    
+    <div class="polaroid" style="margin-top:16px;">
+      <div class="tape tape-tl"></div>
+      <div class="tape tape-tr"></div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Shag_Harbour_light%27s.jpg/320px-Shag_Harbour_light%27s.jpg" alt="Shag Harbour"/>
+      <span class="caption">Shag Harbour — Oct 1967</span>
+    </div>
+
+    <div class="handnote">— Photos from Coast Guard incident log; declassified 1993</div>
+  </div>
+
+  <div class="file-content" id="tab-content-3" style="display:none">
+    <div class="stamp">OFFICIAL RECORD</div>
+    <h2>Documentation</h2>
+    <div class="meta-row"><span class="meta-label">PRIMARY</span><span>RCMP Incident Report #67-10-04</span></div>
+    <div class="meta-row"><span class="meta-label">SECONDARY</span><span>The UFO Casebook, Project Blue Book (cross-ref)</span></div>
+    <div class="meta-row"><span class="meta-label">CLASSIFICATION</span><span>CE-3 (Close Encounter, Third Kind)</span></div>
+    <div class="meta-row"><span class="meta-label">TIER</span><span>A — Full investigation with primary sources</span></div>
+    <div class="meta-row"><span class="meta-label">STATUS</span><span>Unresolved. No official explanation issued.</span></div>
+    
+    <button class="search-link-btn postit">Search External Sources ▶</button>
+  </div>
+  
+  <div class="file-content" id="tab-content-4" style="display:none">
+    <div class="stamp" style="color:#666;border-color:#666;">[REDACTED]</div>
+    <h2 style="color:#888;">Aftermath</h2>
+    <p style="font-size:13px;color:#666;margin-top:10px;">
+      <span class="redacted-line">Cultural impact data withheld pending review.</span>
+    </p>
+    <p style="font-size:11px;color:transparent;margin-top:10px;font-family:'Caveat',cursive;font-size:16px;color:#0047ab;transform:rotate(-1deg);">
+      Check back — research ongoing
+    </p>
+  </div>
+</div>
+
+<script>
+function switchTab(el, idx) {
+  document.querySelectorAll('.folder-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  for(let i=0;i<5;i++) {
+    document.getElementById('tab-content-'+i).style.display = i===idx?'block':'none';
+  }
+}
+</script>

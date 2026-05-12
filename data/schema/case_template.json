@@ -1,0 +1,97 @@
+{
+  "caseId": "CAN-001",
+  "adjacent": false,
+  "identity": {
+    "name": "Working Title",
+    "alias": "Alternative name / nickname",
+    "date": "YYYY-MM-DD",
+    "time": "22:30",
+    "location": {
+      "name": "City, Province/Territory",
+      "province": "SK",
+      "lat": 50.4547,
+      "lng": -104.6074,
+      "precision": "exact|approximate|region"
+    },
+    "classification": {
+      "hynek": "CE1",
+      "tier": "A",
+      "notes": "Classification rationale"
+    }
+  },
+  "sighting": {
+    "shape": "Disc",
+    "size": {
+      "length": "60 ft",
+      "width": "30 ft",
+      "height": "15 ft",
+      "comparison": "football field",
+      "certainty": "reported|estimated|speculative",
+      "witness_count": 1
+    },
+    "color": "metallic silver",
+    "duration": "3-4 minutes",
+    "altitude": "approximately 1,000 feet",
+    "weather": "clear, cold, no wind",
+    "movement": {
+      "primary": "Hovering",
+      "departure": "accelerated upward",
+      "sound": "silent"
+    },
+    "trajectory": [
+      {"lat": 50.4547, "lng": -104.6074},
+      {"lat": 50.4621, "lng": -104.5893}
+    ],
+    "physical_trace": true,
+    "trace_details": "Ground impressions, scorched earth, electromagnetic interference"
+  },
+  "beings": {
+    "present": false,
+    "occupants": null,
+    "contact_made": false,
+    "contact_type": null,
+    "contact_details": null,
+    "telepathy": false,
+    "telepathy_message": null,
+    "_blank_state": "When present=false, tabs show as [ENTITIES: NONE REPORTED] greyed out"
+  },
+  "witnesses": {
+    "total_count": 1,
+    "named": ["Stefan Michalak"],
+    "credibility": {
+      "overall": "HIGH",
+      "factors": ["Consistency of account", "Physical corroboration", "No recanting", "Professional background"]
+    },
+    "demographics": "Adult male, electronics engineer",
+    "aftermath": "Hospitalized with grid-burn injuries"
+  },
+  "evidence": {
+    "physical": {
+      "type": ["Ground marks"],
+      "analyzed": true,
+      "analysis_results": "Unknown origin of markings"
+    },
+    "photographic": false,
+    "radar": false,
+    "medical": true,
+    "medical_details": "Grid-pattern second-degree burns on abdomen",
+    "documentation": "RCMP report, Dr. Wilbert Smith files",
+    "credibility": "HIGH"
+  },
+  "sources": {
+    "primary": "RCMP Investigation Files",
+    "secondary": ["CBSC Report", "Wilbert Smith archives"],
+    "references": [
+      "Book/Article with author, year, page",
+      "Newspaper: Publication, date, headline",
+      "Document reference"
+    ],
+    "nuforc_link": "Optional NUFORC report URL",
+    "last_updated": "2024-01-15"
+  },
+  "narratives": {
+    "summary": "2-3 sentence overview of the event",
+    "full_account": "Complete witness narrative with direct quotes",
+    "investigation_summary": "What authorities/investigators concluded"
+  }
+}

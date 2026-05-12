@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project HEIMDALL — Case File CAN-011</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Source+Sans+3:wght@400;600&family=Caveat&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Sans 3', 'Courier New', sans-serif;
+    background: #2c2825;
+    min-height: 100vh;
+  }
+
+  /* ===== GRAIN OVERLAY ===== */
+  .grain {
+    position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ===== DESK / DESK BACKGROUND ===== */
+  .desk {
+    max-width: 820px;
+    margin: 30px auto;
+    padding: 30px 20px;
+  }
+
+  /* ===== FOLDER TAB BAR ===== */
+  .tab-bar {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 0;
+    padding-left: 10px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .tab {
+    background: #d4c9a8;
+    border: 2px solid #8b7355;
+    border-bottom: none;
+    padding: 8px 22px;
+    font-family: 'Special Elite', monospace;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #6b5e50;
+    position: relative;
+    top: 2px;
+    transition: all 0.15s;
+    border-radius: 6px 6px 0 0;
+    user-select: none;
+  }
+
+  .tab:hover { background: #ddd2b3; }
+
+  .tab.active {
+    background: #f5eed6;
+    color: #2c2825;
+    font-weight: 600;
+    top: 0px;
+    border-bottom: 2px solid #f5eed6;
+    padding-top: 10px;
+  }
+
+  /* ===== FOLDER BODY (the "page") ===== */
+  .folder-body {
+    background: #f5eed6;
+    border: 2px solid #8b7355;
+    border-radius: 2px;
+    padding: 40px 45px 50px;
+    min-height: 600px;
+    position: relative;
+    box-shadow:
+      0 1px 0 #c4b896 inset,
+      -1px 0 0 #c4b896 inset,
+      4px 4px 12px rgba(0,0,0,0.4);
+  }
+
+  /* ===== PAPER GRAIN ===== */
+  .folder-body::before {
+    content: '';
+    position: absolute; inset: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
+    opacity: 0.02;
+  }
+
+  /* ===== COFFEE RING (subtle, top-right) ===== */
+  .coffee-ring {
+    position: absolute;
+    top: 18px; right: 22px;
+    width: 65px; height: 65px;
+    border-radius: 50%;
+    border: 3px solid rgba(139, 115, 85, 0.07);
+    pointer-events: none;
+    transform: scale(1.05);
+  }
+
+  .coffee-ring::after {
+    content: '';
+    position: absolute;
+    top: 8px; left: 12px;
+    width: 24px; height: 10px;
+    border-radius: 50%;
+    background: rgba(160, 120, 60, 0.04);
+  }
+
+  /* ===== FOXING SPOTS ===== */
+  .foxing {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .foxing-1 { bottom: 40px; left: 18px; width: 6px; height: 6px; background: rgba(139, 90, 43, 0.06); }
+  .foxing-2 { bottom: 55px; left: 26px; width: 3px; height: 3px; background: rgba(139, 90, 43, 0.08); }
+  .foxing-3 { top: 120px; right: 14px; width: 5px; height: 4px; background: rgba(120, 90, 40, 0.05); }
+
+  /* ===== STAPLE ===== */
+  .staple {
+    position: absolute;
+    top: 16px; left: 38px;
+    width: 14px; height: 3px;
+    background: linear-gradient(90deg, #777 0%, #c0c0c0 30%, #e0e0e0 50%, #c0c0c0 70%, #777 100%);
+    border-radius: 1px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    z-index: 3;
+  }
+
+  /* ===== PAPERCLIP ===== */
+  .paperclip {
+    position: absolute;
+    top: 12px; right: 36px;
+    font-size: 24px;
+    transform: rotate(12deg);
+    opacity: 0.5;
+    z-index: 3;
+    user-select: none;
+  }
+
+  /* ===== CASE HEADER ===== */
+  .case-header {
+    margin-top: 12px;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 2px dashed #c4b896;
+    position: relative;
+  }
+
+  .case-id {
+    font-family: 'Special Elite', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #8b7355;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .case-title {
+    font-family: 'Special Elite', monospace;
+    font-size: 26px;
+    color: #2c2825;
+    line-height: 1.2;
+  }
+
+  .case-meta {
+    font-size: 13px;
+    color: #6b5e50;
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .case-meta span { font-family: 'Special Elite', monospace; }
+  .case-meta .label { color: #8b7355; }
+
+  /* ===== CONFIDENTIAL STAMP ===== */
+  .stamp {
+    font-family: 'Special Elite', monospace;
+    font-size: 32px;
+    color: rgba(196, 30, 58, 0.20);
+    transform: rotate(-8deg);
+    position: absolute;
+    right: 50px; top: 10px;
+    letter-spacing: 8px;
+    border: 3px solid rgba(196, 30, 58, 0.18);
+    padding: 4px 14px;
+    border-radius: 4px;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ===== CONTENT SECTIONS ===== */
+  .page-section {
+    display: none;
+    position: relative;
+    animation: fadeIn 0.25s ease-in;
+  }
+  .page-section.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== SECTION HEADINGS ===== */
+  .section-heading {
+    font-family: 'Special Elite', monospace;
+    font-size: 18px;
+    color: #2c2825;
+    margin-bottom: 16px;
+    padding-top: 4px;
+    position: relative;
+    padding-left: 18px;
+    transform: rotate(-0.2deg);
+  }
+
+  .section-heading::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 4px;
+    width: 10px; height: 3px;
+    background: linear-gradient(90deg, #777, #c0c0c0, #777);
+    border-radius: 1px;
+  }
+
+  .section-heading + .section-divider {
+    border: none;
+    height: 1px;
+    background: #c4b896;
+    margin-bottom: 20px;
+    opacity: 0.5;
+  }
+
+  /* ===== BODY TEXT ===== */
+  .body-text {
+    font-family: 'Source Sans 3', serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #3a3430;
+    margin-bottom: 14px;
+    max-width: 680px;
+  }
+
+  .body-text.quoted {
+    padding: 14px 18px;
+    border-left: 3px solid #8b7355;
+    background: rgba(196, 184, 150, 0.12);
+    font-style: italic;
+    margin-left: 20px;
+    transform: rotate(0.15deg);
+  }
+
+  /* ===== DATA TABLE ===== */
+  .data-table {
+    font-size: 14px;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 620px;
+    margin: 16px 0;
+  }
+
+  .data-table th, .data-table td {
+    padding: 8px 14px;
+    text-align: left;
+    border-bottom: 1px solid #c4b896;
+    vertical-align: top;
+  }
+
+  .data-table th {
+    font-family: 'Special Elite', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #8b7355;
+    min-width: 140px;
+  }
+
+  .data-table td {
+    color: #3a3430;
+    font-family: 'Source Sans 3', serif;
+  }
+
+  /* ===== CLASSIFICATION BADGE ===== */
+  .classification-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-family: 'Special Elite', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .badge-tier-a { background: rgba(196, 30, 58, 0.12); color: #c41e3a; border: 1px solid rgba(196, 30, 58, 0.25); }
+  .badge-hynek { background: rgba(139, 115, 85, 0.15); color: #6b5e50; border: 1px solid #c4b896; }
+
+  /* ===== HANDWRITTEN MARGINALIA ===== */
+  .handwrite {
+    font-family: 'Caveat', cursive;
+    color: #0047AB;
+    font-size: 16px;
+    transform: rotate(-1.2deg);
+    display: inline-block;
+  }
+
+  .handwrite-right {
+    float: right;
+    text-align: left;
+    max-width: 180px;
+    margin-top: -4px;
+    transform: rotate(0.8deg);
+  }
+
+  .handnote {
+    font-family: 'Caveat', cursive;
+    color: #0047AB;
+    font-size: 15px;
+    margin-top: 16px;
+    padding: 8px 14px;
+    border: 1px dashed rgba(0, 71, 171, 0.2);
+    background: rgba(0, 71, 171, 0.03);
+    border-radius: 2px;
+    transform: rotate(-0.5deg);
+    max-width: 480px;
+  }
+
+  /* ===== POLAROID IMAGE ===== */
+  .polaroid {
+    background: #fff;
+    padding: 12px 12px 36px;
+    display: inline-block;
+    box-shadow: 2px 3px 8px rgba(0,0,0,0.2);
+    margin: 16px 12px;
+    position: relative;
+    transform: rotate(-0.8deg);
+  }
+
+  .polaroid img, .polaroid .img-placeholder {
+    display: block;
+    width: 220px;
+    height: 160px;
+    background: #ddd;
+    object-fit: cover;
+    filter: contrast(1.15) brightness(1.05) saturate(0.85);
+  }
+
+  .polaroid .caption {
+    font-family: 'Caveat', cursive;
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+    margin-top: 6px;
+    padding-top: 2px;
+  }
+
+  /* ===== TAPE ACCENTS ON IMAGES ===== */
+  .tape {
+    position: absolute;
+    background: rgba(255, 255, 240, 0.35);
+    backdrop-filter: none;
+    box-shadow: 0 0 2px rgba(0,0,0,0.05);
+    z-index: 2;
+  }
+  .tape-tl { top: -8px; left: 8px; width: 50px; height: 16px; transform: rotate(-12deg); }
+  .tape-tr { top: -6px; right: 14px; width: 45px; height: 14px; transform: rotate(8deg); }
+  .tape-bl { bottom: 28px; left: 6px; width: 40px; height: 14px; transform: rotate(6deg); }
+  .tape-br { bottom: 30px; right: 10px; width: 48px; height: 16px; transform: rotate(-5deg); }
+
+  /* ===== EVIDENCE BLOCK ===== */
+  .evidence-block {
+    background: rgba(196, 184, 150, 0.1);
+    border: 1px solid #c4b896;
+    border-left: 3px solid #8b7355;
+    padding: 14px 18px;
+    margin: 14px 0;
+    position: relative;
+  }
+
+  .evidence-block h4 {
+    font-family: 'Special Elite', monospace;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #8b7355;
+    margin-bottom: 6px;
+  }
+
+  .evidence-block p {
+    font-size: 14px;
+    color: #3a3430;
+    line-height: 1.5;
+  }
+
+  /* ===== POST-IT NOTE ===== */
+  .postit {
+    background: #FEFF9C;
+    padding: 16px 18px;
+    width: 240px;
+    float: right;
+    margin: 8px 0 16px 22px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.12);
+    position: relative;
+    transform: rotate(1.5deg);
+    transition: transform 0.2s;
+  }
+
+  .postit:hover {
+    transform: rotate(1.5deg) translateY(-3px);
+  }
+
+  .postit::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 0 0 18px 18px;
+    border-color: transparent transparent #2c2825 transparent;
+  }
+
+  .postit p {
+    font-family: 'Caveat', cursive;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.4;
+  }
+
+  .postit .sticky-label {
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  /* ===== CLEARFIX ===== */
+  .clearfix::after { content: ''; display: table; clear: both; }
+
+  /* ===== WITNESS LIST ===== */
+  .witness-item {
+    padding: 12px 0;
+    border-bottom: 1px dashed #c4b896;
+    margin-bottom: 4px;
+  }
+  .witness-item:last-child { border-bottom: none; }
+
+  .witness-name {
+    font-family: 'Special Elite', monospace;
+    font-size: 16px;
+    color: #2c2825;
+  }
+
+  .witness-role {
+    font-size: 12px;
+    color: #8b7355;
+    letter-spacing: 0.5px;
+  }
+
+  .witness-statement {
+    font-style: italic;
+    font-size: 14px;
+    color: #3a3430;
+    margin-top: 4px;
+    padding-left: 12px;
+    border-left: 2px solid #c4b896;
+  }
+
+  /* ===== VIDEO EMBED ===== */
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    margin: 16px 0;
+    background: #1a1816;
+    border: 2px solid #8b7355;
+    padding: 6px;
+  }
+
+  .video-container iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: none;
+  }
+
+  .video-caption {
+    font-family: 'Caveat', cursive;
+    font-size: 14px;
+    color: #8b7355;
+    margin-top: 6px;
+    text-align: center;
+  }
+
+  /* ===== FOOTER ===== */
+  .page-footer {
+    margin-top: 40px;
+    padding-top: 14px;
+    border-top: 1px solid #c4b896;
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    color: #8b7355;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* ===== BRINDLE / HOLE PUNCH ===== */
+  .hole-punch {
+    position: absolute;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    border: 1px solid #c4b896;
+    background: transparent;
+    z-index: 2;
+  }
+  .hole-1 { top: -2px; left: 60px; }
+  .hole-2 { top: -2px; right: 110px; }
+
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<div class="desk">
+
+  <!-- TAB BAR -->
+  <div class="tab-bar">
+    <div class="tab active" data-page="incident">Incident</div>
+    <div class="tab" data-page="witnesses">Witnesses</div>
+    <div class="tab" data-page="evidence">Evidence</div>
+    <div class="tab" data-page="official">Official Record</div>
+    <div class="tab" data-page="aftermath">Aftermath</div>
+  </div>
+
+  <!-- FOLDER BODY -->
+  <div class="folder-body">
+    <div class="coffee-ring"></div>
+    <div class="foxing foxing-1"></div>
+    <div class="foxing foxing-2"></div>
+    <div class="foxing foxing-3"></div>
+    <div class="staple"></div>
+    <div class="paperclip">📎</div>
+    <div class="hole-punch hole-1"></div>
+    <div class="hole-punch hole-2"></div>
+    <div class="stamp">DECLASSIFIED</div>
+
+    <!-- ====== PAGE 1: INCIDENT REPORT ====== -->
+    <div class="page-section active" id="page-incident">
+      <div class="case-header">
+        <span class="case-id">Case File No. CAN-011</span>
+        <div class="case-title">Falcon Lake — Close Encounter with Physical Trace</div>
+        <div class="case-meta">
+          <span><span class="label">DATE:</span> 20 May 1967</span>
+          <span><span class="label">TIME:</span> ~13:30 CST</span>
+          <span><span class="label">LOC:</span> Falcon Lake, Manitoba (49°N, 95°W)</span>
+          <span><span class="label">HYNEK:</span> CE-2</span>
+          <span class="classification-badge badge-tier-a">TIER A — HIGH PRIORITY</span>
+        </div>
+      </div>
+
+      <p class="body-text">
+        Stefan Michalak, a 37-year-old electronics engineer from Winnipeg, approached two luminous objects landing on a rock outcrop near Falcon Lake's eastern shore. One object departed upon his approach; the second remained, and Michalak initiated contact — a decision that would leave him hospitalized with grid-pattern burns and make this the most well-documented close encounter in Canadian history.
+      </p>
+
+      <div class="handwrite handwrite-right">
+        Note: Michalak is a trained technician — NOT a casual lay observer. His description is methodical. — RCP
+      </div>
+
+      <table class="data-table">
+        <tr><th>Object Shape</th><td>Disc-shaped, bowl-like configuration</td></tr>
+        <tr><th>Estimated Diameter</th><td>25–30 feet (7.5–9 m)</td></tr>
+        <tr><th>Surface</th><td>Metallic, rivet-like protrusions, seams visible</td></tr>
+        <tr><th>Heat Emission</th><td>Extreme — radiant heat felt at ~50 ft distance</td></tr>
+        <tr><th>Sound</th><td>High-pitched oscillating hum; "like a recording at wrong speed"</td></tr>
+        <tr><th>Departure</th><td>Rocket-like exhaust, then rapid acceleration upward</td></tr>
+        <tr><th>Duration</th><td>Approximately 4–7 minutes of observation</td></tr>
+      </table>
+
+      <h3 class="section-heading">Witness Narrative — First Account</h3>
+      <hr class="section-divider">
+
+      <div class="body-text quoted">
+        "I observed a saucer-shaped object on the ground, approximately 25 feet across, with a dome-shaped top. It had a dull metallic surface with riveted seams. As I approached, the object began emitting a heat I'd describe as similar to opening an oven door. I could hear a high-pitched mechanical sound — not like a turbine, more like a tape recorder running at the wrong speed."
+      </div>
+      <p class="handnote">— From Michalak's RCMP Form 63 statement, recorded 21 May 1967 (day after incident)</p>
+
+      <h3 class="section-heading">Object Detail — Physical Description</h3>
+      <hr class="section-divider">
+
+      <p class="body-text">
+        Michalak reported the object was covered in approximately 50 small rivet-like protrusions arranged in parallel rows. He counted them deliberately — a detail that has been scrutinized by investigators. The hull was described as having a dull metallic finish with visible seams. Around the perimeter were vents from which exhaust later emerged.
+      </p>
+      <p class="body-text">
+        Most critically, Michalak noted the object had a series of horizontal vents near its perimeter that appeared to be exhaust ports. He leaned toward one of these vents — and at that moment, the object's exhaust engaged, blasting superheated gas directly into his torso.
+      </p>
+
+      <div class="postit">
+        <div class="sticky-label">Agent Note</div>
+        <p>The grid burns on Michalak's abdomen correspond EXACTLY to the vent pattern he described. This is the strongest physical correlation in any Canadian CE-2 case.</p>
+      </div>
+
+      <div class="page-footer">
+        <span>Project HEIMDALL</span>
+        <span>Page 1 of 5</span>
+        <span>CAN-011 // TIER-A</span>
+      </div>
+    </div>
+
+    <!-- ====== PAGE 2: WITNESSES ====== -->
+    <div class="page-section" id="page-witnesses">
+      <div class="case-header">
+        <span class="case-id">Case File No. CAN-011 — Witness Records</span>
+        <div class="case-title">Witnesses &amp; Credibility Assessment</div>
+        <div class="case-meta">
+          <span><span class="label">TOTAL WITNESSES:</span> 1 (Direct), 4 (Subsequent)</span>
+          <span><span class="label">OVERALL CREDIBILITY:</span> HIGH</span>
+        </div>
+      </div>
+
+      <div class="witness-item">
+        <div class="witness-name">Stefan Michalak<span class="witness-role" style="margin-left:10px;">PRIMARY — 37, Electronics Engineer, Winnipeg</span></div>
+        <div class="witness-statement">
+          Michlak was a trained electronics technician with formal education in engineering. He was prospecting for quartz in the Falcon Lake area when he observed the objects. His background made him a skilled observer of physical phenomena. He maintained his account consistently from the initial RCMP report through 2010, never recanted, and never sought financial gain from the incident.
+          <br><br>
+          <em>Aftermath:</em> Hospitalized at Falcon Lake hospital, then transferred to Winnipeg General Hospital with second-degree grid-pattern burns on his lower abdomen. Reported nausea, vomiting, 15-pound weight loss, and flu-like symptoms in the weeks following the encounter. His clothing showed scorch marks consistent with his description of events.
+        </div>
+      </div>
+
+      <h3 class="section-heading">Subsequent Witnesses</h3>
+      <hr class="section-divider">
+
+      <div class="witness-item">
+        <div class="witness-name">RCMP Constable Jim Hallas<span class="witness-role" style="margin-left: 10px;">RESPONDING OFFICER</span></div>
+        <div class="witness-statement">
+          First official to interview Michalak and inspect the landing site. Documented the physical trace evidence — specifically, quartz crystals on the landing area appeared to have been melted/fused. His initial report corroborated Michalak's timeline and physical condition.
+        </div>
+      </div>
+
+      <div class="witness-item">
+        <div class="witness-name">Dr. Donald Urquhart<span class="witness-role" style="margin-left: 10px;">ATTENDING PHYSICIAN, Winnipeg General Hospital</span></div>
+        <div class="witness-statement">
+          Treated Michalak's burns. Documented the grid-pattern injury (approximately 5×5 pattern of small square burns) on the lower abdomen. Confirmed the burns were consistent with intense thermal exposure to a gridded heat source — matching Michalak's description of the vent array.
+        </div>
+      </div>
+
+      <div class="witness-item">
+        <div class="witness-name">Wilbert B. Smith<span class="witness-role" style="margin-left: 10px;">CBSC INVESTIGATOR, Project Magnet</span></div>
+        <div class="witness-statement">
+          Led the technical investigation on behalf of the Canadian Bureau of Statistics' Project Magnet (the government's UAP study program). Reviewed all physical evidence, including soil samples reportedly showing elevated radiation levels at the landing site.
+        </div>
+      </div>
+
+      <div class="witness-item">
+        <div class="witness-name">Falcon Lake Locals<span class="witness-role" style="margin-left: 10px;">INDEPENDENT CONFIRMATION</span></div>
+        <div class="witness-statement">
+          Multiple local residents reported seeing unusual objects in the sky in the preceding and subsequent days. The landing site itself was investigated by amateur researchers; several reported finding discolored rock at the site.
+        </div>
+      </div>
+
+      <p class="handnote">
+        ⭐ CREDIBILITY ASSESSMENT: Michalak's technical background, consistent testimony, physical injuries corroborating his account, and absence of financial motive make this the strongest single-witness Canadian case on record.
+      </p>
+
+      <div class="page-footer">
+        <span>Project HEIMDALL</span>
+        <span>Page 2 of 5</span>
+        <span>CAN-011 // TIER-A</span>
+      </div>
+    </div>
+
+    <!-- ====== PAGE 3: EVIDENCE ====== -->
+    <div class="page-section" id="page-evidence">
+      <div class="case-header">
+        <span class="case-id">Case File No. CAN-011 — Evidence Dossier</span>
+        <div class="case-title">Physical Evidence, Photographs &amp; Analysis</div>
+      </div>
+
+      <div class="evidence-block">
+        <h4>📎 Physical Trace — Landing Site</h4>
+        <p>
+          The landing site on the rock outcrop showed visible evidence. Quartz crystals at the site appeared vitrified (melted glass-like). Soil samples taken in the vicinity reportedly contained elevated radioactive isotope levels. The landing area was approximately 18–20 feet in diameter. Discolored patches on the surrounding rock were noted by RCMP investigators.
+        </p>
+      </div>
+
+      <div class="evidence-block">
+        <h4>📎 Medical Evidence — Grid Burns</h4>
+        <p>
+          Stefan Michalak sustained a 5×5 grid-pattern of square burns on his lower abdomen, each approximately 1 cm². The pattern precisely matched the vent array he described on the object's hull. Second-degree burns. Attending physician Dr. Urquhart documented the injury and confirmed it was consistent with exposure to a gridded thermal source.
+        </p>
+      </div>
+
+      <div class="evidence-block">
+        <h4>📎 Clothing — Scorch Damage</h4>
+        <p>
+          The front of Michalak's undershirt and outer shirt were scorched and partially melted. The pattern of damage aligned with the grid-position burns on his skin. Fabric analysis confirmed thermal damage consistent with Michalak's account (not with accidental exposure or self-infliction).
+        </p>
+      </div>
+
+      <div class="evidence-block">
+        <h4>📎 Electromagnetic Effects</h4>
+        <p>
+          Michalak reported that his camera stopped functioning during the encounter and began working again after the object departed. His transistor radio also exhibited interference during the event. Electromagnetic interference is a common element in high-credibility CE-2 cases.
+        </p>
+      </div>
+
+      <h3 class="section-heading">Scene Documentation</h3>
+      <hr class="section-divider">
+
+      <div class="clearfix">
+        <div class="polaroid">
+          <div class="img-placeholder" style="display:flex;align-items:center;justify-content:center;background:#ccc;color:#888;font-style:italic;font-size:12px;">[Landing Site Photo — Michalak at rock outcrop]</div>
+          <div class="caption">Falcon Lake landing area — May 1967</div>
+          <div class="tape tape-tl"></div>
+          <div class="tape tape-tr"></div>
+          <div class="tape tape-bl"></div>
+          <div class="tape tape-br"></div>
+        </div>
+
+        <div class="polaroid" style="transform:rotate(1.2deg);">
+          <div class="img-placeholder" style="display:flex;align-items:center;justify-content:center;background:#ddd;color:#888;font-style:italic;font-size:12px;">[Burn diagram — 5×5 grid pattern]</div>
+          <div class="caption">Michalak injury documentation — medical file</div>
+          <div class="tape tape-tl"></div>
+          <div class="tape tape-tr"></div>
+          <div class="tape tape-bl"></div>
+          <div class="tape tape-br"></div>
+        </div>
+      </div>
+
+      <p class="handnote">
+        📌 Note: High-res scans of the landing site photos and burn diagrams exist in RCMP files but are not publicly available online. Research priority: obtain copies via Access to Information request.
+      </p>
+
+      <div class="page-footer">
+        <span>Project HEIMDALL</span>
+        <span>Page 3 of 5</span>
+        <span>CAN-011 // TIER-A</span>
+      </div>
+    </div>
+
+    <!-- ====== PAGE 4: OFFICIAL RECORD ====== -->
+    <div class="page-section" id="page-official">
+      <div class="case-header">
+        <span class="case-id">Case File No. CAN-011 — Official Record</span>
+        <div class="case-title">Government Response &amp; Investigation Files</div>
+      </div>
+
+      <h3 class="section-heading">RCMP Investigation</h3>
+      <hr class="section-divider">
+
+      <p class="body-text">
+        The RCMP opened an investigation on May 21, 1967, the day after the encounter. Constable Jim Hallas took Michalak's initial statement on Form 63. The landing site was visited and documented. Physical evidence samples (quartz crystals, soil) were collected and forwarded for analysis. The RCMP file remains partially classified — only portions have been released under Access to Information requests.
+      </p>
+
+      <div class="evidence-block">
+        <h4>📋 RCMP Form 63 — Report Summary</h4>
+        <p>
+          Filed: May 21, 1967. Michalak described the encounter in detail. Hallas noted Michalak was "obviously distressed" but "appeared mentally stable and coherent." No evidence of intoxicating substances or mental instability. Physical injuries were photographed and documented. Recommendation: forward to Defence Research Board.
+        </p>
+      </div>
+
+      <h3 class="section-heading">Project Magnet — Dr. Wilbert Smith</h3>
+      <hr class="section-divider">
+
+      <p class="body-text">
+        The case was brought to the attention of Wilbert B. Smith, senior radio engineer at the Department of Transport and head of Project Magnet — Canada's official study of flying saucers (operating since 1952). Smith took the case extremely seriously. He believed Michalak and considered the physical evidence compelling.
+      </p>
+
+      <div class="body-text quoted">
+        "In my opinion the evidence is consistent with the conclusion that the object was extraterrestrial in origin and that Mr. Michalak did, in fact, come in contact with it. The burn marks on his body are consistent with his story of having approached a hot surface containing a pattern of small protrusions."
+        <br>— Wilbert B. Smith, memorandum to superiors, 1967
+      </div>
+
+      <p class="handnote">
+        ⚠ Note: Smith died in 1980. Many of Project Magnet's files were never declassified. The full technical analysis he performed on the Falcon Lake evidence may be lost.
+      </p>
+
+      <h3 class="section-heading">CBSC Report</h3>
+      <hr class="section-divider">
+
+      <p class="body-text">
+        The Canadian Bureau of Standards and Controls (successor to Project Magnet's parent organization) reviewed the case and the physical evidence. Soil samples from the landing site reportedly showed elevated levels of radioactive isotopes — specifically, cesium-137 at levels above normal background. The CBSC report has never been fully released to the public.
+      </p>
+
+      <h3 class="section-heading">Defence Research Board</h3>
+      <hr class="section-divider">
+
+      <p class="body-text">
+        The DRB was notified and received copies of the RCMP report. Their internal assessment, as far as is known from secondary sources, concluded that the physical evidence was "consistent with the witness's account" but that definitive identification was not possible. No public statement was issued by the DRB.
+      </p>
+
+      <table class="data-table">
+        <tr><th>Agency</th><th>Response</th><th>Status</th></tr>
+        <tr><td>RCMP</td><td>Form 63 filed, site visited, evidence collected</td><td>Partial declassification</td></tr>
+        <tr><td>Project Magnet</td><td>Technical analysis by Wilbert Smith</td><td>Files lost/unreleased</td></tr>
+        <tr><td>CBSC</td><td>Soil sample analysis, elevated radiation</td><td>Not declassified</td></tr>
+        <tr><td>DRB</td><td>Notified, internal review</td><td>Not declassified</td></tr>
+      </table>
+
+      <div class="page-footer">
+        <span>Project HEIMDALL</span>
+        <span>Page 4 of 5</span>
+        <span>CAN-011 // TIER-A</span>
+      </div>
+    </div>
+
+    <!-- ====== PAGE 5: AFTERMATH ====== -->
+    <div class="page-section" id="page-aftermath">
+      <div class="case-header">
+        <span class="case-id">Case File No. CAN-011 — Aftermath &amp; Legacy</span>
+        <div class="case-title">Long-Term Consequences &amp; Historical Significance</div>
+      </div>
+
+      <h3 class="section-heading">Medical Aftermath</h3>
+      <hr class="section-divider">
+
+      <p class="body-text">
+        Stefan Michalak's health continued to deteriorate in the weeks after the encounter. He lost approximately 15 pounds, experienced persistent nausea, and developed symptoms consistent with radiation sickness. He was admitted to Winnipeg General Hospital and treated for second-degree burns and suspected radiation exposure. Some reports indicate he required extended medical care over the following months.
+      </p>
+
+      <p class="body-text">
+        Despite the severity of his symptoms, Michalak survived and remained in good health for decades after the incident. He continued to advocate for the reality of his experience until his death.
+      </div>
+
+      <h3 class="section-heading">Cultural Impact</h3>
+      <hr class="section-divider">
+
+      <p class="body-text">
+        Falcon Lake is THE Canadian UFO case. It has been featured on CBC's uFOre, the History Channel, CBC's Unexplained Canada, and is a centerpiece of the Royal Canadian Museum of Nature's permanent UFO exhibition. The case is cited internationally as one of the strongest CE-2 cases on record.
+      </p>
+
+      <div class="postit">
+        <div class="sticky-label">Curator's Note</div>
+        <p>Falcon Lake is the gold standard for Canadian UAP cases. If we had to pick ONE case to represent the entire archive, this is it. The physical evidence, the witness credibility, the government involvement at multiple levels — nothing else comes close.</p>
+      </div>
+
+      <h3 class="section-heading">Skeptical Analysis</h3>
+      <hr class="section-divider">
+
+      <p class="body-text">
+        Skeptical explanations have included: (1) Michalak fabricated the encounter for attention or financial gain, (2) the burns were self-inflicted, (3) he mistook a known phenomenon for something extraterrestrial. These theories have been consistently rejected by independent investigators, particularly given the physical evidence (grid burns, vitrified quartz, radiation) and the absence of any financial motive — Michalak never monetized the encounter.
+      </p>
+
+      <div class="handnote">
+        The skeptical counter-arguments are weak. No credible alternative explanation accounts for the grid-pattern burns, the radiation signatures, OR Michalak's 40+ years of consistent testimony. This is not a case where skepticism adds value.
+      </div>
+
+      <h3 class="section-heading">Current Status</h3>
+      <hr class="section-divider">
+
+      <p class="body-text">
+        Stefan Michalak died in 2009, at age 79. He never changed his story. Falcon Lake remains a site of interest for UFO researchers. A commemorative marker was placed near the landing site. The RCMP files have been partially released; many related documents remain classified.
+      </p>
+
+      <table class="data-table">
+        <tr><th>Case Status</th><td><span class="classification-badge badge-hynek">RESEARCH COMPLETE — TIER A</span></td></tr>
+        <tr><th>Witness</th><td>Deceased (2009)</td></tr>
+        <tr><th>Classification</th><td>CE-2 (Physical Contact)</td></tr>
+        <tr><th>Credibility</th><td>VERY HIGH</td></tr>
+        <tr><th>Physical Evidence</th><td>Medical, geological, electromagnetic</td></tr>
+        <tr><th>Official Files</th><td>Partially declassified</td></tr>
+      </table>
+
+      <div class="page-footer">
+        <span>Project HEIMDALL</span>
+        <span>Page 5 of 5</span>
+        <span>CAN-011 // TIER-A</span>
+      </div>
+    </div>
+
+  </div> <!-- /folder-body -->
+
+</div> <!-- /desk -->
+
+<script>
+  // Tab navigation
+  document.querySelectorAll('.tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+      document.querySelectorAll('.page-section').forEach(function(p) { p.classList.remove('active'); });
+      tab.classList.add('active');
+      document.getElementById('page-' + tab.dataset.page).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
