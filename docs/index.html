@@ -1261,7 +1261,7 @@ body {
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script src="narratives.js"></script>
+<!-- narratives.js removed - no longer needed -->
 <script>
 
 /* ==============================================================
@@ -1301,7 +1301,7 @@ function initFromData() {
 }
 
 function loadDeepData() {
-  fetch('../data/cases-full.json')
+  fetch('./data/cases-full.json')
     .then(function(r) { return r.json(); })
     .then(function(data) {
       ALL_CASES = data;
