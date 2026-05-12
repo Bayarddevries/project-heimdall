@@ -1,0 +1,82 @@
+{
+  "started": "2026-05-12T15:44:46.140202",
+  "cases": {
+    "CAN-002": {
+      "case_id": "CAN-002",
+      "wikipedia": {
+        "wikipedia_url": null,
+        "wikipedia_found": false,
+        "extract": {}
+      },
+      "nuforc": {
+        "nuforc_url": null,
+        "nuforc_found": false,
+        "extract": {}
+      },
+      "youtube": []
+    },
+    "CAN-003": {
+      "case_id": "CAN-003",
+      "wikipedia": {
+        "wikipedia_url": null,
+        "wikipedia_found": false,
+        "extract": {}
+      },
+      "nuforc": {
+        "nuforc_url": null,
+        "nuforc_found": false,
+        "extract": {}
+      },
+      "youtube": []
+    },
+    "CAN-001": {
+      "case_id": "CAN-001",
+      "wikipedia": {
+        "wikipedia_url": null,
+        "wikipedia_found": false,
+        "extract": {}
+      },
+      "nuforc": {
+        "nuforc_url": null,
+        "nuforc_found": false,
+        "extract": {}
+      },
+      "youtube": []
+    },
+    "CAN-004": {
+      "case_id": "CAN-004",
+      "wikipedia": {
+        "wikipedia_url": null,
+        "wikipedia_found": false,
+        "extract": {}
+      },
+      "nuforc": {
+        "nuforc_url": null,
+        "nuforc_found": false,
+        "extract": {}
+      },
+      "youtube": []
+    },
+    "CAN-005": {
+      "case_id": "CAN-005",
+      "wikipedia": {
+        "wikipedia_url": null,
+        "wikipedia_found": false,
+        "extract": {}
+      },
+      "nuforc": {
+        "nuforc_url": null,
+        "nuforc_found": false,
+        "extract": {}
+      },
+      "youtube": [
+        {
+          "url": "https://www.youtube.com/watch?v=1ATddbIQM98&t=1s",
+          "title": "Bethune/Gander UFO Incident, Newfoundland Canada 1951",
+          "views": "5105"
+        }
+      ]
+    }
+  },
+  "completed": "2026-05-12T15:44:54.110703"
+}
