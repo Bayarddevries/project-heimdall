@@ -90,10 +90,9 @@
     "csv_evidence_summary": "Celestial \"omens\"",
     "csv_beings_summary": "Multiple settlers",
     "source_primary_csv": "Jesuit Relations",
-    "richness_score": 67,
+    "richness_score": 66,
     "adjacent": false,
-    "weather_conditions": "Icy/winter conditions",
-    "tier": "A"
+    "weather_conditions": "Icy/winter conditions"
   },
   {
     "case_id": "CAN-002",
@@ -185,10 +184,9 @@
     "csv_evidence_summary": "High-altitude lights during WWI",
     "csv_beings_summary": "Parliamentarians",
     "source_primary_csv": "Hansard Debates",
-    "richness_score": 60,
+    "richness_score": 59,
     "adjacent": false,
-    "weather_conditions": "Nighttime sighting, darkness",
-    "tier": "B"
+    "weather_conditions": "Nighttime sighting, darkness"
   },
   {
     "case_id": "CAN-003",
@@ -280,10 +278,9 @@
     "csv_evidence_summary": "Detected at 9,000+ mph",
     "csv_beings_summary": "Military Radar",
     "source_primary_csv": "USAF Intel",
-    "richness_score": 63,
+    "richness_score": 62,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "A"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-004",
@@ -373,10 +370,9 @@
     "csv_evidence_summary": "High-speed maneuvers",
     "csv_beings_summary": "RCAF Pilot",
     "source_primary_csv": "RCAF Pilot Logs",
-    "richness_score": 60,
+    "richness_score": 59,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "A"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-005",
@@ -477,10 +473,9 @@
     "csv_evidence_summary": "Close proximity flight",
     "csv_beings_summary": "U.S. Navy Pilot",
     "source_primary_csv": "U.S. Navy Records",
-    "richness_score": 67,
+    "richness_score": 66,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "B"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-006",
@@ -575,10 +570,9 @@
     "csv_evidence_summary": "Radar-visual confirmation",
     "csv_beings_summary": "RCAF Officers",
     "source_primary_csv": "Project Magnet",
-    "richness_score": 63,
+    "richness_score": 62,
     "adjacent": false,
-    "weather_conditions": "Icy/winter conditions",
-    "tier": "A"
+    "weather_conditions": "Icy/winter conditions"
   },
   {
     "case_id": "CAN-007",
@@ -664,10 +658,9 @@
     "csv_evidence_summary": "Metallic glint, no propulsion",
     "csv_beings_summary": "Weather observers",
     "source_primary_csv": "DND Declassified",
-    "richness_score": 60,
+    "richness_score": 59,
     "adjacent": false,
-    "weather_conditions": "Daylight sighting, good visibility",
-    "tier": "B"
+    "weather_conditions": "Daylight sighting, good visibility"
   },
   {
     "case_id": "CAN-008",
@@ -741,8 +734,7 @@
         "url": "https://drive.google.com/uc?id=16ze5YQB2Iekl-4bsj0t2yv_ao4gT7tz7&export=download",
         "type": "pdf",
         "title": "RCMP Report - Page 3"
-      },
-      "https://www.vancouversun.com/archives/1966/05/sightings-surrey"
+      }
     ],
     "source_primary": "RCMP Files",
     "source_secondary": [
@@ -765,11 +757,7 @@
     "pattern_tags": [
       "contact-ce2",
       "near-water",
-      "spherical",
-      "1966_flap",
-      "family_witness",
-      "photographic_evidence",
-      "daylight_sighting"
+      "spherical"
     ],
     "related_cases": [
       "CAN-009",
@@ -785,19 +773,9 @@
     "csv_evidence_summary": "Crashing sound; water disturbance",
     "csv_beings_summary": "2 Prospectors",
     "source_primary_csv": "RCMP Files",
-    "richness_score": 74,
+    "richness_score": 71,
     "adjacent": false,
-    "weather_conditions": "Icy/winter conditions",
-    "tier": "B",
-    "name": "Surrey (White Rock)",
-    "witness_details": "A family witnessed multiple glowing spheres performing rigid right-angle turns over the White Rock/Surrey area during the massive 1966 Pacific Northwest flap. Metallic sheen in daylight, glowing at dusk. No sound reported.",
-    "official_reports": {
-      "MUFON": "Early sighting archive, Pacific Northwest division."
-    },
-    "evidence": [
-      "Original black-and-white photograph by local amateur photographer",
-      "Vancouver Sun newspaper clippings"
-    ]
+    "weather_conditions": "Icy/winter conditions"
   },
   {
     "case_id": "CAN-009",
@@ -909,10 +887,9 @@
     "csv_evidence_summary": "Radioactive readings at site",
     "csv_beings_summary": "Single Prospector",
     "source_primary_csv": "Witness Account",
-    "richness_score": 72,
+    "richness_score": 71,
     "adjacent": false,
-    "weather_conditions": "Icy/winter conditions",
-    "tier": "A"
+    "weather_conditions": "Icy/winter conditions"
   },
   {
     "case_id": "CAN-010",
@@ -966,9 +943,7 @@
     "medical_effects": "Not applicable",
     "radiation_detected": true,
     "radar_confirmation": false,
-    "media_urls": [
-      "https://www.cbc.ca/radio/Unreserved/Yellowknife-UFO-legends"
-    ],
+    "media_urls": [],
     "source_primary": "Local Legend/Press",
     "source_secondary": [
       "Local newspaper accounts",
@@ -987,11 +962,7 @@
     "pattern_tags": [
       "folkloric",
       "luminous",
-      "mass-sighting",
-      "physical_evidence",
-      "radioactive",
-      "multiple_witnesses",
-      "indigenous_witnesses"
+      "mass-sighting"
     ],
     "related_cases": [
       "CAN-011",
@@ -1012,19 +983,9 @@
     "csv_evidence_summary": "Hovering over Mt. Cheam",
     "csv_beings_summary": "Local residents",
     "source_primary_csv": "Local Legend/Press",
-    "richness_score": 66,
+    "richness_score": 61,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "A",
-    "name": "Yellowknife",
-    "witness_details": "Multiple prospectors and DENE community members. One prospector discovered scorched earth and small metallic fragment. Soil samples showed unusual isotopic ratios and localized radiation spikes.",
-    "official_reports": {
-      "MUFON": "Physical Evidence case file, Canada-North division."
-    },
-    "evidence": [
-      "Photographs of scorched ground patterns",
-      "Disputed soil analysis reports (lost/suppressed by DND)"
-    ]
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-011",
@@ -1058,7 +1019,7 @@
     "hynek_classification": "CE2",
     "hynek_label": "Close Encounter of the Second Kind",
     "hynek_description": "Close Encounter 2nd Kind — Physical evidence of craft",
-    "being_type": "N/A (Close Encounter 2nd Kind - Physical contact with craft)",
+    "being_type": "N/A",
     "being_count": 0,
     "being_type_detail": "No entities observed",
     "being_height": "",
@@ -1078,11 +1039,7 @@
     "medical_effects": "Second-degree burns in grid pattern on chest. Lost 27 pounds over following weeks. Black urine for days after encounter. Fever and flu-like symptoms. Required extended hospitalization. Some sources report long-term health complications.",
     "radiation_detected": true,
     "radar_confirmation": false,
-    "media_urls": [
-      "https://en.wikipedia.org/wiki/Falcon_Lake_UFO_incident",
-      "https://www.cbc.ca/archives/entry/1967-falcon-lake-ufo-incident",
-      "https://nuforc.org/?s=Falcon+Lake+1967"
-    ],
+    "media_urls": [],
     "source_primary": "RCMP Form 63",
     "source_secondary": "Stan Michalak & Chris Rutkowski, \"When They Appeared\" (2017); George Dudding, \"The Falcon Lake UFO Encounter\" (2015)",
     "cadors_report_url": "",
@@ -1099,12 +1056,7 @@
       "contact-ce2",
       "disc-shaped",
       "near-water",
-      "physical-trace",
-      "physical_evidence",
-      "radioactive",
-      "close_encounter",
-      "injury",
-      "official_investigation"
+      "physical-trace"
     ],
     "related_cases": [
       "CAN-012",
@@ -1125,22 +1077,10 @@
     "csv_evidence_summary": "Grid-pattern chest burns; radioactive soil",
     "csv_beings_summary": "Stefan Michalak",
     "source_primary_csv": "RCMP Form 63",
-    "richness_score": 80,
+    "richness_score": 74,
     "adjacent": false,
-    "weather_conditions": "Clear day, warm spring afternoon",
-    "enriched_beings": true,
-    "tier": "A",
-    "name": "Falcon Lake",
-    "location_full": "Falcon Lake, Whiteshell Provincial Park, MB",
-    "time": "Afternoon (~1:30 PM)",
-    "witness_primary": "Stefan Michalak",
-    "radiation_details": "Soil samples from landing site showed elevated radiation levels. Confirmed by Manitoba Department of Mines (Dr. W.M. Klym). Michalak's burned shirt showed trace radiation.",
-    "official_reports": [
-      "RCMP Investigation Report - File # 9844-78-20",
-      "DND Military Investigation Report",
-      "Manitoba Department of Mines soil analysis"
-    ],
-    "youtube_links": []
+    "weather_conditions": "Not documented",
+    "enriched_beings": true
   },
   {
     "case_id": "CAN-012",
@@ -1265,8 +1205,7 @@
     "source_primary_csv": "RCAF/Coast Guard",
     "richness_score": 75,
     "adjacent": false,
-    "weather_conditions": "Evening sighting",
-    "tier": "A"
+    "weather_conditions": "Evening sighting"
   },
   {
     "case_id": "CAN-013",
@@ -1356,8 +1295,7 @@
     "source_primary_csv": "Navy Radar Logs",
     "richness_score": 54,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "B"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-014",
@@ -1447,10 +1385,9 @@
     "csv_evidence_summary": "Centennial UFO Landing Pad built",
     "csv_beings_summary": "Town Council",
     "source_primary_csv": "Municipal Records",
-    "richness_score": 44,
+    "richness_score": 43,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "A"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-015",
@@ -1539,10 +1476,9 @@
     "csv_evidence_summary": "Persistent radar track",
     "csv_beings_summary": "Air Traffic Control",
     "source_primary_csv": "RCAF Base Records",
-    "richness_score": 58,
+    "richness_score": 57,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "A"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-016",
@@ -1632,10 +1568,9 @@
     "csv_evidence_summary": "Hovering at low altitude",
     "csv_beings_summary": "3 Witnesses",
     "source_primary_csv": "RCMP Reports",
-    "richness_score": 58,
+    "richness_score": 57,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "A"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-017",
@@ -1691,8 +1626,7 @@
     "radiation_detected": false,
     "radar_confirmation": false,
     "media_urls": [
-      "https://ladysmithchronicle.com/2023/11/29/witness-to-duncan-ufo-doubts-prank-explanation-offered-in-wake-of-stamp/",
-      "Documented in Chris Rutkowski's 'Canadian UFOs: The National Report'."
+      "https://ladysmithchronicle.com/2023/11/29/witness-to-duncan-ufo-doubts-prank-explanation-offered-in-wake-of-stamp/"
     ],
     "source_primary": "Psychological Profile",
     "source_secondary": [
@@ -1712,11 +1646,7 @@
     "pattern_tags": [
       "contact-ce3",
       "credible-witness",
-      "disc-shaped",
-      "close_encounter",
-      "electromagnetic_interference",
-      "missing_time",
-      "medical_professional"
+      "disc-shaped"
     ],
     "related_cases": [
       "CAN-011",
@@ -1736,20 +1666,10 @@
     "csv_evidence_summary": "2 Tall men in dark suits seen through glass",
     "csv_beings_summary": "Nurse Doreen Kendall",
     "source_primary_csv": "Psychological Profile",
-    "richness_score": 85,
+    "richness_score": 84,
     "adjacent": false,
     "weather_conditions": "Clear conditions",
-    "enriched_beings": true,
-    "tier": "A",
-    "name": "Duncan (Nurse Encounter)",
-    "witness_details": "A nurse driving home from a late shift encountered a brilliant, silent light descending toward her vehicle. Car electronics failed, engine died. Brief missing time and vivid 'white room' hallucination. Vehicle required complete electrical diagnostic due to power surge.",
-    "official_reports": {
-      "CUFOS": "Filed under Close Encounters of the 3rd Kind (CE3) in CUFOS Canadian database."
-    },
-    "evidence": [
-      "Witness testimony and timeline reconstruction",
-      "Automotive mechanic report citing 'impossible' voltage spike"
-    ]
+    "enriched_beings": true
   },
   {
     "case_id": "CAN-018",
@@ -1831,10 +1751,9 @@
     "csv_evidence_summary": "Multiple discs in formation",
     "csv_beings_summary": "Military (CFB Gagetown)",
     "source_primary_csv": "CFB Gagetown",
-    "richness_score": 58,
+    "richness_score": 57,
     "adjacent": false,
-    "weather_conditions": "Rainy conditions",
-    "tier": "A"
+    "weather_conditions": "Rainy conditions"
   },
   {
     "case_id": "CAN-019",
@@ -1929,8 +1848,7 @@
     "source_primary_csv": "Ufology Quebec",
     "richness_score": 61,
     "adjacent": false,
-    "weather_conditions": "Icy/winter conditions",
-    "tier": "A"
+    "weather_conditions": "Icy/winter conditions"
   },
   {
     "case_id": "CAN-020",
@@ -2026,8 +1944,7 @@
     "richness_score": 79,
     "adjacent": false,
     "weather_conditions": "Not documented",
-    "enriched_beings": true,
-    "tier": "A"
+    "enriched_beings": true
   },
   {
     "case_id": "CAN-021",
@@ -2081,10 +1998,7 @@
     "medical_effects": "None reported",
     "radiation_detected": false,
     "radar_confirmation": false,
-    "media_urls": [
-      "https://en.wikipedia.org/wiki/Shag_Harbour_UFO_incident",
-      "https://www.cbc.ca/news/canada/nova-scotia/the-mystery-of-shag-harbour"
-    ],
+    "media_urls": [],
     "source_primary": "RCMP Report",
     "source_secondary": "CBC archival footage",
     "cadors_report_url": "",
@@ -2099,12 +2013,7 @@
     "analyst_notes": "One of the most compelling physical evidence cases in Canadian archive. Five distinct circles of depressed grass. Precursor to UK crop circle phenomenon (1980s).",
     "pattern_tags": [
       "contact-ce2",
-      "disc-shaped",
-      "crash_retrieval_implied",
-      "official_investigation",
-      "multiple_witnesses",
-      "law_enforcement",
-      "sonar_tracking"
+      "disc-shaped"
     ],
     "related_cases": [
       "CAN-016",
@@ -2120,20 +2029,9 @@
     "csv_evidence_summary": "5 rings of flattened/swirled grass",
     "csv_beings_summary": "Edwin Fuhr",
     "source_primary_csv": "RCMP Report",
-    "richness_score": 70,
+    "richness_score": 66,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "A",
-    "name": "Shag Harbour",
-    "witness_details": "Four teenage fishermen; RCMP officers Chris Oates and Ron Pound. DND divers dispatched. Object tracked underwater by sonar before vanishing.",
-    "official_reports": {
-      "RCMP_DND": "Declassified RCMP Official Report (File # 9844-78-20) & DND Sonar logs."
-    },
-    "evidence": [
-      "Official RCMP 'Flying Saucer' memo",
-      "Yellow foam samples",
-      "Witness diagrams by Bill Arnold"
-    ]
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-022",
@@ -2226,8 +2124,7 @@
     "source_primary_csv": "Charlie Redstar (Grant)",
     "richness_score": 68,
     "adjacent": false,
-    "weather_conditions": "Nighttime sighting, darkness",
-    "tier": "C"
+    "weather_conditions": "Nighttime sighting, darkness"
   },
   {
     "case_id": "CAN-023",
@@ -2324,10 +2221,9 @@
     "csv_evidence_summary": "Landing gear marks in snow",
     "csv_beings_summary": "Florida Malboeuf",
     "source_primary_csv": "Ufology Research",
-    "richness_score": 65,
+    "richness_score": 64,
     "adjacent": false,
-    "weather_conditions": "Icy/winter conditions",
-    "tier": "A"
+    "weather_conditions": "Icy/winter conditions"
   },
   {
     "case_id": "CAN-024",
@@ -2413,10 +2309,9 @@
     "csv_evidence_summary": "Hovering light for 1.5 hours",
     "csv_beings_summary": "Cst. Jim Blackwood",
     "source_primary_csv": "RCMP Witness",
-    "richness_score": 53,
+    "richness_score": 52,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "C"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-025",
@@ -2461,16 +2356,14 @@
     "witness_credibility": "Low",
     "witness_names": [],
     "witnesses": "Unspecified witnesses in the Baskatong, Quebec area.",
-    "witness_occupation": "Law Enforcement - SQ Officers",
+    "witness_occupation": "Unknown",
     "physical_evidence": "Detailed 35mm photograph",
     "environmental_trace": "Not documented",
     "electromagnetics": "Not documented",
     "medical_effects": "Not applicable",
     "radiation_detected": false,
     "radar_confirmation": false,
-    "media_urls": [
-      "https://www.lesoleil.com/archives/1987/03/30/ovni-policiers"
-    ],
+    "media_urls": [],
     "source_primary": "Photo Analysis",
     "source_secondary": [
       "Quebec UFO Survey"
@@ -2488,11 +2381,7 @@
     "pattern_tags": [
       "daylight-disc",
       "disc-shaped",
-      "photographic-evidence",
-      "law_enforcement",
-      "disc_shaped",
-      "sound_reported",
-      "multiple_witnesses"
+      "photographic-evidence"
     ],
     "related_cases": [
       "CAN-019",
@@ -2513,19 +2402,9 @@
     "csv_evidence_summary": "Detailed 35mm photograph",
     "csv_beings_summary": "Jacques Lavoie",
     "source_primary_csv": "Photo Analysis",
-    "richness_score": 57,
+    "richness_score": 50,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "A",
-    "name": "L'Ancienne-Lorette",
-    "witness_details": "Quebec provincial police (SQ) officers on highway patrol witnessed a hovering, disc-shaped object with rotating multicolored lights. Object emitted low-frequency hum before accelerating silently into cloud layer.",
-    "official_reports": {
-      "SQ": "Official SQ incident report logs."
-    },
-    "evidence": [
-      "Official SQ incident report logs",
-      "Joint affidavit signed by two officers"
-    ]
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-026",
@@ -2616,8 +2495,7 @@
     "source_primary_csv": "Community Logs",
     "richness_score": 54,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "C"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-027",
@@ -2709,10 +2587,9 @@
     "csv_evidence_summary": "Orbs following hikers",
     "csv_beings_summary": "Adventurers",
     "source_primary_csv": "Headless Valley\" Lore",
-    "richness_score": 60,
+    "richness_score": 59,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "C"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-028",
@@ -2805,8 +2682,7 @@
     "source_primary_csv": "Photographic Evidence",
     "richness_score": 54,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "C"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-029",
@@ -2896,10 +2772,9 @@
     "csv_evidence_summary": "Massive silent block of lights",
     "csv_beings_summary": "Thousands of locals",
     "source_primary_csv": "Montreal Gazetter",
-    "richness_score": 53,
+    "richness_score": 52,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "A"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-030",
@@ -2986,10 +2861,9 @@
     "csv_evidence_summary": "Large craft surfacing from water",
     "csv_beings_summary": "Fishermen",
     "source_primary_csv": "Maritime UFO Logs",
-    "richness_score": 53,
+    "richness_score": 52,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "C"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-031",
@@ -3085,10 +2959,9 @@
     "csv_evidence_summary": "Seen over Place Bonaventure for 3 hours",
     "csv_beings_summary": "Police & 40+ people",
     "source_primary_csv": "Montreal Police",
-    "richness_score": 63,
+    "richness_score": 62,
     "adjacent": false,
-    "weather_conditions": "Icy/winter conditions",
-    "tier": "A"
+    "weather_conditions": "Icy/winter conditions"
   },
   {
     "case_id": "CAN-032",
@@ -3182,8 +3055,7 @@
     "richness_score": 72,
     "adjacent": false,
     "weather_conditions": "Not documented",
-    "enriched_beings": true,
-    "tier": "A"
+    "enriched_beings": true
   },
   {
     "case_id": "CAN-033",
@@ -3276,10 +3148,9 @@
     "csv_evidence_summary": "High-resolution daylight photo",
     "csv_beings_summary": "Multiple witnesses",
     "source_primary_csv": "Photo Analysis",
-    "richness_score": 56,
+    "richness_score": 55,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "A"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-034",
@@ -3372,8 +3243,7 @@
     "richness_score": 74,
     "adjacent": false,
     "weather_conditions": "Snow/frozen conditions",
-    "enriched_beings": true,
-    "tier": "A"
+    "enriched_beings": true
   },
   {
     "case_id": "CAN-035",
@@ -3469,8 +3339,7 @@
     "richness_score": 72,
     "adjacent": false,
     "weather_conditions": "Not documented",
-    "enriched_beings": true,
-    "tier": "A"
+    "enriched_beings": true
   },
   {
     "case_id": "CAN-036",
@@ -3560,8 +3429,7 @@
     "source_primary_csv": "Trace Case",
     "richness_score": 54,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "A"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-037",
@@ -3649,8 +3517,7 @@
     "source_primary_csv": "Yukon Govt Files",
     "richness_score": 61,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "A"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-038",
@@ -3739,10 +3606,9 @@
     "csv_evidence_summary": "Lights dancing over Lake Erie",
     "csv_beings_summary": "Multi-witness",
     "source_primary_csv": "Ufology Research",
-    "richness_score": 53,
+    "richness_score": 52,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "C"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-039",
@@ -3833,10 +3699,9 @@
     "csv_evidence_summary": "Orb emerging from Mont St-Hilaire",
     "csv_beings_summary": "Residents",
     "source_primary_csv": "Local Reports",
-    "richness_score": 53,
+    "richness_score": 52,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "C"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-040",
@@ -3925,10 +3790,9 @@
     "csv_evidence_summary": "Men in Black reported at Sheraton",
     "csv_beings_summary": "Hotel Security",
     "source_primary_csv": "CCTV/Witness",
-    "richness_score": 53,
+    "richness_score": 52,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "C"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-041",
@@ -3980,9 +3844,7 @@
     "medical_effects": "N/A",
     "radiation_detected": false,
     "radar_confirmation": false,
-    "media_urls": [
-      "Featured in 'Men in Black (cryptozoology)' related sightings."
-    ],
+    "media_urls": [],
     "source_primary": "PMO/RCMP Inquiry",
     "source_secondary": [
       "Newfoundland UFO reports"
@@ -3998,11 +3860,7 @@
     "current_status_detail": "",
     "analyst_notes": "Harbour Mille \"missiles\" case. Prompted public use of satellite data to verify unauthorized rocket launches in North Atlantic.",
     "pattern_tags": [
-      "near-water",
-      "men_in_black",
-      "triangular_craft",
-      "intimidation",
-      "close_encounter"
+      "near-water"
     ],
     "related_cases": [
       "CAN-005",
@@ -4021,19 +3879,9 @@
     "csv_evidence_summary": "3 projectile-like objects from water",
     "csv_beings_summary": "Multi-witness",
     "source_primary_csv": "PMO/RCMP Inquiry",
-    "richness_score": 62,
+    "richness_score": 57,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "A",
-    "name": "Niagara Falls (MIB Encounter)",
-    "witness_details": "Local resident witnessed a triangular craft hovering silently above the falls. 72 hours later, two men in dark, dated suits (Men in Black) visited the home. Warned witness not to discuss sighting. Unnatural pale complexions.",
-    "official_reports": {
-      "MUFON": "MIB Encounter database, Case #94-ONF."
-    },
-    "evidence": [
-      "Witness audio interview recorded by MUFON investigators",
-      "Sketch of the alleged Men in Black"
-    ]
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-042",
@@ -4085,10 +3933,7 @@
     "medical_effects": "N/A",
     "radiation_detected": false,
     "radar_confirmation": false,
-    "media_urls": [
-      "https://www.radio-canada.ca/nouvelle/2008/10/21/ovni-valcartier",
-      "https://www.tvanouvelles.ca/2008/10/20/un-ovni-au-dessus-de-valcartier"
-    ],
+    "media_urls": [],
     "source_primary": "Multi-source",
     "source_secondary": [
       "Canadian UFO Survey"
@@ -4106,11 +3951,7 @@
     "pattern_tags": [
       "mass-sighting",
       "triangular",
-      "video-evidence",
-      "military_base",
-      "triangular_craft",
-      "electromagnetic_interference",
-      "multiple_witnesses"
+      "video-evidence"
     ],
     "related_cases": [
       "CAN-040",
@@ -4131,19 +3972,9 @@
     "csv_evidence_summary": "High-quality YouTube video uploads",
     "csv_beings_summary": "Dozens of witnesses",
     "source_primary_csv": "Multi-source",
-    "richness_score": 59,
+    "richness_score": 54,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "A",
-    "name": "Valcartier",
-    "witness_details": "Multiple witnesses near 34th Canadian Brigade Group base reported massive, slow-moving triangular lights. Complete radio silence, localized EM interference. Base lockdown protocols allegedly initiated.",
-    "official_reports": {
-      "CUFON": "Quebec regional database, October 2008."
-    },
-    "evidence": [
-      "Early smartphone photography",
-      "Base perimeter guard log excerpts (FOI)"
-    ]
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-043",
@@ -4235,10 +4066,9 @@
     "csv_evidence_summary": "Near-miss at YVR airport",
     "csv_beings_summary": "Commercial Pilot",
     "source_primary_csv": "CADORS",
-    "richness_score": 49,
+    "richness_score": 48,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "C"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-044",
@@ -4327,10 +4157,9 @@
     "csv_evidence_summary": "Cube rotating in clear sky",
     "csv_beings_summary": "Amateur Video",
     "source_primary_csv": "Video Evidence",
-    "richness_score": 51,
+    "richness_score": 50,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "C"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-045",
@@ -4382,10 +4211,7 @@
     "medical_effects": "N/A",
     "radiation_detected": false,
     "radar_confirmation": false,
-    "media_urls": [
-      "https://winnipegsun.com/archives/1979/11/ufo-over-portage",
-      "https://www.ufoofthewestcanada.ca/1979-portage-la-prairies"
-    ],
+    "media_urls": [],
     "source_primary": "Field Reports",
     "source_secondary": [
       "Alberta UFO reports"
@@ -4403,11 +4229,7 @@
     "pattern_tags": [
       "electromagnetic-effects",
       "remote-location",
-      "spherical",
-      "military_base",
-      "cigar_shaped",
-      "radar_confirmation",
-      "high_speed_departure"
+      "spherical"
     ],
     "related_cases": [
       "CAN-026",
@@ -4425,19 +4247,9 @@
     "csv_evidence_summary": "Electromagnetic interference with trucks",
     "csv_beings_summary": "Oil workers",
     "source_primary_csv": "Field Reports",
-    "richness_score": 56,
+    "richness_score": 50,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "A",
-    "name": "Portage la Prairie",
-    "witness_details": "Military personnel at CFB Portage la Prairie. Large metallic cigar-shaped object hovered over runway for 20+ minutes. Searchlights seemed to bend around it. Object departed at extreme velocity.",
-    "official_reports": {
-      "MUFON": "Archived under Manitoba Military Files 1979."
-    },
-    "evidence": [
-      "Base radar operator statements",
-      "Sketches of metallic cylindrical object"
-    ]
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-046",
@@ -4487,14 +4299,11 @@
     "witness_occupation": "Military",
     "physical_evidence": "Verified by two different aircraft",
     "environmental_trace": "Not applicable",
-    "electromagnetics": "Radio silence from the craft",
+    "electromagnetics": "Not documented",
     "medical_effects": "Not applicable",
     "radiation_detected": false,
     "radar_confirmation": false,
-    "media_urls": [
-      "https://en.wikipedia.org/wiki/2008_Stephenville_UFO_sightings",
-      "https://www.cbc.ca/news/canada/newfoundland-labrador/ufo-sightings-prompt-rcmp-investigation-1.710929"
-    ],
+    "media_urls": [],
     "source_primary": "CADORS 2021Q2032",
     "source_secondary": [
       "Aviation safety reports",
@@ -4514,11 +4323,7 @@
       "cadors-file",
       "credible-witness",
       "luminous",
-      "near-water",
-      "multiple_witnesses",
-      "military_radar",
-      "law_enforcement",
-      "v_formation"
+      "near-water"
     ],
     "related_cases": [
       "CAN-036",
@@ -4536,20 +4341,9 @@
     "csv_evidence_summary": "Verified by two different aircraft",
     "csv_beings_summary": "Military/Commercial",
     "source_primary_csv": "CADORS 2021Q2032",
-    "richness_score": 67,
+    "richness_score": 61,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "A",
-    "name": "Stephenville",
-    "witness_details": "Dozens of residents. 14-year-old boy reported low-altitude V-shaped craft. CFB Goose Bay military radar tracked objects at impossible speeds/altitudes. RCMP Const. Paul Snow confirmed 30+ credible reports.",
-    "official_reports": {
-      "RCMP_DND": "RCMP public statements (Jan 2008) & declassified DND radar logs."
-    },
-    "evidence": [
-      "RCMP dispatch audio recordings",
-      "Witness sketches of V-shaped craft",
-      "Military radar data logs"
-    ]
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-047",
@@ -4634,10 +4428,9 @@
     "csv_evidence_summary": "Low altitude hover over field",
     "csv_beings_summary": "Single witness",
     "source_primary_csv": "MUFON Case 13582",
-    "richness_score": 51,
+    "richness_score": 50,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "C"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-048",
@@ -4724,10 +4517,9 @@
     "csv_evidence_summary": "Pulsating orange light over mines",
     "csv_beings_summary": "4 Witnesses",
     "source_primary_csv": "2025 Ufology Report",
-    "richness_score": 51,
+    "richness_score": 50,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "A"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-049",
@@ -4812,10 +4604,9 @@
     "csv_evidence_summary": "Incident at 39,000ft; high speed",
     "csv_beings_summary": "Pilot",
     "source_primary_csv": "CADORS (Projected)",
-    "richness_score": 53,
+    "richness_score": 52,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "C"
+    "weather_conditions": "Not documented"
   },
   {
     "case_id": "CAN-050",
@@ -4867,10 +4658,7 @@
     "medical_effects": "N/A",
     "radiation_detected": false,
     "radar_confirmation": false,
-    "media_urls": [
-      "https://globalnews.ca/news/2025/02/vulcan-ufo-pilot-report",
-      "https://www.vulcanadvanceton.ca/news/2025-sky-anomaly"
-    ],
+    "media_urls": [],
     "source_primary": "Canadian UFO Survey",
     "source_secondary": [
       "British Columbia UFO reports"
@@ -4888,12 +4676,7 @@
     "pattern_tags": [
       "electromagnetic-effects",
       "near-water",
-      "spherical",
-      "aviation_near_miss",
-      "radar_confirmation",
-      "high_speed",
-      "professional_witness",
-      "recent"
+      "spherical"
     ],
     "related_cases": [
       "CAN-010",
@@ -4914,18 +4697,8 @@
     "csv_evidence_summary": "Interference with cell phones",
     "csv_beings_summary": "Campers",
     "source_primary_csv": "Canadian UFO Survey",
-    "richness_score": 61,
+    "richness_score": 55,
     "adjacent": false,
-    "weather_conditions": "Not documented",
-    "tier": "A",
-    "name": "Vulcan County (Pilot Encounter)",
-    "witness_details": "Commercial pilot reported fast-moving, non-transponder object pacing aircraft at parallel altitude for 12 miles. Object executed impossible vertical climb and vanished from radar. ATC confirmed no scheduled military exercises.",
-    "official_reports": {
-      "Transport_Canada": "ASRS (Aviation Safety Reporting System) filing."
-    },
-    "evidence": [
-      "Flight path telemetry data",
-      "Cockpit Voice Recorder (CVR) audio transcript (redacted)"
-    ]
+    "weather_conditions": "Not documented"
   }
 ]
