@@ -356,6 +356,47 @@ body {
   margin-top: 8px;
 }
 
+/* Narrative markdown styling */
+.case-narrative {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #3b3228;
+}
+.case-narrative h1, .case-narrative h2, .case-narrative h3, .case-narrative h4 {
+  font-family: 'Special Elite', monospace;
+  color: #2c2825;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid rgba(196,184,150,0.4);
+  padding-bottom: 2px;
+}
+.case-narrative h1 { font-size: 18px; }
+.case-narrative h2 { font-size: 15px; }
+.case-narrative h3 { font-size: 13px; }
+.case-narrative p { margin-bottom: 8px; }
+.case-narrative ul, .case-narrative ol {
+  margin: 6px 0;
+  padding-left: 20px;
+}
+.case-narrative li { margin-bottom: 3px; }
+.case-narrative strong { color: #2c2825; }
+.case-narrative blockquote {
+  margin: 8px 0;
+  padding: 6px 10px;
+  border-left: 3px solid #8b7355;
+  background: rgba(139,115,85,0.05);
+  font-style: italic;
+  color: #6b5e50;
+}
+.case-narrative em { color: #8b7355; }
+.case-narrative code {
+  font-family: 'Source Sans 3', monospace;
+  background: rgba(139,115,85,0.08);
+  padding: 1px 4px;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
 .search-link-btn {
   display: block;
   width: 100%;
@@ -650,6 +691,8 @@ body {
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="narratives.js"></script>
 <script>
 
 /* ==============================================================
@@ -838,6 +881,7 @@ function buildSidebar() {
       if (markers[c.id]) markers[c.id].openPopup();
       document.querySelectorAll('.case-item').forEach(function(el){ el.classList.remove('active'); });
       li.classList.add('active');
+      window.openDetail(c.id);
     });
     list.appendChild(li);
   });
@@ -857,46 +901,57 @@ window.openDetail = function(caseId) {
   var tierDesc = c.tier==='A'?'Full investigation with primary sources':c.tier==='B'?'Enhanced documentation':'Basic documentation';
   var searchUrl = 'https://www.google.com/search?q='+encodeURIComponent(c.location+' UFO '+c.year);
 
-  content.innerHTML = '<div class="detail-tab">CASE FILE — '+c.id+'</div>'+
-    '<div class="detail-stamp">'+tierLabel+'</div>'+
-    '<div class="detail-title">'+c.location+'</div>'+
-    '<div class="detail-subtitle">'+c.date+' \u00b7 '+cl+' \u00b7 '+c.shape+'</div>'+
+  // Get narrative from NARRATIVES if available
+  var narrative = '';
+  if (typeof NARRATIVES !== 'undefined' && NARRATIVES[caseId]) {
+    narrative = NARRATIVES[caseId];
+  }
 
-    '<div class="detail-section">'+
-      '<h3><span class="staple-mark"></span> Case Summary</h3>'+
-      '<p><strong>What was reported:</strong> '+c.evidence+'</p>'+
-    '</div>'+
+  // Configure marked
+  if (typeof marked !== 'undefined') {
+    marked.setOptions({
+      breaks: true,
+      gfm: true
+    });
+  }
+  var narrativeHTML = narrative ? marked.parse(narrative) : '<p class="handnote">— pending full narrative</p>';
 
-    '<div class="detail-section">'+
-      '<h3><span class="staple-mark"></span> Classification Data</h3>'+
-      '<div class="meta-grid">'+
-        '<span class="ml">CASE ID</span><span class="mv">'+c.id+'</span>'+
-        '<span class="ml">DATE</span><span class="mv">'+c.date+'</span>'+
-        '<span class="ml">YEAR</span><span class="mv">'+c.year+'</span>'+
-        '<span class="ml">SHAPE</span><span class="mv">'+c.shape+'</span>'+
-        '<span class="ml">CONTACT</span><span class="mv">'+cl+' ('+c.contact+')</span>'+
-        '<span class="ml">WITNESSES</span><span class="mv">'+c.witnesses+'</span>'+
-        '<span class="ml">COORDS</span><span class="mv">'+c.coords[0]+', '+c.coords[1]+'</span>'+
-        '<span class="ml">SOURCE</span><span class="mv">'+c.source+'</span>'+
-      '</div>'+
-    '</div>'+
+  content.innerHTML = '<div class="detail-tab">CASE FILE — '+c.id+'</div>' +
+    '<div class="detail-stamp">'+tierLabel+'</div>' +
+    '<div class="detail-title">'+c.location+'</div>' +
+    '<div class="detail-subtitle">'+c.date+' · '+cl+' · '+c.shape+'</div>' +
 
-    '<div class="detail-section">'+
-      '<h3><span class="staple-mark"></span> Evidence & Impact</h3>'+
-      '<div class="evidence-block">'+c.evidence+'</div>'+
-    '</div>'+
+    '<div class="detail-section">' +
+      '<h3><span class="staple-mark"></span> Case Summary</h3>' +
+      '<p><strong>What was reported:</strong> '+c.evidence+'</p>' +
+    '</div>' +
 
-    '<div class="detail-section">'+
-      '<h3><span class="staple-mark"></span> Research Status</h3>'+
-      '<p>Tier: <strong>'+c.tier+'</strong> — '+tierDesc+'</p>'+
-    '</div>'+
+    '<div class="detail-section">' +
+      '<h3><span class="staple-mark"></span> Classification Data</h3>' +
+      '<div class="meta-grid">' +
+        '<span class="ml">CASE ID</span><span class="mv">'+c.id+'</span>' +
+        '<span class="ml">DATE</span><span class="mv">'+c.date+'</span>' +
+        '<span class="ml">YEAR</span><span class="mv">'+c.year+'</span>' +
+        '<span class="ml">SHAPE</span><span class="mv">'+c.shape+'</span>' +
+        '<span class="ml">CONTACT</span><span class="mv">'+cl+' ('+c.contact+')</span>' +
+        '<span class="ml">WITNESSES</span><span class="mv">'+c.witnesses+'</span>' +
+        '<span class="ml">COORDS</span><span class="mv">'+c.coords[0]+', '+c.coords[1]+'</span>' +
+        '<span class="ml">SOURCE</span><span class="mv">'+c.source+'</span>' +
+        '<span class="ml">TIER</span><span class="mv">'+c.tier+' — '+tierDesc+'</span>' +
+      '</div>' +
+    '</div>' +
 
-    '<div class="detail-section">'+
-      '<h3><span class="staple-mark"></span> Research Notes</h3>'+
-      '<p class="handnote">— pending full narrative, witness quotes, media assets</p>'+
-    '</div>'+
+    '<div class="detail-section">' +
+      '<h3><span class="staple-mark"></span> Evidence & Impact</h3>' +
+      '<div class="evidence-block">'+c.evidence+'</div>' +
+    '</div>' +
 
-    '<button class="search-link-btn" onclick="window.open(\''+searchUrl+'\', \'_blank\')">Search External Sources &#9654;</button>';
+    '<div class="detail-section">' +
+      '<h3><span class="staple-mark"></span> Full Case Report</h3>' +
+      '<div class="case-narrative">'+narrativeHTML+'</div>' +
+    '</div>' +
+
+    '<button class="search-link-btn" onclick="window.open(\''+searchUrl+'\', \'_blank\')">Search External Sources ▶</button>';
 
   panel.classList.add('open');
 };
