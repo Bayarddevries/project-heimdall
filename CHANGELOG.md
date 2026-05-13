@@ -1,6 +1,24 @@
 # CHANGELOG — Project HEIMDALL
 
-## [2025-05-11] v1.1 — Narrative Integration & Docs
+## [2026-05-13] v1.2 — Mobile Fixes, Tab Refactor, Media Gallery
+
+- **Refactor: Detail panel 5 tabs → 3 tabs** (INCIDENT / EVIDENCE & SOURCES / ANALYSIS)
+  - Cleaner information architecture; EVIDENCE tab auto-redacts when no data exists
+  - New `buildTabsThree()` separates data building from rendering
+  - `hasNoEvidenceAndSourcesData()` heuristic for evidence tab redaction
+- **Fix: Mobile detail panel empty** — add `flex-direction: column` + `z-index` for stacking context
+- **Feat: Mobile zoom buttons** — 44px touch targets for mobile map controls
+- **Enrichment: CAN-055 Vulcan County** — add full case details
+- **Fix: Guard null/undefined fields** — protect UI from missing location, shape, contact data
+- **Media gallery: 13 images** — added from Drive, linked to case evidence tabs
+- **Clean dead links** — removed broken reference links from case data
+- **Remove stale backup** — delete `docs/index.html.bak-20260512-2201`
+
+## [2026-05-13] v1.1.1 — Date Header Fix
+
+- Fix case date headers in detail panel rendering
+
+## [2026-05-11] v1.1 — Narrative Integration & Docs
 
 - Embedded all 54 case markdown narratives into `docs/narratives.js` (267KB)
 - Added `marked.js` CDN dependency for client-side markdown rendering
