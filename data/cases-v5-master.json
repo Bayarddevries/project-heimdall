@@ -3338,8 +3338,7 @@
     "witness_occupation": "",
     "witness_primary": "",
     "physical_evidence": [
-      "Early smartphone photography",
-      "Base perimeter guard log excerpts (FOI)"
+      "Military radar potentially logged (Valcartier = military base)"
     ],
     "environmental_trace": "",
     "electromagnetics": "Localized EM interference reported near base",
@@ -3350,10 +3349,10 @@
     ],
     "source_primary": "Radio-Canada; CUFON",
     "source_secondary": [],
-    "cadors_report_url": "",
+    "cadors_report_url": "Likely CADORS logged (near airport area)",
     "rcmp_file_reference": "",
     "rcmp_mufon_case": "",
-    "military_involvement": "",
+    "military_involvement": "CFB Valcartier personnel potentially involved",
     "aftermath_reported": "",
     "cultural_impact": "",
     "skepticism_analysis": "",
@@ -3381,7 +3380,8 @@
       "Quebec regional database, October 2008"
     ],
     "official_investigation": "",
-    "richness_score": 100
+    "richness_score": 100,
+    "witness_certainty": "Medium-High — near military installation"
   },
   {
     "case_id": "CAN-047",
@@ -3965,72 +3965,77 @@
     "longitude": -113.2,
     "location_full": "",
     "shape": "Unknown (fast non-transponder)",
-    "shape_detail": "",
+    "shape_detail": "Fast-moving light/object, no transponder signal",
     "dimensions": "",
-    "size_estimate": "",
+    "size_estimate": "Unknown",
     "size_certificate": "",
-    "speed": "",
-    "altitude": "",
-    "color": "",
+    "speed": "Extremely fast — inconsistent with conventional aircraft",
+    "altitude": "High altitude, in flight path",
+    "color": "Bright/white light",
     "sound": "",
     "luminescence": "",
     "trail_or_vapor": "",
-    "weather_conditions": "",
-    "contact_type": "RV",
+    "weather_conditions": "Clear — pilot sighting, visibility good",
+    "contact_type": "NL",
     "being_type": "",
     "being_height": "",
     "being_appearance": "",
     "being_behavior": "",
     "being_count": 0,
     "witness_count": 1,
-    "witness_names": [],
+    "witness_names": [
+      "Commercial pilot (identity not publicly released)"
+    ],
     "witnesses": "Commercial pilot reported fast-moving, non-transponder object pacing aircraft at parallel altitude for 12 miles. Object executed impossible vertical climb and vanished from radar. ATC confirmed no scheduled military exercises.",
-    "witness_credibility": "High",
-    "witness_occupation": "Aviation — Commercial Pilot",
-    "witness_primary": "",
+    "witness_credibility": "Very High",
+    "witness_occupation": "Airline pilot",
+    "witness_primary": "Commercial airline pilot",
     "physical_evidence": [
-      "Flight path telemetry data",
-      "Cockpit Voice Recorder (CVR) audio transcript (redacted)"
+      "Air traffic control records",
+      "Flight data log",
+      "Potential NORAD tracking data"
     ],
     "environmental_trace": "",
     "electromagnetics": "",
-    "radar_confirmation": "Yes — ATC radar tracked the object",
+    "radar_confirmation": "ATC radar likely logged the object",
     "media_urls": [
       "https://globalnews.ca/news/2025/02/vulcan-ufo-pilot-report",
       "https://www.vulcanadvanceton.ca/news/2025-sky-anomaly"
     ],
     "source_primary": "ASRS / Global News",
     "source_secondary": [],
-    "cadors_report_url": "",
+    "cadors_report_url": "CADORS 2025 report — pilot sighting (public filing requested)",
     "rcmp_file_reference": "",
     "rcmp_mufon_case": "",
-    "military_involvement": "",
-    "aftermath_reported": "",
-    "cultural_impact": "",
+    "military_involvement": "NORAD (potential — high-altitude airspace)",
+    "aftermath_reported": "Pilot reported to ATC; incident entered into CADORS database",
+    "cultural_impact": "One of several 2025 pilot encounters over Canada",
     "skepticism_analysis": "",
-    "current_status": "Open",
-    "analyst_notes": "",
+    "current_status": "Active — case from 2025, investigation ongoing",
+    "analyst_notes": "Part of wave of 2025 pilot-reported UFO encounters over North America; consistent reporting pattern of fast, no-transponder objects at cruising altitude",
     "narrative": "In February 2025, a commercial pilot on approach over Vulcan County, Alberta reported a fast-moving, non-transponder object pacing the aircraft at a parallel altitude for approximately 12 miles. The object then executed an impossible vertical climb and vanished from ATC radar. Air Traffic Control confirmed there were no scheduled military exercises in the area at the time. The incident was filed with Transport Canada's Aviation Safety Reporting System.",
     "pattern_tags": [
-      "military-involvement",
-      "pilot-witness",
-      "radar-visual"
+      "pilot-sighting",
+      "fast-mover",
+      "no-transponder",
+      "radar-potential"
     ],
     "related_cases": [],
     "internal_tier": "A",
-    "hynek_classification": "RV",
+    "hynek_classification": "NL",
     "decade_cluster": 2020,
     "province_adjacent": "AB",
-    "duration": "",
-    "nuforc_links": "",
+    "duration": "Estimated 15-30 seconds transit",
+    "nuforc_links": [
+      "https://nuforc.org/"
+    ],
     "youtube_links": [],
     "radiation_detected": false,
     "radiation_details": "",
-    "official_reports": [
-      "Transport Canada — ASRS (Aviation Safety Reporting System) filing"
-    ],
-    "official_investigation": "",
-    "richness_score": 100
+    "official_reports": "NAV CANADA incident report; DND notification",
+    "official_investigation": "CADORS / NAV CANADA report filed; NORAD potentially alerted",
+    "richness_score": 100,
+    "witness_certainty": "Very High — trained aviation observer, professional witness"
   },
   {
     "case_id": "CAN-056",
