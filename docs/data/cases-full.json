@@ -804,39 +804,9 @@
     "radar_confirmation": "",
     "media_urls": [
       {
-        "url": "images/CAN-011/Drawing_of_the_craft.jpg",
-        "filename": "Drawing_of_the_craft.jpg",
-        "title": "Drawing Of The Craft",
-        "type": "image",
-        "source": "Google Drive (Bayard deVries collection)"
-      },
-      {
-        "url": "images/CAN-011/Drawing_of_the_craft_2.jpg",
-        "filename": "Drawing_of_the_craft_2.jpg",
-        "title": "Drawing Of The Craft 2",
-        "type": "image",
-        "source": "Google Drive (Bayard deVries collection)"
-      },
-      {
-        "url": "images/CAN-011/RCMP_Report.jpg",
-        "filename": "RCMP_Report.jpg",
-        "title": "Rcmp Report",
-        "type": "image",
-        "source": "Google Drive (Bayard deVries collection)"
-      },
-      {
-        "url": "images/CAN-011/Steve_Michalak_burns.jpg",
-        "filename": "Steve_Michalak_burns.jpg",
-        "title": "Steve Michalak Burns",
-        "type": "image",
-        "source": "Google Drive (Bayard deVries collection)"
-      },
-      {
-        "url": "images/CAN-011/Steve_Michalak_with_drawing.png",
-        "filename": "Steve_Michalak_with_drawing.png",
-        "title": "Steve Michalak With Drawing",
-        "type": "image",
-        "source": "Google Drive (Bayard deVries collection)"
+        "url": "https://www.vancouversun.com/archives/1966/05/sightings-surrey",
+        "title": "Vancouver Sun Archives \u2014 1966 Surrey sightings",
+        "type": "reference"
       }
     ],
     "source_primary": "Vancouver Sun Archives",
@@ -920,29 +890,48 @@
     "radar_confirmation": "",
     "media_urls": [
       {
-        "url": "images/CAN-012/Newspaper_front_page.png",
-        "filename": "Newspaper_front_page.png",
-        "title": "Newspaper Front Page",
+        "url": "images/CAN-012/Drawing_of_the_craft.jpg",
+        "filename": "Drawing_of_the_craft.jpg",
+        "title": "Craft drawing",
         "type": "image",
         "source": "Google Drive (Bayard deVries collection)"
       },
       {
-        "url": "images/CAN-012/Shag_harbour_DND_memo.webp",
-        "filename": "Shag_harbour_DND_memo.webp",
-        "title": "Shag Harbour Dnd Memo",
+        "url": "images/CAN-012/Drawing_of_the_craft_2.jpg",
+        "filename": "Drawing_of_the_craft_2.jpg",
+        "title": "Craft drawing 2",
         "type": "image",
         "source": "Google Drive (Bayard deVries collection)"
       },
       {
-        "url": "images/CAN-012/Shag_harbour_UFO_sign.jpg",
-        "filename": "Shag_harbour_UFO_sign.jpg",
-        "title": "Shag Harbour Ufo Sign",
+        "url": "images/CAN-012/RCMP_Report.jpg",
+        "filename": "RCMP_Report.jpg",
+        "title": "RCMP report",
         "type": "image",
         "source": "Google Drive (Bayard deVries collection)"
+      },
+      {
+        "url": "images/CAN-012/Steve_Michalak_burns.jpg",
+        "filename": "Steve_Michalak_burns.jpg",
+        "title": "Steve Michalak burns",
+        "type": "image",
+        "source": "Google Drive (Bayard deVries collection)"
+      },
+      {
+        "url": "images/CAN-012/Steve_Michalak_with_drawing.png",
+        "filename": "Steve_Michalak_with_drawing.png",
+        "title": "Steve Michalak with drawing",
+        "type": "image",
+        "source": "Google Drive (Bayard deVries collection)"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Falcon_Lake_incident",
+        "title": "Wikipedia \u2014 Falcon Lake Incident",
+        "type": "reference"
       },
       {
         "url": "https://www.cbc.ca/archives/entry/1967-falcon-lake-ufo-incident",
-        "title": "CBC Archives",
+        "title": "CBC Archives \u2014 1967 Falcon Lake UFO Incident",
         "type": "reference"
       },
       {
@@ -1035,13 +1024,34 @@
     "radar_confirmation": "",
     "media_urls": [
       {
+        "url": "images/CAN-013/Newspaper_front_page.png",
+        "filename": "Newspaper_front_page.png",
+        "title": "Newspaper front page",
+        "type": "image",
+        "source": "Google Drive (Bayard deVries collection)"
+      },
+      {
+        "url": "images/CAN-013/Shag_harbour_DND_memo.webp",
+        "filename": "Shag_harbour_DND_memo.webp",
+        "title": "Shag Harbour DND memo",
+        "type": "image",
+        "source": "Google Drive (Bayard deVries collection)"
+      },
+      {
+        "url": "images/CAN-013/Shag_harbour_UFO_sign.jpg",
+        "filename": "Shag_harbour_UFO_sign.jpg",
+        "title": "Shag Harbour UFO sign",
+        "type": "image",
+        "source": "Google Drive (Bayard deVries collection)"
+      },
+      {
         "url": "https://en.wikipedia.org/wiki/Shag_Harbour_UFO_incident",
-        "title": "Wikipedia article",
+        "title": "Wikipedia \u2014 Shag Harbour UFO Incident",
         "type": "reference"
       },
       {
         "url": "https://www.cbc.ca/news/canada/nova-scotia/the-mystery-of-shag-harbour",
-        "title": "CBC Archives",
+        "title": "CBC Archives \u2014 The Mystery of Shag Harbour",
         "type": "reference"
       }
     ],
