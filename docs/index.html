@@ -1626,6 +1626,7 @@ window.openDetail = function(caseId) {
   }
 
   function renderTab(idx) {
+    console.log('[DEBUG] renderTab(' + idx + ') children=' + contentEl.children.length + ' bodyLen=' + tabs[idx].body.length);
     while (contentEl.children.length > 1) {
       contentEl.removeChild(contentEl.lastChild);
     }
@@ -1736,8 +1737,12 @@ function fixGdriveUrl(url) {
 }
 
 function renderMedia(items) {
-  if (!items || items.length === 0) return '';
-  var html = '<div class="media-grid">';
+  if (!items || items.length === 0) {
+    console.log('[DEBUG] renderMedia: no items');
+    return '';
+  }
+  console.log('[DEBUG] renderMedia: rendering ' + items.length + ' items');
+  var html = '<div class="media-grid" style="outline: 3px dashed red;">';
   items.forEach(function(item, idx) {
     var url = fixGdriveUrl(item.url || item);
     var title = typeof item === 'object' ? (item.title || 'Evidence ' + (idx + 1)) : 'Evidence ' + (idx + 1);
