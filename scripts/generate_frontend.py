@@ -64,16 +64,37 @@ for js_path in [BASE / "docs" / "narratives.js", BASE / "docs" / "data" / "narra
 
 # Sync cases-full.json
 src = JSON_PATH
-dst = BASE / "docs" / "data" / "cases-full.json"
-dst.parent.mkdir(parents=True, exist_ok=True)
+dst_docs = BASE / "docs" / "data" / "cases-full.json"
+dst_local = BASE / "data" / "cases-full.json"
+dst_docs.parent.mkdir(parents=True, exist_ok=True)
 
 # Verify the JSON is valid before copying
 with open(src) as fp:
     data = json.load(fp)
 print(f"\nVerified {len(data)} cases in source JSON")
 
-shutil.copy2(src, dst)
-print(f"Synced to {dst}")
+shutil.copy2(src, dst_docs)
+print(f"Synced to {dst_docs}")
+
+shutil.copy2(src, dst_local)
+print(f"Synced to {dst_local}")
+
+# Generate lean cases.json (frontend subset: 15 fields)
+LEAN_FIELDS = [
+    'case_id', 'date', 'year', 'location', 'province',
+    'latitude', 'longitude', 'shape', 'contact_type',
+    'witness_count', 'physical_evidence', 'source_primary',
+    'internal_tier', 'hynek_classification', 'narrative',
+]
+lean_cases = []
+for case in data:
+    lean = {k: case.get(k, '') for k in LEAN_FIELDS}
+    lean_cases.append(lean)
+
+lean_path = BASE / "data" / "cases.json"
+with open(lean_path, 'w', encoding='utf-8') as fp:
+    json.dump(lean_cases, fp, indent=2, ensure_ascii=False)
+print(f"Wrote {lean_path} ({len(lean_cases)} entries, {len(LEAN_FIELDS)} fields each)")
 
 # Verification
 print("\n=== VERIFICATION ===")
