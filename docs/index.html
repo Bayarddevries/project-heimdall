@@ -1557,12 +1557,14 @@ function buildSidebar() {
   });
 }
 
+
 /* ==============================================================
-   DETAIL PANEL
+   DETAIL PANEL — 3-tab dossier system
+   Tab 1: INCIDENT      (what happened + witnesses + narrative)
+   Tab 2: EVIDENCE & SOURCES (proof + media + official reports)
+   Tab 3: ANALYSIS      (classification + status + cultural impact)
    ============================================================== */
-/*
- * openDetail -- builds the 5-tab filing cabinet for a case
- */
+
 window.openDetail = function(caseId) {
   var c = allCases.find(function(x){ return x.id === caseId; });
   if (!c) return;
@@ -1586,8 +1588,8 @@ window.openDetail = function(caseId) {
     marked.setOptions({ breaks: true, gfm: true });
   }
 
-  // Build tab data
-  var tabs = buildTabs(c, deep);
+  // Build 3 tabs
+  var tabs = buildTabsThree(c, deep, cl, tierLabel);
 
   // Render tab strip
   stripEl.innerHTML = '';
@@ -1602,7 +1604,6 @@ window.openDetail = function(caseId) {
 
   // Render active tab content
   renderTab(0);
-
   panel.classList.add('open');
 
   /* Inner functions */
@@ -1613,26 +1614,20 @@ window.openDetail = function(caseId) {
   }
 
   function renderTab(idx) {
-    // Clear content (keep close button)
     while (contentEl.children.length > 1) {
       contentEl.removeChild(contentEl.lastChild);
     }
     var tab = tabs[idx];
-    // Wrap in scan-rotation container (pseudo-"sloppy scan" feel)
     var scanIdx = (idx * 3 + 1) % 5 + 1;
     contentEl.insertAdjacentHTML('beforeend', '<div class="scan-wrap scan-angle-' + scanIdx + '" style="transform: rotate(var(--scan-angle, 0deg)); transition: transform 0.1s ease;">' + tab.body + '</div>');
   }
 };
 
 /*
- * buildTabs -- returns array of {label, redacted, body} for the 5 tabs
+ * buildTabsThree -- returns array of {label, redacted, body} for the 3 tabs
  */
-function buildTabs(c, deep) {
-  var cl = CONTACT_LABELS[c.contact] || c.contact;
-  var tierLabel = c.tier === 'A' ? '\u2605\u2605 PRIORITY' : c.tier === 'B' ? '\u2605 MODERATE' : 'ROUTINE';
+function buildTabsThree(c, deep, cl, tierLabel) {
   var tierDesc = c.tier === 'A' ? 'Primary source investigation with corroborating evidence' : c.tier === 'B' ? 'Documented with secondary sources' : 'Basic sighting report -- limited documentation';
-
-  // Get narrative
   var narrative = '';
   if (typeof NARRATIVES !== 'undefined' && NARRATIVES[c.id]) {
     narrative = NARRATIVES[c.id];
@@ -1640,104 +1635,64 @@ function buildTabs(c, deep) {
 
   var tabs = [];
 
-  // ===== TAB 0: INCIDENT =====
+  // TAB 0: INCIDENT — what happened + witnesses + narrative
   tabs.push({
     label: 'INCIDENT',
     redacted: false,
-    body: buildIncidentTab(c, deep, narrative, cl, tierLabel, tierDesc)
+    body: buildNewIncidentTab(c, deep, narrative, cl, tierLabel)
   });
 
-  // ===== TAB 1: WITNESS =====
+  // TAB 1: EVIDENCE & SOURCES — proof + media + reports
   tabs.push({
-    label: 'WITNESS',
-    redacted: hasNoWitnessData(c, deep),
-    body: hasNoWitnessData(c, deep)
-      ? buildNoData('WITNESS FILE', 'No witness data on file')
-      : buildWitnessTab(c, deep)
+    label: 'EVIDENCE & SOURCES',
+    redacted: hasNoEvidenceAndSourcesData(c, deep),
+    body: hasNoEvidenceAndSourcesData(c, deep)
+      ? buildNoData('EVIDENCE', 'No physical evidence or source documentation on file')
+      : buildNewEvidenceAndSourcesTab(c, deep)
   });
 
-  // ===== TAB 2: EVIDENCE =====
+  // TAB 2: ANALYSIS — classification + status + cultural impact
   tabs.push({
-    label: 'EVIDENCE',
-    redacted: hasNoEvidenceData(c, deep),
-    body: hasNoEvidenceData(c, deep)
-      ? buildNoData('EVIDENCE', 'No physical evidence documented')
-      : buildEvidenceTab(c, deep)
-  });
-
-  // ===== TAB 3: OFFICIAL =====
-  tabs.push({
-    label: 'OFFICIAL',
+    label: 'ANALYSIS',
     redacted: false,
-    body: buildOfficialTab(c, deep, cl, tierLabel, tierDesc)
-  });
-
-  // ===== TAB 4: AFTERMATH =====
-  tabs.push({
-    label: 'AFTERMATH',
-    redacted: hasNoAftermathData(c, deep),
-    body: hasNoAftermathData(c, deep)
-      ? buildNoData('AFTERMATH', 'Aftermath not yet documented')
-      : buildAftermathTab(c, deep)
+    body: buildAnalysisTab(c, deep, cl, tierLabel, tierDesc)
   });
 
   return tabs;
 }
 
-/* Data availability checks */
-function hasNoWitnessData(c, deep) {
-  if (deep) {
-    var wc = deep.witness_count || 0;
-    var wn = deep.witness_names || [];
-    var wd = deep.witnesses || '';
-    var bt = deep.being_type || '';
-    if (wc > 0 || wn.length > 0 || (wd && String(wd).length > 10) || (bt && bt !== 'N/A' && bt !== '')) return false;
-  }
-  // shallow data
-  var w = c.witnesses || '0';
-  if (w !== '0' && String(w).toLowerCase() !== 'not documented' && String(w).toLowerCase() !== 'n/a') return false;
-  return true;
-}
-
-function hasNoEvidenceData(c, deep) {
+function hasNoEvidenceAndSourcesData(c, deep) {
   if (deep) {
     var pe = deep.physical_evidence || '';
     var et = deep.environmental_trace || '';
     var em = deep.electromagnetics || '';
+    var rd = deep.radiation || '';
     var mu = deep.media_urls || [];
+    var sr = deep.sources || [];
+    var rl = deep.reference_links || [];
+    var ofr = deep.official_reports || [];
+    var cadors = deep.cadors_report_url || '';
     if ((pe && pe !== 'Not documented' && pe !== 'Not applicable' && pe !== '') ||
-        (et && et !== 'Not documented' && et !== '' && et !== 'N/A') ||
+        (et && et !== 'Not documented' && et !== 'N/A') ||
         (em && em !== 'N/A' && em !== '') ||
-        mu.length > 0) return false;
+        (rd && rd !== 'N/A' && rd !== '') ||
+        mu.length > 0 || sr.length > 0 || rl.length > 0 ||
+        ofr.length > 0 || (cadors && cadors !== '')) return false;
   }
-  // shallow
   var e = c.evidence || '';
   if (e && e !== 'Not documented' && e !== 'N/A') return false;
+  if (c.source && c.source !== 'Not documented') return false;
   return true;
 }
 
-function hasNoAftermathData(c, deep) {
-  if (deep) {
-    var ci = deep.cultural_impact || '';
-    var cs = deep.current_status || '';
-    var sa = deep.skepticism_analysis || '';
-    var an = deep.analyst_notes || '';
-    if ((ci && ci !== 'N/A' && ci !== '') || (cs && cs !== 'N/A' && cs !== '') ||
-        (sa && sa !== 'N/A' && sa !== '') || (an && an !== 'N/A' && an !== '')) return false;
-  }
-  return false; // always show aftermath from narrative at minimum
-}
-
-/* No-data template */
 function buildNoData(stampText, note) {
   return '<div class="no-data-stamp">' +
     '<div class="stamp-red">[ ' + stampText + ' ]</div>' +
-    '<p style="color:#666;margin-top:12px;font-size:12px;">No data on file for this section.</p>' +
-    '<div class="stamp-note">— ' + note + '</div>' +
+    '<p style="color:#666;margin-top:12px;font-size:12px;">' + note + '</p>' +
+    '<div class="stamp-note">&#8212; ' + note + '</div>' +
     '</div>';
 }
 
-/* Helper: narrative HTML */
 function renderNarrative(text) {
   if (!text) return '';
   if (typeof text === 'object' && text !== null) {
@@ -1752,14 +1707,13 @@ function renderNarrative(text) {
     return html;
   }
   if (typeof marked !== 'undefined') return '<div class="fc-prose">' + marked.parse(text) + '</div>';
-  return '<div class="fc-prose"><p>' + escapeHtml(text).replace(/\n/g, '</p><p>') + '</p></div>';
+  return '<div class="fc-prose"><p>' + escapeHtml(text).replace(/\\n/g, '</p><p>') + '</p></div>';
 }
 
 function escapeHtml(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
-/* Helper: convert Google Drive view URL to embeddable/download URL */
 function fixGdriveUrl(url) {
   if (!url) return url;
   if (url.indexOf('drive.google.com/file/d/') >= 0) {
@@ -1769,29 +1723,28 @@ function fixGdriveUrl(url) {
   return url;
 }
 
-/* Helper: render media items */
 function renderMedia(items) {
   if (!items || items.length === 0) return '';
   var html = '<div class="media-grid">';
   items.forEach(function(item, idx) {
-    var url = fixGdriveUrl(item.url || '');
-    var title = item.title || 'Evidence ' + (idx + 1);
-    var type = (item.type || 'image').toLowerCase();
+    var url = fixGdriveUrl(item.url || item);
+    var title = typeof item === 'object' ? (item.title || 'Evidence ' + (idx + 1)) : 'Evidence ' + (idx + 1);
+    var type = typeof item === 'object' ? (item.type || 'image').toLowerCase() : 'image';
     if (type === 'image' || type === 'photo') {
       html += '<div class="polaroid">' +
         '<div class="tape tape-tl"></div><div class="tape tape-tr"></div>' +
-        '<img src="' + url + '" alt="' + escapeHtml(title) + '" loading="lazy" onerror="this.style.display=\'none\'"/>' +
+        '<img src="' + escapeHtml(url) + '" alt="' + escapeHtml(title) + '" loading="lazy" onerror="this.style.display=\'none\'"/>' +
         '<span class="p-cap">' + escapeHtml(title) + '</span>' +
         '</div>';
     } else if (type === 'video' || type === 'youtube') {
-      var vid = (url.indexOf('youtube') >= 0 || url.indexOf('youtu.be') >= 0) ? extractYTId(url) : null;
+      var vid = extractYTId(url);
       if (vid) {
         html += '<iframe class="fc-video" src="https://www.youtube.com/embed/' + vid + '" frameborder="0" allowfullscreen></iframe>';
       } else {
-        html += '<video class="fc-video" controls preload="metadata"><source src="' + url + '"></video>';
+        html += '<video class="fc-video" controls preload="metadata"><source src="' + escapeHtml(url) + '"></video>';
       }
     } else if (type === 'pdf' || type === 'document') {
-      html += '<a class="fc-pdf-link" href="' + url + '" target="_blank">\U0001F4CE PDF: ' + escapeHtml(title) + ' \u25B6</a>';
+      html += '<a class="fc-pdf-link" href="' + escapeHtml(url) + '" target="_blank">&#128206; PDF: ' + escapeHtml(title) + ' &#9654;</a>';
     }
   });
   html += '</div>';
@@ -1803,27 +1756,22 @@ function extractYTId(url) {
   return m ? m[1] : null;
 }
 
-/* ===== TAB BUILDERS ===== */
+/* ===== NEW TAB BUILDERS (3-tab system) ===== */
 
-function buildIncidentTab(c, deep, narrative, cl, tierLabel, tierDesc) {
+function buildNewIncidentTab(c, deep, narrative, cl, tierLabel) {
   var deepDate = deep ? (deep.date || c.date) : c.date;
   var deepShape = deep ? (deep.shape || c.shape) : c.shape;
   var deepContact = deep ? (deep.contact_type || c.contact) : c.contact;
   var deepContactLabel = CONTACT_LABELS[deepContact] || deepContact;
 
   var metaRows = '';
-  // Location
   metaRows += '<div class="fc-meta"><span class="fc-meta-label">LOCATION</span><span class="fc-meta-value">' + escapeHtml(c.location) + '</span></div>';
-  // Date
   metaRows += '<div class="fc-meta"><span class="fc-meta-label">DATE</span><span class="fc-meta-value">' + escapeHtml(deepDate) + '</span></div>';
-  // Shape
   metaRows += '<div class="fc-meta"><span class="fc-meta-label">SHAPE</span><span class="fc-meta-value">' + escapeHtml(deepShape) + '</span></div>';
-  // Contact
   metaRows += '<div class="fc-meta"><span class="fc-meta-label">CONTACT</span><span class="fc-meta-value">' + escapeHtml(deepContactLabel) + ' (' + escapeHtml(deepContact) + ')</span></div>';
 
-  // Deep fields if available
   if (deep) {
-    var dims = [deep.dimensions, deep.size_estimate, deep.duration].filter(Boolean).join(', ');
+    var dims = [deep.dimensions, deep.size_estimate].filter(Boolean).join(', ');
     if (dims) {
       metaRows += '<div class="fc-meta"><span class="fc-meta-label">DIMENSIONS</span><span class="fc-meta-value">' + escapeHtml(dims) + '</span></div>';
     }
@@ -1836,55 +1784,28 @@ function buildIncidentTab(c, deep, narrative, cl, tierLabel, tierDesc) {
     if (deep.weather_conditions && deep.weather_conditions !== 'N/A') {
       metaRows += '<div class="fc-meta"><span class="fc-meta-label">WEATHER</span><span class="fc-meta-value">' + escapeHtml(deep.weather_conditions) + '</span></div>';
     }
-    if (deep.military_involvement) {
-      metaRows += '<hr class="fc-sep"/>' +
-        '<div class="fc-h3">Military Involvement</div>' +
-        '<div class="evi-block">' + escapeHtml(deep.military_involvement) + '</div>';
+    if (deep.duration && deep.duration !== 'N/A') {
+      metaRows += '<div class="fc-meta"><span class="fc-meta-label">DURATION</span><span class="fc-meta-value">' + escapeHtml(deep.duration) + '</span></div>';
     }
   }
 
-  // Narrative
-  var narHtml = '';
-  if (narrative) {
-    narHtml += '<hr class="fc-sep"/>' +
-      '<div class="fc-h3">Full Incident Report</div>' +
-      renderNarrative(narrative);
-  }
-
-  // Agent note
-  var noteText = c.tier === 'A' ? 'Flagged for deep research — verify primary sources' : c.tier === 'B' ? 'Check local archives for additional reports' : 'Standard filing — review if new data emerges';
-
-  var html = '<div class="fc-stamp">' + tierLabel + '</div>' +
-    '<div class="fc-title">' + escapeHtml(c.location) + '</div>' +
-    '<div class="fc-subtitle">' + escapeHtml(deepDate) + ' \u00b7 ' + escapeHtml(deepShape) + '</div>' +
-    metaRows +
-    narHtml +
-    '<div class="handnote">— ' + noteText + '</div>';
-
-  return html;
-}
-
-function buildWitnessTab(c, deep) {
-  var html = '<div class="fc-stamp">WITNESS FILE</div>' +
-    '<div class="fc-title">Witness Statements</div>';
-
+  // Witness section (merged from old WITNESS tab)
+  var witnessContent = '';
   if (deep) {
     var wc = deep.witness_count;
     if (wc && wc !== 'N/A' && String(wc) !== '0') {
-      html += '<div class="fc-meta"><span class="fc-meta-label">WITNESS COUNT</span><span class="fc-meta-value">' + escapeHtml(String(wc)) + '</span></div>';
+      witnessContent += '<div class="fc-meta"><span class="fc-meta-label">WITNESS COUNT</span><span class="fc-meta-value">' + escapeHtml(String(wc)) + '</span></div>';
     }
 
-    // Witness names
     var names = deep.witness_names || [];
     if (names.length > 0) {
-      html += '<hr class="fc-sep"/><div class="fc-h3">Named Witnesses</div>';
+      witnessContent += '<hr class="fc-sep"/><div class="fc-h3">Named Witnesses</div>';
       names.forEach(function(n) {
-        var role = '', cred = '';
         if (typeof n === 'string') {
-          html += '<div class="witness-card">' + escapeHtml(n) + '</div>';
+          witnessContent += '<div class="witness-card">' + escapeHtml(n) + '</div>';
         } else {
-          html += '<div class="witness-card"><strong>' + escapeHtml(n.name || 'Unknown') + '</strong>' +
-            (n.role ? ' \u00b7 ' + escapeHtml(n.role) : '') +
+          witnessContent += '<div class="witness-card"><strong>' + escapeHtml(n.name || 'Unknown') + '</strong>' +
+            (n.role ? ' &#183; ' + escapeHtml(n.role) : '') +
             (n.credibility ? '<div style="margin-top:2px;font-size:10px;color:#8b7355;">Credibility: ' + escapeHtml(n.credibility) + '</div>' : '') +
             (n.account ? '<div class="evi-block" style="margin-top:4px;">' + escapeHtml(n.account) + '</div>' : '') +
             '</div>';
@@ -1892,199 +1813,234 @@ function buildWitnessTab(c, deep) {
       });
     }
 
-    // Witness object (rich dict)
     if (deep.witnesses && typeof deep.witnesses === 'object' && !Array.isArray(deep.witnesses)) {
       var w = deep.witnesses;
       if (w.primary_witness) {
-        html += '<hr class="fc-sep"/><div class="fc-h3">Primary Witness</div>' +
+        witnessContent += '<hr class="fc-sep"/><div class="fc-h3">Primary Witness</div>' +
           '<div class="witness-card">' + escapeHtml(String(w.primary_witness)) + '</div>';
       }
       if (w.credibility && String(w.credibility).length > 5) {
-        html += '<div class="fc-meta"><span class="fc-meta-label">CREDIBILITY</span><span class="fc-meta-value">' + escapeHtml(String(w.credibility)) + '</span></div>';
+        witnessContent += '<div class="fc-meta"><span class="fc-meta-label">CREDIBILITY</span><span class="fc-meta-value">' + escapeHtml(String(w.credibility)) + '</span></div>';
       }
     }
 
-    // Witness summary string
     if (deep.witnesses && typeof deep.witnesses === 'string' && deep.witnesses.length > 10 && deep.witnesses !== 'Not documented') {
-      html += '<hr class="fc-sep"/><div class="fc-h3">Witness Details</div>' +
+      witnessContent += '<hr class="fc-sep"/><div class="fc-h3">Witness Details</div>' +
         '<div class="evi-block">' + escapeHtml(deep.witnesses) + '</div>';
     }
 
-    // Beings data
-    if (deep.being_type && deep.being_type !== 'N/A' && deep.being_type !== '') {
-      html += '<hr class="fc-sep"/><div class="fc-h3">Non-Human Entities</div>';
-      html += '<div class="fc-meta"><span class="fc-meta-label">TYPE</span><span class="fc-meta-value">' + escapeHtml(deep.being_type) + '</span></div>';
-      if (deep.being_height) html += '<div class="fc-meta"><span class="fc-meta-label">HEIGHT</span><span class="fc-meta-value">' + escapeHtml(deep.being_height) + '</span></div>';
-      if (deep.being_appearance) html += '<div class="fc-meta"><span class="fc-meta-label">APPEARANCE</span><span class="fc-meta-value">' + escapeHtml(deep.being_appearance) + '</span></div>';
-      if (deep.beings_data && deep.beings_data !== 'N/A') {
-        html += '<div class="evi-block">' + escapeHtml(deep.beings_data) + '</div>';
-      }
-    }
-
-    // Missing time
     if (deep.missing_time && deep.missing_time !== 'N/A' && deep.missing_time !== '') {
-      html += '<hr class="fc-sep"/><div class="fc-h3">Missing Time</div>' +
+      witnessContent += '<hr class="fc-sep"/><div class="fc-h3">Missing Time</div>' +
         '<div class="evi-block">' + escapeHtml(deep.missing_time) + '</div>';
     }
 
-    // Medical effects
     if (deep.medical_effects && deep.medical_effects !== 'N/A' && deep.medical_effects.length > 10) {
-      html += '<hr class="fc-sep"/><div class="fc-h3">Medical Effects</div>' +
+      witnessContent += '<hr class="fc-sep"/><div class="fc-h3">Medical Effects</div>' +
         '<div class="evi-block">' + escapeHtml(deep.medical_effects) + '</div>';
     }
 
-    // Time interval
-    if (deep.time_interval && deep.time_interval !== 'N/A') {
-      html += '<div class="fc-meta"><span class="fc-meta-label">DURATION</span><span class="fc-meta-value">' + escapeHtml(deep.time_interval) + '</span></div>';
+    if (deep.being_type && deep.being_type !== 'N/A' && deep.being_type !== '') {
+      witnessContent += '<hr class="fc-sep"/><div class="fc-h3">Non-Human Entities</div>';
+      witnessContent += '<div class="fc-meta"><span class="fc-meta-label">TYPE</span><span class="fc-meta-value">' + escapeHtml(deep.being_type) + '</span></div>';
+      if (deep.being_height) witnessContent += '<div class="fc-meta"><span class="fc-meta-label">HEIGHT</span><span class="fc-meta-value">' + escapeHtml(deep.being_height) + '</span></div>';
+      if (deep.being_appearance) witnessContent += '<div class="fc-meta"><span class="fc-meta-label">APPEARANCE</span><span class="fc-meta-value">' + escapeHtml(deep.being_appearance) + '</span></div>';
+      if (deep.beings_data && deep.beings_data !== 'N/A') {
+        witnessContent += '<div class="evi-block">' + escapeHtml(deep.beings_data) + '</div>';
+      }
     }
   } else {
-    // Shallback
-    if (c.witnesses && String(c.witnesses) !== '0') {
-      html += '<div class="fc-meta"><span class="fc-meta-label">WITNESSES</span><span class="fc-meta-value">' + escapeHtml(String(c.witnesses)) + '</span></div>';
+    if (c.witnesses && String(c.witnesses) !== '0' && String(c.witnesses).toLowerCase() !== 'not documented' && String(c.witnesses).toLowerCase() !== 'n/a') {
+      witnessContent += '<div class="fc-meta"><span class="fc-meta-label">WITNESSES</span><span class="fc-meta-value">' + escapeHtml(String(c.witnesses)) + '</span></div>';
     }
   }
 
-  // Narrative fallback
-  if (typeof NARRATIVES !== 'undefined' && NARRATIVES[c.id]) {
-    html += '<hr class="fc-sep"/><div class="fc-h3">Witness Accounts</div>' + renderNarrative(NARRATIVES[c.id]);
+  var narHtml = '';
+  if (narrative) {
+    narHtml += '<hr class="fc-sep"/>' +
+      '<div class="fc-h3">Full Incident Report</div>' +
+      renderNarrative(narrative);
   }
 
-  html += '<div class="handnote">— See Ref: ' + c.id + '-WITNESS</div>';
+  var noteText = c.tier === 'A' ? 'Flagged for deep research &#8212; verify primary sources' : c.tier === 'B' ? 'Check local archives for additional reports' : 'Standard filing &#8212; review if new data emerges';
+
+  var html = '<div class="fc-stamp">' + tierLabel + '</div>' +
+    '<div class="fc-title">' + escapeHtml(c.location) + '</div>' +
+    '<div class="fc-subtitle">' + escapeHtml(deepDate) + ' &#183; ' + escapeHtml(deepShape) + '</div>' +
+    metaRows +
+    (witnessContent ? '<hr class="fc-sep"/><div class="fc-h3">Witness Report</div>' + witnessContent : '') +
+    narHtml +
+    '<div class="handnote">&#8212; ' + noteText + '</div>';
+
   return html;
 }
 
-function buildEvidenceTab(c, deep) {
-  var html = '<div class="fc-stamp">EVIDENCE</div>' +
-    '<div class="fc-title">Physical Evidence</div>';
+function buildNewEvidenceAndSourcesTab(c, deep) {
+  var html = '<div class="fc-stamp">EVIDENCE & SOURCES</div>' +
+    '<div class="fc-title">Material Evidence</div>';
 
   if (deep) {
-    // Physical evidence
     if (deep.physical_evidence && deep.physical_evidence !== 'Not documented' && deep.physical_evidence !== 'Not applicable' && deep.physical_evidence !== '') {
       html += '<div class="fc-meta"><span class="fc-meta-label">PHYSICAL</span><span class="fc-meta-value">' + escapeHtml(deep.physical_evidence) + '</span></div>';
     }
-    // Environmental trace
     if (deep.environmental_trace && deep.environmental_trace !== 'Not documented' && deep.environmental_trace !== 'N/A' && deep.environmental_trace !== '') {
       html += '<div class="fc-meta"><span class="fc-meta-label">ENVIRONMENTAL</span><span class="fc-meta-value">' + escapeHtml(deep.environmental_trace) + '</span></div>';
     }
-    // Electromagnetics
     if (deep.electromagnetics && deep.electromagnetics !== 'N/A' && deep.electromagnetics !== '') {
       html += '<div class="fc-meta"><span class="fc-meta-label">ELECTROMAGNETIC</span><span class="fc-meta-value">' + escapeHtml(deep.electromagnetics) + '</span></div>';
     }
-    // Radiation
     if (deep.radiation && deep.radiation !== 'N/A' && deep.radiation !== '') {
       html += '<div class="fc-meta"><span class="fc-meta-label">RADIATION</span><span class="fc-meta-value">' + escapeHtml(deep.radiation) + '</span></div>';
     }
   }
 
-  // Shallback
   if (c.evidence && c.evidence !== 'Not documented' && c.evidence !== 'N/A') {
     html += '<div class="evi-block">' + escapeHtml(c.evidence) + '</div>';
   }
 
-  // Media
   var mediaItems = [];
   if (deep && deep.media_urls && deep.media_urls.length > 0) {
     mediaItems = deep.media_urls;
   }
   if (mediaItems.length > 0) {
-    html += '<hr class="fc-sep"/><div class="fc-h3">Media</div>' + renderMedia(mediaItems);
+    html += '<hr class="fc-sep"/><div class="fc-h3">Media Archive</div>' + renderMedia(mediaItems);
   }
 
-  // Shallback narrative evidence
-  if (typeof NARRATIVES !== 'undefined' && NARRATIVES[c.id] && !deep) {
-    html += '<hr class="fc-sep"/><div class="fc-h3">Incident Notes</div>' + renderNarrative(NARRATIVES[c.id]);
-  }
-
-  html += '<div class="handnote">— Cross-ref NUFORC / ' + c.id + '</div>';
-  return html;
-}
-
-function buildOfficialTab(c, deep, cl, tierLabel, tierDesc) {
-  var html = '<div class="fc-stamp">OFFICIAL RECORD</div>' +
-    '<div class="fc-title">Documentation</div>';
-
-  // Primary source
-  if (c.source) {
-    html += '<div class="fc-meta"><span class="fc-meta-label">PRIMARY</span><span class="fc-meta-value">' + escapeHtml(c.source) + '</span></div>';
-  }
-
+  var reportsSection = '';
   if (deep) {
-    // Secondary sources
+    var ofr = deep.official_reports || [];
+    if (ofr.length > 0) {
+      reportsSection += '<hr class="fc-sep"/><div class="fc-h3">Official Reports</div><ul class="source-list">';
+      ofr.forEach(function(r) { reportsSection += '<li>' + escapeHtml(r) + '</li>'; });
+      reportsSection += '</ul>';
+    }
+
+    if (deep.cadors_report_url && deep.cadors_report_url !== '') {
+      reportsSection += '<div class="fc-meta"><span class="fc-meta-label">CADORS REPORT</span><span class="fc-meta-value"><a href="' + escapeHtml(deep.cadors_report_url) + '" target="_blank" style="color:#6b5e50;">Access Report &#9654;</a></span></div>';
+    }
+
+    if (deep.rcmp_file_reference && deep.rcmp_file_reference !== '') {
+      reportsSection += '<div class="fc-meta"><span class="fc-meta-label">RCMP FILE</span><span class="fc-meta-value">' + escapeHtml(deep.rcmp_file_reference) + '</span></div>';
+    }
+
+    if (deep.rcmp_mufon_case && deep.rcmp_mufon_case !== '') {
+      reportsSection += '<div class="fc-meta"><span class="fc-meta-label">MUFON CASE</span><span class="fc-meta-value">' + escapeHtml(deep.rcmp_mufon_case) + '</span></div>';
+    }
+
+    if (deep.military_involvement) {
+      reportsSection += '<hr class="fc-sep"/><div class="fc-h3">Military Involvement</div>' +
+        '<div class="evi-block">' + escapeHtml(deep.military_involvement) + '</div>';
+    }
+
     var sources = deep.sources || [];
     if (sources.length > 0) {
-      html += '<hr class="fc-sep"/><div class="fc-h3">Secondary Sources</div>' +
-        '<ul class="source-list">';
-      sources.forEach(function(s) { html += '<li>' + escapeHtml(s) + '</li>'; });
-      html += '</ul>';
+      reportsSection += '<hr class="fc-sep"/><div class="fc-h3">Secondary Sources</div><ul class="source-list">';
+      sources.forEach(function(s) { reportsSection += '<li>' + escapeHtml(s) + '</li>'; });
+      reportsSection += '</ul>';
     }
+
     if (deep.reference_links && deep.reference_links.length > 0) {
-      html += '<ul class="source-list">';
+      reportsSection += '<ul class="source-list">';
       deep.reference_links.forEach(function(r) {
         var label = r.title || r.url;
-        html += '<li><a href="' + r.url + '" target="_blank" style="color:#6b5e50;">' + escapeHtml(label) + '</a></li>';
+        reportsSection += '<li><a href="' + escapeHtml(r.url) + '" target="_blank" style="color:#6b5e50;">' + escapeHtml(label) + '</a></li>';
       });
-      html += '</ul>';
+      reportsSection += '</ul>';
+    }
+
+    if (deep.nuforc_links && deep.nuforc_links !== '') {
+      reportsSection += '<div class="fc-meta"><span class="fc-meta-label">NUFORC</span><span class="fc-meta-value"><a href="' + escapeHtml(deep.nuforc_links) + '" target="_blank" style="color:#6b5e50;">View Report &#9654;</a></span></div>';
+    }
+
+    if (deep.youtube_links && deep.youtube_links.length > 0) {
+      reportsSection += '<hr class="fc-sep"/><div class="fc-h3">Video References</div>';
+      deep.youtube_links.forEach(function(url) {
+        reportsSection += '<div class="evi-block" style="margin-bottom:6px;"><a href="' + escapeHtml(url) + '" target="_blank" style="color:#c41e3a;">YouTube &#9654;</a></div>';
+      });
+    }
+  } else {
+    if (c.source) {
+      reportsSection += '<hr class="fc-sep"/><div class="fc-h3">Primary Source</div>' +
+        '<div class="fc-meta"><span class="fc-meta-label">SOURCE</span><span class="fc-meta-value">' + escapeHtml(c.source) + '</span></div>';
     }
   }
 
-  // Classification
-  html += '<hr class="fc-sep"/>';
-  html += '<div class="fc-meta"><span class="fc-meta-label">CLASSIFICATION</span><span class="fc-meta-value">' + escapeHtml(cl) + ' (' + escapeHtml(c.contact) + ')</span></div>';
-  html += '<div class="fc-meta"><span class="fc-meta-label">TIER</span><span class="fc-meta-value">' + escapeHtml(c.tier) + ' — ' + escapeHtml(tierDesc) + '</span></div>';
-
-  // Status
-  if (deep && deep.current_status && deep.current_status !== 'N/A') {
-    html += '<div class="fc-meta"><span class="fc-meta-label">STATUS</span><span class="fc-meta-value">' + escapeHtml(deep.current_status) + '</span></div>';
-  } else if (c.tier === 'A') {
-    html += '<div class="fc-meta"><span class="fc-meta-label">STATUS</span><span class="fc-meta-value">Unresolved. No official explanation issued.</span></div>';
-  }
-
-  // Skepticism analysis
-  if (deep && deep.skepticism_analysis && deep.skepticism_analysis !== 'N/A') {
-    html += '<hr class="fc-sep"/><div class="fc-h3">Scepticism Analysis</div>' +
-      '<div class="evi-block">' + escapeHtml(deep.skepticism_analysis) + '</div>';
-  }
-
-  // Search button
-  var searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(c.location + ' UFO ' + c.year);
-  html += '<button class="postit-btn" onclick="window.open(\'' + searchUrl + '\', \'_blank\')">Search External Sources \u25B6</button>';
-
+  html += reportsSection;
+  html += '<div class="handnote">&#8212; Cross-ref NUFORC / ' + c.id + '</div>';
   return html;
 }
 
-function buildAftermathTab(c, deep) {
-  var html = '<div class="fc-stamp">AFTERMATH</div>' +
-    '<div class="fc-title">Post-Incident Analysis</div>';
+function buildAnalysisTab(c, deep, cl, tierLabel, tierDesc) {
+  var html = '<div class="fc-stamp">CLASSIFIED</div>' +
+    '<div class="fc-title">Case Assessment</div>';
+
+  html += '<div class="fc-meta"><span class="fc-meta-label">HYNEK CLASSIFICATION</span><span class="fc-meta-value">' + escapeHtml(cl) + ' (' + escapeHtml(c.contact) + ')</span></div>';
+  html += '<div class="fc-meta"><span class="fc-meta-label">INVESTIGATION TIER</span><span class="fc-meta-value">' + tierLabel + ' &#8212; ' + escapeHtml(tierDesc) + '</span></div>';
 
   if (deep) {
-    // Cultural impact
+    if (deep.current_status && deep.current_status !== 'N/A') {
+      html += '<hr class="fc-sep"/><div class="fc-meta"><span class="fc-meta-label">CURRENT STATUS</span><span class="fc-meta-value">' + escapeHtml(deep.current_status) + '</span></div>';
+    }
+
+    if (deep.radar_confirmation && deep.radar_confirmation !== 'N/A' && deep.radar_confirmation !== '') {
+      html += '<div class="fc-meta"><span class="fc-meta-label">RADAR CONFIRMATION</span><span class="fc-meta-value">' + escapeHtml(deep.radar_confirmation) + '</span></div>';
+    }
+
+    if (deep.witness_certainty && deep.witness_certainty !== 'N/A' && deep.witness_certainty !== '') {
+      html += '<div class="fc-meta"><span class="fc-meta-label">WITNESS CERTAINTY</span><span class="fc-meta-value">' + escapeHtml(deep.witness_certainty) + '</span></div>';
+    }
+
     if (deep.cultural_impact && deep.cultural_impact !== 'N/A' && deep.cultural_impact !== '') {
-      html += '<div class="fc-h3">Cultural Impact</div>' +
+      html += '<hr class="fc-sep"/><div class="fc-h3">Cultural Impact</div>' +
         '<div class="evi-block">' + escapeHtml(deep.cultural_impact) + '</div>';
     }
-    // Current status from aftermath perspective
-    if (deep.current_status && deep.current_status !== 'N/A' && deep.current_status !== '') {
-      html += '<div class="fc-meta"><span class="fc-meta-label">CURRENT STATUS</span><span class="fc-meta-value">' + escapeHtml(deep.current_status) + '</span></div>';
+
+    if (deep.official_investigation && deep.official_investigation !== '') {
+      html += '<hr class="fc-sep"/><div class="fc-h3">Official Investigation</div>' +
+        '<div class="evi-block">' + escapeHtml(deep.official_investigation) + '</div>';
     }
-    // Analyst notes
+
+    if (deep.skepticism_analysis && deep.skepticism_analysis !== 'N/A' && deep.skepticism_analysis !== '') {
+      html += '<hr class="fc-sep"/><div class="fc-h3">Scepticism Analysis</div>' +
+        '<div class="evi-block">' + escapeHtml(deep.skepticism_analysis) + '</div>';
+    }
+
+    if (deep.aftermath_reported && deep.aftermath_reported !== '') {
+      html += '<hr class="fc-sep"/><div class="fc-h3">Aftermath</div>' +
+        '<div class="evi-block">' + escapeHtml(deep.aftermath_reported) + '</div>';
+    }
+
     if (deep.analyst_notes && deep.analyst_notes !== 'N/A' && deep.analyst_notes !== '') {
       html += '<hr class="fc-sep"/><div class="fc-h3">Analyst Notes</div>' +
         '<div class="evi-block">' + escapeHtml(deep.analyst_notes) + '</div>';
     }
+
+    var related = deep.related_cases || [];
+    if (related.length > 0) {
+      html += '<hr class="fc-sep"/><div class="fc-h3">Related Cases</div>';
+      related.forEach(function(rc) {
+        html += '<div class="evi-block" style="margin-bottom:4px;">' + escapeHtml(rc) + '</div>';
+      });
+    }
+
+    var tags = deep.pattern_tags || [];
+    if (tags.length > 0) {
+      var tagHtml = tags.map(function(t) { return '<span class="tag-pill">' + escapeHtml(t) + '</span>'; }).join(' ');
+      html += '<hr class="fc-sep"/><div class="fc-h3">Pattern Tags</div><div class="tag-cloud">' + tagHtml + '</div>';
+    }
+  } else {
+    html += '<div class="fc-meta"><span class="fc-meta-label">STATUS</span><span class="fc-meta-value">Unresolved. No official explanation issued.</span></div>';
   }
 
-  // Fallback: use narrative as aftermath context
-  if (typeof NARRATIVES !== 'undefined' && NARRATIVES[c.id]) {
-    html += '<hr class="fc-sep"/><div class="fc-h3">Case File Summary</div>' + renderNarrative(NARRATIVES[c.id]);
-  }
+  var searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(c.location + ' UFO ' + c.year);
+  html += '<hr class="fc-sep"/><button class="postit-btn" onclick="window.open(\'' + searchUrl + '\', \'_blank\')">Search External Sources &#9654;</button>';
 
-  html += '<div class="handnote">— Case ' + c.id + ' · Archive ongoing</div>';
   return html;
 }
 
 document.getElementById('detail-close').addEventListener('click', function() {
   document.getElementById('detail-panel').classList.remove('open');
 });
+
 
 /* ==============================================================
    FILTERS
