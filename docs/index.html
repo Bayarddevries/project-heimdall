@@ -720,6 +720,18 @@ body {
 }
 .fc-pdf-link:hover { background: rgba(139,115,85,0.15); }
 
+.fc-ref-link {
+  display: inline-block;
+  padding: 4px 8px;
+  background: rgba(139,115,85,0.08);
+  border: 1px dashed #8b7355;
+  color: #6b5e50;
+  text-decoration: none;
+  font-size: 11px;
+  margin: 4px 0;
+}
+.fc-ref-link:hover { background: rgba(139,115,85,0.15); }
+
 /* Source list */
 .source-list {
   list-style: none;
@@ -1745,6 +1757,8 @@ function renderMedia(items) {
       }
     } else if (type === 'pdf' || type === 'document') {
       html += '<a class="fc-pdf-link" href="' + escapeHtml(url) + '" target="_blank">&#128206; PDF: ' + escapeHtml(title) + ' &#9654;</a>';
+    } else if (type === 'reference') {
+      html += '<a class="fc-ref-link" href="' + escapeHtml(url) + '" target="_blank" rel="noopener">&#128279; ' + escapeHtml(title) + '</a>';
     }
   });
   html += '</div>';
