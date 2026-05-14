@@ -157,6 +157,128 @@ body {
 }
 .top-bar .stats-area strong { color: #2c2825; font-weight: 700; }
 
+/* ===== TIMELINE VIEW ===== */
+.timeline-view {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 140px;
+  z-index: 1040;
+  background: linear-gradient(180deg, rgba(245,238,214,0.0) 0%, rgba(245,238,214,0.95) 15%);
+  border-top: 2px solid #8b7355;
+  display: none;
+  flex-direction: column;
+  padding: 8px 20px 6px;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+}
+.timeline-view.visible { display: flex; }
+.timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  flex-shrink: 0;
+}
+.timeline-header h3 {
+  font-family: 'Special Elite', monospace;
+  font-size: 11px;
+  color: #6b5e50;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+.timeline-close {
+  background: none;
+  border: 1px solid #b8a88a;
+  color: #6b5e50;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 2px;
+  transition: all 0.15s;
+}
+.timeline-close:hover { background: #d4c5a9; }
+.timeline-track-container {
+  flex: 1;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.timeline-track {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  min-width: 100%;
+}
+.timeline-axis {
+  position: absolute;
+  top: 50%; left: 0; right: 0;
+  height: 1px;
+  background: #8b7355;
+  opacity: 0.4;
+}
+.timeline-year-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Special Elite', monospace;
+  font-size: 8px;
+  color: #8b7355;
+  white-space: nowrap;
+}
+.timeline-dot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.timeline-dot:hover { transform: translate(-50%, -50%) scale(1.8); z-index: 5; }
+.timeline-dot .dot {
+  border-radius: 50%;
+  border: 1.5px solid #f5eed6;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.timeline-dot .dot.A { width: 12px; height: 12px; background: #c41e3a; }
+.timeline-dot .dot.B { width: 9px; height: 9px; background: #d4a843; }
+.timeline-dot .dot.C { width: 6px; height: 6px; background: #6b5e50; }
+.timeline-dot .dot.CE3 { background: #6b2fa0; }
+.timeline-dot .dot.CE4 { background: #6b2fa0; }
+.timeline-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Special Elite', monospace;
+  font-size: 7px;
+  color: #6b5e50;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  background: rgba(245,238,214,0.9);
+  padding: 1px 3px;
+  border-radius: 2px;
+  margin-top: 10px;
+}
+.timeline-dot:hover .label { opacity: 1; }
+/* Toggle button in top-bar */
+.view-toggle {
+  background: transparent;
+  border: 1px solid #b8a88a;
+  color: #6b5e50;
+  font-family: 'Special Elite', monospace;
+  font-size: 9px;
+  padding: 2px 8px;
+  cursor: pointer;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.15s;
+}
+.view-toggle:hover, .view-toggle.active {
+  background: #d4c5a9;
+  color: #2c2825;
+}
+
 /* ===== SIDEBAR ===== */
 .sidebar {
   position: fixed;
@@ -1549,6 +1671,12 @@ body {
   .timeline-slider::-webkit-slider-thumb { width: 24px; height: 24px; }
   .timeline-range { font-size: clamp(11px,2.8vw,12px); order: 2; flex: 1; }
 
+  /* Timeline View mobile */
+  .timeline-view { height: 100px; padding: 6px 10px 4px; }
+  .timeline-header h3 { font-size: 9px; }
+  .timeline-close { padding: 4px 8px; font-size: 16px; min-width: 32px; min-height: 32px; }
+  .view-toggle { font-size: 8px; padding: 4px 6px; min-height: 32px; }
+
   .sidebar-header h2 { font-size: 14px; margin: 0; }
   .search-wrap { padding: 8px; }
   .search-input { padding: 10px 28px 10px 12px; font-size: 16px; }
@@ -1613,6 +1741,20 @@ body {
     <div>Total: <strong id="stat-total">56</strong></div>
     <div>Showing: <strong id="stat-visible">56</strong></div>
     <div>YEARS: <strong>1662 – 2025</strong></div>
+    <button class="view-toggle" id="view-toggle" title="Toggle timeline view">☰ Timeline</button>
+  </div>
+</div>
+
+<!-- TIMELINE VIEW -->
+<div class="timeline-view" id="timeline-view">
+  <div class="timeline-header">
+    <h3>☰ CHRONOLOGICAL TIMELINE</h3>
+    <button class="timeline-close" id="timeline-close">✕</button>
+  </div>
+  <div class="timeline-track-container">
+    <div class="timeline-track" id="timeline-track">
+      <div class="timeline-axis"></div>
+    </div>
   </div>
 </div>
 
@@ -1702,6 +1844,11 @@ function initFromData() {
   bindTimeline();
   bindSearch();
   updateView();
+  // Compute year range for timeline
+  if (allCases.length > 0) {
+    minYearAll = allCases.reduce(function(m, c) { return Math.min(m, c.year || 1662); }, 9999);
+    maxYearAll = allCases.reduce(function(m, c) { return Math.max(m, c.year || 2025); }, 0);
+  }
 }
 
 function loadDeepData() {
@@ -2397,6 +2544,103 @@ function bindSearch() {
     input.focus();
   });
 }
+
+/* ==============================================================
+   TIMELINE VIEW
+   ============================================================== */
+var timelineVisible = false;
+var minYearAll = 1662, maxYearAll = 2025;
+
+function buildTimeline() {
+  var track = document.getElementById('timeline-track');
+  if (!track) return;
+  // Keep the axis, clear everything else
+  var axis = track.querySelector('.timeline-axis');
+  track.innerHTML = '';
+  track.appendChild(axis);
+
+  var totalYears = maxYearAll - minYearAll + 1;
+  var trackWidth = Math.max(track.parentElement.offsetWidth, totalYears * 12);
+  track.style.width = trackWidth + 'px';
+
+  // Year labels — adaptive interval based on range
+  var yearSpan = maxYearAll - minYearAll;
+  var labelInterval = yearSpan > 200 ? 50 : yearSpan > 100 ? 25 : yearSpan > 50 ? 10 : 5;
+  for (var y = minYearAll; y <= maxYearAll; y += labelInterval) {
+    var pct = ((y - minYearAll) / totalYears) * 100;
+    var label = document.createElement('div');
+    label.className = 'timeline-year-label';
+    label.style.left = pct + '%';
+    label.textContent = y;
+    track.appendChild(label);
+  }
+
+  // Get visible cases
+  var visible = allCases.filter(function(c) {
+    if (activeFilter !== 'all') {
+      if (['A','B','C'].indexOf(activeFilter) >= 0 && c.tier !== activeFilter) return false;
+      if (['A','B','C'].indexOf(activeFilter) < 0 && c.contact !== activeFilter) return false;
+    }
+    if (c.year < minYear) return false;
+    if (searchQuery) {
+      var q = searchQuery.toLowerCase();
+      var loc = (c.location || '').toLowerCase();
+      var shape = (c.shape || '').toLowerCase();
+      var year = String(c.year || '');
+      var cid = (c.id || '').toLowerCase();
+      if (loc.indexOf(q) < 0 && shape.indexOf(q) < 0 && year.indexOf(q) < 0 && cid.indexOf(q) < 0) return false;
+    }
+    return true;
+  });
+
+  // Sort by year
+  visible.sort(function(a, b) { return a.year - b.year; });
+
+  // Place dots — stagger vertically to avoid overlap
+  visible.forEach(function(c, i) {
+    var pct = ((c.year - minYearAll) / totalYears) * 100;
+    var staggerOffset = (i % 5) * 6 - 12; // stagger between -12px and +12px
+
+    var dot = document.createElement('div');
+    dot.className = 'timeline-dot';
+    dot.style.left = pct + '%';
+    dot.style.top = 'calc(50% + ' + staggerOffset + 'px)';
+    dot.innerHTML = '<div class="dot ' + (c.tier || 'C') + '"></div>' +
+      '<div class="label timeline-label">' + c.id + ' ' + c.year + '</div>';
+    dot.addEventListener('click', function() {
+      map.setView(c.coords, 7);
+      window.openDetail(c.id);
+    });
+    dot.title = c.id + ' — ' + (c.location || '') + ' (' + c.year + ')';
+    track.appendChild(dot);
+  });
+}
+
+function toggleTimeline() {
+  timelineVisible = !timelineVisible;
+  var tv = document.getElementById('timeline-view');
+  var btn = document.getElementById('view-toggle');
+  if (timelineVisible) {
+    tv.classList.add('visible');
+    if (btn) btn.classList.add('active');
+    buildTimeline();
+  } else {
+    tv.classList.remove('visible');
+    if (btn) btn.classList.remove('active');
+  }
+}
+
+// Bind timeline toggle
+document.getElementById('view-toggle').addEventListener('click', toggleTimeline);
+document.getElementById('timeline-close').addEventListener('click', toggleTimeline);
+
+// Rebuild timeline when filters change
+var origUpdateView = updateView;
+updateView = function() {
+  origUpdateView();
+  if (timelineVisible) buildTimeline();
+};
+
 function isMobile() { return window.innerWidth <= 768; }
 
 document.getElementById('sidebar-toggle').addEventListener('click', function() {
