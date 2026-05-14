@@ -55,12 +55,27 @@ for i, (cid, text) in enumerate(narratives.items()):
     js_content += "\n"
 js_content += "};\n"
 
+# H-201: Write minified version (remove indentation, compact)
+js_minified = "var NARRATIVES={"
+parts = []
+for cid, text in narratives.items():
+    escaped = text.replace('\\', '\\\\').replace('"', '\\"').replace('\n', '\\n').replace('\r', '')
+    parts.append(f'"{cid}":"{escaped}"')
+js_minified += ",".join(parts) + "};"
+
 # Write both locations
 for js_path in [BASE / "docs" / "narratives.js", BASE / "docs" / "data" / "narratives.js"]:
     js_path.parent.mkdir(parents=True, exist_ok=True)
     with open(js_path, 'w', encoding='utf-8') as fp:
         fp.write(js_content)
     print(f"\nWrote {js_path} ({len(js_content)} bytes)")
+
+# Write minified versions
+for js_path in [BASE / "docs" / "narratives.min.js", BASE / "docs" / "data" / "narratives.min.js"]:
+    js_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(js_path, 'w', encoding='utf-8') as fp:
+        fp.write(js_minified)
+    print(f"Wrote {js_path} ({len(js_minified)} bytes, {100*len(js_minified)//len(js_content)}% of original)")
 
 # Sync cases-full.json
 src = JSON_PATH
