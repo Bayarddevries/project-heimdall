@@ -659,9 +659,20 @@ body {
   box-shadow: 1px 2px 4px rgba(0,0,0,0.1);
   text-align: center;
 }
+.postit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.04) 0%, transparent 100%);
+}
 .postit-btn:hover {
   transform: rotate(-0.3deg) translateY(-2px);
   box-shadow: 2px 4px 8px rgba(0,0,0,0.15);
+}
+.postit-btn:active {
+  transform: rotate(0.5deg) scale(0.98);
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 /* Media grid */
@@ -969,29 +980,35 @@ body {
   text-align: right;
 }
 
-/* ===== FILTER BUTTONS → CHECKBOX STYLE ===== */
+/* ===== FILTER BUTTONS → HAND-DRAWN CHECKBOX STYLE ===== */
 .filter-bar {
   gap: 6px;
 }
 .filter-btn {
-  font-family: 'Special Elite', monospace !important;
-  font-size: 11px !important;
+  font-family: 'Caveat', cursive !important;
+  font-size: 14px !important;
   padding: 4px 10px !important;
-  border: 1px solid rgba(107,94,80,0.3) !important;
+  border: 1.5px solid rgba(107,94,80,0.3) !important;
   background: transparent !important;
   position: relative;
   transition: none !important;
   text-transform: none !important;
   letter-spacing: 0 !important;
-  border-radius: 0 !important;
+  border-radius: 2px !important;
   color: #6b5e50 !important;
   cursor: pointer;
 }
 .filter-btn::before {
-  content: '\2610'; /* empty checkbox */
-  margin-right: 4px;
-  font-size: 13px;
-  color: #8b7355;
+  content: '';
+  display: inline-block;
+  width: 14px; height: 14px;
+  border: 2px solid #6b5e50;
+  border-radius: 2px;
+  margin-right: 5px;
+  vertical-align: middle;
+  transform: rotate(-2deg);
+  position: relative;
+  top: -1px;
 }
 .filter-btn.active {
   border-color: #8b7355 !important;
@@ -999,11 +1016,22 @@ body {
   color: #2c2825 !important;
 }
 .filter-btn.active::before {
-  content: '\2611'; /* checked checkbox */
+  border-color: #c41e3a;
+  background: transparent;
+}
+.filter-btn.active::after {
+  content: '✗';
+  position: absolute;
+  left: 13px; top: 3px;
+  font-family: 'Caveat', cursive;
+  font-size: 14px;
+  color: #c41e3a;
+  font-weight: 700;
+  transform: rotate(-3deg);
 }
 .filter-btn:hover {
   background: rgba(139,115,85,0.06) !important;
-  border-color: #8b7355;
+  border-color: #8b7355 !important;
 }
 
 /* ===== POST-IT BUTTON STYLE (for "Open Full Case File") ===== */
@@ -1022,12 +1050,19 @@ body {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   clip-path: polygon(0 0, 100% 0.5%, 99.5% 100%, 0.3% 99.5%);
 }
+.p-btn::before, .search-link-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.04) 0%, transparent 100%);
+}
 .p-btn:hover, .search-link-btn:hover {
   transform: rotate(-0.3deg) translateY(-1px) !important;
   box-shadow: 2px 4px 8px rgba(0,0,0,0.15) !important;
   color: #2c2825 !important;
 }
-.p-btn:hover::after {
+.p-btn:hover::after, .search-link-btn:hover::after {
   content: '';
   position: absolute;
   bottom: 0; right: 0;
@@ -1035,6 +1070,10 @@ body {
   border-style: solid;
   border-width: 0 0 14px 14px;
   border-color: transparent transparent #e8dfc0 transparent;
+}
+.p-btn:active, .search-link-btn:active {
+  transform: rotate(0.5deg) scale(0.98) !important;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2) !important;
 }
 
 /* ===== DYM0 LABEL STYLE (for case IDs, classification badges) ===== */
@@ -1126,6 +1165,9 @@ body {
   opacity: 1;
   transform: rotate(-2deg) scale(1.03);
 }
+.stamp-badge:active {
+  transform: rotate(0deg) scale(0.97);
+}
 .detail-stamp {
   transition: color 0.2s, border-color 0.2s;
   cursor: default;
@@ -1133,6 +1175,9 @@ body {
 .detail-stamp:hover {
   color: #a01830;
   border-color: #a01830;
+}
+.detail-stamp:active {
+  transform: rotate(0deg) scale(0.97);
 }
 .p-class {
   transition: color 0.2s, border-color 0.2s;
@@ -1195,7 +1240,63 @@ body {
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.15);
 }
 
-/* ===== RESPONSIVE (< 768px) ===== */
+/* ===== HAND-DRAWN CHECKBOXES (H-021) ===== */
+.hand-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Caveat', cursive;
+  font-size: 16px;
+  color: #3b3228;
+  cursor: pointer;
+  margin-right: 14px;
+  user-select: none;
+}
+.hand-checkbox .box {
+  display: inline-block;
+  width: 18px; height: 18px;
+  border: 2px solid #3b3228;
+  border-radius: 2px;
+  position: relative;
+  transform: rotate(-2deg);
+  flex-shrink: 0;
+}
+.hand-checkbox.checked .box::after {
+  content: '✗';
+  position: absolute;
+  top: -4px; left: 1px;
+  font-family: 'Caveat', cursive;
+  font-size: 18px;
+  color: #c41e3a;
+  font-weight: 700;
+}
+
+/* ===== PAPERCLIP TOGGLE (H-022) ===== */
+.paperclip-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.paperclip-toggle .track {
+  width: 36px; height: 16px;
+  background: #d4c9a8;
+  border-radius: 2px;
+  position: relative;
+  border: 1px solid #b8a88a;
+}
+.paperclip-toggle .clip {
+  position: absolute;
+  top: -4px; left: 2px;
+  width: 12px; height: 22px;
+  border: 2px solid #888;
+  border-radius: 3px 3px 6px 6px;
+  background: linear-gradient(180deg, #ccc 0%, #999 100%);
+  transition: left 0.2s;
+}
+.paperclip-toggle.on .clip { left: 20px; }
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .top-bar {
     height: auto; min-height: 56px;
