@@ -1776,6 +1776,157 @@ body {
     line-height: 44px!important;
     font-size: 20px!important;
   }
+  }
+}
+
+/* ===== NIGHT OPS DARK MODE (H-106) ===== */
+/* Toggle with .night-ops on <body> */
+body.night-ops {
+  background: #0a0a0a !important;
+  color: #c8b89a !important;
+}
+body.night-ops .top-bar {
+  background: #1a1410 !important;
+  border-bottom-color: #4a2020 !important;
+  box-shadow: 0 2px 12px rgba(180,30,30,0.15), inset 0 -2px 8px rgba(180,30,30,0.08) !important;
+}
+body.night-ops .top-bar h1 { color: #d4a050 !important; text-shadow: 0 0 8px rgba(212,160,80,0.3); }
+body.night-ops .top-bar h1 span { color: #8a7050 !important; }
+body.night-ops .stamp-badge {
+  background: #4a1010 !important; color: #e8a0a0 !important;
+  border-color: #6a2020 !important; text-shadow: 0 0 4px rgba(232,160,160,0.3);
+}
+body.night-ops .stats-area { color: #8a7050 !important; }
+body.night-ops .stats-area strong { color: #d4a050 !important; }
+body.night-ops .view-toggle {
+  border-color: #4a2020 !important; color: #c89060 !important;
+}
+body.night-ops .view-toggle:hover, body.night-ops .view-toggle.active {
+  background: #2a1510 !important; color: #e8b070 !important;
+}
+
+/* Sidebar */
+body.night-ops .sidebar {
+  background: #14100c !important;
+  border-right-color: #2a1810 !important;
+  box-shadow: inset 0 0 30px rgba(180,30,30,0.06), inset 0 0 60px rgba(150,20,20,0.03) !important;
+}
+body.night-ops .sidebar-header { border-bottom-color: #2a1810 !important; }
+body.night-ops .sidebar-header h2 { color: #c89060 !important; }
+body.night-ops .search-input {
+  background: #1a1410 !important; color: #c8b89a !important;
+  border-color: #2a1810 !important;
+}
+body.night-ops .filter-btn {
+  background: #1a1410 !important; color: #8a7050 !important;
+  border-color: #2a1810 !important;
+}
+body.night-ops .filter-btn.active {
+  background: #2a1510 !important; color: #d4a050 !important;
+  border-color: #4a2020 !important;
+}
+body.night-ops .case-item { border-bottom-color: rgba(74,32,32,0.15) !important; }
+body.night-ops .case-item:hover { background: rgba(74,32,32,0.1) !important; }
+body.night-ops .case-item.active { background: rgba(74,32,32,0.15) !important; }
+body.night-ops .case-item .cid { color: #8a6040 !important; }
+body.night-ops .case-item .cloc { color: #c8a070 !important; }
+body.night-ops .case-item .cyear { color: #6a5040 !important; }
+
+/* Detail Panel */
+body.night-ops .detail-panel {
+  background: #14100c !important;
+  box-shadow: inset 0 0 30px rgba(180,30,30,0.06) !important;
+}
+body.night-ops .folder-tab { color: #8a7050 !important; }
+body.night-ops .folder-tab.active {
+  color: #d4a050 !important; background: #1a1410 !important;
+  box-shadow: inset 0 -3px 0 #8b2020 !important;
+}
+body.night-ops .file-content { color: #c8b89a !important; }
+body.night-ops .fc-title { color: #d4a050 !important; }
+body.night-ops .fc-subtitle { color: #8a7050 !important; }
+body.night-ops .fc-h3 { color: #c89060 !important; }
+body.night-ops .fc-stamp {
+  background: #2a1510 !important; color: #e8a0a0 !important;
+  border-color: #4a2020 !important;
+}
+body.night-ops .fc-prose { color: #b8a88a !important; }
+body.night-ops .evi-block {
+  background: #1a1410 !important; border-color: #2a1810 !important; color: #b8a88a !important;
+}
+body.night-ops .handnote { color: #e87050 !important; }
+body.night-ops .agent-note { color: #e87050 !important; border-left-color: #4a2020 !important; }
+body.night-ops .detail-close { color: #8a7050 !important; }
+body.night-ops .detail-close:hover { color: #d4a050 !important; }
+body.night-ops .brass-fastener-bar { background: #1a1410 !important; }
+body.night-ops .brass-fastener { background: radial-gradient(circle, #8a6040, #4a3020) !important; }
+
+/* Timeline */
+body.night-ops .timeline-bar {
+  background: #14100c !important; border-top-color: #2a1810 !important;
+}
+body.night-ops .timeline-bar label { color: #8a7050 !important; }
+body.night-ops .timeline-range { color: #c89060 !important; }
+body.night-ops .timeline-slider::-webkit-slider-runnable-track { background: #2a1810 !important; }
+body.night-ops .timeline-slider::-webkit-slider-thumb { background: #8b2020 !important; }
+
+/* Timeline View */
+body.night-ops .timeline-view {
+  background: linear-gradient(180deg, rgba(10,10,10,0.0) 0%, rgba(20,16,12,0.95) 15%) !important;
+  border-top-color: #2a1810 !important;
+}
+body.night-ops .timeline-header h3 { color: #c89060 !important; }
+body.night-ops .timeline-close { color: #8a7050 !important; }
+body.night-ops .timeline-axis { background: #2a1810 !important; }
+body.night-ops .timeline-dot { border-color: #4a2020 !important; }
+body.night-ops .timeline-label { color: #8a7050 !important; }
+body.night-ops .timeline-year { color: #6a5040 !important; }
+
+/* Map — dark filter on tile layer */
+body.night-ops .leaflet-tile-pane {
+  filter: brightness(0.6) contrast(1.2) saturate(0.3) sepia(0.4) hue-rotate(-10deg);
+}
+body.night-ops .leaflet-control-zoom a {
+  background: #1a1410 !important; color: #c89060 !important; border-color: #2a1810 !important;
+}
+body.night-ops .leaflet-control-attribution { background: rgba(20,16,12,0.8) !important; color: #6a5040 !important; }
+
+/* Popups */
+body.night-ops .heimdall-popup .p-content {
+  background: #1a1410 !important; color: #c8b89a !important; border-color: #2a1810 !important;
+}
+body.night-ops .heimdall-popup .p-title { color: #d4a050 !important; }
+body.night-ops .heimdall-popup .p-class { color: #e8a0a0 !important; }
+body.night-ops .heimdall-popup .p-sub,
+body.night-ops .heimdall-popup .p-src,
+body.night-ops .heimdall-popup .p-ev { color: #8a7050 !important; }
+body.night-ops .p-btn { background: #2a1510 !important; color: #c89060 !important; border-color: #4a2020 !important; }
+body.night-ops .p-note { color: #e87050 !important; }
+
+/* Background effects */
+body.night-ops .grain-overlay { opacity: 0.03 !important; }
+body.night-ops .coffee-stain { opacity: 0.02 !important; }
+body.night-ops .foxing-overlay { opacity: 0.02 !important; }
+
+/* Night Ops Toggle Button */
+.night-ops-toggle {
+  position: fixed; bottom: 48px; right: 12px; z-index: 1500;
+  background: #1a1410; border: 1px solid #4a2020; color: #c89060;
+  font-family: 'Special Elite', monospace; font-size: 9px;
+  padding: 6px 10px; cursor: pointer; border-radius: 2px;
+  text-transform: uppercase; letter-spacing: 1px;
+  transition: all 0.2s;
+}
+.night-ops-toggle:hover { background: #2a1510; color: #e8b070; }
+body.night-ops .night-ops-toggle {
+  background: #4a1010; color: #e8a0a0; border-color: #6a2020;
+}
+
+/* Mobile night ops */
+@media (max-width: 768px) {
+  body.night-ops .sidebar { box-shadow: inset 0 0 30px rgba(180,30,30,0.06) !important; }
+  body.night-ops .detail-panel { box-shadow: inset 0 0 30px rgba(180,30,30,0.06) !important; }
+  .night-ops-toggle { bottom: 80px; right: 8px; font-size: 8px; padding: 4px 8px; }
 }
 </style>
 </head>
@@ -1866,6 +2017,9 @@ body {
   <span class="timeline-range" id="year-label">1662 – 2025</span>
 </div>
 
+<!-- NIGHT OPS TOGGLE -->
+<button class="night-ops-toggle" id="night-ops-toggle" title="Toggle Night Operations mode">🌙 Night Ops</button>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="data/narratives.js"></script>
@@ -1900,6 +2054,20 @@ var searchQuery = '';
 function initPage() {
   loadDeepData();
 }
+
+/* ===== NIGHT OPS TOGGLE (H-106) ===== */
+(function() {
+  var toggle = document.getElementById('night-ops-toggle');
+  if (!toggle) return;
+  // Restore saved preference
+  if (localStorage.getItem('heimdall-night-ops') === '1') {
+    document.body.classList.add('night-ops');
+  }
+  toggle.addEventListener('click', function() {
+    var isNight = document.body.classList.toggle('night-ops');
+    localStorage.setItem('heimdall-night-ops', isNight ? '1' : '0');
+  });
+})();
 
 function initFromData() {
   createMap();
