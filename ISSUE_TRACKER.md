@@ -19,7 +19,6 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | ID | Title | Priority | Status | Description |
 |----|-------|----------|--------|-------------|
 | H-011 | Edge wear + inner glow | P2 | Open | Add 0.5-1px irregular borders + tan inner glow to paper containers |
-| H-040 | Responsive mobile layout | P1 | Open | Mobile: stacked layout with hamburger nav for folder tabs, touch-friendly targets |
 
 ### Data
 
@@ -31,7 +30,6 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | H-053 | RCMP Form 63 deep scan | P0 | Blocked | Full scan of RCMP Form 63 for all case physical evidence details |
 | H-054 | Fill research_needs.json gaps | P1 | Open | Execute tasks in research_tasks.txt to fill missing fields |
 | H-056 | Cross-reference witness names | P2 | Open | Match witnesses across multiple cases for pattern analysis |
-| H-060 | Geolocation verification | P1 | Open | Verify lat/lng for all 56 cases with modern mapping tools |
 | H-061 | Date disambiguation | P2 | Open | Standardize dates to ISO format where possible |
 
 ### Features
@@ -81,7 +79,9 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | H-022 | Paperclip toggle switches | P2 | 2026-05-13 | Metal paperclip slides between positions as toggle UI element |
 | H-030 | Polaroid photo effect | P0 | 2026-05-13 | Aged bg, thicker borders, stronger filter, hover enhance, tape corners |
 | H-031 | Scotch tape corner mounts | P1 | 2026-05-13 | Merged into H-030 polaroid effect — tape enhanced there |
-| H-055 | Media/photograph collection | P0 | 2026-05-13 | Added 3 public-domain images (Falcon Lake, Michalak, Sambro Light) |
+| H-040 | Responsive mobile layout | P1 | 2026-05-14 | Mobile touch targets fixed to 44px, timeline z-index, header readability |
+| H-055 | Media/photograph collection | P0 | 2026-05-13 | Added public-domain images (Falcon Lake, Michalak, Sambro Light) |
+| H-060 | Geolocation verification | P1 | 2026-05-14 | Full Nominatim audit of 56 cases; 3 coordinates corrected |
 | H-100 | Map search by location | P1 | 2026-05-13 | Search box filters sidebar + map markers by location, shape, year, ID |
 | H-102 | Timeline mode | P1 | 2026-05-13 | Horizontal timeline view with tier-colored dots, hover labels, adaptive years |
 | H-107 | Share/link to specific case | P1 | 2026-05-13 | URL hash-based deep linking (#CAN-012 opens that case directly) |
@@ -93,9 +93,9 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | Metric | Count |
 |--------|-------|
 | Total Issues | 38 |
-| Open | 12 |
-| Completed | 26 |
+| Open | 10 |
+| Completed | 28 |
 | Blocked | 1 |
-| P0 Critical | 3 |
-| P1 High | 5 |
+| P0 Critical | 2 |
+| P1 High | 4 |
 | P2 Medium | 4 |

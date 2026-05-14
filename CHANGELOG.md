@@ -1,5 +1,14 @@
 # CHANGELOG — Project HEIMDALL
 
+## [2026-05-14] v1.6 — Mobile Fixes, Geolocation Verification
+
+- **Fix: Mobile touch targets (H-040)** — `.view-toggle` and `.timeline-close` buttons raised from 32px to 44px min-height/min-width for WCAG compliance; `.timeline-view` z-index raised to 1110 (above timeline-bar at 1100); `.timeline-header h3` font-size increased from 9px to 11px for readability
+- **Fix: Geolocation verification (H-060)** — Full Nominatim API audit of all 56 cases: 38 OK (<20km), 5 CHECK (<50km, acceptable), 9 NO_RESULT (remote/water bodies), 3 corrected:
+  - CAN-028 Portage la Prairie: (49.5,-98.7)→(49.9724,-98.2892) — 60km error
+  - CAN-042 St-Hilaire: (45.5,-73.1)→(45.5624,-73.1919) — corrected to Mont Saint-Hilaire
+  - CAN-037 l'Annonciation: (46.4,-74.8)→(46.4108,-74.782) — refined to actual road location
+- **Data: CSV corrections** — Updated `canadian_ufo_sightings_v5.csv` with corrected coordinates for 3 cases
+
 ## [2026-05-13] v1.5 — Visual Polish, Timeline, Media
 
 - **Feat: Paper grain background (H-010)** — Enhanced grain overlay with 3 noise layers (512/256/128px), increased base opacity to 0.055

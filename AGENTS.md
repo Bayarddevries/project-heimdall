@@ -10,7 +10,7 @@ Project HEIMDALL is an interactive Leaflet.js map + classified-aesthetic archive
 
 **Live site:** https://bayarddevries.github.io/project-heimdall/
 **Repo:** github.com/Bayarddevries/project-heimdall
-**Current version:** V5 — 56 cases, Batch 1 visual polish deployed
+**Current version:** V5 — 56 cases, v1.6 deployed
 
 ---
 
@@ -134,7 +134,7 @@ Agents must verify:
 
 | File | Purpose |
 |------|---------|
-| `docs/index.html` | Main app (all HTML/CSS/JS, ~2373 lines) |
+| `docs/index.html` | Main app (all HTML/CSS/JS, ~2702 lines) |
 | `docs/narratives.js` | Embedded case narratives (generated, ~44KB) |
 | `data/cases/*.md` | Source markdown case files (56 files) |
 | `data/cases.json` | Metadata JSON (synced with CASES array) |
@@ -164,6 +164,24 @@ GitHub Pages serves from `docs/` and typically deploys within 60 seconds of the 
 | H-100 | Search | `.search-wrap`, `.search-input`, `.search-clear`. Filters by location/shape/year/ID |
 | H-016 | Die-cut tabs | `.folder-tab::after` notch, staggered `margin-left`, active `translateX(-4px)` |
 | H-030 | Polaroid | `.polaroid` aged bg, thicker borders, hover straighten+scale, `.tape` 40×14px |
+
+## v1.5 Features (Deployed 2026-05-13)
+
+| ID | Feature | Details |
+|----|---------|---------|
+| H-010 | Paper grain | 3 noise layers (512/256/128px), increased base opacity to 0.055 |
+| H-013 | Scan rotation | CSS vars `--scan-rot`/`--scan-trans`, translate offset on `.scan-angle-1` through `.scan-angle-5` |
+| H-014 | Staple accents | 3D staple graphic on `.fc-h3::before` with metallic gradient, prong shadows |
+| H-015 | Handwritten marginalia | `.handnote` with ✎ icon, `.agent-note` with dashed left border |
+| H-102 | Timeline mode | `.timeline-view` fixed bottom, tier-colored dots, hover labels, `.view-toggle` button |
+| H-055 | Media collection | 3 new public-domain images: Falcon Lake reconstruction, Steve Michalak saucer drawing, Sambro Light RCMP report |
+
+## v1.6 Features (Deployed 2026-05-14)
+
+| ID | Feature | Details |
+|----|---------|---------|
+| H-040 | Mobile touch targets | `.view-toggle` and `.timeline-close` raised to 44px min-dimension; `.timeline-view` z-index 1110; `.timeline-header h3` 11px |
+| H-060 | Geolocation verification | Full Nominatim API audit of 56 cases; 3 coordinates corrected (CAN-028, CAN-037, CAN-042) |
 
 ---
 
