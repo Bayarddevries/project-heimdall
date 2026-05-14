@@ -10,7 +10,7 @@ Project HEIMDALL is an interactive Leaflet.js map + classified-aesthetic archive
 
 **Live site:** https://bayarddevries.github.io/project-heimdall/
 **Repo:** github.com/Bayarddevries/project-heimdall
-**Current version:** V5 — 56 cases, v1.8 deployed
+**Current version:** V5 — 56 cases, v1.9 deployed
 
 ---
 
@@ -145,6 +145,7 @@ Agents must verify:
 | `scripts/rebuild_v5.py` | CSV → master JSON pipeline |
 | `scripts/regenerate_markdown.py` | Master JSON → markdown files |
 | `scripts/generate_frontend.py` | Markdown → frontend assets |
+| `.github/workflows/regenerate.yml` | CI/CD — auto-runs pipeline on push |
 
 ---
 
@@ -190,6 +191,15 @@ GitHub Pages serves from `docs/` and typically deploys within 60 seconds of the 
 || H-011 | Edge wear + inner glow | Paper edge shading with repeating gradients, inner glow on sidebar/detail-panel/top-bar, case-item edge wear lines, filter-bar edge shadow |
 || H-055 | Media collection | 9 new Wikimedia Commons images for 8 cases. media_urls in dict format with type/image/reference classification |
 || H-106 | Dark mode (night ops) | `.night-ops` class on `<body>`, 🌙 Night Ops toggle, dark backgrounds (#14100c), gold text (#c89060), red accents (#8b2020), map tile filter, localStorage persistence |
+
+## v1.9 Features (Deployed 2026-05-15)
+
+| ID | Feature | Details |
+|----|---------|---------|
+| H-055 | Media collection phase 2 | 32 public-domain images across 18 case folders. Wikimedia Commons + Wikipedia sources. media_urls synced for all cases with files |
+| H-200 | CI/CD automation | `.github/workflows/regenerate.yml` — GitHub Actions auto-runs pipeline on push when case data changes |
+
+---
 
 ## v1.8 Features (Deployed 2026-05-15)
 

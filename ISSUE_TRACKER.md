@@ -24,12 +24,6 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | H-053 | RCMP Form 63 deep scan | P0 | Blocked | Full scan of RCMP Form 63 for all case physical evidence details |
 | H-054 | Fill research_needs.json gaps | P1 | Open | Execute tasks in research_tasks.txt to fill missing fields |
 
-### Bug / Maintenance
-
-| ID | Title | Priority | Status | Description |
-|----|-------|----------|--------|-------------|
-| H-200 | narratives.js sync automation | P1 | Open | Automate narrative regeneration on commit (CI/CD hook) |
-
 ---
 
 ## Completed
@@ -61,7 +55,7 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | H-030 | Polaroid photo effect | P0 | 2026-05-13 | Aged bg, thicker borders, stronger filter, hover enhance, tape corners |
 | H-031 | Scotch tape corner mounts | P1 | 2026-05-13 | Merged into H-030 polaroid effect — tape enhanced there |
 | H-040 | Responsive mobile layout | P1 | 2026-05-14 | Mobile touch targets fixed to 44px, timeline z-index, header readability |
-| H-055 | Media/photograph collection | P0 | 2026-05-14 | 12+ public-domain images from Wikimedia Commons for 11 cases |
+| H-055 | Media/photograph collection | P0 | 2026-05-15 | 32 public-domain images across 18 case folders. Wikimedia Commons + Wikipedia sources |
 | H-056 | Cross-reference witness names | P2 | 2026-05-15 | Witness pattern matches by type (RCMP/Military/Police/Pilot/Civilian) |
 | H-060 | Geolocation verification | P1 | 2026-05-14 | Full Nominatim audit of 56 cases; 3 coordinates corrected |
 | H-061 | Date disambiguation | P2 | 2026-05-15 | Standardized all dates to ISO format with precision-aware display |
@@ -73,6 +67,7 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | H-105 | Sound effects | P3 | 2026-05-15 | Procedural Web Audio: paper rustle, stamp thud, staple click, UI click |
 | H-106 | Dark mode (night ops) | P2 | 2026-05-14 | Red-lit night operations theme with toggle button, localStorage persistence |
 | H-107 | Share/link to specific case | P1 | 2026-05-13 | URL hash-based deep linking (#CAN-012 opens that case directly) |
+| H-200 | narratives.js sync automation | P1 | 2026-05-15 | GitHub Actions workflow auto-runs pipeline on push when case data changes |
 | H-201 | Reduce narratives.js file size | P2 | 2026-05-15 | Minified narratives.js generation in pipeline (narratives.min.js) |
 | H-202 | Fix cases-all.json generation | P1 | 2026-05-15 | Verified regex frontmatter stripping works on all 56 files (no YAML parser needed) |
 
@@ -82,10 +77,10 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 
 | Metric | Count |
 |--------|-------|
-| Total Issues | 42 |
-| Open | 5 |
-| Completed | 36 |
+| Total Issues | 43 |
+| Open | 4 |
+| Completed | 38 |
 | Blocked | 1 |
 | P0 Critical | 1 |
 | P1 High | 3 |
-| P2 Medium | 1 |
+| P2 Medium | 0 |
