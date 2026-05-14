@@ -112,7 +112,14 @@
     "environmental_trace": "",
     "electromagnetics": "",
     "radar_confirmation": "",
-    "media_urls": [],
+    "media_urls": [
+      {
+        "url": "images/CAN-002/Parliament_building.jpg",
+        "title": "Parliament building",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      }
+    ],
     "source_primary": "Hansard Debates",
     "source_secondary": [],
     "cadors_report_url": "",
@@ -326,7 +333,14 @@
     "environmental_trace": "",
     "electromagnetics": "",
     "radar_confirmation": "",
-    "media_urls": [],
+    "media_urls": [
+      {
+        "url": "images/CAN-005/Craft_drawing.jpg",
+        "title": "Craft drawing",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      }
+    ],
     "source_primary": "U.S. Navy Records",
     "source_secondary": [],
     "cadors_report_url": "",
@@ -613,7 +627,24 @@
     "electromagnetics": "",
     "radar_confirmation": "",
     "media_urls": [
-      "https://www.cbc.ca/radio/Unreserved/Yellowknife-UFO-legends"
+      {
+        "url": "images/CAN-009/RCMP_Report_Full.pdf",
+        "title": "RCMP Report Full",
+        "type": "document",
+        "source": "Archived report"
+      },
+      {
+        "url": "images/CAN-009/RCMP_Report_Page2.pdf",
+        "title": "RCMP Report Page2",
+        "type": "document",
+        "source": "Archived report"
+      },
+      {
+        "url": "images/CAN-009/RCMP_Report_Page3.pdf",
+        "title": "RCMP Report Page3",
+        "type": "document",
+        "source": "Archived report"
+      }
     ],
     "source_primary": "Witness Account",
     "source_secondary": [],
@@ -647,7 +678,7 @@
     "radiation_detected": true,
     "radiation_details": "",
     "official_reports": [
-      "MUFON — Physical Evidence case file, Canada-North division"
+      "MUFON \u2014 Physical Evidence case file, Canada-North division"
     ],
     "official_investigation": "",
     "richness_score": 100
@@ -797,7 +828,7 @@
     "radiation_detected": false,
     "radiation_details": "",
     "official_reports": [
-      "MUFON — Early sighting archive, Pacific Northwest division"
+      "MUFON \u2014 Early sighting archive, Pacific Northwest division"
     ],
     "official_investigation": "",
     "richness_score": 100
@@ -834,7 +865,7 @@
     "witness_count": 1,
     "witness_names": [],
     "witnesses": "Stefan Michalak",
-    "witness_credibility": "High — documented, physical evidence, multiple corroborating sources",
+    "witness_credibility": "High \u2014 documented, physical evidence, multiple corroborating sources",
     "witness_occupation": "Prospector, Amateur Scientist, Inventor from Winnipeg",
     "witness_primary": "Stefan Michalak",
     "physical_evidence": [
@@ -849,9 +880,54 @@
     "electromagnetics": "Radio interference reported; walkie-talkie reportedly malfunctioned during encounter",
     "radar_confirmation": "",
     "media_urls": [
-      "https://en.wikipedia.org/wiki/Falcon_Lake_UFO_incident",
-      "https://www.cbc.ca/archives/entry/1967-falcon-lake-ufo-incident",
-      "https://nuforc.org/?s=Falcon+Lake+1967"
+      {
+        "url": "images/CAN-012/Drawing_of_the_craft.jpg",
+        "title": "Drawing of the craft",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      },
+      {
+        "url": "images/CAN-012/Drawing_of_the_craft_2.jpg",
+        "title": "Drawing of the craft 2",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      },
+      {
+        "url": "images/CAN-012/Falcon_Lake_Whiteshell_PP.jpg",
+        "title": "Falcon Lake Whiteshell PP",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      },
+      {
+        "url": "images/CAN-012/Falconlake_reconstitution.png",
+        "title": "Falconlake reconstitution",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      },
+      {
+        "url": "images/CAN-012/RCMP_Report.jpg",
+        "title": "RCMP Report",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      },
+      {
+        "url": "images/CAN-012/Steve_Michalak_burns.jpg",
+        "title": "Steve Michalak burns",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      },
+      {
+        "url": "images/CAN-012/Steve_Michalak_with_drawing.png",
+        "title": "Steve Michalak with drawing",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      },
+      {
+        "url": "images/CAN-012/Steve_Michalak_with_drawing_of_saucer.png",
+        "title": "Steve Michalak with drawing of saucer",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      }
     ],
     "source_primary": "RCMP Form 63",
     "source_secondary": [],
@@ -936,8 +1012,42 @@
     "electromagnetics": "",
     "radar_confirmation": "",
     "media_urls": [
-      "https://en.wikipedia.org/wiki/Shag_Harbour_UFO_incident",
-      "https://www.cbc.ca/news/canada/nova-scotia/the-mystery-of-shag-harbour"
+      {
+        "url": "images/CAN-013/Newspaper_front_page.png",
+        "title": "Newspaper front page",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      },
+      {
+        "url": "images/CAN-013/Sambro_Light_RCMP_1967.jpg",
+        "title": "Sambro Light RCMP 1967",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      },
+      {
+        "url": "images/CAN-013/Shag_Harbour.jpg",
+        "title": "Shag Harbour",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      },
+      {
+        "url": "images/CAN-013/Shag_Harbour_Incident_Park.jpg",
+        "title": "Shag Harbour Incident Park",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      },
+      {
+        "url": "images/CAN-013/Shag_harbour_DND_memo.webp",
+        "title": "Shag harbour DND memo",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      },
+      {
+        "url": "images/CAN-013/Shag_harbour_UFO_sign.jpg",
+        "title": "Shag harbour UFO sign",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      }
     ],
     "source_primary": "RCAF/Coast Guard",
     "source_secondary": [],
@@ -950,7 +1060,7 @@
     "skepticism_analysis": "",
     "current_status": "Open",
     "analyst_notes": "",
-    "narrative": "On October 4, 1967, at approximately 11:20 PM, multiple witnesses observed a low-flying illuminated object descending toward the waters off Shag Harbour, Nova Scotia. Four teenage fishermen first spotted the object. Laurie Wickens and friends saw it approach the water, and Wickens called the RCMP to report a possible plane crash. RCMP officers arrived within 15 minutes to find an object floating in the water with lights visible, approximately 250-300 meters offshore. The object sank before rescue could be attempted. The RCMP, Canadian Coast Guard, RCAF, and Royal Canadian Navy all responded. Navy divers from Fleet Diving Unit Atlantic spent three days searching the seafloor. The RCMP officially filed a 'Flying Saucer' report — the only Canadian government document classifying an incident as a UFO. Yellowish foam was found on the water surface. Despite an extensive search involving naval vessels and divers, nothing was ever recovered. The Navy's final statement: 'Not a trace... not a clue... not a bit of anything.' This remains one of the most important Canadian UFO cases.",
+    "narrative": "On October 4, 1967, at approximately 11:20 PM, multiple witnesses observed a low-flying illuminated object descending toward the waters off Shag Harbour, Nova Scotia. Four teenage fishermen first spotted the object. Laurie Wickens and friends saw it approach the water, and Wickens called the RCMP to report a possible plane crash. RCMP officers arrived within 15 minutes to find an object floating in the water with lights visible, approximately 250-300 meters offshore. The object sank before rescue could be attempted. The RCMP, Canadian Coast Guard, RCAF, and Royal Canadian Navy all responded. Navy divers from Fleet Diving Unit Atlantic spent three days searching the seafloor. The RCMP officially filed a 'Flying Saucer' report \u2014 the only Canadian government document classifying an incident as a UFO. Yellowish foam was found on the water surface. Despite an extensive search involving naval vessels and divers, nothing was ever recovered. The Navy's final statement: 'Not a trace... not a clue... not a bit of anything.' This remains one of the most important Canadian UFO cases.",
     "pattern_tags": [
       "close-encounter",
       "mass-sighting",
@@ -1287,7 +1397,7 @@
     "trail_or_vapor": "",
     "weather_conditions": "",
     "contact_type": "CE3",
-    "being_type": "Humanoid — tall men in dark suits",
+    "being_type": "Humanoid \u2014 tall men in dark suits",
     "being_height": "",
     "being_appearance": "",
     "being_behavior": "",
@@ -1296,7 +1406,7 @@
     "witness_names": [],
     "witnesses": "A nurse driving home from a late shift encountered a brilliant, silent light descending toward her vehicle. Car electronics failed, engine died. Brief missing time and vivid 'white room' experience. Vehicle required complete electrical diagnostic due to power surge.",
     "witness_credibility": "High",
-    "witness_occupation": "Medical — Nurse",
+    "witness_occupation": "Medical \u2014 Nurse",
     "witness_primary": "",
     "physical_evidence": [
       "Witness testimony and timeline reconstruction",
@@ -1305,7 +1415,14 @@
     "environmental_trace": "",
     "electromagnetics": "Car electronics failed; engine died; voltage surge on restart",
     "radar_confirmation": "",
-    "media_urls": [],
+    "media_urls": [
+      {
+        "url": "images/CAN-018/Duncan_City_Hall_BC.jpg",
+        "title": "Duncan City Hall BC",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      }
+    ],
     "source_primary": "Psychological Profile",
     "source_secondary": [],
     "cadors_report_url": "",
@@ -1317,7 +1434,7 @@
     "skepticism_analysis": "",
     "current_status": "Open",
     "analyst_notes": "",
-    "narrative": "On January 1, 1970, nurse Doreen Kendall was driving home from a late shift at Duncan Hospital, Vancouver Island, when she encountered a brilliant, silent light that descended toward her vehicle. Her car's electronics immediately failed and the engine died. During the encounter, she experienced what she described as missing time and a vivid 'white room' experience involving two tall beings in dark suits. Upon regaining consciousness, she found her car's electrical system completely drained — the mechanic later described the voltage spike as 'impossible' from any known vehicle malfunction. The case was later documented by researcher Chris Rutkowski and classified as a Close Encounter of the Third Kind.",
+    "narrative": "On January 1, 1970, nurse Doreen Kendall was driving home from a late shift at Duncan Hospital, Vancouver Island, when she encountered a brilliant, silent light that descended toward her vehicle. Her car's electronics immediately failed and the engine died. During the encounter, she experienced what she described as missing time and a vivid 'white room' experience involving two tall beings in dark suits. Upon regaining consciousness, she found her car's electrical system completely drained \u2014 the mechanic later described the voltage spike as 'impossible' from any known vehicle malfunction. The case was later documented by researcher Chris Rutkowski and classified as a Close Encounter of the Third Kind.",
     "pattern_tags": [
       "close-encounter",
       "electromagnetic",
@@ -2024,10 +2141,14 @@
     ],
     "environmental_trace": "",
     "electromagnetics": "",
-    "radar_confirmation": "Yes — base radar tracked the object",
+    "radar_confirmation": "Yes \u2014 base radar tracked the object",
     "media_urls": [
-      "https://winnipegsun.com/archives/1979/11/ufo-over-portage",
-      "https://www.ufoofthewestcanada.ca/1979-portage-la-prairies"
+      {
+        "url": "images/CAN-028/Portage_la_Prairie_MB.jpg",
+        "title": "Portage la Prairie MB",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      }
     ],
     "source_primary": "Military Radar Logs",
     "source_secondary": [],
@@ -2058,7 +2179,7 @@
     "radiation_detected": false,
     "radiation_details": "",
     "official_reports": [
-      "MUFON — Archived under Manitoba Military Files 1979"
+      "MUFON \u2014 Archived under Manitoba Military Files 1979"
     ],
     "official_investigation": "",
     "richness_score": 100
@@ -2167,7 +2288,7 @@
     "witness_names": [],
     "witnesses": "Quebec provincial police (SQ) officers on highway patrol witnessed a hovering, disc-shaped object with rotating multicolored lights. Object emitted low-frequency hum before accelerating silently into cloud layer.",
     "witness_credibility": "High",
-    "witness_occupation": "Law Enforcement — SQ Officers",
+    "witness_occupation": "Law Enforcement \u2014 SQ Officers",
     "witness_primary": "",
     "physical_evidence": [
       "Official SQ incident report logs",
@@ -2190,7 +2311,7 @@
     "skepticism_analysis": "",
     "current_status": "Open",
     "analyst_notes": "",
-    "narrative": "In 1987, two Quebec provincial police (Sureté du Quebec) officers on highway patrol near L'Ancienne-Lorette, Quebec witnessed a hovering disc-shaped object with rotating multicolored lights. The object emitted a low-frequency hum before accelerating silently upward and disappearing into the cloud layer. Both officers signed a joint affidavit and filed an official SQ incident report. Law enforcement witnesses give this case high credibility.",
+    "narrative": "In 1987, two Quebec provincial police (Suret\u00e9 du Quebec) officers on highway patrol near L'Ancienne-Lorette, Quebec witnessed a hovering disc-shaped object with rotating multicolored lights. The object emitted a low-frequency hum before accelerating silently upward and disappearing into the cloud layer. Both officers signed a joint affidavit and filed an official SQ incident report. Law enforcement witnesses give this case high credibility.",
     "pattern_tags": [
       "close-encounter",
       "daylight-disc",
@@ -2208,7 +2329,7 @@
     "radiation_detected": false,
     "radiation_details": "",
     "official_reports": [
-      "SQ — Official SQ incident report logs"
+      "SQ \u2014 Official SQ incident report logs"
     ],
     "official_investigation": "",
     "richness_score": 100
@@ -3095,7 +3216,7 @@
     "trail_or_vapor": "",
     "weather_conditions": "",
     "contact_type": "CE3",
-    "being_type": "Humanoid — MIB (Men in Black)",
+    "being_type": "Humanoid \u2014 MIB (Men in Black)",
     "being_height": "",
     "being_appearance": "Men in dark, dated suits; unnatural pale complexions",
     "being_behavior": "",
@@ -3113,7 +3234,14 @@
     "environmental_trace": "",
     "electromagnetics": "",
     "radar_confirmation": "",
-    "media_urls": [],
+    "media_urls": [
+      {
+        "url": "images/CAN-043/Niagara_watervallen_canada.jpg",
+        "title": "Niagara watervallen canada",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      }
+    ],
     "source_primary": "CCTV/Witness",
     "source_secondary": [],
     "cadors_report_url": "",
@@ -3141,7 +3269,7 @@
     "radiation_detected": false,
     "radiation_details": "",
     "official_reports": [
-      "MUFON — MIB Encounter database, Case #94-ONF"
+      "MUFON \u2014 MIB Encounter database, Case #94-ONF"
     ],
     "official_investigation": "",
     "richness_score": 91
@@ -3204,7 +3332,7 @@
     "skepticism_analysis": "",
     "current_status": "Open",
     "analyst_notes": "",
-    "narrative": "Beginning on January 5, 2008, dozens of residents of Stephenville, Newfoundland reported seeing large lights moving silently across the sky. A 14-year-old boy reported a V-shaped craft flying at extremely low altitude over the town. The U.S. military acknowledged operating aircraft from CFB Goose Bay that evening but denied having any craft that would account for all the sightings. CFB Goose Bay radar reportedly tracked objects moving at speeds exceeding 1,000 mph at altitudes of 500-5,000 feet — well outside normal aircraft operating parameters. RCMP Constable Paul Snow confirmed over 30 credible reports in the following days. The case gained international attention and was dubbed the 'Newfoundland Trench' incident. Military radar tracks at impossible speeds combined with dozens of civilian and police reports make this one of the most compelling modern Canadian UFO cases.",
+    "narrative": "Beginning on January 5, 2008, dozens of residents of Stephenville, Newfoundland reported seeing large lights moving silently across the sky. A 14-year-old boy reported a V-shaped craft flying at extremely low altitude over the town. The U.S. military acknowledged operating aircraft from CFB Goose Bay that evening but denied having any craft that would account for all the sightings. CFB Goose Bay radar reportedly tracked objects moving at speeds exceeding 1,000 mph at altitudes of 500-5,000 feet \u2014 well outside normal aircraft operating parameters. RCMP Constable Paul Snow confirmed over 30 credible reports in the following days. The case gained international attention and was dubbed the 'Newfoundland Trench' incident. Military radar tracks at impossible speeds combined with dozens of civilian and police reports make this one of the most compelling modern Canadian UFO cases.",
     "pattern_tags": [
       "daylight-disc",
       "mass-sighting",
@@ -3345,8 +3473,12 @@
     "electromagnetics": "Localized EM interference reported near base",
     "radar_confirmation": "",
     "media_urls": [
-      "https://www.radio-canada.ca/nouvelle/2008/10/21/ovni-valcartier",
-      "https://www.tvanouvelles.ca/2008/10/20/un-ovni-au-dessus-de-valcartier"
+      {
+        "url": "images/CAN-046/Valcartier_location.png",
+        "title": "Valcartier location",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      }
     ],
     "source_primary": "Radio-Canada; CUFON",
     "source_secondary": [],
@@ -3986,7 +4118,7 @@
     "witness_names": [],
     "witnesses": "Commercial pilot reported fast-moving, non-transponder object pacing aircraft at parallel altitude for 12 miles. Object executed impossible vertical climb and vanished from radar. ATC confirmed no scheduled military exercises.",
     "witness_credibility": "High",
-    "witness_occupation": "Aviation — Commercial Pilot",
+    "witness_occupation": "Aviation \u2014 Commercial Pilot",
     "witness_primary": "",
     "physical_evidence": [
       "Flight path telemetry data",
@@ -3994,10 +4126,14 @@
     ],
     "environmental_trace": "",
     "electromagnetics": "",
-    "radar_confirmation": "Yes — ATC radar tracked the object",
+    "radar_confirmation": "Yes \u2014 ATC radar tracked the object",
     "media_urls": [
-      "https://globalnews.ca/news/2025/02/vulcan-ufo-pilot-report",
-      "https://www.vulcanadvanceton.ca/news/2025-sky-anomaly"
+      {
+        "url": "images/CAN-055/Vulcan_County_AB.jpg",
+        "title": "Vulcan County AB",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      }
     ],
     "source_primary": "ASRS / Global News",
     "source_secondary": [],
@@ -4027,7 +4163,7 @@
     "radiation_detected": false,
     "radiation_details": "",
     "official_reports": [
-      "Transport Canada — ASRS (Aviation Safety Reporting System) filing"
+      "Transport Canada \u2014 ASRS (Aviation Safety Reporting System) filing"
     ],
     "official_investigation": "",
     "richness_score": 100
