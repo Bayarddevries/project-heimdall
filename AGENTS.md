@@ -10,7 +10,7 @@ Project HEIMDALL is an interactive Leaflet.js map + classified-aesthetic archive
 
 **Live site:** https://bayarddevries.github.io/project-heimdall/
 **Repo:** github.com/Bayarddevries/project-heimdall
-**Current version:** V5 — 56 cases, v1.6 deployed
+**Current version:** V5 — 56 cases, v1.8 deployed
 
 ---
 
@@ -187,9 +187,20 @@ GitHub Pages serves from `docs/` and typically deploys within 60 seconds of the 
 
 | ID | Feature | Details |
 |----|---------|---------|
-| H-011 | Edge wear + inner glow | Paper edge shading with repeating gradients, inner glow on sidebar/detail-panel/top-bar, case-item edge wear lines, filter-bar edge shadow |
-| H-055 | Media collection | 9 new Wikimedia Commons images for 8 cases. media_urls in dict format with type/image/reference classification |
-| H-106 | Dark mode (night ops) | `.night-ops` class on `<body>`, 🌙 Night Ops toggle, dark backgrounds (#14100c), gold text (#c89060), red accents (#8b2020), map tile filter, localStorage persistence |
+|| H-011 | Edge wear + inner glow | Paper edge shading with repeating gradients, inner glow on sidebar/detail-panel/top-bar, case-item edge wear lines, filter-bar edge shadow |
+|| H-055 | Media collection | 9 new Wikimedia Commons images for 8 cases. media_urls in dict format with type/image/reference classification |
+|| H-106 | Dark mode (night ops) | `.night-ops` class on `<body>`, 🌙 Night Ops toggle, dark backgrounds (#14100c), gold text (#c89060), red accents (#8b2020), map tile filter, localStorage persistence |
+
+## v1.8 Features (Deployed 2026-05-15)
+
+| ID | Feature | Details |
+|----|---------|---------|
+| H-101 | Case relationship graph | 4th "RELATIONSHIPS" tab with visual node graph + sortable table. Shows cases connected by shared pattern tags or explicit cross-references. `.rel-graph`, `.rel-node`, `.rel-central`, `.rel-linked`, `.rel-line`, `.rel-tags`, `.rel-tag`, `.rel-tier`, `.rel-table` |
+| H-061 | Date disambiguation | All 56 dates standardized to ISO format (YYYY-MM-DD) with `date_precision` field (year/month/day). `formatDate()` function for human-readable display |
+| H-105 | Sound effects | Procedural Web Audio API: `playPaperRustle()`, `playStampThud()`, `playStapleClick()`, `playClick()`. `toggleSound()` with 🔊/🔇 button |
+| H-056 | Witness pattern cross-reference | "Witness Pattern Matches" in Relationships tab. Categorizes by RCMP/Military/Police/Pilot/Civilian Group |
+| H-201 | Narratives.js minification | Pipeline generates `narratives.min.js`. HTML loads minified version |
+| H-202 | YAML parser fix | Verified regex frontmatter stripping works on all 56 files |
 
 ---
 

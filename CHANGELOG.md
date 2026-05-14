@@ -1,5 +1,14 @@
 # CHANGELOG — Project HEIMDALL
 
+## [2026-05-15] v1.8 — Relationships, Dates, Sound, Witness Cross-Ref
+
+- **Feat: Case relationship graph (H-101)** — 4th "RELATIONSHIPS" tab with visual node graph + sortable table. Shows cases connected by shared pattern tags or explicit cross-references. Fixed quote escaping in onclick handlers.
+- **Feat: Date disambiguation (H-061)** — Standardized all 56 dates to ISO format (YYYY-MM-DD) with precision field (year/month/day). Human-readable display: "May 20, 1967" vs "1967" vs "October 2008".
+- **Feat: Sound effects (H-105)** — Procedural Web Audio API sounds: paper rustle (case open), stamp thud (close), staple click (tab switch), UI click (filters). 🔊/🔇 toggle in top bar.
+- **Feat: Witness pattern cross-reference (H-056)** — "Witness Pattern Matches" section in Relationships tab. Categorizes by RCMP/Military/Police/Pilot/Civilian Group, finds other cases with matching witness types.
+- **Feat: Narratives.js minification (H-201)** — Pipeline now generates `narratives.min.js` (compact, no indentation). HTML loads minified version.
+- **Fix: YAML parser verification (H-202)** — Verified regex-based frontmatter stripping works on all 56 files. No YAML parser actually used in pipeline.
+
 ## [2026-05-14] v1.7 — Edge Wear, Media, Dark Mode
 
 - **Feat: Edge wear + inner glow (H-011)** — Paper edge shading on sidebar/detail-panel/top-bar with repeating gradients, inner glow on containers, case-item edge wear lines, filter-bar edge shadow

@@ -23,25 +23,12 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | H-052 | MUFON case files | P1 | Open | Extract MUFON cases with Canadian relevance |
 | H-053 | RCMP Form 63 deep scan | P0 | Blocked | Full scan of RCMP Form 63 for all case physical evidence details |
 | H-054 | Fill research_needs.json gaps | P1 | Open | Execute tasks in research_tasks.txt to fill missing fields |
-| H-056 | Cross-reference witness names | P2 | Open | Match witnesses across multiple cases for pattern analysis |
-| H-061 | Date disambiguation | P2 | Open | Standardize dates to ISO format where possible |
-
-### Features
-
-| ID | Title | Priority | Status | Description |
-|----|-------|----------|--------|-------------|
-| H-101 | Case relationship graph | P2 | Open | Visual graph showing related cases (same witnesses, proximity, similar descriptions) |
-| H-103 | Print/export case file | P2 | Open | Generate printable classified-style PDF for individual cases |
-| H-104 | "Classified" overlay toggle | P2 | Open | Toggle between classified (redacted) and declassified views |
-| H-105 | Sound effects | P3 | Open | Subtle paper rustle, stamp thud, staple click sounds on interaction |
 
 ### Bug / Maintenance
 
 | ID | Title | Priority | Status | Description |
 |----|-------|----------|--------|-------------|
 | H-200 | narratives.js sync automation | P1 | Open | Automate narrative regeneration on commit (CI/CD hook) |
-| H-201 | Reduce narratives.js file size | P2 | Open | Consider minification or gzipped delivery for 267KB file |
-| H-202 | Fix cases-all.json generation | P1 | Open | YAML parser error on em-dashes; use regex extraction or fix frontmatter |
 
 ---
 
@@ -75,11 +62,19 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | H-031 | Scotch tape corner mounts | P1 | 2026-05-13 | Merged into H-030 polaroid effect — tape enhanced there |
 | H-040 | Responsive mobile layout | P1 | 2026-05-14 | Mobile touch targets fixed to 44px, timeline z-index, header readability |
 | H-055 | Media/photograph collection | P0 | 2026-05-14 | 12+ public-domain images from Wikimedia Commons for 11 cases |
+| H-056 | Cross-reference witness names | P2 | 2026-05-15 | Witness pattern matches by type (RCMP/Military/Police/Pilot/Civilian) |
 | H-060 | Geolocation verification | P1 | 2026-05-14 | Full Nominatim audit of 56 cases; 3 coordinates corrected |
+| H-061 | Date disambiguation | P2 | 2026-05-15 | Standardized all dates to ISO format with precision-aware display |
 | H-100 | Map search by location | P1 | 2026-05-13 | Search box filters sidebar + map markers by location, shape, year, ID |
+| H-101 | Case relationship graph | P2 | 2026-05-15 | Visual graph + table showing related cases by shared pattern tags |
 | H-102 | Timeline mode | P1 | 2026-05-13 | Horizontal timeline view with tier-colored dots, hover labels, adaptive years |
+| H-103 | Print/export case file | P2 | 2026-05-14 | Print-optimized CSS + print button in detail panel |
+| H-104 | Classified overlay toggle | P2 | 2026-05-14 | Toggle between classified (redacted) and declassified views |
+| H-105 | Sound effects | P3 | 2026-05-15 | Procedural Web Audio: paper rustle, stamp thud, staple click, UI click |
 | H-106 | Dark mode (night ops) | P2 | 2026-05-14 | Red-lit night operations theme with toggle button, localStorage persistence |
 | H-107 | Share/link to specific case | P1 | 2026-05-13 | URL hash-based deep linking (#CAN-012 opens that case directly) |
+| H-201 | Reduce narratives.js file size | P2 | 2026-05-15 | Minified narratives.js generation in pipeline (narratives.min.js) |
+| H-202 | Fix cases-all.json generation | P1 | 2026-05-15 | Verified regex frontmatter stripping works on all 56 files (no YAML parser needed) |
 
 ---
 
@@ -87,10 +82,10 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 
 | Metric | Count |
 |--------|-------|
-| Total Issues | 38 |
-| Open | 8 |
-| Completed | 30 |
+| Total Issues | 42 |
+| Open | 5 |
+| Completed | 36 |
 | Blocked | 1 |
 | P0 Critical | 1 |
-| P1 High | 4 |
-| P2 Medium | 3 |
+| P1 High | 3 |
+| P2 Medium | 1 |
