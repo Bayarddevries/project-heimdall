@@ -1,5 +1,11 @@
 # CHANGELOG — Project HEIMDALL
 
+## [2026-05-14] v1.7 — Edge Wear, Media, Dark Mode
+
+- **Feat: Edge wear + inner glow (H-011)** — Paper edge shading on sidebar/detail-panel/top-bar with repeating gradients, inner glow on containers, case-item edge wear lines, filter-bar edge shadow
+- **Feat: Media collection continued (H-055)** — 9 new Wikimedia Commons images for 8 cases: Falcon Lake landscape, Shag Harbour village + park, Duncan BC city hall, Portage la Prairie, L'Ancienne-Lorette church, Niagara Falls, Valcartier location map, Vulcan County AB. All media_urls updated to dict format with type classification
+- **Feat: Dark mode night ops (H-106)** — Full red-lit "night operations" theme with 🌙 Night Ops toggle button. Dark backgrounds (#14100c), muted gold text (#c89060), red accents (#8b2020). Map tile filter (brightness 0.6 + sepia + hue-rotate). localStorage persistence. Mobile responsive
+
 ## [2026-05-14] v1.6 — Mobile Fixes, Geolocation Verification
 
 - **Fix: Mobile touch targets (H-040)** — `.view-toggle` and `.timeline-close` buttons raised from 32px to 44px min-height/min-width for WCAG compliance; `.timeline-view` z-index raised to 1110 (above timeline-bar at 1100); `.timeline-header h3` font-size increased from 9px to 11px for readability

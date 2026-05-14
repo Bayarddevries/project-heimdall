@@ -14,12 +14,6 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 
 ## Open Issues
 
-### UI / Visual Overhaul
-
-| ID | Title | Priority | Status | Description |
-|----|-------|----------|--------|-------------|
-| H-011 | Edge wear + inner glow | P2 | Open | Add 0.5-1px irregular borders + tan inner glow to paper containers |
-
 ### Data
 
 | ID | Title | Priority | Status | Description |
@@ -40,7 +34,6 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | H-103 | Print/export case file | P2 | Open | Generate printable classified-style PDF for individual cases |
 | H-104 | "Classified" overlay toggle | P2 | Open | Toggle between classified (redacted) and declassified views |
 | H-105 | Sound effects | P3 | Open | Subtle paper rustle, stamp thud, staple click sounds on interaction |
-| H-106 | Dark mode (night ops) | P2 | Open | Red-lit "night operations" variant of the classified aesthetic |
 
 ### Bug / Maintenance
 
@@ -66,6 +59,7 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | H-008 | 2023 flap integration | P1 | 2025-05-11 | Added CAN-051 to CAN-054 from cross-border cases |
 | H-009 | Research infrastructure | P0 | 2025-05-11 | research_needs.json, research_tasks.txt, data schema |
 | H-010 | Paper grain background | P1 | 2026-05-13 | Enhanced grain overlay — 3 noise layers, increased opacity |
+| H-011 | Edge wear + inner glow | P2 | 2026-05-14 | Paper edge shading, inner glow on containers, case-item edge wear |
 | H-012 | Coffee stains + foxing | P2 | 2026-05-13 | 5 coffee stain elements + foxing overlay on background |
 | H-013 | Offset/scanned text rotation | P1 | 2026-05-13 | Scan-angle classes with translate offset for photocopy feel |
 | H-014 | Staple/paperclip accents | P1 | 2026-05-13 | 3D staple graphic on fc-h3 section headers |
@@ -80,10 +74,11 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | H-030 | Polaroid photo effect | P0 | 2026-05-13 | Aged bg, thicker borders, stronger filter, hover enhance, tape corners |
 | H-031 | Scotch tape corner mounts | P1 | 2026-05-13 | Merged into H-030 polaroid effect — tape enhanced there |
 | H-040 | Responsive mobile layout | P1 | 2026-05-14 | Mobile touch targets fixed to 44px, timeline z-index, header readability |
-| H-055 | Media/photograph collection | P0 | 2026-05-13 | Added public-domain images (Falcon Lake, Michalak, Sambro Light) |
+| H-055 | Media/photograph collection | P0 | 2026-05-14 | 12+ public-domain images from Wikimedia Commons for 11 cases |
 | H-060 | Geolocation verification | P1 | 2026-05-14 | Full Nominatim audit of 56 cases; 3 coordinates corrected |
 | H-100 | Map search by location | P1 | 2026-05-13 | Search box filters sidebar + map markers by location, shape, year, ID |
 | H-102 | Timeline mode | P1 | 2026-05-13 | Horizontal timeline view with tier-colored dots, hover labels, adaptive years |
+| H-106 | Dark mode (night ops) | P2 | 2026-05-14 | Red-lit night operations theme with toggle button, localStorage persistence |
 | H-107 | Share/link to specific case | P1 | 2026-05-13 | URL hash-based deep linking (#CAN-012 opens that case directly) |
 
 ---
@@ -93,9 +88,9 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | Metric | Count |
 |--------|-------|
 | Total Issues | 38 |
-| Open | 10 |
-| Completed | 28 |
+| Open | 8 |
+| Completed | 30 |
 | Blocked | 1 |
-| P0 Critical | 2 |
+| P0 Critical | 1 |
 | P1 High | 4 |
-| P2 Medium | 4 |
+| P2 Medium | 3 |

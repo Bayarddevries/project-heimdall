@@ -134,7 +134,7 @@ Agents must verify:
 
 | File | Purpose |
 |------|---------|
-| `docs/index.html` | Main app (all HTML/CSS/JS, ~2702 lines) |
+| `docs/index.html` | Main app (all HTML/CSS/JS, ~2920 lines) |
 | `docs/narratives.js` | Embedded case narratives (generated, ~44KB) |
 | `data/cases/*.md` | Source markdown case files (56 files) |
 | `data/cases.json` | Metadata JSON (synced with CASES array) |
@@ -182,6 +182,14 @@ GitHub Pages serves from `docs/` and typically deploys within 60 seconds of the 
 |----|---------|---------|
 | H-040 | Mobile touch targets | `.view-toggle` and `.timeline-close` raised to 44px min-dimension; `.timeline-view` z-index 1110; `.timeline-header h3` 11px |
 | H-060 | Geolocation verification | Full Nominatim API audit of 56 cases; 3 coordinates corrected (CAN-028, CAN-037, CAN-042) |
+
+## v1.7 Features (Deployed 2026-05-14)
+
+| ID | Feature | Details |
+|----|---------|---------|
+| H-011 | Edge wear + inner glow | Paper edge shading with repeating gradients, inner glow on sidebar/detail-panel/top-bar, case-item edge wear lines, filter-bar edge shadow |
+| H-055 | Media collection | 9 new Wikimedia Commons images for 8 cases. media_urls in dict format with type/image/reference classification |
+| H-106 | Dark mode (night ops) | `.night-ops` class on `<body>`, 🌙 Night Ops toggle, dark backgrounds (#14100c), gold text (#c89060), red accents (#8b2020), map tile filter, localStorage persistence |
 
 ---
 
