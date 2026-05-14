@@ -1515,6 +1515,7 @@ var CONTACT_LABELS = {
    ============================================================== */
 var map, markers = {}, activeFilter = 'all', minYear = 1662, ALL_CASES = [], CASES = [];
 var allCases = [];
+var deepLinkHandled = false;
 
 /* ==============================================================
    INIT -- load JSON first, then initialize UI
@@ -1555,6 +1556,14 @@ function loadDeepData() {
       });
       allCases = CASES.slice();
       initFromData();
+      // Handle deep link on first load
+      if (!deepLinkHandled) {
+        deepLinkHandled = true;
+        var hash = window.location.hash.replace('#', '');
+        if (hash && hash.match(/^CAN-\d{3}$/)) {
+          setTimeout(function() { openCaseById(hash); }, 300);
+        }
+      }
     })
     .catch(function(e) {
       console.log('Deep data load failed, using inline:', e);
@@ -1682,6 +1691,10 @@ window.openDetail = function(caseId) {
   var c = allCases.find(function(x){ return x.id === caseId; });
   if (!c) return;
   map.closePopup();
+  // Update URL hash for deep linking
+  if (window.location.hash !== '#' + caseId) {
+    history.replaceState(null, null, '#' + caseId);
+  }
 
   var panel = document.getElementById('detail-panel');
   var contentEl = document.getElementById('detail-content');
@@ -2211,6 +2224,30 @@ window.addEventListener('resize', function() {
   if (!isMobile()) {
     document.getElementById('sidebar').classList.remove('mobile-open');
     document.getElementById('backdrop').classList.remove('active');
+  }
+});
+
+/* ==============================================================
+   DEEP LINKING
+   ============================================================== */
+function openCaseById(caseId) {
+  var c = allCases.find(function(x){ return x.id === caseId; });
+  if (!c) return;
+  map.setView(c.coords, 7);
+  document.querySelectorAll('.case-item').forEach(function(el){ el.classList.remove('active'); });
+  // Find sidebar item by matching the case ID text in the .cid span
+  document.querySelectorAll('.case-item').forEach(function(el) {
+    var cid = el.querySelector('.cid');
+    if (cid && cid.textContent.trim() === caseId) el.classList.add('active');
+  });
+  window.openDetail(caseId);
+}
+
+// Update URL hash when a case is opened
+window.addEventListener('hashchange', function() {
+  var hash = window.location.hash.replace('#', '');
+  if (hash && hash.match(/^CAN-\d{3}$/)) {
+    openCaseById(hash);
   }
 });
 
