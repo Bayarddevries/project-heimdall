@@ -18,12 +18,7 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 
 | ID | Title | Priority | Status | Description |
 |----|-------|----------|--------|-------------|
-| H-010 | Paper grain background | P1 | Open | Add paper fiber/grain texture to main container and dossier panels |
 | H-011 | Edge wear + inner glow | P2 | Open | Add 0.5-1px irregular borders + tan inner glow to paper containers |
-| H-012 | Coffee stains + foxing | P2 | Open | Add low-opacity (5-8%) coffee ring stains and age spots to corners/background |
-| H-013 | Offset/scanned text rotation | P1 | Open | Apply slight rotation (0.3-0.5deg) to text blocks/images for "human-error" photocopy feel |
-| H-014 | Staple/paperclip accents | P1 | Open | Replace standard headers with staple images pinning content blocks |
-| H-015 | Handwritten marginalia | P1 | Open | Add Caveat font in ballpoint blue (#0047AB) for agent notes, dates, flags in margins |
 | H-040 | Responsive mobile layout | P1 | Open | Mobile: stacked layout with hamburger nav for folder tabs, touch-friendly targets |
 
 ### Data
@@ -35,7 +30,6 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | H-052 | MUFON case files | P1 | Open | Extract MUFON cases with Canadian relevance |
 | H-053 | RCMP Form 63 deep scan | P0 | Blocked | Full scan of RCMP Form 63 for all case physical evidence details |
 | H-054 | Fill research_needs.json gaps | P1 | Open | Execute tasks in research_tasks.txt to fill missing fields |
-| H-055 | Media/photograph collection | P0 | Open | Gather and embed newspaper clippings, photos, sketches, VHS stills for cases |
 | H-056 | Cross-reference witness names | P2 | Open | Match witnesses across multiple cases for pattern analysis |
 | H-060 | Geolocation verification | P1 | Open | Verify lat/lng for all 56 cases with modern mapping tools |
 | H-061 | Date disambiguation | P2 | Open | Standardize dates to ISO format where possible |
@@ -45,7 +39,6 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | ID | Title | Priority | Status | Description |
 |----|-------|----------|--------|-------------|
 | H-101 | Case relationship graph | P2 | Open | Visual graph showing related cases (same witnesses, proximity, similar descriptions) |
-| H-102 | Timeline mode | P1 | Open | Horizontal timeline view alongside map for chronological browsing |
 | H-103 | Print/export case file | P2 | Open | Generate printable classified-style PDF for individual cases |
 | H-104 | "Classified" overlay toggle | P2 | Open | Toggle between classified (redacted) and declassified views |
 | H-105 | Sound effects | P3 | Open | Subtle paper rustle, stamp thud, staple click sounds on interaction |
@@ -74,6 +67,12 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | H-007 | Sidebar sync | P0 | 2025-05-11 | Sidebar clicks sync with map zoom and detail panel |
 | H-008 | 2023 flap integration | P1 | 2025-05-11 | Added CAN-051 to CAN-054 from cross-border cases |
 | H-009 | Research infrastructure | P0 | 2025-05-11 | research_needs.json, research_tasks.txt, data schema |
+| H-010 | Paper grain background | P1 | 2026-05-13 | Enhanced grain overlay — 3 noise layers, increased opacity |
+| H-012 | Coffee stains + foxing | P2 | 2026-05-13 | 5 coffee stain elements + foxing overlay on background |
+| H-013 | Offset/scanned text rotation | P1 | 2026-05-13 | Scan-angle classes with translate offset for photocopy feel |
+| H-014 | Staple/paperclip accents | P1 | 2026-05-13 | 3D staple graphic on fc-h3 section headers |
+| H-015 | Handwritten marginalia | P1 | 2026-05-13 | Enhanced handnote with pencil icon, .agent-note class |
+| H-016 | Die-cut folder tabs | P0 | 2026-05-13 | Staggered tab navigation with notch illusion and active pop-out |
 | H-017 | Dymo label UI elements | P2 | 2026-05-13 | Dymo label maker style for case numbers, dates, classification headers |
 | H-018 | Brass prong / punch binding | P2 | 2026-05-13 | Two-hole punch + brass fastener graphics on inner document pages |
 | H-019 | Post-it note buttons | P1 | 2026-05-13 | Post-it note style buttons with fold highlight and press states |
@@ -82,9 +81,10 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | H-022 | Paperclip toggle switches | P2 | 2026-05-13 | Metal paperclip slides between positions as toggle UI element |
 | H-030 | Polaroid photo effect | P0 | 2026-05-13 | Aged bg, thicker borders, stronger filter, hover enhance, tape corners |
 | H-031 | Scotch tape corner mounts | P1 | 2026-05-13 | Merged into H-030 polaroid effect — tape enhanced there |
+| H-055 | Media/photograph collection | P0 | 2026-05-13 | Added 3 public-domain images (Falcon Lake, Michalak, Sambro Light) |
 | H-100 | Map search by location | P1 | 2026-05-13 | Search box filters sidebar + map markers by location, shape, year, ID |
+| H-102 | Timeline mode | P1 | 2026-05-13 | Horizontal timeline view with tier-colored dots, hover labels, adaptive years |
 | H-107 | Share/link to specific case | P1 | 2026-05-13 | URL hash-based deep linking (#CAN-012 opens that case directly) |
-| H-016 | Die-cut folder tabs | P0 | 2026-05-13 | Staggered tab navigation with notch illusion and active pop-out |
 
 ---
 
@@ -93,9 +93,9 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | Metric | Count |
 |--------|-------|
 | Total Issues | 38 |
-| Open | 18 |
-| Completed | 20 |
+| Open | 12 |
+| Completed | 26 |
 | Blocked | 1 |
-| P0 Critical | 4 |
-| P1 High | 9 |
-| P2 Medium | 5 |
+| P0 Critical | 3 |
+| P1 High | 5 |
+| P2 Medium | 4 |

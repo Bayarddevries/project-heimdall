@@ -1,43 +1,44 @@
 # Project HEIMDALL — Session Checkpoint
-## Stopped: May 13, 2026 — v1.4 Deployed
+## Stopped: May 13, 2026 — v1.5 Deployed
 
 ### Where We Are
-Four new features deployed to GitHub Pages. All changes are in `docs/index.html`.
+Six new features deployed to GitHub Pages. All changes in `docs/index.html` + new media files.
 
 ### What Was Done This Session
-1. **H-107: Deep linking** — `#CAN-012` opens case directly via URL hash. `hashchange` listener + `history.replaceState`.
-2. **H-100: Search by location** — Search box in sidebar filters map markers + case list by location, shape, year, case ID.
-3. **H-016: Die-cut folder tabs** — Staggered offsets, notch illusion, active tab pops out. Mobile horizontal layout.
-4. **H-030: Polaroid photo effect** — Aged bg, thicker borders, stronger contrast filter, hover straighten+scale, enhanced tape.
+1. **H-010: Paper grain** — 3 noise layers (512/256/128px), increased opacity
+2. **H-013: Scan rotation** — translate offset on scan-angle classes for crooked photocopy feel
+3. **H-014: Staple accents** — 3D staple graphic on fc-h3 headers via ::before/::after
+4. **H-015: Handwritten marginalia** — enhanced handnote with ✎ icon, .agent-note class
+5. **H-102: Timeline mode** — horizontal timeline with tier-colored dots, hover labels, adaptive year labels
+6. **H-055: Media collection** — 3 new public-domain images added (Falcon Lake, Steve Michalak, Sambro Light)
 
 ### Current State
 - **Branch:** main
-- **Last commit:** 9f948b5 (v1.4 — 4 features)
-- **docs/index.html:** ~2373 lines
-- **Data:** 56 cases, narratives synced
+- **Last commit:** 35a6031 (v1.5 — visual polish, timeline, media)
+- **docs/index.html:** ~2695 lines
+- **Data:** 56 cases, 16 media files on disk across 5 cases
 
 ### What's Next (Priority Order)
-1. **H-055** — Media/photograph collection (P0 data, requires research)
-2. **H-010** — Paper grain background (P1 visual)
-3. **H-013** — Offset/scanned text rotation (P1 visual)
-4. **H-015** — Handwritten marginalia (P1 visual)
-5. **H-102** — Timeline mode (P1 feature)
-6. **H-050/051/052** — NUFORC/CADORS/MUFON mining (P1 data)
+1. **H-040** — Mobile responsive audit (P1)
+2. **H-060** — Geolocation verification via Nominatim (P1)
+3. **H-055 continued** — More media for remaining Tier A cases (P0)
+4. **H-101** — Case relationship graph (P2)
+5. **H-103** — Print/export case file (P2)
+6. **H-106** — Dark mode night ops (P2)
 
 ### Open Issues Summary
-- 18 open (4 P0, 9 P1, 5 P2), 20 completed, 1 blocked
+- 12 open (3 P0, 5 P1, 4 P2), 26 completed, 1 blocked
 - Full tracker at `ISSUE_TRACKER.md`
 
 ### Key Files
 | File | Purpose |
 |------|---------|
-| `docs/index.html` | Main app — all HTML/CSS/JS inline, ~2373 lines |
+| `docs/index.html` | Main app — all HTML/CSS/JS inline, ~2695 lines |
 | `docs/narratives.js` | Generated case narratives (56 entries) |
 | `data/cases-v5-master.json` | Master JSON — 56 cases, 61 fields each |
 | `data/cases/*.md` | 56 source markdown case files |
 | `docs/data/cases-full.json` | Served copy (GitHub Pages) |
-| `ISSUE_TRACKER.md` | 38 issues, 18 open |
-| `AGENTS.md` | Agent operating instructions |
+| `docs/images/` | 16 media files across 5 case folders |
 
 ### Design System
 - Fonts: Special Elite (headers), Source Sans Pro (body), Caveat (handwritten)

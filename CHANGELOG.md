@@ -1,5 +1,14 @@
 # CHANGELOG — Project HEIMDALL
 
+## [2026-05-13] v1.5 — Visual Polish, Timeline, Media
+
+- **Feat: Paper grain background (H-010)** — Enhanced grain overlay with 3 noise layers (512/256/128px), increased base opacity to 0.055
+- **Feat: Scan rotation (H-013)** — Added translate offset to scan-angle classes for realistic "crooked photocopy" feel on dossier content
+- **Feat: Staple accents (H-014)** — 3D staple graphic on all `.fc-h3` section headers via `::before`/`::after` pseudo-elements
+- **Feat: Handwritten marginalia (H-015)** — Enhanced `.handnote` with pencil icon (✎), added `.agent-note` class with dashed left border
+- **Feat: Timeline mode (H-102)** — Horizontal timeline view with tier-colored dots, vertical stagger, hover labels, click-to-open, adaptive year labels
+- **Feat: Media collection (H-055)** — Added 3 new public-domain images: Falcon Lake reconstruction, Steve Michalak with saucer drawing, Sambro Light RCMP report
+
 ## [2026-05-13] v1.4 — Deep Linking, Search, Die-Cut Tabs, Polaroid Effect
 
 - **Feat: Deep linking (H-107)** — URL hash `#CAN-012` opens that case directly on page load. `hashchange` listener for real-time updates. `history.replaceState` keeps URL in sync when clicking cases.
