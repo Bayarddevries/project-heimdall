@@ -1470,16 +1470,80 @@ body {
   border-color: #a01830;
 }
 
-/* ===== PAPER EDGE SHADING ===== */
+/* ===== PAPER EDGE SHADING (H-011) ===== */
 .top-bar::after, .sidebar::before, .detail-panel::before {
   content: '';
   position: absolute;
   pointer-events: none;
+  z-index: 5;
 }
+/* Sidebar left edge — worn paper dark line + inner glow */
 .sidebar::before {
   left: 0; top: 0; bottom: 0;
-  width: 3px;
-  background: linear-gradient(to right, rgba(107,86,68,0.15), transparent);
+  width: 8px;
+  background:
+    linear-gradient(to right, rgba(90,70,50,0.25) 0%, rgba(90,70,50,0.12) 3px, transparent 8px),
+    repeating-linear-gradient(to bottom,
+      transparent 0px, transparent 3px,
+      rgba(90,70,50,0.04) 3px, rgba(90,70,50,0.04) 4px
+    );
+  box-shadow: inset 3px 0 6px rgba(90,70,50,0.08);
+}
+/* Detail panel left edge — aged paper strip */
+.detail-panel::before {
+  left: 0; top: 0; bottom: 0;
+  width: 6px;
+  background:
+    linear-gradient(to right, rgba(100,80,55,0.2) 0%, rgba(100,80,55,0.08) 2px, transparent 6px);
+  box-shadow: inset 2px 0 4px rgba(100,80,55,0.06);
+}
+/* Top bar bottom edge — subtle shadow + wear */
+.top-bar::after {
+  bottom: -2px; left: 0; right: 0;
+  height: 4px;
+  background:
+    linear-gradient(to bottom, rgba(90,70,50,0.12) 0%, transparent 4px),
+    repeating-linear-gradient(to right,
+      transparent 0px, transparent 7px,
+      rgba(90,70,50,0.03) 7px, rgba(90,70,50,0.03) 8px
+    );
+}
+
+/* ===== INNER GLOW ON PAPER CONTAINERS ===== */
+.sidebar, .detail-panel {
+  box-shadow:
+    inset 0 0 30px rgba(210,190,160,0.15),
+    inset 0 0 60px rgba(200,180,150,0.08);
+}
+.top-bar {
+  box-shadow:
+    inset 0 -2px 8px rgba(210,190,160,0.12),
+    0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* ===== CASE ITEM EDGE WEAR ===== */
+.case-item {
+  border-bottom: 1px solid rgba(139,115,85,0.08);
+  position: relative;
+}
+.case-item::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 2%; right: 2%;
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent 0%,
+    rgba(139,115,85,0.06) 10%,
+    rgba(139,115,85,0.12) 50%,
+    rgba(139,115,85,0.06) 90%,
+    transparent 100%
+  );
+}
+
+/* ===== FILTER BAR EDGE ===== */
+.filter-bar {
+  border-bottom: 1px solid rgba(139,115,85,0.1);
+  box-shadow: 0 2px 4px rgba(90,70,50,0.04);
 }
 
 /* ===== HANDWRITTEN MARGINALIA HELPERS ===== */
