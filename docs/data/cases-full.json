@@ -4,7 +4,7 @@
     "case_number": "1",
     "case_name": "Montreal",
     "year": 1662,
-    "date": "1662",
+    "date": "1662-01-01",
     "province": "QC",
     "region": "Quebec",
     "latitude": 45.5,
@@ -69,14 +69,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-002",
     "case_number": "2",
     "case_name": "Ottawa",
     "year": 1915,
-    "date": "1915",
+    "date": "1915-01-01",
     "province": "ON",
     "region": "Ontario",
     "latitude": 45.4,
@@ -148,14 +149,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-003",
     "case_number": "3",
     "case_name": "Goose Bay",
     "year": 1947,
-    "date": "1947",
+    "date": "1947-01-01",
     "province": "NL",
     "region": "Newfoundland and Labrador",
     "latitude": 53.3,
@@ -219,14 +221,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-004",
     "case_number": "4",
     "case_name": "Rivers",
     "year": 1950,
-    "date": "1950",
+    "date": "1950-01-01",
     "province": "MB",
     "region": "Manitoba",
     "latitude": 50.0,
@@ -290,14 +293,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-005",
     "case_number": "5",
     "case_name": "Gander",
     "year": 1951,
-    "date": "1951",
+    "date": "1951-01-01",
     "province": "NL",
     "region": "Newfoundland and Labrador",
     "latitude": 48.9,
@@ -368,14 +372,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-006",
     "case_number": "6",
     "case_name": "North Bay",
     "year": 1952,
-    "date": "1952",
+    "date": "1952-01-01",
     "province": "ON",
     "region": "Ontario",
     "latitude": 46.3,
@@ -439,14 +444,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-007",
     "case_number": "7",
     "case_name": "Ennadai Lake",
     "year": 1954,
-    "date": "1954",
+    "date": "1954-01-01",
     "province": "NU",
     "region": "Nunavut",
     "latitude": 61.2,
@@ -510,14 +516,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-008",
     "case_number": "8",
     "case_name": "Clan Lake",
     "year": 1960,
-    "date": "1960",
+    "date": "1960-01-01",
     "province": "Unknown",
     "region": "Unknown",
     "latitude": 62.7,
@@ -582,14 +589,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 86
+    "richness_score": 86,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-009",
     "case_number": "9",
     "case_name": "Yellowknife",
     "year": 1960,
-    "date": "1960",
+    "date": "1960-01-01",
     "province": "Unknown",
     "region": "Unknown",
     "latitude": 62.4,
@@ -687,14 +695,15 @@
       "MUFON \u2014 Physical Evidence case file, Canada-North division"
     ],
     "official_investigation": "",
-    "richness_score": 100
+    "richness_score": 100,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-010",
     "case_number": "10",
     "case_name": "Agassiz",
     "year": 1966,
-    "date": "1966",
+    "date": "1966-01-01",
     "province": "BC",
     "region": "British Columbia",
     "latitude": 49.2,
@@ -759,14 +768,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-011",
     "case_number": "11",
     "case_name": "Surrey (White Rock)",
     "year": 1966,
-    "date": "1966",
+    "date": "1966-01-01",
     "province": "BC",
     "region": "British Columbia",
     "latitude": 49.2,
@@ -842,14 +852,15 @@
       "MUFON \u2014 Early sighting archive, Pacific Northwest division"
     ],
     "official_investigation": "",
-    "richness_score": 100
+    "richness_score": 100,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-012",
     "case_number": "12",
     "case_name": "Falcon Lake",
     "year": 1967,
-    "date": "May 20, 1967",
+    "date": "1967-05-20",
     "province": "MB",
     "region": "Manitoba",
     "latitude": 49.9,
@@ -995,14 +1006,15 @@
       "Manitoba Department of Mines soil analysis"
     ],
     "official_investigation": "",
-    "richness_score": 100
+    "richness_score": 100,
+    "date_precision": "day"
   },
   {
     "case_id": "CAN-013",
     "case_number": "13",
     "case_name": "Shag Harbour",
     "year": 1967,
-    "date": "Oct 4, 1967",
+    "date": "1967-10-04",
     "province": "NS",
     "region": "Nova Scotia",
     "latitude": 43.4,
@@ -1125,14 +1137,15 @@
       "DND Sonar logs"
     ],
     "official_investigation": "",
-    "richness_score": 100
+    "richness_score": 100,
+    "date_precision": "day"
   },
   {
     "case_id": "CAN-014",
     "case_number": "14",
     "case_name": "Shelburne",
     "year": 1967,
-    "date": "1967",
+    "date": "1967-01-01",
     "province": "NS",
     "region": "Nova Scotia",
     "latitude": 43.7,
@@ -1198,14 +1211,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 94
+    "richness_score": 94,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-015",
     "case_number": "15",
     "case_name": "St. Paul",
     "year": 1967,
-    "date": "1967",
+    "date": "1967-01-01",
     "province": "AB",
     "region": "Alberta",
     "latitude": 53.9,
@@ -1270,14 +1284,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 80
+    "richness_score": 80,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-016",
     "case_number": "16",
     "case_name": "Rivers",
     "year": 1968,
-    "date": "1968",
+    "date": "1968-01-01",
     "province": "MB",
     "region": "Manitoba",
     "latitude": 50.0,
@@ -1341,14 +1356,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-017",
     "case_number": "17",
     "case_name": "Prince George",
     "year": 1969,
-    "date": "1969",
+    "date": "1969-01-01",
     "province": "BC",
     "region": "British Columbia",
     "latitude": 53.9,
@@ -1412,14 +1428,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-018",
     "case_number": "18",
     "case_name": "Duncan (Nurse Encounter)",
     "year": 1970,
-    "date": "Jan 1, 1970",
+    "date": "1970-01-01",
     "province": "BC",
     "region": "British Columbia",
     "latitude": 48.7,
@@ -1497,14 +1514,15 @@
       "Documented in Chris Rutkowski's 'Canadian UFOs: The National Report'"
     ],
     "official_investigation": "",
-    "richness_score": 94
+    "richness_score": 94,
+    "date_precision": "day"
   },
   {
     "case_id": "CAN-019",
     "case_number": "19",
     "case_name": "Oromocto",
     "year": 1972,
-    "date": "1972",
+    "date": "1972-01-01",
     "province": "NB",
     "region": "New Brunswick",
     "latitude": 45.8,
@@ -1568,14 +1586,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-020",
     "case_number": "20",
     "case_name": "Val-d'Or",
     "year": 1973,
-    "date": "1973",
+    "date": "1973-01-01",
     "province": "QC",
     "region": "Quebec",
     "latitude": 48.1,
@@ -1639,14 +1658,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-021",
     "case_number": "21",
     "case_name": "Granby",
     "year": 1973,
-    "date": "1973",
+    "date": "1973-01-01",
     "province": "QC",
     "region": "Quebec",
     "latitude": 45.4,
@@ -1710,14 +1730,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-022",
     "case_number": "22",
     "case_name": "Langenburg",
     "year": 1974,
-    "date": "1974",
+    "date": "1974-01-01",
     "province": "SK",
     "region": "Saskatchewan",
     "latitude": 50.8,
@@ -1782,14 +1803,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-023",
     "case_number": "23",
     "case_name": "Carman",
     "year": 1975,
-    "date": "1975",
+    "date": "1975-01-01",
     "province": "MB",
     "region": "Manitoba",
     "latitude": 49.5,
@@ -1854,14 +1876,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-024",
     "case_number": "24",
     "case_name": "Montreal",
     "year": 1977,
-    "date": "1977",
+    "date": "1977-01-01",
     "province": "QC",
     "region": "Quebec",
     "latitude": 45.5,
@@ -1926,14 +1949,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-025",
     "case_number": "25",
     "case_name": "Clarenville",
     "year": 1978,
-    "date": "1978",
+    "date": "1978-01-01",
     "province": "NL",
     "region": "Newfoundland and Labrador",
     "latitude": 48.1,
@@ -1997,14 +2021,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-026",
     "case_number": "26",
     "case_name": "Baskatong",
     "year": 1978,
-    "date": "1978",
+    "date": "1978-01-01",
     "province": "QC",
     "region": "Quebec",
     "latitude": 46.8,
@@ -2068,14 +2093,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-027",
     "case_number": "27",
     "case_name": "Saddle Lake",
     "year": 1979,
-    "date": "1979",
+    "date": "1979-01-01",
     "province": "AB",
     "region": "Alberta",
     "latitude": 53.9,
@@ -2139,14 +2165,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-028",
     "case_number": "28",
     "case_name": "Portage la Prairie",
     "year": 1979,
-    "date": "1979",
+    "date": "1979-01-01",
     "province": "MB",
     "region": "Manitoba",
     "latitude": 49.9724,
@@ -2235,14 +2262,15 @@
       "MUFON \u2014 Archived under Manitoba Military Files 1979"
     ],
     "official_investigation": "",
-    "richness_score": 100
+    "richness_score": 100,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-029",
     "case_number": "29",
     "case_name": "Nahanni Valley",
     "year": 1980,
-    "date": "1980",
+    "date": "1980-01-01",
     "province": "NT",
     "region": "Northwest Territories",
     "latitude": 61.2,
@@ -2306,14 +2334,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-030",
     "case_number": "30",
     "case_name": "L'Ancienne-Lorette",
     "year": 1987,
-    "date": "1987",
+    "date": "1987-01-01",
     "province": "QC",
     "region": "Quebec",
     "latitude": 46.8,
@@ -2396,14 +2425,15 @@
       "SQ \u2014 Official SQ incident report logs"
     ],
     "official_investigation": "",
-    "richness_score": 100
+    "richness_score": 100,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-031",
     "case_number": "31",
     "case_name": "Kelowna",
     "year": 1981,
-    "date": "1981",
+    "date": "1981-01-01",
     "province": "BC",
     "region": "British Columbia",
     "latitude": 49.8,
@@ -2467,14 +2497,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-032",
     "case_number": "32",
     "case_name": "Westmount",
     "year": 1985,
-    "date": "1985",
+    "date": "1985-01-01",
     "province": "QC",
     "region": "Quebec",
     "latitude": 45.4,
@@ -2539,14 +2570,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-033",
     "case_number": "33",
     "case_name": "Shelburne",
     "year": 1989,
-    "date": "1989",
+    "date": "1989-01-01",
     "province": "NS",
     "region": "Nova Scotia",
     "latitude": 43.7,
@@ -2611,14 +2643,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-034",
     "case_number": "34",
     "case_name": "Montreal",
     "year": 1990,
-    "date": "Nov 7, 1990",
+    "date": "1990-11-07",
     "province": "QC",
     "region": "Quebec",
     "latitude": 45.5,
@@ -2682,14 +2715,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "day"
   },
   {
     "case_id": "CAN-035",
     "case_number": "35",
     "case_name": "Carp",
     "year": 1991,
-    "date": "1991",
+    "date": "1991-01-01",
     "province": "ON",
     "region": "Ontario",
     "latitude": 45.3,
@@ -2753,14 +2787,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-036",
     "case_number": "36",
     "case_name": "St-Zotique",
     "year": 1991,
-    "date": "1991",
+    "date": "1991-01-01",
     "province": "QC",
     "region": "Quebec",
     "latitude": 45.2,
@@ -2824,14 +2859,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-037",
     "case_number": "37",
     "case_name": "l'Annonciation",
     "year": 1992,
-    "date": "1992",
+    "date": "1992-01-01",
     "province": "QC",
     "region": "Quebec",
     "latitude": 46.4108,
@@ -2895,14 +2931,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-038",
     "case_number": "38",
     "case_name": "Port Colborne",
     "year": 1993,
-    "date": "1993",
+    "date": "1993-01-01",
     "province": "ON",
     "region": "Ontario",
     "latitude": 42.8,
@@ -2968,14 +3005,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 94
+    "richness_score": 94,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-039",
     "case_number": "39",
     "case_name": "St-Jean-sur-Ric.",
     "year": 1994,
-    "date": "1994",
+    "date": "1994-01-01",
     "province": "Unknown",
     "region": "Unknown",
     "latitude": 45.3,
@@ -3040,14 +3078,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 86
+    "richness_score": 86,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-040",
     "case_number": "40",
     "case_name": "Fox Lake",
     "year": 1996,
-    "date": "1996",
+    "date": "1996-01-01",
     "province": "YT",
     "region": "Yukon",
     "latitude": 61.2,
@@ -3111,14 +3150,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-041",
     "case_number": "41",
     "case_name": "Fort Erie",
     "year": 2004,
-    "date": "2004",
+    "date": "2004-01-01",
     "province": "ON",
     "region": "Ontario",
     "latitude": 42.9,
@@ -3183,14 +3223,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-042",
     "case_number": "42",
     "case_name": "St-Hilaire",
     "year": 2007,
-    "date": "2007",
+    "date": "2007-01-01",
     "province": "QC",
     "region": "Quebec",
     "latitude": 45.5624,
@@ -3254,14 +3295,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-043",
     "case_number": "43",
     "case_name": "Niagara Falls (MIB Encounter)",
     "year": 2008,
-    "date": "2008",
+    "date": "2008-01-01",
     "province": "ON",
     "region": "Ontario",
     "latitude": 43.0,
@@ -3336,14 +3378,15 @@
       "MUFON \u2014 MIB Encounter database, Case #94-ONF"
     ],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-044",
     "case_number": "44",
     "case_name": "Stephenville",
     "year": 2008,
-    "date": "Jan 5, 2008",
+    "date": "2008-01-05",
     "province": "NL",
     "region": "Newfoundland and Labrador",
     "latitude": 48.9,
@@ -3430,14 +3473,15 @@
       "Declassified DND radar logs"
     ],
     "official_investigation": "",
-    "richness_score": 100
+    "richness_score": 100,
+    "date_precision": "day"
   },
   {
     "case_id": "CAN-045",
     "case_number": "45",
     "case_name": "Harbour Mille",
     "year": 2010,
-    "date": "2010",
+    "date": "2010-01-01",
     "province": "NL",
     "region": "Newfoundland and Labrador",
     "latitude": 47.6,
@@ -3502,14 +3546,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-046",
     "case_number": "46",
     "case_name": "Valcartier",
     "year": 2008,
-    "date": "Oct 2008",
+    "date": "2008-10-01",
     "province": "QC",
     "region": "Quebec",
     "latitude": 46.9,
@@ -3599,14 +3644,15 @@
       "Quebec regional database, October 2008"
     ],
     "official_investigation": "",
-    "richness_score": 100
+    "richness_score": 100,
+    "date_precision": "month"
   },
   {
     "case_id": "CAN-047",
     "case_number": "47",
     "case_name": "Hamilton",
     "year": 2012,
-    "date": "2012",
+    "date": "2012-01-01",
     "province": "ON",
     "region": "Ontario",
     "latitude": 43.2,
@@ -3672,14 +3718,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 94
+    "richness_score": 94,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-048",
     "case_number": "48",
     "case_name": "Vancouver",
     "year": 2014,
-    "date": "2014",
+    "date": "2014-01-01",
     "province": "BC",
     "region": "British Columbia",
     "latitude": 49.2,
@@ -3743,14 +3790,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-049",
     "case_number": "49",
     "case_name": "Oshawa",
     "year": 2015,
-    "date": "2015",
+    "date": "2015-01-01",
     "province": "ON",
     "region": "Ontario",
     "latitude": 43.8,
@@ -3814,14 +3862,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-050",
     "case_number": "50",
     "case_name": "Ashmount",
     "year": 2016,
-    "date": "2016",
+    "date": "2016-01-01",
     "province": "AB",
     "region": "Alberta",
     "latitude": 53.9,
@@ -3885,14 +3934,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-051",
     "case_number": "51",
     "case_name": "Gulf of St. Law.",
     "year": 2021,
-    "date": "2021",
+    "date": "2021-01-01",
     "province": "Unknown",
     "region": "Unknown",
     "latitude": 48.0,
@@ -3956,14 +4006,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 86
+    "richness_score": 86,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-052",
     "case_number": "52",
     "case_name": "Hafford",
     "year": 2024,
-    "date": "2024",
+    "date": "2024-01-01",
     "province": "SK",
     "region": "Saskatchewan",
     "latitude": 52.8,
@@ -4027,14 +4078,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-053",
     "case_number": "53",
     "case_name": "Sudbury",
     "year": 2025,
-    "date": "2025",
+    "date": "2025-01-01",
     "province": "ON",
     "region": "Ontario",
     "latitude": 46.4,
@@ -4098,14 +4150,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-054",
     "case_number": "54",
     "case_name": "N. Alberta",
     "year": 2025,
-    "date": "2025",
+    "date": "2025-01-01",
     "province": "Unknown",
     "region": "Unknown",
     "latitude": 56.0,
@@ -4169,14 +4222,15 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 86
+    "richness_score": 86,
+    "date_precision": "year"
   },
   {
     "case_id": "CAN-055",
     "case_number": "55",
     "case_name": "Vulcan County (Pilot Encounter)",
     "year": 2025,
-    "date": "Feb 2025",
+    "date": "2025-02-01",
     "province": "AB",
     "region": "Alberta",
     "latitude": 50.5,
@@ -4264,14 +4318,15 @@
       "Transport Canada \u2014 ASRS (Aviation Safety Reporting System) filing"
     ],
     "official_investigation": "",
-    "richness_score": 100
+    "richness_score": 100,
+    "date_precision": "month"
   },
   {
     "case_id": "CAN-056",
     "case_number": "56",
     "case_name": "Sheridan Lake",
     "year": 2025,
-    "date": "2025",
+    "date": "2025-01-01",
     "province": "BC",
     "region": "British Columbia",
     "latitude": 51.5,
@@ -4336,6 +4391,7 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91
+    "richness_score": 91,
+    "date_precision": "year"
   }
 ]

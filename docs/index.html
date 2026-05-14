@@ -2359,7 +2359,8 @@ function loadDeepData() {
           witnesses: c.witness_count || 0,
           evidence: c.physical_evidence || 'None documented',
           source: c.source_primary || 'Unknown',
-          tier: c.internal_tier || 'C'
+          tier: c.internal_tier || 'C',
+          date_precision: c.date_precision || 'year'
         };
       });
       allCases = CASES.slice();
@@ -2422,7 +2423,7 @@ function popupHTML(c) {
     '<div class="p-title">'+(c.location||'Unknown location')+'</div>'+
     '<div class="p-sub">'+(c.shape||'Unknown type')+' \\u00b7 '+cl+'</div>'+
     '<div class="p-meta">'+
-      '<span class="p-ml">Date</span><span class="p-mv">'+c.date+'</span>'+
+      '<span class="p-ml">Date</span><span class="p-mv">'+formatDate(c.date, c.date_precision||'year')+'</span>'+
       '<span class="p-ml">Witnesses</span><span class="p-mv">'+c.witnesses+'</span>'+
     '</div>'+
     '<div class="p-ev"><strong>Evidence:</strong> '+c.evidence+'</div>'+
@@ -2709,17 +2710,32 @@ function extractYTId(url) {
   return m ? m[1] : null;
 }
 
+/* ===== DATE FORMATTING (H-061) ===== */
+function formatDate(isoDate, precision) {
+  if (!isoDate) return '';
+  var parts = isoDate.split('-');
+  var y = parts[0], m = parts[1], d = parts[2];
+  var months = ['','January','February','March','April','May','June','July','August','September','October','November','December'];
+  if (precision === 'day' && m && d) {
+    return months[parseInt(m)] + ' ' + parseInt(d) + ', ' + y;
+  } else if (precision === 'month' && m) {
+    return months[parseInt(m)] + ' ' + y;
+  }
+  return y; // year-only fallback
+}
+
 /* ===== NEW TAB BUILDERS (3-tab system) ===== */
 
 function buildNewIncidentTab(c, deep, narrative, cl, tierLabel) {
   var deepDate = deep ? (deep.date || c.date) : c.date;
+  var deepDatePrecision = deep ? (deep.date_precision || c.date_precision || 'year') : (c.date_precision || 'year');
   var deepShape = deep ? (deep.shape || c.shape) : c.shape;
   var deepContact = deep ? (deep.contact_type || c.contact) : c.contact;
   var deepContactLabel = CONTACT_LABELS[deepContact] || deepContact;
 
   var metaRows = '';
   metaRows += '<div class="fc-meta"><span class="fc-meta-label">LOCATION</span><span class="fc-meta-value">' + escapeHtml(c.location) + '</span></div>';
-  metaRows += '<div class="fc-meta"><span class="fc-meta-label">DATE</span><span class="fc-meta-value">' + escapeHtml(deepDate) + '</span></div>';
+  metaRows += '<div class="fc-meta"><span class="fc-meta-label">DATE</span><span class="fc-meta-value">' + escapeHtml(formatDate(deepDate, deepDatePrecision)) + '</span></div>';
   metaRows += '<div class="fc-meta"><span class="fc-meta-label">SHAPE</span><span class="fc-meta-value">' + escapeHtml(deepShape) + '</span></div>';
   metaRows += '<div class="fc-meta"><span class="fc-meta-label">CONTACT</span><span class="fc-meta-value">' + escapeHtml(deepContactLabel) + ' (' + escapeHtml(deepContact) + ')</span></div>';
 
@@ -2818,7 +2834,7 @@ function buildNewIncidentTab(c, deep, narrative, cl, tierLabel) {
 
   var html = '<div class="fc-stamp">' + tierLabel + '</div>' +
     '<div class="fc-title">' + escapeHtml(c.location) + '</div>' +
-    '<div class="fc-subtitle">' + escapeHtml(deepDate) + ' &#183; ' + escapeHtml(deepShape) + '</div>' +
+    '<div class="fc-subtitle">' + escapeHtml(formatDate(deepDate, deepDatePrecision)) + ' &#183; ' + escapeHtml(deepShape) + '</div>' +
     metaRows +
     (witnessContent ? '<hr class="fc-sep"/><div class="fc-h3">Witness Report</div>' + witnessContent : '') +
     narHtml +
