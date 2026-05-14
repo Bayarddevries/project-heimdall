@@ -1,5 +1,10 @@
 # CHANGELOG — Project HEIMDALL
 
+## [2026-05-15] v1.9 — Media Collection, CI/CD
+
+- **Feat: Media collection phase 2 (H-055)** — Added images for 8 new cases (CAN-001, CAN-003, CAN-006, CAN-010, CAN-014, CAN-016, CAN-020, CAN-032). Total: 18 cases with media, 32 image files. Removed 264MB PDF that exceeded GitHub's file size limit.
+- **Feat: CI/CD automation (H-200)** — GitHub Actions workflow `.github/workflows/regenerate.yml` auto-runs pipeline on push when case data changes. Commits regenerated narratives.js back to repo.
+
 ## [2026-05-15] v1.8 — Relationships, Dates, Sound, Witness Cross-Ref
 
 - **Feat: Case relationship graph (H-101)** — 4th "RELATIONSHIPS" tab with visual node graph + sortable table. Shows cases connected by shared pattern tags or explicit cross-references. Fixed quote escaping in onclick handlers.

@@ -1,31 +1,28 @@
 # Project HEIMDALL — Session Checkpoint
-## Stopped: May 15, 2026 — v1.8 Deployed
+## Stopped: May 15, 2026 — v1.9 Deployed
 
 ### Where We Are
-Relationship graph, date disambiguation, sound effects, witness cross-reference, and narratives.js minification deployed to GitHub Pages.
+Media collection expanded, CI/CD automation added. 18 cases now have media (32 image files).
 
 ### What Was Done This Session
-1. **H-101: Case relationship graph** — 4th "RELATIONSHIPS" tab with visual node graph + sortable table. Shows cases connected by shared pattern tags or explicit cross-references. Fixed quote escaping in onclick handlers.
-2. **H-061: Date disambiguation** — Standardized all 56 dates to ISO format (YYYY-MM-DD) with precision field (year/month/day). Human-readable display via `formatDate()`.
-3. **H-105: Sound effects** — Procedural Web Audio API: paper rustle, stamp thud, staple click, UI click. 🔊/🔇 toggle.
-4. **H-056: Witness pattern cross-reference** — "Witness Pattern Matches" in Relationships tab. Categorizes by RCMP/Military/Police/Pilot/Civilian Group.
-5. **H-201: Narratives.js minification** — Pipeline generates `narratives.min.js`. HTML loads minified version.
-6. **H-202: YAML parser verification** — Verified regex frontmatter stripping works on all 56 files.
+1. **H-055: Media collection phase 2** — Added images for 8 new cases: CAN-001 (Montreal 1910), CAN-003 (CFB Goose Bay), CAN-006 (Project Blue Book PDF), CAN-010 (Fort Frances), CAN-014 (Blue Book 1967), CAN-016 (CIA Reading Room ref), CAN-020 (RCMP patch), CAN-032 (Quebec city). Synced media_urls for all 18 cases with files on disk. Removed 264MB PDF that exceeded GitHub's 100MB limit.
+2. **H-200: CI/CD automation** — Created `.github/workflows/regenerate.yml` GitHub Actions workflow that auto-runs the pipeline on push when case data changes.
+3. **Media_urls sync** — Fixed media_urls in cases-full.json to match actual files on disk for all cases.
 
 ### Current State
 - **Branch:** main
-- **Last commit:** 7f966a6 (v1.8 — relationships, dates, sound, witness cross-ref)
+- **Last commit:** b33c275 (v1.9 — media collection + CI/CD)
 - **docs/index.html:** ~3457 lines
-- **Data:** 56 cases, 20+ media files on disk across 11 case folders
+- **Data:** 56 cases, 32 media files across 18 case folders
+- **CI/CD:** GitHub Actions workflow active
 
 ### What's Next (Priority Order)
-1. **H-055** — Continue media collection for remaining 45 cases (P0)
-2. **H-054** — Fill research gaps (P1, requires web research)
-3. **H-050/H-051/H-052** — Data mining NUFORC/CADORS/MUFON (P1, likely network-blocked)
-4. **H-200** — narratives.js sync automation (P1, CI/CD)
+1. **H-054** — Fill research gaps (P1, requires web research)
+2. **H-050/H-051/H-052** — Data mining NUFORC/CADORS/MUFON (P1, likely network-blocked)
+3. **H-055 continued** — More media for remaining 38 cases without images
 
 ### Open Issues Summary
-- 5 open (1 P0, 3 P1, 1 P2), 36 completed, 1 blocked
+- 3 open (3 P1), 38 completed, 1 blocked
 - Full tracker at `ISSUE_TRACKER.md`
 
 ### Key Files
@@ -37,7 +34,8 @@ Relationship graph, date disambiguation, sound effects, witness cross-reference,
 | `data/cases-v5-master.json` | Master JSON — 56 cases, 66 fields each |
 | `data/cases/*.md` | 56 source markdown case files |
 | `docs/data/cases-full.json` | Served copy (GitHub Pages) |
-| `docs/images/` | 20+ media files across 11 case folders |
+| `docs/images/` | 32 media files across 18 case folders |
+| `.github/workflows/regenerate.yml` | CI/CD pipeline automation |
 
 ### Design System
 - Fonts: Special Elite (headers), Source Sans Pro (body), Caveat (handwritten)

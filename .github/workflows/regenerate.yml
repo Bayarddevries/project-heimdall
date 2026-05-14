@@ -1,0 +1,37 @@
+name: Regenerate Narratives
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/cases/**'
+      - 'data/cases-v5-master.json'
+      - 'scripts/**'
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Run pipeline
+        run: |
+          python scripts/rebuild_v5.py
+          python scripts/regenerate_markdown.py
+          python scripts/generate_frontend.py
+      
+      - name: Sync cases-full.json
+        run: cp data/cases-full.json docs/data/cases-full.json
+      
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/narratives.js docs/narratives.min.js docs/data/narratives.js docs/data/narratives.min.js docs/data/cases-full.json data/cases.json
+          git diff --staged --quiet || git commit -m "ci: regenerate narratives [skip ci]"
+          git push
