@@ -1,13 +1,16 @@
 # Project HEIMDALL — Session Checkpoint
-## Stopped: May 15, 2026 — v1.9 Deployed
+## Stopped: May 15, 2026 — v1.9.1 Bugfixes Deployed
 
 ### Where We Are
-Media collection expanded, CI/CD automation added. 18 cases now have media (32 image files).
+Bug fixes for onclick quoting deployed. 18 cases with media (32 files), CI/CD active.
 
 ### What Was Done This Session
-1. **H-055: Media collection phase 2** — Added images for 8 new cases: CAN-001 (Montreal 1910), CAN-003 (CFB Goose Bay), CAN-006 (Project Blue Book PDF), CAN-010 (Fort Frances), CAN-014 (Blue Book 1967), CAN-016 (CIA Reading Room ref), CAN-020 (RCMP patch), CAN-032 (Quebec city). Synced media_urls for all 18 cases with files on disk. Removed 264MB PDF that exceeded GitHub's 100MB limit.
-2. **H-200: CI/CD automation** — Created `.github/workflows/regenerate.yml` GitHub Actions workflow that auto-runs the pipeline on push when case data changes.
-3. **Media_urls sync** — Fixed media_urls in cases-full.json to match actual files on disk for all cases.
+1. **Fix: openDetail onclick quoting (H-203)** — Corrected string concatenation in detail panel open button
+2. **Fix: window.open onclick quoting (H-204)** — Corrected string concatenation in external search link button
+
+3. **H-055: Media collection phase 2** — Added images for 8 new cases: CAN-001 (Montreal 1910), CAN-003 (CFB Goose Bay), CAN-006 (Project Blue Book PDF), CAN-010 (Fort Frances), CAN-014 (Blue Book 1967), CAN-016 (CIA Reading Room ref), CAN-020 (RCMP patch), CAN-032 (Quebec city). Synced media_urls for all 18 cases with files on disk. Removed 264MB PDF that exceeded GitHub's 100MB limit.
+4. **H-200: CI/CD automation** — Created `.github/workflows/regenerate.yml` GitHub Actions workflow that auto-runs the pipeline on push when case data changes.
+5. **Media_urls sync** — Fixed media_urls in cases-full.json to match actual files on disk for all cases.
 
 ### Current State
 - **Branch:** main
@@ -17,9 +20,9 @@ Media collection expanded, CI/CD automation added. 18 cases now have media (32 i
 - **CI/CD:** GitHub Actions workflow active
 
 ### What's Next (Priority Order)
-1. **H-054** — Fill research gaps (P1, requires web research)
-2. **H-050/H-051/H-052** — Data mining NUFORC/CADORS/MUFON (P1, likely network-blocked)
-3. **H-055 continued** — More media for remaining 38 cases without images
+6. **H-054** — Fill research gaps (P1, requires web research)
+7. **H-050/H-051/H-052** — Data mining NUFORC/CADORS/MUFON (P1, likely network-blocked)
+8. **H-055 continued** — More media for remaining 38 cases without images
 
 ### Open Issues Summary
 - 3 open (3 P1), 38 completed, 1 blocked

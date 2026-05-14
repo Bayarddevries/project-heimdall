@@ -2438,7 +2438,7 @@ function popupHTML(c) {
     '</div>'+
     '<div class="p-ev"><strong>Evidence:</strong> '+c.evidence+'</div>'+
     '<div class="p-src">Source: '+c.source+'</div>'+
-    '<button class="p-btn" onclick="openDetail(\'+c.id+'')">Open Full Case File &#9654;</button>'+
+    '<button class="p-btn" onclick="openDetail(\''+c.id+'\')">Open Full Case File &#9654;</button>'+
     '<div class="p-note">— '+note+'</div>'+
     '</div></div></div>';
 }
@@ -3011,7 +3011,7 @@ function buildAnalysisTab(c, deep, cl, tierLabel, tierDesc) {
   }
 
   var searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(c.location + ' UFO ' + c.year);
-  html += '<hr class="fc-sep"/><button class="postit-btn" onclick="window.open(\' + searchUrl + '\', \'_blank')">Search External Sources &#9654;</button>';
+  html += '<hr class="fc-sep"/><button class="postit-btn" onclick="window.open(\'' + searchUrl + '\', \'_blank\')">Search External Sources &#9654;</button>';
 
   return html;
 }
