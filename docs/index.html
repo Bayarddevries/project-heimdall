@@ -2197,6 +2197,7 @@ body.night-ops .rel-table a { color: #a070c0; }
     <div>Showing: <strong id="stat-visible">56</strong></div>
     <div>YEARS: <strong>1662 – 2025</strong></div>
     <button class="view-toggle" id="view-toggle" title="Toggle timeline view">☰ Timeline</button>
+    <button class="view-toggle" id="sound-toggle" title="Toggle sound effects" onclick="toggleSound()">🔊</button>
   </div>
 </div>
 
@@ -2543,7 +2544,7 @@ window.openDetail = function(caseId) {
     t.className = 'folder-tab' + (i === 0 ? ' active' : '') + (tabs[i].redacted ? ' redacted' : '');
     t.textContent = tabs[i].label;
     t.setAttribute('data-tab', i);
-    t.addEventListener('click', (function(idx){ return function() { switchTab(idx); }; })(i));
+    t.addEventListener('click', (function(idx){ return function() { playStapleClick(); switchTab(idx); }; })(i));
     stripEl.appendChild(t);
   }
 
@@ -3094,6 +3095,7 @@ function buildRelationshipsTab(c, deep) {
 }
 
 document.getElementById('detail-close').addEventListener('click', function() {
+  playStampThud();
   document.getElementById('detail-panel').classList.remove('open');
 });
 
@@ -3109,6 +3111,7 @@ document.getElementById('detail-print').addEventListener('click', function() {
 function bindFilters() {
   document.querySelectorAll('.filter-btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
+      playClick();
       document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
       btn.classList.add('active');
       activeFilter = btn.dataset.f;
@@ -3278,6 +3281,7 @@ window.addEventListener('resize', function() {
 function openCaseById(caseId) {
   var c = allCases.find(function(x){ return x.id === caseId; });
   if (!c) return;
+  playPaperRustle();
   map.setView(c.coords, 7);
   document.querySelectorAll('.case-item').forEach(function(el){ el.classList.remove('active'); });
   // Find sidebar item by matching the case ID text in the .cid span
@@ -3299,6 +3303,94 @@ window.addEventListener('hashchange', function() {
 /* ==============================================================
    BOOT
    ============================================================== */
+/* ===== SOUND EFFECTS (H-105) ===== */
+var AudioCtx = window.AudioContext || window.webkitAudioContext;
+var audioCtx = null;
+var soundEnabled = true;
+
+function ensureAudio() {
+  if (!audioCtx) audioCtx = new AudioCtx();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+}
+
+function playPaperRustle() {
+  if (!soundEnabled) return;
+  ensureAudio();
+  var dur = 0.15, sr = audioCtx.sampleRate, len = dur * sr;
+  var buf = audioCtx.createBuffer(1, len, sr);
+  var data = buf.getChannelData(0);
+  for (var i = 0; i < len; i++) {
+    data[i] = (Math.random() * 2 - 1) * 0.03 * (1 - i / len);
+  }
+  var src = audioCtx.createBufferSource();
+  src.buffer = buf;
+  var filter = audioCtx.createBiquadFilter();
+  filter.type = 'bandpass';
+  filter.frequency.value = 3000;
+  filter.Q.value = 0.5;
+  var gain = audioCtx.createGain();
+  gain.gain.value = 0.4;
+  src.connect(filter).connect(gain).connect(audioCtx.destination);
+  src.start();
+}
+
+function playStampThud() {
+  if (!soundEnabled) return;
+  ensureAudio();
+  var osc = audioCtx.createOscillator();
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(80, audioCtx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(40, audioCtx.currentTime + 0.1);
+  var gain = audioCtx.createGain();
+  gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
+  osc.connect(gain).connect(audioCtx.destination);
+  osc.start();
+  osc.stop(audioCtx.currentTime + 0.15);
+}
+
+function playStapleClick() {
+  if (!soundEnabled) return;
+  ensureAudio();
+  var dur = 0.04, sr = audioCtx.sampleRate, len = dur * sr;
+  var buf = audioCtx.createBuffer(1, len, sr);
+  var data = buf.getChannelData(0);
+  for (var i = 0; i < len; i++) {
+    data[i] = (Math.random() * 2 - 1) * 0.15 * Math.exp(-i / (len * 0.15));
+  }
+  var src = audioCtx.createBufferSource();
+  src.buffer = buf;
+  var filter = audioCtx.createBiquadFilter();
+  filter.type = 'highpass';
+  filter.frequency.value = 2000;
+  var gain = audioCtx.createGain();
+  gain.gain.value = 0.5;
+  src.connect(filter).connect(gain).connect(audioCtx.destination);
+  src.start();
+}
+
+function playClick() {
+  if (!soundEnabled) return;
+  ensureAudio();
+  var osc = audioCtx.createOscillator();
+  osc.type = 'square';
+  osc.frequency.value = 1200;
+  var gain = audioCtx.createGain();
+  gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.03);
+  osc.connect(gain).connect(audioCtx.destination);
+  osc.start();
+  osc.stop(audioCtx.currentTime + 0.03);
+}
+
+// Sound toggle button
+function toggleSound() {
+  soundEnabled = !soundEnabled;
+  var btn = document.getElementById('sound-toggle');
+  if (btn) btn.textContent = soundEnabled ? '🔊' : '🔇';
+  if (soundEnabled) try { ensureAudio(); } catch(e) {}
+}
+
 initPage();
 
 </script>
