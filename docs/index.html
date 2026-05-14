@@ -1928,6 +1928,102 @@ body.night-ops .night-ops-toggle {
   body.night-ops .detail-panel { box-shadow: inset 0 0 30px rgba(180,30,30,0.06) !important; }
   .night-ops-toggle { bottom: 80px; right: 8px; font-size: 8px; padding: 4px 8px; }
 }
+
+/* ===== CLASSIFIED OVERLAY TOGGLE (H-104) ===== */
+/* Toggle with .classified-mode on <body> */
+.classified-toggle {
+  position: fixed; bottom: 48px; right: 70px; z-index: 1500;
+  background: #d4c5a9; border: 1px solid #8b7355; color: #6b5e50;
+  font-family: 'Special Elite', monospace; font-size: 9px;
+  padding: 6px 10px; cursor: pointer; border-radius: 2px;
+  text-transform: uppercase; letter-spacing: 1px;
+  transition: all 0.2s;
+}
+.classified-toggle:hover { background: #e8dcc8; color: #2c2825; }
+.classified-toggle.active {
+  background: #4a1010; color: #e8a0a0; border-color: #6a2020;
+}
+body.night-ops .classified-toggle {
+  background: #1a1410; border-color: #4a2020; color: #c89060;
+}
+body.night-ops .classified-toggle.active {
+  background: #4a1010; color: #e8a0a0; border-color: #6a2020;
+}
+
+/* Redaction overlay on content blocks */
+body.classified-mode .fc-prose,
+body.classified-mode .evi-block,
+body.classified-mode .fc-meta-value,
+body.classified-mode .handnote,
+body.classified-mode .agent-note {
+  position: relative;
+}
+body.classified-mode .fc-prose::after,
+body.classified-mode .evi-block::after,
+body.classified-mode .handnote::after,
+body.classified-mode .agent-note::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    #1a1a1a 0px, #1a1a1a 2px,
+    #2a2a2a 2px, #2a2a2a 4px
+  );
+  opacity: 0.85;
+  pointer-events: none;
+  border-radius: 1px;
+}
+/* Redacted text replacement */
+body.classified-mode .fc-prose {
+  color: transparent !important;
+  text-shadow: none !important;
+  background: linear-gradient(90deg, 
+    #1a1a1a 0%, #2a2a2a 25%, #1a1a1a 50%, #2a2a2a 75%, #1a1a1a 100%
+  );
+  background-size: 200% 100%;
+  animation: classified-scan 3s linear infinite;
+}
+@keyframes classified-scan {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+/* Stamp overlay */
+body.classified-mode .detail-stamp {
+  opacity: 1 !important;
+  transform: rotate(-8deg) scale(1.1) !important;
+}
+/* Classified watermark */
+body.classified-mode .file-content::before {
+  content: 'CLASSIFIED';
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-family: 'Special Elite', monospace;
+  font-size: 72px;
+  color: rgba(196, 30, 58, 0.06);
+  pointer-events: none;
+  z-index: 9999;
+  white-space: nowrap;
+  letter-spacing: 12px;
+}
+/* Night ops + classified combo */
+body.night-ops.classified-mode .fc-prose {
+  background: linear-gradient(90deg, 
+    #0a0a0a 0%, #1a0505 25%, #0a0a0a 50%, #1a0505 75%, #0a0a0a 100%
+  );
+  background-size: 200% 100%;
+  animation: classified-scan 3s linear infinite;
+}
+body.night-ops.classified-mode .file-content::before {
+  color: rgba(180, 30, 30, 0.08);
+}
+
+/* Mobile classified */
+@media (max-width: 768px) {
+  .classified-toggle { bottom: 80px; right: 60px; font-size: 8px; padding: 4px 8px; }
+  body.classified-mode .file-content::before { font-size: 36px; letter-spacing: 6px; }
+}
 </style>
 </head>
 <body>
@@ -2019,6 +2115,7 @@ body.night-ops .night-ops-toggle {
 
 <!-- NIGHT OPS TOGGLE -->
 <button class="night-ops-toggle" id="night-ops-toggle" title="Toggle Night Operations mode">🌙 Night Ops</button>
+<button class="classified-toggle" id="classified-toggle" title="Toggle Classified/Declassified view">🔒 Classified</button>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -2066,6 +2163,21 @@ function initPage() {
   toggle.addEventListener('click', function() {
     var isNight = document.body.classList.toggle('night-ops');
     localStorage.setItem('heimdall-night-ops', isNight ? '1' : '0');
+  });
+})();
+
+/* ===== CLASSIFIED OVERLAY TOGGLE (H-104) ===== */
+(function() {
+  var toggle = document.getElementById('classified-toggle');
+  if (!toggle) return;
+  if (localStorage.getItem('heimdall-classified') === '1') {
+    document.body.classList.add('classified-mode');
+    toggle.classList.add('active');
+  }
+  toggle.addEventListener('click', function() {
+    var isClassified = document.body.classList.toggle('classified-mode');
+    toggle.classList.toggle('active', isClassified);
+    localStorage.setItem('heimdall-classified', isClassified ? '1' : '0');
   });
 })();
 
