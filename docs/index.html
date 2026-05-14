@@ -646,6 +646,27 @@ body {
 }
 .detail-close:hover { color: #c41e3a; }
 
+/* Print button */
+.detail-print {
+  position: absolute;
+  top: 4px; right: 40px;
+  width: auto; height: 28px;
+  background: none;
+  border: 1px solid #c4b898;
+  cursor: pointer;
+  font-family: 'Special Elite', monospace;
+  font-size: 9px;
+  color: #8b7355;
+  z-index: 10;
+  padding: 0 8px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.15s;
+}
+.detail-print:hover { background: #e8dcc8; color: #2c2825; border-color: #8b7355; }
+@media print { .detail-print { display: none !important; } }
+
 /* Stamp */
 .fc-stamp {
   display: inline-block;
@@ -2024,6 +2045,63 @@ body.night-ops.classified-mode .file-content::before {
   .classified-toggle { bottom: 80px; right: 60px; font-size: 8px; padding: 4px 8px; }
   body.classified-mode .file-content::before { font-size: 36px; letter-spacing: 6px; }
 }
+
+/* ===== PRINT / EXPORT STYLES (H-103) ===== */
+@media print {
+  /* Hide non-printable elements */
+  .top-bar, .sidebar, .sidebar-toggle, .timeline-bar, .timeline-view,
+  .night-ops-toggle, .classified-toggle, .backdrop, .grain-overlay,
+  .coffee-stain, .foxing-overlay, .leaflet-control-zoom,
+  .leaflet-control-attribution, #map, .filter-bar, .search-wrap {
+    display: none !important;
+  }
+  /* Reset layout for print */
+  body { background: #fff !important; color: #000 !important; }
+  .detail-panel {
+    position: static !important; width: 100% !important; height: auto !important;
+    box-shadow: none !important; border: none !important;
+    display: block !important; overflow: visible !important;
+  }
+  .detail-panel.open { bottom: auto !important; right: auto !important; }
+  .tab-strip { display: none !important; }
+  .file-content {
+    padding: 0 !important; font-size: 11pt !important; line-height: 1.5 !important;
+    color: #000 !important; overflow: visible !important;
+  }
+  .file-content::before { display: none !important; } /* Hide classified watermark */
+  .fc-title { font-size: 18pt !important; color: #000 !important; }
+  .fc-subtitle { font-size: 10pt !important; color: #333 !important; }
+  .fc-h3 { font-size: 12pt !important; color: #000 !important; }
+  .fc-prose { color: #000 !important; background: none !important; animation: none !important; }
+  .fc-prose::after { display: none !important; } /* Hide redaction overlay */
+  .evi-block {
+    background: #f5f5f5 !important; border: 1px solid #ccc !important;
+    color: #000 !important; break-inside: avoid;
+  }
+  .evi-block::after { display: none !important; }
+  .fc-stamp {
+    background: #f0e0d0 !important; color: #6b2020 !important;
+    border: 1px solid #8b7355 !important; -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .detail-stamp {
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .handnote, .agent-note { color: #444 !important; }
+  .handnote::after, .agent-note::after { display: none !important; }
+  .brass-fastener-bar { display: none !important; }
+  .detail-close { display: none !important; }
+  .media-grid { display: block !important; }
+  .polaroid { break-inside: avoid; margin: 8px; }
+  .polaroid img { max-width: 200px !important; max-height: 150px !important; }
+  .fc-pdf-link::after { content: ' (' attr(href) ')'; font-size: 8pt; color: #666; }
+  .fc-ref-link::after { content: ' (' attr(href) ')'; font-size: 8pt; color: #666; }
+  /* Page breaks */
+  .fc-sec { break-before: page; }
+  .fc-sep { break-after: avoid; }
+  @page { margin: 1in; size: letter; }
+}
+
 </style>
 </head>
 <body>
@@ -2096,6 +2174,7 @@ body.night-ops.classified-mode .file-content::before {
   <div class="tab-strip" id="tab-strip"></div>
   <div class="file-content" id="detail-content">
     <button class="detail-close" id="detail-close">✕</button>
+    <button class="detail-print" id="detail-print" title="Print case file">🖨 Print</button>
     <div class="brass-fastener-bar">
       <div class="brass-fastener"></div>
       <div class="brass-fastener"></div>
@@ -2840,6 +2919,11 @@ function buildAnalysisTab(c, deep, cl, tierLabel, tierDesc) {
 
 document.getElementById('detail-close').addEventListener('click', function() {
   document.getElementById('detail-panel').classList.remove('open');
+});
+
+/* Print case file (H-103) */
+document.getElementById('detail-print').addEventListener('click', function() {
+  window.print();
 });
 
 
