@@ -1,6 +1,6 @@
 # PROJECT HEIMDALL — Canadian UFO Sightings Archive
 
-An interactive, classified-aesthetic Leaflet.js map and archive of 54 documented Canadian UFO sightings spanning 1662 to 2025.
+An interactive, classified-aesthetic Leaflet.js map and archive of 56 documented Canadian UFO sightings spanning 1662 to 2025.
 
 **Live site:** https://bayarddevries.github.io/project-heimdall/
 
@@ -16,19 +16,20 @@ The visual aesthetic evokes declassified government files: paper grain textures,
 
 | Metric | Count |
 |--------|-------|
-| Total Cases | 54 |
-| Time Span | 1662-2025 (363 years) |
-| Tier A (Priority) | 10 |
-| Tier B (Moderate) | 9 |
-| Tier C (Routine) | 35 |
-| CE2 Encounters | 8 |
-| CE3 Encounters | 4 |
-| CE4 Encounters | 1 |
-| Case File Narratives | 54/54 (complete) |
+|| Total Cases | 56 ||
+|| Time Span | 1662-2025 (364 years) ||
+|| Tier A (Priority) | 10 ||
+|| Tier B (Moderate) | 1 ||
+|| Tier C (Routine) | 45 ||
+|| CE1 Encounters | 13 ||
+|| CE2 Encounters | 7 ||
+|| CE3 Encounters | 5 ||
+|| CE4 Encounters | 1 ||
+|| Case File Narratives | 56/56 (complete) ||
 
 ## Features
 
-- **Interactive Leaflet map** — 54 geolocated markers across Canadian territory
+- **Interactive Leaflet map** — 56 geolocated markers across Canadian territory
 - **Timeline slider** — filter cases by year range (1662 to 2025)
 - **Sidebar case list** — sortable, filterable by tier (A/B/C) and encounter type (CE1-CE4, CE2, CE3, CE4, DD, NL, RV)
 - **Detail panel** — right-side case file viewer with full markdown narrative, classification data, evidence, and source citations

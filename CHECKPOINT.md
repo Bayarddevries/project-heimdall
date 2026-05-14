@@ -7,14 +7,15 @@ Bug fixes for onclick quoting deployed. 18 cases with media (32 files), CI/CD ac
 ### What Was Done This Session
 1. **Fix: openDetail onclick quoting (H-203)** — Corrected string concatenation in detail panel open button
 2. **Fix: window.open onclick quoting (H-204)** — Corrected string concatenation in external search link button
+3. **Fix: witnesses TypeError in relationships tab (H-205)** — witnesses field is numeric in cases-full.json causing TypeError in buildRelationshipsTab; cast to String() before .toLowerCase() restores detail panel click functionality
 
-3. **H-055: Media collection phase 2** — Added images for 8 new cases: CAN-001 (Montreal 1910), CAN-003 (CFB Goose Bay), CAN-006 (Project Blue Book PDF), CAN-010 (Fort Frances), CAN-014 (Blue Book 1967), CAN-016 (CIA Reading Room ref), CAN-020 (RCMP patch), CAN-032 (Quebec city). Synced media_urls for all 18 cases with files on disk. Removed 264MB PDF that exceeded GitHub's 100MB limit.
-4. **H-200: CI/CD automation** — Created `.github/workflows/regenerate.yml` GitHub Actions workflow that auto-runs the pipeline on push when case data changes.
-5. **Media_urls sync** — Fixed media_urls in cases-full.json to match actual files on disk for all cases.
+4. **H-055: Media collection phase 2** — Added images for 8 new cases: CAN-001 (Montreal 1910), CAN-003 (CFB Goose Bay), CAN-006 (Project Blue Book PDF), CAN-010 (Fort Frances), CAN-014 (Blue Book 1967), CAN-016 (CIA Reading Room ref), CAN-020 (RCMP patch), CAN-032 (Quebec city). Synced media_urls for all 18 cases with files on disk. Removed 264MB PDF that exceeded GitHub's 100MB limit.
+5. **H-200: CI/CD automation** — Created `.github/workflows/regenerate.yml` GitHub Actions workflow that auto-runs the pipeline on push when case data changes.
+6. **Media_urls sync** — Fixed media_urls in cases-full.json to match actual files on disk for all cases.
 
 ### Current State
 - **Branch:** main
-- **Last commit:** b33c275 (v1.9 — media collection + CI/CD)
+- **Last commit:** 680a798 (v1.9.1 — H-203/4/5 bugfixes, docs update)
 - **docs/index.html:** ~3457 lines
 - **Data:** 56 cases, 32 media files across 18 case folders
 - **CI/CD:** GitHub Actions workflow active
@@ -25,7 +26,7 @@ Bug fixes for onclick quoting deployed. 18 cases with media (32 files), CI/CD ac
 8. **H-055 continued** — More media for remaining 38 cases without images
 
 ### Open Issues Summary
-- 3 open (3 P1), 38 completed, 1 blocked
+- 4 open (4 P1), 39 completed, 1 blocked
 - Full tracker at `ISSUE_TRACKER.md`
 
 ### Key Files
