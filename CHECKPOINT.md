@@ -1,45 +1,62 @@
 # Project HEIMDALL — Session Checkpoint
-## Stopped: May 11, 2026 — Evening Session
+## Stopped: May 13, 2026 — Batch 1 Deployed
 
 ### Where We Are
-Built the **Falcon Lake dossier prototype** (`docs/falcon-lake-prototype.html`) — a standalone 5-tab interactive case file with the full classified aesthetic. This is the visual template for ALL 54 cases going forward.
+Batch 1 visual polish is fully merged and deployed to GitHub Pages. All hand-drawn UI refinements are live at https://bayarddevries.github.io/project-heimdall/.
 
-### The Pivot
-We pivoted from incremental map tweaks to a complete redesign of the case presentation. Instead of single Leaflet popups, each case will open as an interactive multi-page dossier (folder with tabs).
+### What Was Done This Session
+1. Created standalone Batch 1 preview HTML (`/mnt/c/Users/bayar/Outbox/heimdall-batch1-preview.html`) for user review
+2. User approved: "this is spot on"
+3. Merged all Batch 1 CSS changes into `docs/index.html`:
+   - H-021: Hand-drawn checkboxes (`.hand-checkbox` class)
+   - H-022: Paperclip toggle (`.paperclip-toggle` class)
+   - H-020: Stamp press states (`.stamp-badge:active`, `.detail-stamp:active`)
+   - H-019: Post-it refinements (fold highlight, press states)
+   - Filter buttons: Caveat 14px font, hand-drawn checkbox boxes with red ✗ mark
+4. Rebased over 4 remote debug commits that had diverged
+5. Pushed to main — live at GitHub Pages
 
-### What's Built
-- `docs/falcon-lake-prototype.html` — Complete prototype, all CSS/JS inline
-  - 5 tabs: Incident, Witnesses, Evidence, Official Record, Aftermath
-  - Full classified file aesthetic (manila grain, coffee rings, staples, tape, polaroids, marginalia)
-  - Content for Falcon Lake (CAN-011) populated from CSV + historical records
-  - Tab navigation, hover effects, stamp watermarks
+### Current State
+- **Branch:** main
+- **Last commit:** 7e2572a (Batch 1 visual polish)
+- **docs/index.html:** ~2224 lines, ~76KB
+- **Data:** 56 cases in `data/cases-v5-master.json`, 56 `.md` files in `data/cases/`
+- **narratives.js:** 44KB (56 entries)
+- **docs/data/cases-full.json:** synced
+- **docs/images/**: empty (H-055 media collection is P0 open)
 
-### What's Next (Priority Order)
-1. **Integrate dossier into main index.html** — Replace current popup system with the tabbed folder UI. Side panel on marker click.
-2. **Expand all 54 cases to the rich schema** — CSV only has 8 fields. We need 25+ fields per case (witness counts, evidence types, physical trace, official response, media). Start with Tier A cases first.
-3. **Data research pipeline** — Mine NUFORC, government archives, press, ufology sources for detailed enrichment.
-4. **Media** — Find real photos (polaroid frames), embed YouTube videos.
-5. **Coordinate fixes** — Falcon Lake lat/lng, jitter overlapping markers.
-6. **Adjacent cases** — CAN-051/052/054 (2023 US flap) as related/cross-referenced.
+### What's Next (Priority Order Per User)
+1. **H-107** — Deep linking (#CAN-012 opens case directly)
+2. **H-100** — Map search by location
+3. **H-016** — Die-cut folder tabs (P0 visual)
+4. **H-030** — Polaroid photo effect (P0 visual)
+5. **H-055** — Media/photograph collection (P0 data, requires research)
+6. **H-050/051/052** — NUFORC/CADORS/MUFON mining (P1 data)
 
-### Live Prototype URL
-`http://localhost:8123/falcon-lake-prototype.html` (needs server restart: `cd /root/project-heimdall/docs && python3 -m http.server 8123`)
+### Open Issues Summary
+- 23 open (5 P0, 12 P1, 6 P2), 10 completed, 1 blocked
+- Full tracker at `ISSUE_TRACKER.md`
 
-### Live Site
-`https://bayarddevries.github.io/project-heimdall/` — current version (pre-dossier redesign)
+### Key Files
+| File | Purpose |
+|------|---------|
+| `docs/index.html` | Main app — all HTML/CSS/JS inline, ~2224 lines |
+| `docs/narratives.js` | Generated case narratives (56 entries) |
+| `data/cases-v5-master.json` | Master JSON — 56 cases, 61 fields each |
+| `data/cases/*.md` | 56 source markdown case files |
+| `docs/data/cases-full.json` | Served copy (GitHub Pages) |
+| `ISSUE_TRACKER.md` | 33 issues, 23 open |
+| `AGENTS.md` | Agent operating instructions |
 
-### Design Decisions Locked In
-- Classified file aesthetic from `classified-file-ui` skill (manila, grain, staples, tape, etc.)
-- 5-tab dossier per case (not 6 — condensed from original proposal)
-- Google Fonts: Special Elite, Source Sans 3, Caveat (only external dependency)
-- Inline everything — no external CSS/JS files (single HTML deliverable)
-- Post-it notes for agent annotations
-- Polaroid frames with tape corners for images
-- Handwritten marginalia in ballpoint blue (#0047AB)
+### Design System
+- Fonts: Special Elite (headers), Source Sans Pro (body), Caveat (handwritten)
+- Colors: manila (#d4c5a9, #e8dcc8), red (#c41e3a), gold (#d4a843), brown (#6b5e50), purple (#6b2fa0)
+- Ballpoint blue marginalia: #0047AB
+- Aesthetic: classified file / manila folder / paper textures / stamps / staples / tape
 
-### Source CSV
-`/mnt/c/Users/bayar/Downloads/CANADIAN UFO SIGHTINGS.csv` (50 rows, 8 columns)
-
-### Repo
-`/root/project-heimdall/` on `main` branch
-Deploy from `docs/` via GitHub Pages
+### Deployment
+```bash
+cd /root/project-heimdall
+git add -A && git commit -m "message" && git push
+```
+GitHub Pages serves from `docs/` within ~60 seconds.

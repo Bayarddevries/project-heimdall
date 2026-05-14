@@ -1,5 +1,17 @@
 # CHANGELOG — Project HEIMDALL
 
+## [2026-05-13] v1.3 — Batch 1 Visual Polish
+
+Deployed hand-drawn UI elements and interaction refinements:
+
+- **Feat: Hand-drawn checkboxes (H-021)** — New `.hand-checkbox` class with Caveat-font red ✗ mark. Filter buttons now use hand-drawn boxes instead of unicode checkbox glyphs.
+- **Feat: Paperclip toggle (H-022)** — New `.paperclip-toggle` component with sliding clip mechanism for toggle UI.
+- **Feat: Stamp press states** — `.stamp-badge:active` and `.detail-stamp:active` for tactile press feedback.
+- **Feat: Post-it refinements** — Added `::before` fold highlight gradient and `:active` press state to `.postit-btn`, `.p-btn`, `.search-link-btn`.
+- **Refactor: Filter button typography** — Changed from Special Elite 11px to Caveat 14px for handwritten feel.
+- **Refactor: Filter checkbox style** — `.filter-btn::before` renders hand-drawn box, `.filter-btn.active::after` renders red ✗ mark.
+- **Rebase: Remote sync** — Rebased over 4 remote debug commits (39da324, 5c0e9c2, d8fd61c, 62690ed, ae61d86).
+
 ## [2026-05-13] v1.2 — Mobile Fixes, Tab Refactor, Media Gallery
 
 - **Refactor: Detail panel 5 tabs → 3 tabs** (INCIDENT / EVIDENCE & SOURCES / ANALYSIS)

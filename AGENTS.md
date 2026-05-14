@@ -6,16 +6,18 @@ This file provides instructions for AI agents working on Project HEIMDALL. Load 
 
 ## Project Overview
 
-Project HEIMDALL is an interactive Leaflet.js map + classified-aesthetic archive of 54 Canadian UFO sightings (1662-2025). Deployed to GitHub Pages from the `docs/` folder. Single-page application, no build step, no frameworks.
+Project HEIMDALL is an interactive Leaflet.js map + classified-aesthetic archive of 56 Canadian UFO sightings (1662-2025). Deployed to GitHub Pages from the `docs/` folder. Single-page application, no build step, no frameworks.
 
 **Live site:** https://bayarddevries.github.io/project-heimdall/
+**Repo:** github.com/Bayarddevries/project-heimdall
+**Current version:** V5 — 56 cases, Batch 1 visual polish deployed
 
 ---
 
 ## Critical Architecture Facts
 
 ### Data Flow
-1. Case narratives live in `data/cases/*.md` (54 files, CAN-001.md to CAN-054.md)
+1. Case narratives live in `data/cases/*.md` (56 files, CAN-001.md to CAN-056.md)
 2. Each .md file has YAML frontmatter + markdown body
 3. `docs/narratives.js` is a pre-generated JS object: `var NARRATIVES = {"CAN-001": "...", ...}`
 4. `docs/index.html` has a hardcoded `CASES` array for map metadata
@@ -32,6 +34,24 @@ body = m.group(1).strip() if m else content.strip()
 ### Narrative Regeneration
 When `data/cases/*.md` files are updated, regenerate `docs/narratives.js` with the script in README.md. **Never edit narratives.js by hand — it is always generated.**
 
+### Three-Tier Data Pipeline
+1. `scripts/rebuild_v5.py` — CSV + RESEARCH_DATA → `data/cases-v5-master.json`
+2. `scripts/regenerate_markdown.py` — master JSON → 56 `data/cases/*.md` files
+3. `scripts/generate_frontend.py` — markdown + master JSON → `docs/narratives.js` + `docs/data/cases-full.json` + `data/cases.json`
+
+**Always run in order**: rebuild_v5.py → regenerate_markdown.py → generate_frontend.py → git push.
+
+### Dual-COPY BUG (CRITICAL)
+There are TWO copies of `cases-full.json`:
+- `data/cases-full.json` (source/root copy)
+- `docs/data/cases-full.json` (the one GitHub Pages ACTUALLY serves)
+
+After ANY change to `cases-full.json`, immediately run:
+```
+cp data/cases-full.json docs/data/cases-full.json
+```
+Or run the full pipeline which handles both copies.
+
 ---
 
 ## What NOT To Do
@@ -42,6 +62,8 @@ When `data/cases/*.md` files are updated, regenerate `docs/narratives.js` with t
 - **Do not edit `docs/narratives.js` manually.** Always regenerate from `data/cases/*.md`.
 - **Do not change the CSS theme** without preserving the classified-aesthetic (paper tones, typewriter fonts, manila folders).
 - **Do not deploy from anything other than `docs/` on the `main` branch.**
+- **Do not delete or rename case files** without updating the CASES array in index.html and regenerating narratives.js.
+- **Do NOT verify media rendering via `file://` protocol.** The browser's `fetch()` API is blocked on `file://` URLs (CORS). Use live GitHub Pages URL or a local HTTP server.
 
 ---
 
@@ -53,7 +75,7 @@ When `data/cases/*.md` files are updated, regenerate `docs/narratives.js` with t
    ```yaml
    ---
    case_id: CAN-XXX
-   case_number: "51"
+   case_number: "57"
    case_name: Event Name
    date: "1995"
    location: Place, Province
@@ -89,7 +111,7 @@ When `data/cases/*.md` files are updated, regenerate `docs/narratives.js` with t
 
 ### Adding New CSS Classes
 - Use the existing font families: 'Special Elite' for headings, 'Source Sans Pro' for body text, 'Caveat' for handwritten notes
-- Classified aesthetic: paper textures, stamps, staples, tape effects
+- Classified aesthetic: paper textures, stamps, staples, tape effects, coffee stains, polaroid frames
 
 ---
 
@@ -97,13 +119,14 @@ When `data/cases/*.md` files are updated, regenerate `docs/narratives.js` with t
 
 Agents must verify:
 1. Map loads without errors in the browser console
-2. ALL 54 markers render on the map
+2. ALL 56 markers render on the map
 3. Sidebar shows all cases
 4. Clicking a marker opens the detail panel with narrative content
 5. Clicking a sidebar item opens the same detail panel
 6. Timeline slider works
 7. Tier/encounter type filters work
 8. Zero JavaScript errors in the browser console (`browser_console`)
+9. Mobile viewport (375x812): bottom sheet displays full content with accessible close button
 
 ---
 
@@ -111,13 +134,17 @@ Agents must verify:
 
 | File | Purpose |
 |------|---------|
-| `docs/index.html` | Main app (all HTML/CSS/JS) |
-| `docs/narratives.js` | Embedded case narratives (generated) |
-| `data/cases/*.md` | Source markdown case files |
+| `docs/index.html` | Main app (all HTML/CSS/JS, ~2224 lines) |
+| `docs/narratives.js` | Embedded case narratives (generated, ~44KB) |
+| `data/cases/*.md` | Source markdown case files (56 files) |
 | `data/cases.json` | Metadata JSON (synced with CASES array) |
-| `data/cases-all.json` | Full case data with all frontmatter |
-| `data/raw_sightings.csv` | Original source CSV |
-| `data/research_needs.json` | Research gap tracking |
+| `data/cases-v5-master.json` | Full case data — master JSON (56 cases, 61 fields) |
+| `data/cases-full.json` | Full case data — root copy (sync to docs/) |
+| `docs/data/cases-full.json` | Full case data — served copy (GitHub Pages) |
+| `data/canadian_ufo_sightings_v5.csv` | Extended source CSV (56 rows) — ground truth |
+| `scripts/rebuild_v5.py` | CSV → master JSON pipeline |
+| `scripts/regenerate_markdown.py` | Master JSON → markdown files |
+| `scripts/generate_frontend.py` | Markdown → frontend assets |
 
 ---
 
@@ -126,6 +153,21 @@ Agents must verify:
 `git add -A && git commit -m "message" && git push` to the `main` branch.
 
 GitHub Pages serves from `docs/` and typically deploys within 60 seconds of the push.
+
+---
+
+## Batch 1 Visual Polish (Deployed 2026-05-13)
+
+The following CSS classes were added/refined in `docs/index.html`:
+
+| ID | Feature | CSS Classes |
+|----|---------|-------------|
+| H-021 | Hand-drawn checkboxes | `.hand-checkbox`, `.hand-checkbox .box`, `.hand-checkbox.checked .box::after` |
+| H-022 | Paperclip toggle | `.paperclip-toggle`, `.track`, `.clip`, `.on` |
+| H-020 | Stamp press states | `.stamp-badge:active`, `.detail-stamp:active` |
+| H-019 | Post-it refinements | `.postit-btn::before`, `.postit-btn:active`, `.p-btn::before`, `.p-btn:active` |
+| — | Filter button font | `.filter-btn` changed from Special Elite 11px → Caveat 14px |
+| — | Filter checkboxes | `.filter-btn::before` hand-drawn box, `.filter-btn.active::after` red ✗ mark |
 
 ---
 
