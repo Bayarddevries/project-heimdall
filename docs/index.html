@@ -2168,6 +2168,15 @@ body.night-ops .rel-table th { border-bottom-color: #2a1810; color: #8a7050; }
 body.night-ops .rel-table td { border-bottom-color: #2a1810; }
 body.night-ops .rel-table a { color: #a070c0; }
 
+/* H-056: Witness pattern matches */
+.witness-type-group { margin: 4px 0; font-size: 11px; line-height: 1.6; }
+.witness-type-label { font-weight: 700; color: #6b2fa0; text-transform: uppercase; font-size: 9px; letter-spacing: 0.5px; }
+.witness-case-link { color: #6b2fa0; text-decoration: none; padding: 1px 4px; border-radius: 2px; background: #e8dcc8; }
+.witness-case-link:hover { background: #d4c5a9; text-decoration: underline; }
+.witness-more { color: #8b7355; font-style: italic; font-size: 10px; }
+body.night-ops .witness-type-label { color: #a070c0; }
+body.night-ops .witness-case-link { background: #2a1510; color: #a070c0; }
+
 </style>
 </head>
 <body>
@@ -3089,6 +3098,57 @@ function buildRelationshipsTab(c, deep) {
       html += '</tr>';
     });
     html += '</tbody></table>';
+  }
+
+  // H-056: Witness pattern cross-reference
+  var witnessTypes = {
+    'RCMP': ['rcmp', 'royal canadian mounted', 'constable', 'cst.'],
+    'Military': ['military', 'rcaf', 'dnd', 'cfb', 'armed forces', 'army', 'navy', 'air force'],
+    'Police': ['police', 'officer', 'sq.', 'provincial police', 'highway patrol'],
+    'Pilot': ['pilot', 'air traffic', 'commercial pilot', 'flight crew'],
+    'Civilian Group': ['residents', 'locals', 'fishermen', 'farmers', 'campers', 'family', 'teenagers'],
+  };
+  var myWitnessText = (c.witnesses || '').toLowerCase();
+  var myNarrative = (c.narrative || '').toLowerCase();
+  var myWitnessMatches = {};
+  for (var wtype in witnessTypes) {
+    var patterns = witnessTypes[wtype];
+    for (var p = 0; p < patterns.length; p++) {
+      var pat = patterns[p].toLowerCase();
+      if (myWitnessText.indexOf(pat) !== -1 || myNarrative.indexOf(pat) !== -1) {
+        if (!myWitnessMatches[wtype]) myWitnessMatches[wtype] = [];
+        // Find other cases with same witness type
+        allCases.forEach(function(oc) {
+          if (oc.id === myId) return;
+          var ocText = ((oc.witnesses || '') + ' ' + (oc.narrative || '')).toLowerCase();
+          for (var p2 = 0; p2 < patterns.length; p2++) {
+            if (ocText.indexOf(patterns[p2].toLowerCase()) !== -1) {
+              if (myWitnessMatches[wtype].indexOf(oc.id) === -1) myWitnessMatches[wtype].push(oc.id);
+              break;
+            }
+          }
+        });
+        break;
+      }
+    }
+  }
+  var hasWitnessMatches = false;
+  for (var wt in myWitnessMatches) { if (myWitnessMatches[wt].length > 0) { hasWitnessMatches = true; break; } }
+  if (hasWitnessMatches) {
+    html += '<hr class="fc-sep" style="margin-top:16px;"/>';
+    html += '<div class="fc-h3">Witness Pattern Matches</div>';
+    html += '<div class="fc-prose" style="font-size:11px;color:#6b5e50;margin-bottom:8px;">Other cases with similar witness types.</div>';
+    for (var wt2 in myWitnessMatches) {
+      var matches = myWitnessMatches[wt2];
+      if (matches.length === 0) continue;
+      html += '<div class="witness-type-group">';
+      html += '<span class="witness-type-label">' + escapeHtml(wt2) + '</span>: ';
+      html += matches.slice(0, 8).map(function(ocid) {
+        return '<a href="#' + ocid + '" onclick="openCaseById(\'' + ocid + '\');return false;" class="witness-case-link">' + ocid + '</a>';
+      }).join(', ');
+      if (matches.length > 8) html += ' <span class="witness-more">+' + (matches.length - 8) + ' more</span>';
+      html += '</div>';
+    }
   }
 
   return html;
