@@ -2427,7 +2427,7 @@ function popupHTML(c) {
     '</div>'+
     '<div class="p-ev"><strong>Evidence:</strong> '+c.evidence+'</div>'+
     '<div class="p-src">Source: '+c.source+'</div>'+
-    '<button class="p-btn" onclick="openDetail(\''+c.id+'\')">Open Full Case File &#9654;</button>'+
+    '<button class="p-btn" onclick="openDetail(\'+c.id+'')">Open Full Case File &#9654;</button>'+
     '<div class="p-note">— '+note+'</div>'+
     '</div></div></div>';
 }
@@ -2985,7 +2985,7 @@ function buildAnalysisTab(c, deep, cl, tierLabel, tierDesc) {
   }
 
   var searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(c.location + ' UFO ' + c.year);
-  html += '<hr class="fc-sep"/><button class="postit-btn" onclick="window.open(\'' + searchUrl + '\', \'_blank\')">Search External Sources &#9654;</button>';
+  html += '<hr class="fc-sep"/><button class="postit-btn" onclick="window.open(\' + searchUrl + '\', \'_blank')">Search External Sources &#9654;</button>';
 
   return html;
 }
@@ -3032,7 +3032,7 @@ function buildRelationshipsTab(c, deep) {
     // Visual graph: central node + connected nodes
     html += '<div class="rel-graph">';
     // Central node (this case)
-    html += '<div class="rel-node rel-central" onclick="openCaseById('' + myId + '')">';
+    html += '<div class="rel-node rel-central" onclick="openCaseById(\'' + myId + '\')">';
     html += '<span class="rel-dot tier-' + (c.tier || 'C') + '"></span>';
     html += '<span class="rel-label">' + escapeHtml(myId) + '</span>';
     html += '<span class="rel-year">' + escapeHtml(String(c.year || '')) + '</span>';
@@ -3042,7 +3042,7 @@ function buildRelationshipsTab(c, deep) {
     relationships.slice(0, 12).forEach(function(r) {
       html += '<div class="rel-conn">';
       html += '<div class="rel-line"></div>';
-      html += '<div class="rel-node rel-linked" onclick="openCaseById('' + r.case_id + '')">';
+      html += '<div class="rel-node rel-linked" onclick="openCaseById(\'' + r.case_id + '\')">';
       html += '<span class="rel-dot tier-' + r.tier + '"></span>';
       html += '<span class="rel-label">' + escapeHtml(r.case_id) + '</span>';
       html += '<span class="rel-year">' + escapeHtml(String(r.year)) + '</span>';
@@ -3064,7 +3064,7 @@ function buildRelationshipsTab(c, deep) {
     html += '<table class="rel-table"><thead><tr><th>Case</th><th>Year</th><th>Tier</th><th>Shared Tags</th><th>Link</th></tr></thead><tbody>';
     relationships.forEach(function(r) {
       html += '<tr>';
-      html += '<td><a href="#' + r.case_id + '" onclick="openCaseById('' + r.case_id + '');return false;">' + escapeHtml(r.case_id) + ' — ' + escapeHtml(r.case_name) + '</a></td>';
+      html += '<td><a href="#' + r.case_id + '" onclick="openCaseById(\'' + r.case_id + '\');return false;">' + escapeHtml(r.case_id) + ' — ' + escapeHtml(r.case_name) + '</a></td>';
       html += '<td>' + escapeHtml(String(r.year)) + '</td>';
       html += '<td><span class="rel-tier tier-' + r.tier + '">' + r.tier + '</span></td>';
       html += '<td>' + r.sharedTags.slice(0, 3).map(function(t) { return '<span class="rel-tag">' + escapeHtml(t) + '</span>'; }).join(' ') + '</td>';
