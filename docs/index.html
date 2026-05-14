@@ -3108,7 +3108,7 @@ function buildRelationshipsTab(c, deep) {
     'Pilot': ['pilot', 'air traffic', 'commercial pilot', 'flight crew'],
     'Civilian Group': ['residents', 'locals', 'fishermen', 'farmers', 'campers', 'family', 'teenagers'],
   };
-  var myWitnessText = (c.witnesses || '').toLowerCase();
+  var myWitnessText = String(c.witnesses || '').toLowerCase();
   var myNarrative = (c.narrative || '').toLowerCase();
   var myWitnessMatches = {};
   for (var wtype in witnessTypes) {
