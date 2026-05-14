@@ -24,9 +24,6 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | H-013 | Offset/scanned text rotation | P1 | Open | Apply slight rotation (0.3-0.5deg) to text blocks/images for "human-error" photocopy feel |
 | H-014 | Staple/paperclip accents | P1 | Open | Replace standard headers with staple images pinning content blocks |
 | H-015 | Handwritten marginalia | P1 | Open | Add Caveat font in ballpoint blue (#0047AB) for agent notes, dates, flags in margins |
-| H-016 | Die-cut folder tabs | P0 | Open | Implement third-cut folder tab navigation (Left/Center/Right stagger) for section switching |
-| H-030 | Polaroid photo effect | P0 | Open | Images get thick uneven white borders, high contrast, "fifth-gen photocopy" look |
-| H-031 | Scotch tape corner mounts | P1 | Open | Transparent tape strips in corners of "taped" images/documents |
 | H-040 | Responsive mobile layout | P1 | Open | Mobile: stacked layout with hamburger nav for folder tabs, touch-friendly targets |
 
 ### Data
@@ -47,14 +44,12 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 
 | ID | Title | Priority | Status | Description |
 |----|-------|----------|--------|-------------|
-| H-100 | Map search by location | P1 | Open | Add search box to filter/map to cities, provinces |
 | H-101 | Case relationship graph | P2 | Open | Visual graph showing related cases (same witnesses, proximity, similar descriptions) |
 | H-102 | Timeline mode | P1 | Open | Horizontal timeline view alongside map for chronological browsing |
 | H-103 | Print/export case file | P2 | Open | Generate printable classified-style PDF for individual cases |
 | H-104 | "Classified" overlay toggle | P2 | Open | Toggle between classified (redacted) and declassified views |
 | H-105 | Sound effects | P3 | Open | Subtle paper rustle, stamp thud, staple click sounds on interaction |
 | H-106 | Dark mode (night ops) | P2 | Open | Red-lit "night operations" variant of the classified aesthetic |
-| H-107 | Share/link to specific case | P1 | Open | URL hash-based deep linking (#CAN-012 opens that case directly) |
 
 ### Bug / Maintenance
 
@@ -85,6 +80,11 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | H-020 | CONFIDENTIAL rubber stamp | P1 | 2026-05-13 | Red stamp graphic with hover + active press states |
 | H-021 | Hand-drawn checkboxes | P2 | 2026-05-13 | X marks in hand-drawn squares for filter toggles |
 | H-022 | Paperclip toggle switches | P2 | 2026-05-13 | Metal paperclip slides between positions as toggle UI element |
+| H-030 | Polaroid photo effect | P0 | 2026-05-13 | Aged bg, thicker borders, stronger filter, hover enhance, tape corners |
+| H-031 | Scotch tape corner mounts | P1 | 2026-05-13 | Merged into H-030 polaroid effect — tape enhanced there |
+| H-100 | Map search by location | P1 | 2026-05-13 | Search box filters sidebar + map markers by location, shape, year, ID |
+| H-107 | Share/link to specific case | P1 | 2026-05-13 | URL hash-based deep linking (#CAN-012 opens that case directly) |
+| H-016 | Die-cut folder tabs | P0 | 2026-05-13 | Staggered tab navigation with notch illusion and active pop-out |
 
 ---
 
@@ -93,9 +93,9 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | Metric | Count |
 |--------|-------|
 | Total Issues | 38 |
-| Open | 22 |
-| Completed | 16 |
+| Open | 18 |
+| Completed | 20 |
 | Blocked | 1 |
-| P0 Critical | 5 |
-| P1 High | 10 |
-| P2 Medium | 7 |
+| P0 Critical | 4 |
+| P1 High | 9 |
+| P2 Medium | 5 |

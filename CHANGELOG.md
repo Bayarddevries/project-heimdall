@@ -1,5 +1,12 @@
 # CHANGELOG — Project HEIMDALL
 
+## [2026-05-13] v1.4 — Deep Linking, Search, Die-Cut Tabs, Polaroid Effect
+
+- **Feat: Deep linking (H-107)** — URL hash `#CAN-012` opens that case directly on page load. `hashchange` listener for real-time updates. `history.replaceState` keeps URL in sync when clicking cases.
+- **Feat: Search by location (H-100)** — Search box in sidebar filters map markers and case list by location, shape, year, or case ID. Clear button (✕) resets. Mobile: 44px touch targets.
+- **Feat: Die-cut folder tabs (H-016)** — Staggered tab offsets (0px/5px/10px), circular notch illusion via `::after` pseudo-element, active tab pops out with `translateX(-4px)` and shadow. Mobile: horizontal layout resets.
+- **Feat: Polaroid photo effect (H-030)** — Aged `#f5f0e8` background, thicker 12px borders, stronger `contrast(1.4) brightness(0.8) saturate(0.6) sepia(0.2)` filter, hover straightens+scales 1.04x, subtle paper texture via `::before` gradient, enhanced tape corners (40×14px, more yellowed).
+
 ## [2026-05-13] v1.3 — Batch 1 Visual Polish
 
 Deployed hand-drawn UI elements and interaction refinements:

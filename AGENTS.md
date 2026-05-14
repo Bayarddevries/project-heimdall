@@ -134,7 +134,7 @@ Agents must verify:
 
 | File | Purpose |
 |------|---------|
-| `docs/index.html` | Main app (all HTML/CSS/JS, ~2224 lines) |
+| `docs/index.html` | Main app (all HTML/CSS/JS, ~2373 lines) |
 | `docs/narratives.js` | Embedded case narratives (generated, ~44KB) |
 | `data/cases/*.md` | Source markdown case files (56 files) |
 | `data/cases.json` | Metadata JSON (synced with CASES array) |
@@ -153,6 +153,17 @@ Agents must verify:
 `git add -A && git commit -m "message" && git push` to the `main` branch.
 
 GitHub Pages serves from `docs/` and typically deploys within 60 seconds of the push.
+
+---
+
+## v1.4 Features (Deployed 2026-05-13)
+
+| ID | Feature | Details |
+|----|---------|---------|
+| H-107 | Deep linking | `#CAN-012` opens case. `openCaseById()`, `hashchange` listener, `history.replaceState` |
+| H-100 | Search | `.search-wrap`, `.search-input`, `.search-clear`. Filters by location/shape/year/ID |
+| H-016 | Die-cut tabs | `.folder-tab::after` notch, staggered `margin-left`, active `translateX(-4px)` |
+| H-030 | Polaroid | `.polaroid` aged bg, thicker borders, hover straighten+scale, `.tape` 40×14px |
 
 ---
 
