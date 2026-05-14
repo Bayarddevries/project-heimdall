@@ -40,7 +40,14 @@
     "environmental_trace": "",
     "electromagnetics": "",
     "radar_confirmation": "",
-    "media_urls": [],
+    "media_urls": [
+      {
+        "url": "images/CAN-001/Montreal_1910.jpg",
+        "title": "Montreal 1910",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      }
+    ],
     "source_primary": "Jesuit Relations",
     "source_secondary": [],
     "cadors_report_url": "",
@@ -191,7 +198,14 @@
     "environmental_trace": "",
     "electromagnetics": "",
     "radar_confirmation": "",
-    "media_urls": [],
+    "media_urls": [
+      {
+        "url": "images/CAN-003/CFB_Goose_Bay.jpg",
+        "title": "CFB Goose Bay",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      }
+    ],
     "source_primary": "USAF Intel",
     "source_secondary": [],
     "cadors_report_url": "",
@@ -411,7 +425,14 @@
     "environmental_trace": "",
     "electromagnetics": "",
     "radar_confirmation": "",
-    "media_urls": [],
+    "media_urls": [
+      {
+        "url": "images/CAN-006/Project_Blue_Book_report.pdf",
+        "title": "Project Blue Book report",
+        "type": "document",
+        "source": "Archived report"
+      }
+    ],
     "source_primary": "Project Magnet",
     "source_secondary": [],
     "cadors_report_url": "",
@@ -724,7 +745,14 @@
     "environmental_trace": "",
     "electromagnetics": "",
     "radar_confirmation": "",
-    "media_urls": [],
+    "media_urls": [
+      {
+        "url": "images/CAN-010/Fort_Frances_ON.jpg",
+        "title": "Fort Frances ON",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      }
+    ],
     "source_primary": "Local Legend/Press",
     "source_secondary": [],
     "cadors_report_url": "",
@@ -1127,7 +1155,14 @@
     "environmental_trace": "",
     "electromagnetics": "",
     "radar_confirmation": "",
-    "media_urls": [],
+    "media_urls": [
+      {
+        "url": "images/CAN-014/Blue_Book_1967.jpg",
+        "title": "Blue Book 1967",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      }
+    ],
     "source_primary": "Navy Radar Logs",
     "source_secondary": [],
     "cadors_report_url": "",
@@ -1272,7 +1307,14 @@
     "environmental_trace": "",
     "electromagnetics": "",
     "radar_confirmation": "",
-    "media_urls": [],
+    "media_urls": [
+      {
+        "url": "images/CAN-016/UFO_Symposium_1968.pdf",
+        "title": "UFO Symposium 1968",
+        "type": "document",
+        "source": "Archived report"
+      }
+    ],
     "source_primary": "RCAF Base Records",
     "source_secondary": [],
     "cadors_report_url": "",
@@ -1570,7 +1612,14 @@
     "environmental_trace": "",
     "electromagnetics": "",
     "radar_confirmation": "",
-    "media_urls": [],
+    "media_urls": [
+      {
+        "url": "images/CAN-020/RCMP_patch.jpg",
+        "title": "RCMP patch",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      }
+    ],
     "source_primary": "Ufology Quebec",
     "source_secondary": [],
     "cadors_report_url": "",
@@ -2298,7 +2347,12 @@
     "electromagnetics": "",
     "radar_confirmation": "",
     "media_urls": [
-      "https://www.lesoleil.com/archives/1987/03/30/ovni-policiers"
+      {
+        "url": "images/CAN-030/Ancienne_Lorette_church.jpg",
+        "title": "Ancienne Lorette church",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      }
     ],
     "source_primary": "SQ Incident Logs",
     "source_secondary": [],
@@ -2446,7 +2500,14 @@
     "environmental_trace": "",
     "electromagnetics": "",
     "radar_confirmation": "",
-    "media_urls": [],
+    "media_urls": [
+      {
+        "url": "images/CAN-032/Quebec_city.jpg",
+        "title": "Quebec city",
+        "type": "image",
+        "source": "Wikimedia Commons"
+      }
+    ],
     "source_primary": "Montreal Gazetter",
     "source_secondary": [],
     "cadors_report_url": "",
