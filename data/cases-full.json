@@ -4,7 +4,7 @@
     "case_number": "1",
     "case_name": "Montreal",
     "year": 1662,
-    "date": "1662-01-01",
+    "date": "1662",
     "province": "QC",
     "region": "Quebec",
     "latitude": 45.5,
@@ -69,15 +69,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-002",
     "case_number": "2",
     "case_name": "Ottawa",
     "year": 1915,
-    "date": "1915-01-01",
+    "date": "1915",
     "province": "ON",
     "region": "Ontario",
     "latitude": 45.4,
@@ -113,14 +112,7 @@
     "environmental_trace": "",
     "electromagnetics": "",
     "radar_confirmation": "",
-    "media_urls": [
-      {
-        "url": "images/CAN-002/Parliament_building.jpg",
-        "title": "Parliament Building",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      }
-    ],
+    "media_urls": [],
     "source_primary": "Hansard Debates",
     "source_secondary": [],
     "cadors_report_url": "",
@@ -149,15 +141,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-003",
     "case_number": "3",
     "case_name": "Goose Bay",
     "year": 1947,
-    "date": "1947-01-01",
+    "date": "1947",
     "province": "NL",
     "region": "Newfoundland and Labrador",
     "latitude": 53.3,
@@ -221,15 +212,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-004",
     "case_number": "4",
     "case_name": "Rivers",
     "year": 1950,
-    "date": "1950-01-01",
+    "date": "1950",
     "province": "MB",
     "region": "Manitoba",
     "latitude": 50.0,
@@ -293,15 +283,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-005",
     "case_number": "5",
     "case_name": "Gander",
     "year": 1951,
-    "date": "1951-01-01",
+    "date": "1951",
     "province": "NL",
     "region": "Newfoundland and Labrador",
     "latitude": 48.9,
@@ -337,14 +326,7 @@
     "environmental_trace": "",
     "electromagnetics": "",
     "radar_confirmation": "",
-    "media_urls": [
-      {
-        "url": "images/CAN-005/Craft_drawing.jpg",
-        "title": "Craft Drawing",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      }
-    ],
+    "media_urls": [],
     "source_primary": "U.S. Navy Records",
     "source_secondary": [],
     "cadors_report_url": "",
@@ -372,15 +354,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-006",
     "case_number": "6",
     "case_name": "North Bay",
     "year": 1952,
-    "date": "1952-01-01",
+    "date": "1952",
     "province": "ON",
     "region": "Ontario",
     "latitude": 46.3,
@@ -444,15 +425,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-007",
     "case_number": "7",
     "case_name": "Ennadai Lake",
     "year": 1954,
-    "date": "1954-01-01",
+    "date": "1954",
     "province": "NU",
     "region": "Nunavut",
     "latitude": 61.2,
@@ -516,15 +496,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-008",
     "case_number": "8",
     "case_name": "Clan Lake",
     "year": 1960,
-    "date": "1960-01-01",
+    "date": "1960",
     "province": "Unknown",
     "region": "Unknown",
     "latitude": 62.7,
@@ -589,15 +568,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 86,
-    "date_precision": "year"
+    "richness_score": 86
   },
   {
     "case_id": "CAN-009",
     "case_number": "9",
     "case_name": "Yellowknife",
     "year": 1960,
-    "date": "1960-01-01",
+    "date": "1960",
     "province": "Unknown",
     "region": "Unknown",
     "latitude": 62.4,
@@ -635,30 +613,7 @@
     "electromagnetics": "",
     "radar_confirmation": "",
     "media_urls": [
-      {
-        "url": "images/CAN-009/RCMP_Report_Full.pdf",
-        "title": "Rcmp Report Full",
-        "type": "pdf",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "images/CAN-009/RCMP_Report_Page2.pdf",
-        "title": "Rcmp Report Page2",
-        "type": "pdf",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "images/CAN-009/RCMP_Report_Page3.pdf",
-        "title": "Rcmp Report Page3",
-        "type": "pdf",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "https://www.cbc.ca/radio/Unreserved/Yellowknife-UFO-legends",
-        "title": "External Reference",
-        "type": "reference",
-        "source": "Web"
-      }
+      "https://www.cbc.ca/radio/Unreserved/Yellowknife-UFO-legends"
     ],
     "source_primary": "Witness Account",
     "source_secondary": [],
@@ -692,18 +647,17 @@
     "radiation_detected": true,
     "radiation_details": "",
     "official_reports": [
-      "MUFON \u2014 Physical Evidence case file, Canada-North division"
+      "MUFON — Physical Evidence case file, Canada-North division"
     ],
     "official_investigation": "",
-    "richness_score": 100,
-    "date_precision": "year"
+    "richness_score": 100
   },
   {
     "case_id": "CAN-010",
     "case_number": "10",
     "case_name": "Agassiz",
     "year": 1966,
-    "date": "1966-01-01",
+    "date": "1966",
     "province": "BC",
     "region": "British Columbia",
     "latitude": 49.2,
@@ -768,15 +722,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-011",
     "case_number": "11",
     "case_name": "Surrey (White Rock)",
     "year": 1966,
-    "date": "1966-01-01",
+    "date": "1966",
     "province": "BC",
     "region": "British Columbia",
     "latitude": 49.2,
@@ -814,12 +767,7 @@
     "electromagnetics": "",
     "radar_confirmation": "",
     "media_urls": [
-      {
-        "url": "https://www.vancouversun.com/archives/1966/05/sightings-surrey",
-        "title": "External Reference",
-        "type": "reference",
-        "source": "Web"
-      }
+      "https://www.vancouversun.com/archives/1966/05/sightings-surrey"
     ],
     "source_primary": "Vancouver Sun Archives",
     "source_secondary": [],
@@ -849,18 +797,17 @@
     "radiation_detected": false,
     "radiation_details": "",
     "official_reports": [
-      "MUFON \u2014 Early sighting archive, Pacific Northwest division"
+      "MUFON — Early sighting archive, Pacific Northwest division"
     ],
     "official_investigation": "",
-    "richness_score": 100,
-    "date_precision": "year"
+    "richness_score": 100
   },
   {
     "case_id": "CAN-012",
     "case_number": "12",
     "case_name": "Falcon Lake",
     "year": 1967,
-    "date": "1967-05-20",
+    "date": "May 20, 1967",
     "province": "MB",
     "region": "Manitoba",
     "latitude": 49.9,
@@ -887,7 +834,7 @@
     "witness_count": 1,
     "witness_names": [],
     "witnesses": "Stefan Michalak",
-    "witness_credibility": "High \u2014 documented, physical evidence, multiple corroborating sources",
+    "witness_credibility": "High — documented, physical evidence, multiple corroborating sources",
     "witness_occupation": "Prospector, Amateur Scientist, Inventor from Winnipeg",
     "witness_primary": "Stefan Michalak",
     "physical_evidence": [
@@ -902,72 +849,9 @@
     "electromagnetics": "Radio interference reported; walkie-talkie reportedly malfunctioned during encounter",
     "radar_confirmation": "",
     "media_urls": [
-      {
-        "url": "images/CAN-012/Drawing_of_the_craft.jpg",
-        "title": "Drawing Of The Craft",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "images/CAN-012/Drawing_of_the_craft_2.jpg",
-        "title": "Drawing Of The Craft 2",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "images/CAN-012/Falcon_Lake_Whiteshell_PP.jpg",
-        "title": "Falcon Lake Whiteshell Pp",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "images/CAN-012/Falconlake_reconstitution.png",
-        "title": "Falconlake Reconstitution",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "images/CAN-012/RCMP_Report.jpg",
-        "title": "Rcmp Report",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "images/CAN-012/Steve_Michalak_burns.jpg",
-        "title": "Steve Michalak Burns",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "images/CAN-012/Steve_Michalak_with_drawing.png",
-        "title": "Steve Michalak With Drawing",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "images/CAN-012/Steve_Michalak_with_drawing_of_saucer.png",
-        "title": "Steve Michalak With Drawing Of Saucer",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "https://en.wikipedia.org/wiki/Falcon_Lake_UFO_incident",
-        "title": "External Reference",
-        "type": "reference",
-        "source": "Web"
-      },
-      {
-        "url": "https://www.cbc.ca/archives/entry/1967-falcon-lake-ufo-incident",
-        "title": "External Reference",
-        "type": "reference",
-        "source": "Web"
-      },
-      {
-        "url": "https://nuforc.org/?s=Falcon+Lake+1967",
-        "title": "External Reference",
-        "type": "reference",
-        "source": "Web"
-      }
+      "https://en.wikipedia.org/wiki/Falcon_Lake_UFO_incident",
+      "https://www.cbc.ca/archives/entry/1967-falcon-lake-ufo-incident",
+      "https://nuforc.org/?s=Falcon+Lake+1967"
     ],
     "source_primary": "RCMP Form 63",
     "source_secondary": [],
@@ -1006,15 +890,14 @@
       "Manitoba Department of Mines soil analysis"
     ],
     "official_investigation": "",
-    "richness_score": 100,
-    "date_precision": "day"
+    "richness_score": 100
   },
   {
     "case_id": "CAN-013",
     "case_number": "13",
     "case_name": "Shag Harbour",
     "year": 1967,
-    "date": "1967-10-04",
+    "date": "Oct 4, 1967",
     "province": "NS",
     "region": "Nova Scotia",
     "latitude": 43.4,
@@ -1053,54 +936,8 @@
     "electromagnetics": "",
     "radar_confirmation": "",
     "media_urls": [
-      {
-        "url": "images/CAN-013/Newspaper_front_page.png",
-        "title": "Newspaper Front Page",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "images/CAN-013/Sambro_Light_RCMP_1967.jpg",
-        "title": "Sambro Light Rcmp 1967",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "images/CAN-013/Shag_Harbour.jpg",
-        "title": "Shag Harbour",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "images/CAN-013/Shag_Harbour_Incident_Park.jpg",
-        "title": "Shag Harbour Incident Park",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "images/CAN-013/Shag_harbour_DND_memo.webp",
-        "title": "Shag Harbour Dnd Memo",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "images/CAN-013/Shag_harbour_UFO_sign.jpg",
-        "title": "Shag Harbour Ufo Sign",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "https://en.wikipedia.org/wiki/Shag_Harbour_UFO_incident",
-        "title": "External Reference",
-        "type": "reference",
-        "source": "Web"
-      },
-      {
-        "url": "https://www.cbc.ca/news/canada/nova-scotia/the-mystery-of-shag-harbour",
-        "title": "External Reference",
-        "type": "reference",
-        "source": "Web"
-      }
+      "https://en.wikipedia.org/wiki/Shag_Harbour_UFO_incident",
+      "https://www.cbc.ca/news/canada/nova-scotia/the-mystery-of-shag-harbour"
     ],
     "source_primary": "RCAF/Coast Guard",
     "source_secondary": [],
@@ -1113,7 +950,7 @@
     "skepticism_analysis": "",
     "current_status": "Open",
     "analyst_notes": "",
-    "narrative": "On October 4, 1967, at approximately 11:20 PM, multiple witnesses observed a low-flying illuminated object descending toward the waters off Shag Harbour, Nova Scotia. Four teenage fishermen first spotted the object. Laurie Wickens and friends saw it approach the water, and Wickens called the RCMP to report a possible plane crash. RCMP officers arrived within 15 minutes to find an object floating in the water with lights visible, approximately 250-300 meters offshore. The object sank before rescue could be attempted. The RCMP, Canadian Coast Guard, RCAF, and Royal Canadian Navy all responded. Navy divers from Fleet Diving Unit Atlantic spent three days searching the seafloor. The RCMP officially filed a 'Flying Saucer' report \u2014 the only Canadian government document classifying an incident as a UFO. Yellowish foam was found on the water surface. Despite an extensive search involving naval vessels and divers, nothing was ever recovered. The Navy's final statement: 'Not a trace... not a clue... not a bit of anything.' This remains one of the most important Canadian UFO cases.",
+    "narrative": "On October 4, 1967, at approximately 11:20 PM, multiple witnesses observed a low-flying illuminated object descending toward the waters off Shag Harbour, Nova Scotia. Four teenage fishermen first spotted the object. Laurie Wickens and friends saw it approach the water, and Wickens called the RCMP to report a possible plane crash. RCMP officers arrived within 15 minutes to find an object floating in the water with lights visible, approximately 250-300 meters offshore. The object sank before rescue could be attempted. The RCMP, Canadian Coast Guard, RCAF, and Royal Canadian Navy all responded. Navy divers from Fleet Diving Unit Atlantic spent three days searching the seafloor. The RCMP officially filed a 'Flying Saucer' report — the only Canadian government document classifying an incident as a UFO. Yellowish foam was found on the water surface. Despite an extensive search involving naval vessels and divers, nothing was ever recovered. The Navy's final statement: 'Not a trace... not a clue... not a bit of anything.' This remains one of the most important Canadian UFO cases.",
     "pattern_tags": [
       "close-encounter",
       "mass-sighting",
@@ -1137,15 +974,14 @@
       "DND Sonar logs"
     ],
     "official_investigation": "",
-    "richness_score": 100,
-    "date_precision": "day"
+    "richness_score": 100
   },
   {
     "case_id": "CAN-014",
     "case_number": "14",
     "case_name": "Shelburne",
     "year": 1967,
-    "date": "1967-01-01",
+    "date": "1967",
     "province": "NS",
     "region": "Nova Scotia",
     "latitude": 43.7,
@@ -1211,15 +1047,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 94,
-    "date_precision": "year"
+    "richness_score": 94
   },
   {
     "case_id": "CAN-015",
     "case_number": "15",
     "case_name": "St. Paul",
     "year": 1967,
-    "date": "1967-01-01",
+    "date": "1967",
     "province": "AB",
     "region": "Alberta",
     "latitude": 53.9,
@@ -1284,15 +1119,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 80,
-    "date_precision": "year"
+    "richness_score": 80
   },
   {
     "case_id": "CAN-016",
     "case_number": "16",
     "case_name": "Rivers",
     "year": 1968,
-    "date": "1968-01-01",
+    "date": "1968",
     "province": "MB",
     "region": "Manitoba",
     "latitude": 50.0,
@@ -1356,15 +1190,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-017",
     "case_number": "17",
     "case_name": "Prince George",
     "year": 1969,
-    "date": "1969-01-01",
+    "date": "1969",
     "province": "BC",
     "region": "British Columbia",
     "latitude": 53.9,
@@ -1428,15 +1261,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-018",
     "case_number": "18",
     "case_name": "Duncan (Nurse Encounter)",
     "year": 1970,
-    "date": "1970-01-01",
+    "date": "Jan 1, 1970",
     "province": "BC",
     "region": "British Columbia",
     "latitude": 48.7,
@@ -1455,7 +1287,7 @@
     "trail_or_vapor": "",
     "weather_conditions": "",
     "contact_type": "CE3",
-    "being_type": "Humanoid \u2014 tall men in dark suits",
+    "being_type": "Humanoid — tall men in dark suits",
     "being_height": "",
     "being_appearance": "",
     "being_behavior": "",
@@ -1464,7 +1296,7 @@
     "witness_names": [],
     "witnesses": "A nurse driving home from a late shift encountered a brilliant, silent light descending toward her vehicle. Car electronics failed, engine died. Brief missing time and vivid 'white room' experience. Vehicle required complete electrical diagnostic due to power surge.",
     "witness_credibility": "High",
-    "witness_occupation": "Medical \u2014 Nurse",
+    "witness_occupation": "Medical — Nurse",
     "witness_primary": "",
     "physical_evidence": [
       "Witness testimony and timeline reconstruction",
@@ -1473,14 +1305,7 @@
     "environmental_trace": "",
     "electromagnetics": "Car electronics failed; engine died; voltage surge on restart",
     "radar_confirmation": "",
-    "media_urls": [
-      {
-        "url": "images/CAN-018/Duncan_City_Hall_BC.jpg",
-        "title": "Duncan City Hall Bc",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      }
-    ],
+    "media_urls": [],
     "source_primary": "Psychological Profile",
     "source_secondary": [],
     "cadors_report_url": "",
@@ -1492,7 +1317,7 @@
     "skepticism_analysis": "",
     "current_status": "Open",
     "analyst_notes": "",
-    "narrative": "On January 1, 1970, nurse Doreen Kendall was driving home from a late shift at Duncan Hospital, Vancouver Island, when she encountered a brilliant, silent light that descended toward her vehicle. Her car's electronics immediately failed and the engine died. During the encounter, she experienced what she described as missing time and a vivid 'white room' experience involving two tall beings in dark suits. Upon regaining consciousness, she found her car's electrical system completely drained \u2014 the mechanic later described the voltage spike as 'impossible' from any known vehicle malfunction. The case was later documented by researcher Chris Rutkowski and classified as a Close Encounter of the Third Kind.",
+    "narrative": "On January 1, 1970, nurse Doreen Kendall was driving home from a late shift at Duncan Hospital, Vancouver Island, when she encountered a brilliant, silent light that descended toward her vehicle. Her car's electronics immediately failed and the engine died. During the encounter, she experienced what she described as missing time and a vivid 'white room' experience involving two tall beings in dark suits. Upon regaining consciousness, she found her car's electrical system completely drained — the mechanic later described the voltage spike as 'impossible' from any known vehicle malfunction. The case was later documented by researcher Chris Rutkowski and classified as a Close Encounter of the Third Kind.",
     "pattern_tags": [
       "close-encounter",
       "electromagnetic",
@@ -1514,15 +1339,14 @@
       "Documented in Chris Rutkowski's 'Canadian UFOs: The National Report'"
     ],
     "official_investigation": "",
-    "richness_score": 94,
-    "date_precision": "day"
+    "richness_score": 94
   },
   {
     "case_id": "CAN-019",
     "case_number": "19",
     "case_name": "Oromocto",
     "year": 1972,
-    "date": "1972-01-01",
+    "date": "1972",
     "province": "NB",
     "region": "New Brunswick",
     "latitude": 45.8,
@@ -1586,15 +1410,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-020",
     "case_number": "20",
     "case_name": "Val-d'Or",
     "year": 1973,
-    "date": "1973-01-01",
+    "date": "1973",
     "province": "QC",
     "region": "Quebec",
     "latitude": 48.1,
@@ -1658,15 +1481,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-021",
     "case_number": "21",
     "case_name": "Granby",
     "year": 1973,
-    "date": "1973-01-01",
+    "date": "1973",
     "province": "QC",
     "region": "Quebec",
     "latitude": 45.4,
@@ -1730,15 +1552,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-022",
     "case_number": "22",
     "case_name": "Langenburg",
     "year": 1974,
-    "date": "1974-01-01",
+    "date": "1974",
     "province": "SK",
     "region": "Saskatchewan",
     "latitude": 50.8,
@@ -1803,15 +1624,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-023",
     "case_number": "23",
     "case_name": "Carman",
     "year": 1975,
-    "date": "1975-01-01",
+    "date": "1975",
     "province": "MB",
     "region": "Manitoba",
     "latitude": 49.5,
@@ -1876,15 +1696,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-024",
     "case_number": "24",
     "case_name": "Montreal",
     "year": 1977,
-    "date": "1977-01-01",
+    "date": "1977",
     "province": "QC",
     "region": "Quebec",
     "latitude": 45.5,
@@ -1949,15 +1768,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-025",
     "case_number": "25",
     "case_name": "Clarenville",
     "year": 1978,
-    "date": "1978-01-01",
+    "date": "1978",
     "province": "NL",
     "region": "Newfoundland and Labrador",
     "latitude": 48.1,
@@ -2021,15 +1839,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-026",
     "case_number": "26",
     "case_name": "Baskatong",
     "year": 1978,
-    "date": "1978-01-01",
+    "date": "1978",
     "province": "QC",
     "region": "Quebec",
     "latitude": 46.8,
@@ -2093,15 +1910,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-027",
     "case_number": "27",
     "case_name": "Saddle Lake",
     "year": 1979,
-    "date": "1979-01-01",
+    "date": "1979",
     "province": "AB",
     "region": "Alberta",
     "latitude": 53.9,
@@ -2165,15 +1981,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-028",
     "case_number": "28",
     "case_name": "Portage la Prairie",
     "year": 1979,
-    "date": "1979-01-01",
+    "date": "1979",
     "province": "MB",
     "region": "Manitoba",
     "latitude": 49.9724,
@@ -2209,26 +2024,10 @@
     ],
     "environmental_trace": "",
     "electromagnetics": "",
-    "radar_confirmation": "Yes \u2014 base radar tracked the object",
+    "radar_confirmation": "Yes — base radar tracked the object",
     "media_urls": [
-      {
-        "url": "images/CAN-028/Portage_la_Prairie_MB.jpg",
-        "title": "Portage La Prairie Mb",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "https://winnipegsun.com/archives/1979/11/ufo-over-portage",
-        "title": "External Reference",
-        "type": "reference",
-        "source": "Web"
-      },
-      {
-        "url": "https://www.ufoofthewestcanada.ca/1979-portage-la-prairies",
-        "title": "External Reference",
-        "type": "reference",
-        "source": "Web"
-      }
+      "https://winnipegsun.com/archives/1979/11/ufo-over-portage",
+      "https://www.ufoofthewestcanada.ca/1979-portage-la-prairies"
     ],
     "source_primary": "Military Radar Logs",
     "source_secondary": [],
@@ -2259,18 +2058,17 @@
     "radiation_detected": false,
     "radiation_details": "",
     "official_reports": [
-      "MUFON \u2014 Archived under Manitoba Military Files 1979"
+      "MUFON — Archived under Manitoba Military Files 1979"
     ],
     "official_investigation": "",
-    "richness_score": 100,
-    "date_precision": "year"
+    "richness_score": 100
   },
   {
     "case_id": "CAN-029",
     "case_number": "29",
     "case_name": "Nahanni Valley",
     "year": 1980,
-    "date": "1980-01-01",
+    "date": "1980",
     "province": "NT",
     "region": "Northwest Territories",
     "latitude": 61.2,
@@ -2334,15 +2132,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-030",
     "case_number": "30",
     "case_name": "L'Ancienne-Lorette",
     "year": 1987,
-    "date": "1987-01-01",
+    "date": "1987",
     "province": "QC",
     "region": "Quebec",
     "latitude": 46.8,
@@ -2370,7 +2167,7 @@
     "witness_names": [],
     "witnesses": "Quebec provincial police (SQ) officers on highway patrol witnessed a hovering, disc-shaped object with rotating multicolored lights. Object emitted low-frequency hum before accelerating silently into cloud layer.",
     "witness_credibility": "High",
-    "witness_occupation": "Law Enforcement \u2014 SQ Officers",
+    "witness_occupation": "Law Enforcement — SQ Officers",
     "witness_primary": "",
     "physical_evidence": [
       "Official SQ incident report logs",
@@ -2380,18 +2177,7 @@
     "electromagnetics": "",
     "radar_confirmation": "",
     "media_urls": [
-      {
-        "url": "images/CAN-030/Ancienne_Lorette_church.jpg",
-        "title": "Ancienne Lorette Church",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "https://www.lesoleil.com/archives/1987/03/30/ovni-policiers",
-        "title": "External Reference",
-        "type": "reference",
-        "source": "Web"
-      }
+      "https://www.lesoleil.com/archives/1987/03/30/ovni-policiers"
     ],
     "source_primary": "SQ Incident Logs",
     "source_secondary": [],
@@ -2404,7 +2190,7 @@
     "skepticism_analysis": "",
     "current_status": "Open",
     "analyst_notes": "",
-    "narrative": "In 1987, two Quebec provincial police (Suret\u00e9 du Quebec) officers on highway patrol near L'Ancienne-Lorette, Quebec witnessed a hovering disc-shaped object with rotating multicolored lights. The object emitted a low-frequency hum before accelerating silently upward and disappearing into the cloud layer. Both officers signed a joint affidavit and filed an official SQ incident report. Law enforcement witnesses give this case high credibility.",
+    "narrative": "In 1987, two Quebec provincial police (Sureté du Quebec) officers on highway patrol near L'Ancienne-Lorette, Quebec witnessed a hovering disc-shaped object with rotating multicolored lights. The object emitted a low-frequency hum before accelerating silently upward and disappearing into the cloud layer. Both officers signed a joint affidavit and filed an official SQ incident report. Law enforcement witnesses give this case high credibility.",
     "pattern_tags": [
       "close-encounter",
       "daylight-disc",
@@ -2422,18 +2208,17 @@
     "radiation_detected": false,
     "radiation_details": "",
     "official_reports": [
-      "SQ \u2014 Official SQ incident report logs"
+      "SQ — Official SQ incident report logs"
     ],
     "official_investigation": "",
-    "richness_score": 100,
-    "date_precision": "year"
+    "richness_score": 100
   },
   {
     "case_id": "CAN-031",
     "case_number": "31",
     "case_name": "Kelowna",
     "year": 1981,
-    "date": "1981-01-01",
+    "date": "1981",
     "province": "BC",
     "region": "British Columbia",
     "latitude": 49.8,
@@ -2497,15 +2282,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-032",
     "case_number": "32",
     "case_name": "Westmount",
     "year": 1985,
-    "date": "1985-01-01",
+    "date": "1985",
     "province": "QC",
     "region": "Quebec",
     "latitude": 45.4,
@@ -2570,15 +2354,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-033",
     "case_number": "33",
     "case_name": "Shelburne",
     "year": 1989,
-    "date": "1989-01-01",
+    "date": "1989",
     "province": "NS",
     "region": "Nova Scotia",
     "latitude": 43.7,
@@ -2643,15 +2426,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-034",
     "case_number": "34",
     "case_name": "Montreal",
     "year": 1990,
-    "date": "1990-11-07",
+    "date": "Nov 7, 1990",
     "province": "QC",
     "region": "Quebec",
     "latitude": 45.5,
@@ -2715,15 +2497,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "day"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-035",
     "case_number": "35",
     "case_name": "Carp",
     "year": 1991,
-    "date": "1991-01-01",
+    "date": "1991",
     "province": "ON",
     "region": "Ontario",
     "latitude": 45.3,
@@ -2787,15 +2568,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-036",
     "case_number": "36",
     "case_name": "St-Zotique",
     "year": 1991,
-    "date": "1991-01-01",
+    "date": "1991",
     "province": "QC",
     "region": "Quebec",
     "latitude": 45.2,
@@ -2859,15 +2639,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-037",
     "case_number": "37",
     "case_name": "l'Annonciation",
     "year": 1992,
-    "date": "1992-01-01",
+    "date": "1992",
     "province": "QC",
     "region": "Quebec",
     "latitude": 46.4108,
@@ -2931,15 +2710,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-038",
     "case_number": "38",
     "case_name": "Port Colborne",
     "year": 1993,
-    "date": "1993-01-01",
+    "date": "1993",
     "province": "ON",
     "region": "Ontario",
     "latitude": 42.8,
@@ -3005,15 +2783,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 94,
-    "date_precision": "year"
+    "richness_score": 94
   },
   {
     "case_id": "CAN-039",
     "case_number": "39",
     "case_name": "St-Jean-sur-Ric.",
     "year": 1994,
-    "date": "1994-01-01",
+    "date": "1994",
     "province": "Unknown",
     "region": "Unknown",
     "latitude": 45.3,
@@ -3078,15 +2855,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 86,
-    "date_precision": "year"
+    "richness_score": 86
   },
   {
     "case_id": "CAN-040",
     "case_number": "40",
     "case_name": "Fox Lake",
     "year": 1996,
-    "date": "1996-01-01",
+    "date": "1996",
     "province": "YT",
     "region": "Yukon",
     "latitude": 61.2,
@@ -3150,15 +2926,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-041",
     "case_number": "41",
     "case_name": "Fort Erie",
     "year": 2004,
-    "date": "2004-01-01",
+    "date": "2004",
     "province": "ON",
     "region": "Ontario",
     "latitude": 42.9,
@@ -3223,15 +2998,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-042",
     "case_number": "42",
     "case_name": "St-Hilaire",
     "year": 2007,
-    "date": "2007-01-01",
+    "date": "2007",
     "province": "QC",
     "region": "Quebec",
     "latitude": 45.5624,
@@ -3295,15 +3069,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-043",
     "case_number": "43",
     "case_name": "Niagara Falls (MIB Encounter)",
     "year": 2008,
-    "date": "2008-01-01",
+    "date": "2008",
     "province": "ON",
     "region": "Ontario",
     "latitude": 43.0,
@@ -3322,7 +3095,7 @@
     "trail_or_vapor": "",
     "weather_conditions": "",
     "contact_type": "CE3",
-    "being_type": "Humanoid \u2014 MIB (Men in Black)",
+    "being_type": "Humanoid — MIB (Men in Black)",
     "being_height": "",
     "being_appearance": "Men in dark, dated suits; unnatural pale complexions",
     "being_behavior": "",
@@ -3340,14 +3113,7 @@
     "environmental_trace": "",
     "electromagnetics": "",
     "radar_confirmation": "",
-    "media_urls": [
-      {
-        "url": "images/CAN-043/Niagara_watervallen_canada.jpg",
-        "title": "Niagara Watervallen Canada",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      }
-    ],
+    "media_urls": [],
     "source_primary": "CCTV/Witness",
     "source_secondary": [],
     "cadors_report_url": "",
@@ -3375,18 +3141,17 @@
     "radiation_detected": false,
     "radiation_details": "",
     "official_reports": [
-      "MUFON \u2014 MIB Encounter database, Case #94-ONF"
+      "MUFON — MIB Encounter database, Case #94-ONF"
     ],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-044",
     "case_number": "44",
     "case_name": "Stephenville",
     "year": 2008,
-    "date": "2008-01-05",
+    "date": "Jan 5, 2008",
     "province": "NL",
     "region": "Newfoundland and Labrador",
     "latitude": 48.9,
@@ -3425,18 +3190,8 @@
     "electromagnetics": "Radio silence from the craft",
     "radar_confirmation": "",
     "media_urls": [
-      {
-        "url": "https://en.wikipedia.org/wiki/2008_Stephenville_UFO_sightings",
-        "title": "External Reference",
-        "type": "reference",
-        "source": "Web"
-      },
-      {
-        "url": "https://www.cbc.ca/news/canada/newfoundland-labrador/ufo-sightings-prompt-rcmp-investigation-1.710929",
-        "title": "External Reference",
-        "type": "reference",
-        "source": "Web"
-      }
+      "https://en.wikipedia.org/wiki/2008_Stephenville_UFO_sightings",
+      "https://www.cbc.ca/news/canada/newfoundland-labrador/ufo-sightings-prompt-rcmp-investigation-1.710929"
     ],
     "source_primary": "RCMP & DND Radar Data",
     "source_secondary": [],
@@ -3449,7 +3204,7 @@
     "skepticism_analysis": "",
     "current_status": "Open",
     "analyst_notes": "",
-    "narrative": "Beginning on January 5, 2008, dozens of residents of Stephenville, Newfoundland reported seeing large lights moving silently across the sky. A 14-year-old boy reported a V-shaped craft flying at extremely low altitude over the town. The U.S. military acknowledged operating aircraft from CFB Goose Bay that evening but denied having any craft that would account for all the sightings. CFB Goose Bay radar reportedly tracked objects moving at speeds exceeding 1,000 mph at altitudes of 500-5,000 feet \u2014 well outside normal aircraft operating parameters. RCMP Constable Paul Snow confirmed over 30 credible reports in the following days. The case gained international attention and was dubbed the 'Newfoundland Trench' incident. Military radar tracks at impossible speeds combined with dozens of civilian and police reports make this one of the most compelling modern Canadian UFO cases.",
+    "narrative": "Beginning on January 5, 2008, dozens of residents of Stephenville, Newfoundland reported seeing large lights moving silently across the sky. A 14-year-old boy reported a V-shaped craft flying at extremely low altitude over the town. The U.S. military acknowledged operating aircraft from CFB Goose Bay that evening but denied having any craft that would account for all the sightings. CFB Goose Bay radar reportedly tracked objects moving at speeds exceeding 1,000 mph at altitudes of 500-5,000 feet — well outside normal aircraft operating parameters. RCMP Constable Paul Snow confirmed over 30 credible reports in the following days. The case gained international attention and was dubbed the 'Newfoundland Trench' incident. Military radar tracks at impossible speeds combined with dozens of civilian and police reports make this one of the most compelling modern Canadian UFO cases.",
     "pattern_tags": [
       "daylight-disc",
       "mass-sighting",
@@ -3473,15 +3228,14 @@
       "Declassified DND radar logs"
     ],
     "official_investigation": "",
-    "richness_score": 100,
-    "date_precision": "day"
+    "richness_score": 100
   },
   {
     "case_id": "CAN-045",
     "case_number": "45",
     "case_name": "Harbour Mille",
     "year": 2010,
-    "date": "2010-01-01",
+    "date": "2010",
     "province": "NL",
     "region": "Newfoundland and Labrador",
     "latitude": 47.6,
@@ -3546,15 +3300,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-046",
     "case_number": "46",
     "case_name": "Valcartier",
     "year": 2008,
-    "date": "2008-10-01",
+    "date": "Oct 2008",
     "province": "QC",
     "region": "Quebec",
     "latitude": 46.9,
@@ -3592,24 +3345,8 @@
     "electromagnetics": "Localized EM interference reported near base",
     "radar_confirmation": "",
     "media_urls": [
-      {
-        "url": "images/CAN-046/Valcartier_location.png",
-        "title": "Valcartier Location",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "https://www.radio-canada.ca/nouvelle/2008/10/21/ovni-valcartier",
-        "title": "External Reference",
-        "type": "reference",
-        "source": "Web"
-      },
-      {
-        "url": "https://www.tvanouvelles.ca/2008/10/20/un-ovni-au-dessus-de-valcartier",
-        "title": "External Reference",
-        "type": "reference",
-        "source": "Web"
-      }
+      "https://www.radio-canada.ca/nouvelle/2008/10/21/ovni-valcartier",
+      "https://www.tvanouvelles.ca/2008/10/20/un-ovni-au-dessus-de-valcartier"
     ],
     "source_primary": "Radio-Canada; CUFON",
     "source_secondary": [],
@@ -3644,15 +3381,14 @@
       "Quebec regional database, October 2008"
     ],
     "official_investigation": "",
-    "richness_score": 100,
-    "date_precision": "month"
+    "richness_score": 100
   },
   {
     "case_id": "CAN-047",
     "case_number": "47",
     "case_name": "Hamilton",
     "year": 2012,
-    "date": "2012-01-01",
+    "date": "2012",
     "province": "ON",
     "region": "Ontario",
     "latitude": 43.2,
@@ -3718,15 +3454,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 94,
-    "date_precision": "year"
+    "richness_score": 94
   },
   {
     "case_id": "CAN-048",
     "case_number": "48",
     "case_name": "Vancouver",
     "year": 2014,
-    "date": "2014-01-01",
+    "date": "2014",
     "province": "BC",
     "region": "British Columbia",
     "latitude": 49.2,
@@ -3790,15 +3525,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-049",
     "case_number": "49",
     "case_name": "Oshawa",
     "year": 2015,
-    "date": "2015-01-01",
+    "date": "2015",
     "province": "ON",
     "region": "Ontario",
     "latitude": 43.8,
@@ -3862,15 +3596,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-050",
     "case_number": "50",
     "case_name": "Ashmount",
     "year": 2016,
-    "date": "2016-01-01",
+    "date": "2016",
     "province": "AB",
     "region": "Alberta",
     "latitude": 53.9,
@@ -3934,15 +3667,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-051",
     "case_number": "51",
     "case_name": "Gulf of St. Law.",
     "year": 2021,
-    "date": "2021-01-01",
+    "date": "2021",
     "province": "Unknown",
     "region": "Unknown",
     "latitude": 48.0,
@@ -4006,15 +3738,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 86,
-    "date_precision": "year"
+    "richness_score": 86
   },
   {
     "case_id": "CAN-052",
     "case_number": "52",
     "case_name": "Hafford",
     "year": 2024,
-    "date": "2024-01-01",
+    "date": "2024",
     "province": "SK",
     "region": "Saskatchewan",
     "latitude": 52.8,
@@ -4078,15 +3809,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-053",
     "case_number": "53",
     "case_name": "Sudbury",
     "year": 2025,
-    "date": "2025-01-01",
+    "date": "2025",
     "province": "ON",
     "region": "Ontario",
     "latitude": 46.4,
@@ -4150,15 +3880,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   },
   {
     "case_id": "CAN-054",
     "case_number": "54",
     "case_name": "N. Alberta",
     "year": 2025,
-    "date": "2025-01-01",
+    "date": "2025",
     "province": "Unknown",
     "region": "Unknown",
     "latitude": 56.0,
@@ -4222,15 +3951,14 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 86,
-    "date_precision": "year"
+    "richness_score": 86
   },
   {
     "case_id": "CAN-055",
     "case_number": "55",
     "case_name": "Vulcan County (Pilot Encounter)",
     "year": 2025,
-    "date": "2025-02-01",
+    "date": "Feb 2025",
     "province": "AB",
     "region": "Alberta",
     "latitude": 50.5,
@@ -4258,7 +3986,7 @@
     "witness_names": [],
     "witnesses": "Commercial pilot reported fast-moving, non-transponder object pacing aircraft at parallel altitude for 12 miles. Object executed impossible vertical climb and vanished from radar. ATC confirmed no scheduled military exercises.",
     "witness_credibility": "High",
-    "witness_occupation": "Aviation \u2014 Commercial Pilot",
+    "witness_occupation": "Aviation — Commercial Pilot",
     "witness_primary": "",
     "physical_evidence": [
       "Flight path telemetry data",
@@ -4266,26 +3994,10 @@
     ],
     "environmental_trace": "",
     "electromagnetics": "",
-    "radar_confirmation": "Yes \u2014 ATC radar tracked the object",
+    "radar_confirmation": "Yes — ATC radar tracked the object",
     "media_urls": [
-      {
-        "url": "images/CAN-055/Vulcan_County_AB.jpg",
-        "title": "Vulcan County Ab",
-        "type": "image",
-        "source": "Wikimedia Commons"
-      },
-      {
-        "url": "https://globalnews.ca/news/2025/02/vulcan-ufo-pilot-report",
-        "title": "External Reference",
-        "type": "reference",
-        "source": "Web"
-      },
-      {
-        "url": "https://www.vulcanadvanceton.ca/news/2025-sky-anomaly",
-        "title": "External Reference",
-        "type": "reference",
-        "source": "Web"
-      }
+      "https://globalnews.ca/news/2025/02/vulcan-ufo-pilot-report",
+      "https://www.vulcanadvanceton.ca/news/2025-sky-anomaly"
     ],
     "source_primary": "ASRS / Global News",
     "source_secondary": [],
@@ -4315,18 +4027,17 @@
     "radiation_detected": false,
     "radiation_details": "",
     "official_reports": [
-      "Transport Canada \u2014 ASRS (Aviation Safety Reporting System) filing"
+      "Transport Canada — ASRS (Aviation Safety Reporting System) filing"
     ],
     "official_investigation": "",
-    "richness_score": 100,
-    "date_precision": "month"
+    "richness_score": 100
   },
   {
     "case_id": "CAN-056",
     "case_number": "56",
     "case_name": "Sheridan Lake",
     "year": 2025,
-    "date": "2025-01-01",
+    "date": "2025",
     "province": "BC",
     "region": "British Columbia",
     "latitude": 51.5,
@@ -4391,7 +4102,6 @@
     "radiation_details": "",
     "official_reports": [],
     "official_investigation": "",
-    "richness_score": 91,
-    "date_precision": "year"
+    "richness_score": 91
   }
 ]
