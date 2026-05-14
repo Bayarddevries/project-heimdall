@@ -2102,6 +2102,72 @@ body.night-ops.classified-mode .file-content::before {
   @page { margin: 1in; size: letter; }
 }
 
+/* ===== RELATIONSHIP GRAPH STYLES (H-101) ===== */
+.rel-graph {
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-start;
+  padding: 8px 0;
+}
+.rel-node {
+  display: inline-flex; flex-direction: column; align-items: center;
+  padding: 6px 10px; border: 1px solid #c4b898; border-radius: 3px;
+  cursor: pointer; transition: all 0.15s; background: #f5eed6;
+  min-width: 60px; text-align: center;
+}
+.rel-node:hover { background: #e8dcc8; border-color: #8b7355; transform: translateY(-1px); }
+.rel-central { border: 2px solid #6b2fa0; background: #f0e8d8; }
+.rel-central .rel-dot { width: 12px; height: 12px; }
+.rel-linked { border-style: dashed; }
+.rel-dot {
+  width: 8px; height: 8px; border-radius: 50%; display: block; margin-bottom: 3px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+.rel-dot.tier-A { background: #c41e3a; }
+.rel-dot.tier-B { background: #d4a843; }
+.rel-dot.tier-C { background: #6b2fa0; }
+.rel-label { font-family: 'Special Elite', monospace; font-size: 9px; color: #2c2825; }
+.rel-year { font-size: 8px; color: #8b7355; margin-top: 1px; }
+.rel-conn { display: flex; flex-direction: column; align-items: center; }
+.rel-line {
+  width: 1px; height: 12px; background: #c4b898; margin: 2px 0;
+}
+.rel-tags { display: flex; flex-wrap: wrap; gap: 2px; justify-content: center; max-width: 120px; margin-top: 3px; }
+.rel-tag {
+  font-size: 7px; font-family: 'Special Elite', monospace;
+  background: #e8dcc8; color: #6b5e50; padding: 1px 3px; border-radius: 1px;
+  border: 1px solid #c4b898;
+}
+.rel-more { font-size: 10px; color: #8b7355; text-align: center; padding: 8px; font-style: italic; }
+.rel-table {
+  width: 100%; border-collapse: collapse; font-size: 10px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.rel-table th {
+  text-align: left; padding: 4px 6px; border-bottom: 2px solid #c4b898;
+  font-family: 'Special Elite', monospace; font-size: 9px; color: #6b5e50;
+}
+.rel-table td { padding: 4px 6px; border-bottom: 1px solid #e8dcc8; }
+.rel-table tr:hover td { background: rgba(200,180,150,0.1); }
+.rel-table a { color: #6b2fa0; text-decoration: none; }
+.rel-table a:hover { text-decoration: underline; }
+.rel-tier {
+  display: inline-block; padding: 1px 4px; border-radius: 2px; font-size: 8px;
+  font-family: 'Special Elite', monospace;
+}
+.rel-tier.tier-A { background: #c41e3a; color: #fff; }
+.rel-tier.tier-B { background: #d4a843; color: #fff; }
+.rel-tier.tier-C { background: #6b2fa0; color: #fff; }
+.rel-explicit { font-size: 8px; color: #c41e3a; font-weight: bold; }
+.rel-inferred { font-size: 8px; color: #8b7355; font-style: italic; }
+body.night-ops .rel-node { background: #1a1410; border-color: #2a1810; }
+body.night-ops .rel-node:hover { background: #2a1510; border-color: #4a2020; }
+body.night-ops .rel-central { border-color: #8b40a0; background: #2a1510; }
+body.night-ops .rel-label { color: #c8b89a; }
+body.night-ops .rel-year { color: #6a5040; }
+body.night-ops .rel-tag { background: #2a1510; color: #8a7050; border-color: #4a2020; }
+body.night-ops .rel-table th { border-bottom-color: #2a1810; color: #8a7050; }
+body.night-ops .rel-table td { border-bottom-color: #2a1810; }
+body.night-ops .rel-table a { color: #a070c0; }
+
 </style>
 </head>
 <body>
@@ -2536,6 +2602,13 @@ function buildTabsThree(c, deep, cl, tierLabel) {
     body: buildAnalysisTab(c, deep, cl, tierLabel, tierDesc)
   });
 
+  // TAB 3: RELATIONSHIPS — case relationship graph (H-101)
+  tabs.push({
+    label: 'RELATIONSHIPS',
+    redacted: false,
+    body: buildRelationshipsTab(c, deep)
+  });
+
   return tabs;
 }
 
@@ -2913,6 +2986,93 @@ function buildAnalysisTab(c, deep, cl, tierLabel, tierDesc) {
 
   var searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(c.location + ' UFO ' + c.year);
   html += '<hr class="fc-sep"/><button class="postit-btn" onclick="window.open(\'' + searchUrl + '\', \'_blank\')">Search External Sources &#9654;</button>';
+
+  return html;
+}
+
+/* ===== RELATIONSHIPS TAB BUILDER (H-101) ===== */
+function buildRelationshipsTab(c, deep) {
+  var html = '';
+  var allCases = (typeof ALL_CASES !== 'undefined') ? ALL_CASES : [];
+  var myTags = deep ? (deep.pattern_tags || []) : (c.pattern_tags || []);
+  var myRelated = deep ? (deep.related_cases || []) : (c.related_cases || []);
+  var myId = c.id;
+
+  // Build relationship data: cases sharing pattern_tags or explicit related_cases
+  var relationships = [];
+  allCases.forEach(function(oc) {
+    if (oc.id === myId) return;
+    var ocTags = oc.pattern_tags || [];
+    var sharedTags = myTags.filter(function(t) { return ocTags.indexOf(t) !== -1; });
+    var isExplicit = myRelated.indexOf(oc.id) !== -1;
+    if (sharedTags.length > 0 || isExplicit) {
+      relationships.push({
+        case_id: oc.id,
+        case_name: oc.case_name || oc.id,
+        year: oc.year || '',
+        location: oc.location_full || oc.case_name || '',
+        tier: oc.tier || 'C',
+        sharedTags: sharedTags,
+        isExplicit: isExplicit,
+        strength: sharedTags.length + (isExplicit ? 2 : 0)
+      });
+    }
+  });
+
+  // Sort by strength (most related first)
+  relationships.sort(function(a, b) { return b.strength - a.strength; });
+
+  html += '<div class="fc-stamp" style="border-color:#6b2fa0;color:#6b2fa0;">RELATIONSHIPS</div>';
+  html += '<div class="fc-title" style="font-size:14px;margin:8px 0 4px;">Case Relationship Map</div>';
+  html += '<div class="fc-prose" style="font-size:11px;color:#6b5e50;margin-bottom:12px;">Cases connected by shared pattern tags or explicit cross-reference.</div>';
+
+  if (relationships.length === 0) {
+    html += '<div class="evi-block" style="text-align:center;color:#8b7050;">No related cases found for this file.</div>';
+  } else {
+    // Visual graph: central node + connected nodes
+    html += '<div class="rel-graph">';
+    // Central node (this case)
+    html += '<div class="rel-node rel-central" onclick="openCaseById('' + myId + '')">';
+    html += '<span class="rel-dot tier-' + (c.tier || 'C') + '"></span>';
+    html += '<span class="rel-label">' + escapeHtml(myId) + '</span>';
+    html += '<span class="rel-year">' + escapeHtml(String(c.year || '')) + '</span>';
+    html += '</div>';
+
+    // Connected nodes
+    relationships.slice(0, 12).forEach(function(r) {
+      html += '<div class="rel-conn">';
+      html += '<div class="rel-line"></div>';
+      html += '<div class="rel-node rel-linked" onclick="openCaseById('' + r.case_id + '')">';
+      html += '<span class="rel-dot tier-' + r.tier + '"></span>';
+      html += '<span class="rel-label">' + escapeHtml(r.case_id) + '</span>';
+      html += '<span class="rel-year">' + escapeHtml(String(r.year)) + '</span>';
+      html += '</div>';
+      html += '<div class="rel-tags">' + r.sharedTags.slice(0, 3).map(function(t) {
+        return '<span class="rel-tag">' + escapeHtml(t) + '</span>';
+      }).join('') + '</div>';
+      html += '</div>';
+    });
+
+    if (relationships.length > 12) {
+      html += '<div class="rel-more">+' + (relationships.length - 12) + ' more related cases</div>';
+    }
+    html += '</div>';
+
+    // Table view
+    html += '<hr class="fc-sep" style="margin-top:16px;"/>';
+    html += '<div class="fc-h3">All Related Cases</div>';
+    html += '<table class="rel-table"><thead><tr><th>Case</th><th>Year</th><th>Tier</th><th>Shared Tags</th><th>Link</th></tr></thead><tbody>';
+    relationships.forEach(function(r) {
+      html += '<tr>';
+      html += '<td><a href="#' + r.case_id + '" onclick="openCaseById('' + r.case_id + '');return false;">' + escapeHtml(r.case_id) + ' — ' + escapeHtml(r.case_name) + '</a></td>';
+      html += '<td>' + escapeHtml(String(r.year)) + '</td>';
+      html += '<td><span class="rel-tier tier-' + r.tier + '">' + r.tier + '</span></td>';
+      html += '<td>' + r.sharedTags.slice(0, 3).map(function(t) { return '<span class="rel-tag">' + escapeHtml(t) + '</span>'; }).join(' ') + '</td>';
+      html += '<td>' + (r.isExplicit ? '<span class="rel-explicit">EXPLICIT</span>' : '<span class="rel-inferred">inferred</span>') + '</td>';
+      html += '</tr>';
+    });
+    html += '</tbody></table>';
+  }
 
   return html;
 }
