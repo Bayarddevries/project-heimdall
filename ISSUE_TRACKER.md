@@ -70,8 +70,9 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | H-200 | narratives.js sync automation | P1 | 2026-05-15 | GitHub Actions workflow auto-runs pipeline on push when case data changes |
 | H-201 | Reduce narratives.js file size | P2 | 2026-05-15 | Minified narratives.js generation in pipeline (narratives.min.js) |
 | H-202 | Fix cases-all.json generation | P1 | 2026-05-15 | Verified regex frontmatter stripping works on all 56 files (no YAML parser needed) |
-| H-203 | Fix openDetail onclick quote escaping | P1 | 2026-05-14 | Corrected broken string concatenation in detail panel open button
-| H-204 | Fix window.open onclick quote escaping | P1 | 2026-05-14 | Corrected broken string concatenation in search external link button
+|| H-204 | Fix window.open onclick quote escaping | P1 | 2026-05-14 | Corrected broken string concatenation in search external link button
+|| H-205 | Fix witnesses TypeError in relationships tab | P0 | 2026-05-14 | witnesses field numeric causes TypeError; cast to String before toLowerCase() — fixes detail panel crash
+|
 
 ---
 

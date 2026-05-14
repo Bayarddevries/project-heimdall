@@ -197,9 +197,10 @@ GitHub Pages serves from `docs/` and typically deploys within 60 seconds of the 
 | ID | Feature | Details |
 |----|---------|---------|
 | H-055 | Media collection phase 2 | 32 public-domain images across 18 case folders. Wikimedia Commons + Wikipedia sources. media_urls synced for all cases with files |
-| H-200 | CI/CD automation | `.github/workflows/regenerate.yml` — GitHub Actions auto-runs pipeline on push when case data changes |
+|| H-200 | CI/CD automation | `.github/workflows/regenerate.yml` — GitHub Actions auto-runs pipeline on push when case data changes |
+|| H-205 | Fix witnesses TypeError in relationships tab | P0 | witnesses field numeric causes TypeError in buildRelationshipsTab; wrapped with String() cast before toLowerCase() — restores detail panel click functionality |
 
----
+
 
 ## v1.8 Features (Deployed 2026-05-15)
 

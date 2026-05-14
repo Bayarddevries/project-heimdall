@@ -4,6 +4,7 @@
 
 - **Feat: Media collection phase 2 (H-055)** — Added images for 8 new cases (CAN-001, CAN-003, CAN-006, CAN-010, CAN-014, CAN-016, CAN-020, CAN-032). Total: 18 cases with media, 32 image files. Removed 264MB PDF that exceeded GitHub's file size limit.
 - **Feat: CI/CD automation (H-200)** — GitHub Actions workflow `.github/workflows/regenerate.yml` auto-runs pipeline on push when case data changes. Commits regenerated narratives.js back to repo.
+- **Fix: H-205** — Detail panel crash fix: witnesses field numeric type caused TypeError in buildRelationshipsTab; cast to String before toLowerCase() restores click functionality.
 
 ## [2026-05-15] v1.8 — Relationships, Dates, Sound, Witness Cross-Ref
 
