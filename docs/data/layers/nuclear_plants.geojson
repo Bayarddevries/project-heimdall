@@ -1,0 +1,226 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bruce Nuclear Generating Station",
+        "type": "CANDU Reactor",
+        "province": "ON",
+        "status": "Active",
+        "description": "Largest nuclear plant in the world (by output). 8 CANDU reactors at Tiverton, Lake Huron."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.6036,
+          44.3247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pickering Nuclear Generating Station",
+        "type": "CANDU Reactor",
+        "province": "ON",
+        "status": "Active",
+        "description": "6 operating CANDU units on Lake Ontario, near Toronto."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.0892,
+          43.8142
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Darlington Nuclear Generating Station",
+        "type": "CANDU Reactor",
+        "province": "ON",
+        "status": "Active",
+        "description": "4 CANDU units east of Toronto. Site of planned small modular reactors."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.7194,
+          43.8708
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chalk River Laboratories",
+        "type": "Research Reactor",
+        "province": "ON",
+        "status": "Active",
+        "description": "Atomic Energy of Canada Ltd. Major research facility on the Ottawa River. NRU reactor (retired 2018), now home to new SMR design centre."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.375,
+          46.05
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Point Lepreau Nuclear Generating Station",
+        "type": "CANDU Reactor",
+        "province": "NB",
+        "status": "Active",
+        "description": "Only nuclear plant in Atlantic Canada. 1 CANDU-6 unit on the Bay of Fundy."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.4576,
+          45.0731
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gentilly-2 Nuclear Generating Station",
+        "type": "CANDU Reactor",
+        "province": "QC",
+        "status": "Decommissioned",
+        "description": "CANDU reactor near Trois-Rivi\u00e8res. Shut down in 2012, now in decommissioning phase."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.3567,
+          46.4328
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Whiteshell Laboratories",
+        "type": "Research Reactor",
+        "province": "MB",
+        "status": "Decommissioned",
+        "description": "AECL research facility near Pinawa, Manitoba. WR-1 reactor shut down 1985."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.88,
+          50.144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "McArthur River Uranium Mine",
+        "type": "Uranium Mine",
+        "province": "SK",
+        "status": "Active",
+        "description": "World's largest high-grade uranium mine, northern Saskatchewan."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0506,
+          57.7672
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cigar Lake Uranium Mine",
+        "type": "Uranium Mine",
+        "province": "SK",
+        "status": "Active",
+        "description": "High-grade underground uranium mine, northern Saskatchewan."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0667,
+          58.0833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Key Lake Uranium Mill",
+        "type": "Uranium Mill",
+        "province": "SK",
+        "status": "Active",
+        "description": "Uranium milling operation, processes ore from McArthur River."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.53,
+          57.22
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Rabbit Lake Uranium Mine",
+        "type": "Uranium Mine",
+        "province": "SK",
+        "status": "Care & Maintenance",
+        "description": "First uranium mine in Saskatchewan's Athabasca Basin (1975)."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.23,
+          58.21
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Port Hope Area C / Welcome Waste Facility",
+        "type": "Historic Site",
+        "province": "ON",
+        "status": "Remediation",
+        "description": "Historic radium and uranium processing site. Long-term low-level radioactive waste management."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.29,
+          43.95
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Darlington SMR Demonstration",
+        "type": "SMR Construction",
+        "province": "ON",
+        "status": "In Development",
+        "description": "Canada's first Small Modular Reactor demonstration project, planned at Darlington site."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.7194,
+          43.8718
+        ]
+      }
+    }
+  ]
+}

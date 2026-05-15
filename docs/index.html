@@ -279,6 +279,110 @@ body {
   color: #2c2825;
 }
 
+/* ===== LAYERS DROPDOWN ===== */
+.layers-wrap {
+  position: relative;
+  display: inline-block;
+}
+.layers-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  min-width: 220px;
+  background: #f5eed6;
+  border: 2px solid #8b7355;
+  border-radius: 3px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  z-index: 1200;
+  display: none;
+  font-family: 'Special Elite', monospace;
+  padding: 0;
+}
+.layers-dropdown.open { display: block; }
+.layers-header {
+  background: #d4c5a9;
+  border-bottom: 1px solid #b8a88a;
+  padding: 6px 10px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #5a4e40;
+  text-align: center;
+}
+.layers-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 11px;
+  color: #3b3228;
+  transition: background 0.12s;
+  border-bottom: 1px solid #e8dfc0;
+}
+.layers-item:last-of-type { border-bottom: none; }
+.layers-item:hover { background: #e8dcc8; }
+.layers-check { display: none; }
+.layers-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid #8b7355;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+.layers-item.active .layers-dot { border-color: transparent; }
+.style-nuke { background: transparent; }
+.layers-item.active .style-nuke { background: #c41e3a; }
+.style-mil { background: transparent; }
+.layers-item.active .style-mil { background: #3a6ba5; }
+.style-radar { background: transparent; }
+.layers-item.active .style-radar { background: #2d8a4e; }
+.layers-count {
+  margin-left: auto;
+  font-size: 9px;
+  color: #8b7355;
+  background: #e8dfc0;
+  padding: 0 5px;
+  border-radius: 6px;
+  line-height: 14px;
+}
+.layers-hint {
+  font-size: 8px;
+  color: #8b7355;
+  padding: 4px 10px;
+  text-align: center;
+  font-style: italic;
+  border-top: 1px solid #e8dfc0;
+}
+
+/* Night ops */
+body.night-ops .layers-dropdown {
+  background: #1c1815;
+  border-color: #5a4e40;
+}
+body.night-ops .layers-header {
+  background: #2c2825;
+  color: #c89060;
+  border-bottom-color: #5a4e40;
+}
+body.night-ops .layers-item {
+  color: #c8b898;
+  border-bottom-color: #2c2825;
+}
+body.night-ops .layers-item:hover { background: #2c2825; }
+body.night-ops .layers-count { background: #2c2825; color: #a09080; }
+body.night-ops .layers-hint { color: #6b5e50; border-top-color: #2c2825; }
+body.night-ops .layers-dot { border-color: #6b5e50; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .layers-dropdown {
+    right: auto;
+    left: 0;
+    min-width: 200px;
+  }
+}
+
 /* ===== SIDEBAR ===== */
 .sidebar {
   position: fixed;
@@ -2207,6 +2311,31 @@ body.night-ops .witness-case-link { background: #2a1510; color: #a070c0; }
     <div>YEARS: <strong>1662 – 2025</strong></div>
     <button class="view-toggle" id="view-toggle" title="Toggle timeline view">☰ Timeline</button>
     <button class="view-toggle" id="sound-toggle" title="Toggle sound effects" onclick="toggleSound()">🔊</button>
+    <div class="layers-wrap">
+      <button class="view-toggle" id="layers-toggle" title="Toggle map overlays">🗺 Layers</button>
+      <div class="layers-dropdown" id="layers-dropdown">
+        <div class="layers-header">OVERLAYS</div>
+        <label class="layers-item" data-layer="nuclear">
+          <input type="checkbox" class="layers-check" checked>
+          <span class="layers-dot style-nuke"></span>
+          <span>☢️ Nuclear Facilities</span>
+          <span class="layers-count" id="layers-count-nuclear">0</span>
+        </label>
+        <label class="layers-item" data-layer="military">
+          <input type="checkbox" class="layers-check" checked>
+          <span class="layers-dot style-mil"></span>
+          <span>⚔️ Military Bases</span>
+          <span class="layers-count" id="layers-count-military">0</span>
+        </label>
+        <label class="layers-item" data-layer="norad">
+          <input type="checkbox" class="layers-check" checked>
+          <span class="layers-dot style-radar"></span>
+          <span>📡 NORAD Radar</span>
+          <span class="layers-count" id="layers-count-norad">0</span>
+        </label>
+        <div class="layers-hint">Click to toggle overlay visibility</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -2336,12 +2465,153 @@ function initPage() {
   });
 })();
 
+/* ==============================================================
+   MAP OVERLAYS (CEGEP Nuclear, Military Bases, NORAD Radar)
+   ============================================================== */
+var overlayLayers = {};
+var overlayGroups = {};
+var overlayDataCache = {};
+
+function initOverlays() {
+  // Load all three GeoJSON layers
+  var layers = [
+    { id: 'nuclear', file: './data/layers/nuclear_plants.geojson', active: true },
+    { id: 'military', file: './data/layers/military_bases.geojson', active: true },
+    { id: 'norad', file: './data/layers/norad_radar.geojson', active: true }
+  ];
+  layers.forEach(function(l) {
+    overlayGroups[l.id] = L.layerGroup().addTo(map);
+    loadGeoJSON(l.id, l.file);
+  });
+  // Hide all legend extras on load
+  document.querySelectorAll('.layers-item').forEach(function(el) {
+    el.classList.add('active');
+  });
+  updateLayerCounts();
+  bindLayersUI();
+}
+
+function loadGeoJSON(id, file) {
+  fetch(file)
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      overlayDataCache[id] = data;
+      styleAndAddLayer(id, data);
+    })
+    .catch(function(e) {
+      console.log('Overlay load error [' + id + ']:', e);
+    });
+}
+
+function styleAndAddLayer(id, data) {
+  var group = overlayGroups[id];
+  var style = layerStyles[id] || {};
+  data.features.forEach(function(f) {
+    var layer;
+    var props = f.properties;
+    if (f.geometry.type === 'Point') {
+      layer = L.circleMarker([f.geometry.coordinates[1], f.geometry.coordinates[0]], {
+        radius: style.radius || 6,
+        fillColor: style.color || '#888',
+        color: '#f5eed6',
+        weight: 1.5,
+        opacity: 0.9,
+        fillOpacity: 0.75
+      });
+      layer.bindPopup(popupForOverlay(props, id));
+    } else if (f.geometry.type === 'LineString') {
+      var coords = f.geometry.coordinates.map(function(c) { return [c[1], c[0]]; });
+      layer = L.polyline(coords, {
+        color: style.lineColor || '#888',
+        weight: style.lineWeight || 2,
+        opacity: style.lineOpacity || 0.6,
+        dashArray: style.dash || '6,4'
+      });
+      layer.bindPopup(popupForOverlay(props, id));
+    }
+    if (layer) group.addLayer(layer);
+  });
+  updateLayerCounts();
+}
+
+var layerStyles = {
+  nuclear: { color: '#c41e3a', radius: 7 },
+  military: { color: '#3a6ba5', radius: 6 },
+  norad:   { color: '#2d8a4e', radius: 5, lineColor: '#2d8a4e', lineWeight: 2.5, lineOpacity: 0.5, dash: '8,5' }
+};
+
+function popupForOverlay(props, layerId) {
+  var iconMap = { nuclear: '☢️', military: '⚔️', norad: '📡' };
+  var icon = iconMap[layerId] || '📍';
+  var statusColor = '#3b3228';
+  if (props.status === 'Decommissioned') statusColor = '#c41e3a';
+  else if (props.status === 'Active') statusColor = '#2d8a4e';
+  else if (props.status === 'Care & Maintenance') statusColor = '#d4a843';
+  var province = props.province || '';
+  var branch = props.branch ? '<div style="font-size:9px;color:#8b7355;margin-top:2px">' + props.branch + '</div>' : '';
+  var desc = props.description ? '<div style="font-size:9px;color:#6b5e50;margin-top:2px;line-height:1.4">' + props.description + '</div>' : '';
+  return '<div style="font-family:Special Elite,monospace;font-size:11px;min-width:160px;max-width:240px">' +
+    '<div style="font-size:10px;font-weight:bold;margin-bottom:2px">' + icon + ' ' + props.name + '</div>' +
+    '<div style="font-size:9px;color:#8b7355">' + props.type + (province ? ' · ' + province : '') + '</div>' +
+    (props.status ? '<div style="font-size:9px;color:' + statusColor + ';margin-top:1px">● ' + props.status + '</div>' : '') +
+    branch + desc + '</div>';
+}
+
+function toggleOverlay(id) {
+  var group = overlayGroups[id];
+  var item = document.querySelector('.layers-item[data-layer="' + id + '"]');
+  if (!group || !item) return;
+  var isActive = item.classList.contains('active');
+  if (isActive) {
+    map.removeLayer(group);
+    item.classList.remove('active');
+  } else {
+    group.addTo(map);
+    item.classList.add('active');
+  }
+}
+
+function updateLayerCounts() {
+  ['nuclear','military','norad'].forEach(function(id) {
+    var group = overlayGroups[id];
+    var el = document.getElementById('layers-count-' + id);
+    if (group && el) {
+      var count = 0;
+      group.eachLayer(function() { count++; });
+      el.textContent = count;
+    }
+  });
+}
+
+function bindLayersUI() {
+  var toggle = document.getElementById('layers-toggle');
+  var dropdown = document.getElementById('layers-dropdown');
+  if (!toggle || !dropdown) return;
+  toggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    dropdown.classList.toggle('open');
+  });
+  document.querySelectorAll('.layers-item').forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var id = this.getAttribute('data-layer');
+      toggleOverlay(id);
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!dropdown.contains(e.target) && e.target !== toggle) {
+      dropdown.classList.remove('open');
+    }
+  });
+}
+
 function initFromData() {
   createMap();
   buildSidebar();
   bindFilters();
   bindTimeline();
   bindSearch();
+  initOverlays();
   updateView();
   // Compute year range for timeline
   if (allCases.length > 0) {

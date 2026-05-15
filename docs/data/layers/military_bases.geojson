@@ -1,0 +1,430 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Esquimalt",
+        "type": "Naval Base",
+        "province": "BC",
+        "branch": "Royal Canadian Navy",
+        "description": "Home of the Pacific Fleet. Major naval base near Victoria."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.4369,
+          48.4292
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Comox",
+        "type": "Air Base",
+        "province": "BC",
+        "branch": "RCAF",
+        "description": "RCAF 19 Wing. Home to CP-140 Aurora maritime patrol aircraft."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -124.8869,
+          49.7103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Chilliwack",
+        "type": "Training Base",
+        "province": "BC",
+        "branch": "Canadian Army",
+        "description": "Historic military base, home to Canadian Forces Land Force Command."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.8156,
+          49.1167
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Suffield",
+        "type": "Training Area",
+        "province": "AB",
+        "branch": "Canadian Army",
+        "description": "Large training area in Alberta. British Army Training Unit Suffield (BATUS)."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.05,
+          50.2667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Edmonton",
+        "type": "Army Base",
+        "province": "AB",
+        "branch": "Canadian Army",
+        "description": "Home to 1 Canadian Mechanized Brigade Group and 3rd Canadian Division HQ."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.5849,
+          53.666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Cold Lake",
+        "type": "Air Base",
+        "province": "AB",
+        "branch": "RCAF",
+        "description": "4 Wing Cold Lake. Home of the CF-188 Hornet fighter fleet. Major NORAD role."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.2767,
+          54.405
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Moose Jaw",
+        "type": "Air Base",
+        "province": "SK",
+        "branch": "RCAF",
+        "description": "15 Wing Moose Jaw. Home to 2 Canadian Forces Flying Training School and the Snowbirds."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.5389,
+          50.3447
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Shilo",
+        "type": "Army Base",
+        "province": "MB",
+        "branch": "Canadian Army",
+        "description": "Artillery and infantry training base near Brandon."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.4814,
+          49.8011
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Winnipeg",
+        "type": "Air Base",
+        "province": "MB",
+        "branch": "RCAF",
+        "description": "17 Wing Winnipeg. 1 Canadian Air Division HQ, NORAD Region HQ."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.2458,
+          49.8858
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Trenton",
+        "type": "Air Base",
+        "province": "ON",
+        "branch": "RCAF",
+        "description": "8 Wing Trenton. Canada's busiest air base. Air Mobility hub."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.5258,
+          44.1194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Petawawa",
+        "type": "Army Base",
+        "province": "ON",
+        "branch": "Canadian Army",
+        "description": "Major army base in the Ottawa Valley. Home to 2 Canadian Mechanized Brigade Group."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.2833,
+          45.9
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Borden",
+        "type": "Training Base",
+        "province": "ON",
+        "branch": "Canadian Armed Forces",
+        "description": "Largest training base. CFSATE, BMATS, and various schools."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.8958,
+          44.2717
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Kingston",
+        "type": "Army Base",
+        "province": "ON",
+        "branch": "Canadian Army",
+        "description": "Home of the Royal Military College of Canada and 1 Canadian Division HQ."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.4908,
+          44.2417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB London",
+        "type": "Army Base",
+        "province": "ON",
+        "branch": "Canadian Army",
+        "description": "Reserve unit base in southwestern Ontario."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.25,
+          42.9833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB North Bay",
+        "type": "Air Base",
+        "province": "ON",
+        "branch": "RCAF",
+        "description": "22 Wing North Bay. Underground NORAD Sector HQ (Canadian Air Defence Sector)."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.45,
+          46.31
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "C\"/A\"D\"S \"Montreal\" (CFB St-Hubert)",
+        "type": "Air Base",
+        "province": "QC",
+        "branch": "RCAF",
+        "description": "RCAF 5 Wing. Home to 12 Radar Squadron (NORAD)."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.4197,
+          45.5236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Valcartier",
+        "type": "Army Base",
+        "province": "QC",
+        "branch": "Canadian Army",
+        "description": "Major army base near Quebec City. Home to 5 Canadian Mechanized Brigade Group."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.4667,
+          46.9
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Gagetown",
+        "type": "Army Base",
+        "province": "NB",
+        "branch": "Canadian Army",
+        "description": "Largest military training facility in Eastern Canada."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.15,
+          45.6333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Halifax / Stadacona",
+        "type": "Naval Base",
+        "province": "NS",
+        "branch": "Royal Canadian Navy",
+        "description": "Home of the Atlantic Fleet. Major naval base and dockyard."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.5717,
+          44.665
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Shearwater",
+        "type": "Air Base",
+        "province": "NS",
+        "branch": "RCAF",
+        "description": "12 Wing Shearwater. Maritime helicopter operations."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.5,
+          44.6333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Greenwood",
+        "type": "Air Base",
+        "province": "NS",
+        "branch": "RCAF",
+        "description": "14 Wing Greenwood. CP-140 Aurora patrol aircraft."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.9167,
+          44.9833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB St. John's (CFS St. John's)",
+        "type": "Radio Station",
+        "province": "NL",
+        "branch": "RCAF",
+        "description": "Communications research and SIGINT facility."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.7167,
+          47.55
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Goose Bay",
+        "type": "Air Base",
+        "province": "NL",
+        "branch": "RCAF",
+        "description": "5 Wing Goose Bay. Air base in Labrador. Used for allied air training."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.42,
+          53.32
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFB Alert",
+        "type": "Radio Station",
+        "province": "NU",
+        "branch": "Canadian Armed Forces",
+        "description": "Most northerly permanently inhabited settlement in the world. Signals intelligence."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.35,
+          82.5
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DND Ottawa (Cartier Square / NDHQ)",
+        "type": "Headquarters",
+        "province": "ON",
+        "branch": "Canadian Armed Forces",
+        "description": "National Defence Headquarters. Ottawa."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.6972,
+          45.4215
+        ]
+      }
+    }
+  ]
+}
