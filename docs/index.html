@@ -3257,17 +3257,17 @@ function buildRelationshipsTab(c, deep) {
   // Build relationship data: cases sharing pattern_tags or explicit related_cases
   var relationships = [];
   allCases.forEach(function(oc) {
-    if (oc.id === myId) return;
+    if (oc.case_id === myId) return;
     var ocTags = oc.pattern_tags || [];
     var sharedTags = myTags.filter(function(t) { return ocTags.indexOf(t) !== -1; });
-    var isExplicit = myRelated.indexOf(oc.id) !== -1;
+    var isExplicit = myRelated.indexOf(oc.case_id) !== -1;
     if (sharedTags.length > 0 || isExplicit) {
       relationships.push({
-        case_id: oc.id,
-        case_name: oc.case_name || oc.id,
+        case_id: oc.case_id,
+        case_name: oc.case_name || oc.case_id,
         year: oc.year || '',
         location: oc.location_full || oc.case_name || '',
-        tier: oc.tier || 'C',
+        tier: oc.internal_tier || 'C',
         sharedTags: sharedTags,
         isExplicit: isExplicit,
         strength: sharedTags.length + (isExplicit ? 2 : 0)
@@ -3349,11 +3349,11 @@ function buildRelationshipsTab(c, deep) {
         if (!myWitnessMatches[wtype]) myWitnessMatches[wtype] = [];
         // Find other cases with same witness type
         allCases.forEach(function(oc) {
-          if (oc.id === myId) return;
+          if (oc.case_id === myId) return;
           var ocText = ((oc.witnesses || '') + ' ' + (oc.narrative || '')).toLowerCase();
           for (var p2 = 0; p2 < patterns.length; p2++) {
             if (ocText.indexOf(patterns[p2].toLowerCase()) !== -1) {
-              if (myWitnessMatches[wtype].indexOf(oc.id) === -1) myWitnessMatches[wtype].push(oc.id);
+              if (myWitnessMatches[wtype].indexOf(oc.case_id) === -1) myWitnessMatches[wtype].push(oc.case_id);
               break;
             }
           }
