@@ -4314,7 +4314,7 @@
       "police-involved"
     ],
     "related_cases": [],
-    "internal_tier": "C",
+    "internal_tier": "B",
     "hynek_classification": "NL",
     "decade_cluster": 2010,
     "province_adjacent": "ON",
@@ -4464,7 +4464,7 @@
       "nocturnal-light"
     ],
     "related_cases": [],
-    "internal_tier": "C",
+    "internal_tier": "B",
     "hynek_classification": "NL",
     "decade_cluster": 2000,
     "province_adjacent": "BC",
@@ -4837,7 +4837,7 @@
     "related_cases": [
       "CAN-045"
     ],
-    "internal_tier": "C",
+    "internal_tier": "B",
     "hynek_classification": "NL",
     "decade_cluster": 2010,
     "province_adjacent": "NL",
@@ -5137,7 +5137,7 @@
     "related_cases": [
       "CAN-009"
     ],
-    "internal_tier": "C",
+    "internal_tier": "B",
     "hynek_classification": "NL",
     "decade_cluster": 2020,
     "province_adjacent": "NT",

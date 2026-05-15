@@ -318,7 +318,7 @@ RESEARCH_DATA = {
         "pattern_tags": ["nocturnal-light", "water-event"]
     },
     "CAN-059": {  # North York Flashing Lights
-        "tier": "C",
+        "tier": "B",
         "name": "North York Flashing Lights",
         "location_full": "North York, Toronto, Ontario",
         "date": "July 26, 2014",
@@ -357,7 +357,7 @@ RESEARCH_DATA = {
         "pattern_tags": ["nocturnal-light", "mass-sighting", "police-involved", "cluster-event"]
     },
     "CAN-061": {  # Terrace Hotspot BC
-        "tier": "C",
+        "tier": "B",
         "name": "Terrace Hotspot",
         "location_full": "Terrace, British Columbia",
         "date": "2002",
@@ -454,7 +454,7 @@ RESEARCH_DATA = {
         "pattern_tags": ["close-encounter", "entity-contact"]
     },
     "CAN-066": {  # Harbour Mille Follow-Up
-        "tier": "C",
+        "tier": "B",
         "name": "Harbour Mille Follow-Up",
         "location_full": "Harbour Mille, Newfoundland and Labrador",
         "date": "2010",
@@ -532,7 +532,7 @@ RESEARCH_DATA = {
         "pattern_tags": ["close-encounter", "abduction", "missing-time", "entity-contact"]
     },
     "CAN-070": {  # Yellowknife Modern
-        "tier": "C",
+        "tier": "B",
         "name": "Yellowknife Modern",
         "location_full": "Yellowknife, Northwest Territories",
         "date": "2022",
