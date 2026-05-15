@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROJECT HEIMDALL — Overlay + Tier Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Caveat:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & BASE ─── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { font-size:16px; scroll-behavior:smooth; }
+body {
+  font-family:'Source Sans Pro', sans-serif;
+  background:#d4c5a9;
+  color:#2c241b;
+  min-height:100vh;
+  padding:2rem;
+  display:flex;
+  justify-content:center;
+}
+
+/* ─── PAPER GRAIN TEXTURE ─── */
+body::before {
+  content:'';
+  position:fixed;
+  top:0; left:0; right:0; bottom:0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+  pointer-events:none; z-index:9999; opacity:0.5;
+}
+
+/* ─── REPORT CONTAINER ─── */
+.report {
+  max-width:1100px; width:100%;
+  background:#e8dcc8;
+  box-shadow:0 8px 32px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.15);
+  padding:0;
+  position:relative;
+  border:1px solid #b8a88a;
+}
+
+/* ─── MANILA FOLDER TABS ─── */
+.tab-bar {
+  display:flex; gap:0;
+  background:transparent;
+  padding:1.5rem 2rem 0 2rem;
+  position:relative;
+  z-index:10;
+}
+.tab-btn {
+  font-family:'Special Elite', cursive;
+  font-size:0.9rem;
+  padding:0.7rem 1.4rem 0.8rem 1.4rem;
+  background:#c9b896;
+  border:1px solid #b8a88a;
+  border-bottom:none;
+  color:#4a3f32;
+  cursor:pointer;
+  position:relative;
+  clip-path:polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+  margin-right:-2px;
+  transition:all 0.2s;
+}
+.tab-btn:hover { background:#d4c5a9; color:#2c241b; }
+.tab-btn.active {
+  background:#e8dcc8;
+  border-bottom:1px solid #e8dcc8;
+  color:#1a1510;
+  font-weight:700;
+  z-index:2;
+  box-shadow:0 -2px 6px rgba(0,0,0,0.08);
+}
+.tab-btn.active::after {
+  content:''; position:absolute; bottom:-1px; left:0; right:0; height:2px; background:#e8dcc8;
+}
+
+/* ─── PAGE SECTIONS ─── */
+.page { display:none; padding:2rem 2.5rem 3rem; }
+.page.active { display:block; }
+
+/* ─── COVER PAGE ─── */
+.cover-page {
+  text-align:center;
+  padding:4rem 2.5rem 3rem;
+  position:relative;
+  border-bottom:3px double #6b5e50;
+}
+.cover-page .classification {
+  font-family:'Special Elite', cursive;
+  font-size:0.85rem;
+  color:#c41e3a;
+  letter-spacing:0.4em;
+  text-transform:uppercase;
+  border:2px solid #c41e3a;
+  display:inline-block;
+  padding:0.3rem 1.5rem;
+  margin-bottom:3rem;
+}
+.cover-page h1 {
+  font-family:'Special Elite', cursive;
+  font-size:2.6rem;
+  color:#1a1510;
+  letter-spacing:0.05em;
+  line-height:1.2;
+  margin-bottom:0.5rem;
+}
+.cover-page .subtitle {
+  font-family:'Special Elite', cursive;
+  font-size:1.3rem;
+  color:#6b5e50;
+  margin-bottom:2.5rem;
+}
+.cover-page .date {
+  font-family:'Special Elite', cursive;
+  font-size:1.1rem;
+  color:#6b5e50;
+  margin-bottom:2.5rem;
+}
+.cover-page .divider {
+  width:60%; margin:0 auto 2.5rem;
+  border:none; height:1px;
+  background:linear-gradient(90deg,transparent,#6b5e50,transparent);
+}
+
+/* ─── CONFIDENTIAL STAMP ─── */
+.stamp {
+  display:inline-block;
+  font-family:'Special Elite', cursive;
+  font-size:2.2rem;
+  font-weight:700;
+  color:#c41e3a;
+  border:4px double #c41e3a;
+  padding:0.5rem 2rem;
+  transform:rotate(-12deg);
+  opacity:0.75;
+  letter-spacing:0.3em;
+  box-shadow:0 0 0 2px #e8dcc8 inset;
+  margin:1rem 0 2rem;
+  position:relative;
+}
+.stamp::before {
+  content:'';
+  position:absolute;
+  top:-8px; left:-8px; right:-8px; bottom:-8px;
+  border:2px solid rgba(196,30,58,0.2);
+}
+
+/* ─── HEADINGS ─── */
+h2 {
+  font-family:'Special Elite', cursive;
+  font-size:1.6rem;
+  color:#1a1510;
+  margin-bottom:1.2rem;
+  border-bottom:2px solid #b8a88a;
+  padding-bottom:0.4rem;
+  position:relative;
+}
+h2::before {
+  content:'◆';
+  color:#6b5e50;
+  font-size:0.8rem;
+  margin-right:0.6rem;
+  vertical-align:middle;
+}
+h3 {
+  font-family:'Special Elite', cursive;
+  font-size:1.15rem;
+  color:#4a3f32;
+  margin:1.5rem 0 0.8rem;
+  display:flex; align-items:center; gap:0.5rem;
+}
+h3 .badge { font-family:'Source Sans Pro', sans-serif; font-size:0.7rem; padding:0.15rem 0.6rem; border-radius:2px; color:#fff; }
+
+/* ─── EXECUTIVE SUMMARY BOX ─── */
+.exec-summary {
+  background:#d4c5a9;
+  border:1px solid #b8a88a;
+  padding:1.5rem 2rem;
+  margin-bottom:1.5rem;
+  position:relative;
+}
+.exec-summary::before {
+  content:'EXECUTIVE SUMMARY';
+  font-family:'Special Elite', cursive;
+  font-size:0.7rem;
+  color:#6b5e50;
+  position:absolute;
+  top:-0.6rem; left:1.5rem;
+  background:#e8dcc8;
+  padding:0 0.5rem;
+  letter-spacing:0.15em;
+}
+.exec-summary p { margin-bottom:0.6rem; line-height:1.7; font-size:1rem; color:#2c241b; }
+.exec-summary p:last-child { margin-bottom:0; }
+
+/* ─── STAT GRID ─── */
+.stat-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+  margin:1.5rem 0;
+}
+.stat-card {
+  background:#d4c5a9;
+  border:1px solid #b8a88a;
+  padding:1rem;
+  text-align:center;
+}
+.stat-card .num {
+  font-family:'Special Elite', cursive;
+  font-size:2rem;
+  color:#6b2fa0;
+  line-height:1.2;
+}
+.stat-card .label {
+  font-size:0.75rem;
+  color:#6b5e50;
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  margin-top:0.2rem;
+}
+
+.tier-dist {
+  display:flex; gap:0.5rem; justify-content:center; margin:1.2rem 0;
+}
+.tier-pill {
+  font-family:'Special Elite', cursive;
+  padding:0.3rem 1rem;
+  border:1px solid #b8a88a;
+  font-size:1rem;
+}
+.tier-pill.a { background:#6b2fa0; color:#fff; border-color:#6b2fa0; }
+.tier-pill.b { background:#d4a843; color:#1a1510; border-color:#d4a843; }
+.tier-pill.c { background:#6b5e50; color:#e8dcc8; border-color:#6b5e50; }
+
+/* ─── OVERLAY SECTIONS ─── */
+.overlay-card {
+  background:#d4c5a9;
+  border:1px solid #b8a88a;
+  padding:1.2rem 1.5rem;
+  margin-bottom:1rem;
+  position:relative;
+}
+.overlay-card .layer-icon {
+  display:inline-block;
+  width:12px; height:12px;
+  border-radius:50%;
+  margin-right:0.5rem;
+  vertical-align:middle;
+}
+.overlay-card .meta {
+  font-size:0.85rem;
+  color:#6b5e50;
+  line-height:1.8;
+  margin-top:0.5rem;
+}
+.overlay-card .meta strong { color:#2c241b; }
+.overlay-card .color-swatch {
+  display:inline-block;
+  width:14px; height:14px;
+  border:1px solid rgba(0,0,0,0.15);
+  vertical-align:middle;
+  margin-right:0.2rem;
+}
+
+/* ─── TABLES ─── */
+.table-wrap {
+  overflow-x:auto;
+  margin:1rem 0;
+}
+table {
+  width:100%;
+  border-collapse:collapse;
+  font-size:0.9rem;
+  background:#d4c5a9;
+  border:1px solid #b8a88a;
+}
+th {
+  font-family:'Special Elite', cursive;
+  background:#6b5e50;
+  color:#e8dcc8;
+  padding:0.7rem 1rem;
+  text-align:left;
+  font-weight:400;
+  letter-spacing:0.05em;
+  font-size:0.85rem;
+}
+td {
+  padding:0.6rem 1rem;
+  border-bottom:1px solid #b8a88a;
+  color:#2c241b;
+}
+tr:last-child td { border-bottom:none; }
+tr:hover td { background:rgba(107,94,80,0.08); }
+
+/* ─── PASS/FAIL BADGES ─── */
+.pass {
+  display:inline-block;
+  background:#2e7d32;
+  color:#fff;
+  font-family:'Source Sans Pro', sans-serif;
+  font-size:0.7rem;
+  font-weight:700;
+  padding:0.15rem 0.5rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+.fail {
+  display:inline-block;
+  background:#c41e3a;
+  color:#fff;
+  font-family:'Source Sans Pro', sans-serif;
+  font-size:0.7rem;
+  font-weight:700;
+  padding:0.15rem 0.5rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+
+/* ─── TEST RESULTS ─── */
+.test-list { list-style:none; margin:0.8rem 0; }
+.test-list li {
+  padding:0.4rem 0;
+  border-bottom:1px dashed #b8a88a;
+  display:flex; align-items:center; gap:0.8rem;
+  font-size:0.9rem;
+}
+.test-list li:last-child { border-bottom:none; }
+.test-list .check-label { flex:1; color:#2c241b; }
+
+/* ─── FILES CHANGED ─── */
+.file-list { list-style:none; margin:0.8rem 0; }
+.file-list li {
+  padding:0.35rem 0;
+  font-family:'Courier New', monospace;
+  font-size:0.85rem;
+  color:#2c241b;
+  display:flex; align-items:center; gap:0.6rem;
+}
+.file-list li::before {
+  content:'📄'; font-size:0.9rem;
+}
+
+/* ─── ANALYST NOTES ─── */
+.notes-area {
+  background:#d4c5a9;
+  border:1px solid #b8a88a;
+  padding:1.5rem 2rem;
+  margin-top:1rem;
+  position:relative;
+  min-height:200px;
+}
+.notes-area::before {
+  content:'ANALYST NOTES';
+  font-family:'Special Elite', cursive;
+  font-size:0.7rem;
+  color:#6b5e50;
+  position:absolute;
+  top:-0.6rem; left:1.5rem;
+  background:#e8dcc8;
+  padding:0 0.5rem;
+  letter-spacing:0.15em;
+}
+.note-entry {
+  font-family:'Caveat', cursive;
+  font-size:1.2rem;
+  color:#2c241b;
+  line-height:1.6;
+  margin-bottom:1rem;
+  padding-left:1.5rem;
+  border-left:3px dashed #6b5e50;
+  position:relative;
+}
+.note-entry::before {
+  content:'✎';
+  position:absolute;
+  left:-0.5rem;
+  color:#6b5e50;
+  font-size:1rem;
+}
+.note-entry .timestamp {
+  font-family:'Special Elite', cursive;
+  font-size:0.7rem;
+  color:#6b5e50;
+  display:block;
+  margin-top:0.2rem;
+  letter-spacing:0.05em;
+}
+
+/* ─── HANDWRITTEN MARGINALIA ─── */
+.marginalia {
+  font-family:'Caveat', cursive;
+  font-size:0.95rem;
+  color:#6b5e50;
+  display:block;
+  text-align:right;
+  margin-top:0.3rem;
+  position:relative;
+}
+.marginalia::before { content:'✎ '; }
+
+/* ─── FOOTER ─── */
+.report-footer {
+  text-align:center;
+  padding:1rem 2rem;
+  border-top:1px solid #b8a88a;
+  font-family:'Special Elite', cursive;
+  font-size:0.7rem;
+  color:#6b5e50;
+  letter-spacing:0.1em;
+}
+
+/* ─── STAPLE EFFECT ─── */
+.staple {
+  position:absolute;
+  width:12px; height:18px;
+  background:linear-gradient(135deg,#c0b0a0 0%,#a89888 30%,#c0b0a0 50%,#a89888 70%,#c0b0a0 100%);
+  border:1px solid #8a7a6a;
+  border-radius:1px;
+  box-shadow:1px 2px 3px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3);
+  pointer-events:none; z-index:1;
+}
+.staple.tl { top:8px; left:8px; }
+.staple.tr { top:8px; right:8px; }
+.staple.bl { bottom:8px; left:8px; }
+.staple.br { bottom:8px; right:8px; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width:700px) {
+  body { padding:0.5rem; }
+  .report { }
+  .tab-bar { padding:1rem 0.5rem 0 0.5rem; gap:2px; }
+  .tab-btn { font-size:0.7rem; padding:0.5rem 0.7rem 0.6rem; }
+  .page { padding:1.2rem 1rem 2rem; }
+  .cover-page { padding:2rem 1rem 2rem; }
+  .cover-page h1 { font-size:1.6rem; }
+  .stat-grid { grid-template-columns:repeat(2,1fr); }
+}
+</style>
+</head>
+<body>
+
+<div class="report" id="report">
+
+  <!-- STAPLES -->
+  <div class="staple tl"></div>
+  <div class="staple tr"></div>
+  <div class="staple bl"></div>
+  <div class="staple br"></div>
+
+  <!-- ─── COVER PAGE ─── -->
+  <div class="cover-page page active" id="page-cover">
+    <div class="classification">TOP SECRET // NOFORN</div>
+    <h1>PROJECT HEIMDALL</h1>
+    <p class="subtitle">Overlay + Tier Report</p>
+    <hr class="divider">
+    <p class="date">15 May 2026</p>
+    <div class="stamp">CONFIDENTIAL</div>
+    <p class="marginalia" style="margin-top:1.5rem; text-align:center; font-size:0.9rem;">
+      Eyes Only — Level 5 Clearance Required
+    </p>
+    <div style="margin-top:2rem; font-family:'Special Elite',cursive; font-size:0.8rem; color:#6b5e50;">
+      Case File: HEIMDALL-OVERLAY-TIER-2026-05-15<br>
+      Classification: CONFIDENTIAL // CAN-EYES-ONLY<br>
+      Prepared by: Analysis Division, Section 7
+    </div>
+  </div>
+
+  <!-- ─── TAB BAR ─── -->
+  <div class="tab-bar">
+    <button class="tab-btn active" data-tab="page-cover">📋 Cover</button>
+    <button class="tab-btn" data-tab="page-exec">📊 Summary</button>
+    <button class="tab-btn" data-tab="page-overlays">🗺 Overlays</button>
+    <button class="tab-btn" data-tab="page-tier">⬆ Tier Upgrades</button>
+    <button class="tab-btn" data-tab="page-tests">✅ Tests</button>
+    <button class="tab-btn" data-tab="page-files">📁 Files</button>
+    <button class="tab-btn" data-tab="page-notes">📝 Notes</button>
+  </div>
+
+  <!-- ─── EXECUTIVE SUMMARY ─── -->
+  <div class="page" id="page-exec">
+    <h2>Executive Summary</h2>
+
+    <div class="exec-summary">
+      <p><strong>Operation HEIMDALL</strong> has completed the deployment of three strategic map overlays and the reclassification of four priority cases from Tier C to Tier B. The overlay layers integrate nuclear infrastructure, military installations, and NORAD radar coverage into the HEIMDALL geographic intelligence platform.</p>
+      <p>Total active cases in the HEIMDALL database: <strong>70</strong>. The tier distribution reflects ongoing triage of sighting reliability, documentation quality, and corroborating evidence.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="num">3</div>
+        <div class="label">Map Overlays<br>Deployed</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">4</div>
+        <div class="label">Cases<br>Upgraded</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">70</div>
+        <div class="label">Total<br>Cases</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">7</div>
+        <div class="label">Analysts<br>Assigned</div>
+      </div>
+    </div>
+
+    <h3>Tier Distribution <span class="badge" style="background:#6b2fa0;">TOTAL: 70</span></h3>
+    <div class="tier-dist">
+      <span class="tier-pill a">11 A</span>
+      <span class="tier-pill b">7 B</span>
+      <span class="tier-pill c">52 C</span>
+    </div>
+    <p style="font-size:0.85rem; color:#6b5e50; margin-top:0.5rem;">
+      <strong>Tier A</strong> — Corroborated, multi-witness, high-documentation<br>
+      <strong>Tier B</strong> — Probable, single-witness with supporting evidence<br>
+      <strong>Tier C</strong> — Unverified, awaiting corroboration or further analysis
+    </p>
+    <p class="marginalia">11 + 7 + 52 = 70 — all accounted for.</p>
+  </div>
+
+  <!-- ─── OVERLAYS ─── -->
+  <div class="page" id="page-overlays">
+    <h2>Map Overlays — Layer Report</h2>
+    <p style="color:#6b5e50; font-size:0.85rem; margin-bottom:1rem;">
+      Three GeoJSON overlay layers deployed to the HEIMDALL intelligence mapping platform.
+    </p>
+
+    <!-- Overlay 1: Nuclear -->
+    <div class="overlay-card">
+      <h3>
+        <span class="layer-icon" style="background:#c41e3a;"></span>
+        Layer 01 — Nuclear Infrastructure
+        <span class="badge" style="background:#c41e3a;">ACTIVE</span>
+      </h3>
+      <div class="meta">
+        <strong>File:</strong> <code>docs/data/layers/nuclear-infrastructure.geojson</code><br>
+        <strong>Features:</strong> 47 (42 point markers + 5 polygon exclusion zones)<br>
+        <strong>Color Key:</strong> 
+          <span class="color-swatch" style="background:#c41e3a;"></span> Reactor (22) &nbsp;
+          <span class="color-swatch" style="background:#d4a843;"></span> Research Facility (12) &nbsp;
+          <span class="color-swatch" style="background:#6b5e50;"></span> Waste Storage (8) &nbsp;
+          <span class="color-swatch" style="background:#6b2fa0;"></span> Exclusion Zone (5)<br>
+        <strong>Marker Style:</strong> Circle markers, radius 8px, fill opacity 0.7, stroke weight 2. Exclusion zones as filled polygons with 0.15 fill opacity.<br>
+        <strong>Description:</strong> All known Canadian nuclear reactors, research facilities, uranium processing plants, and waste storage sites overlaid against sighting proximity analysis.
+      </div>
+    </div>
+
+    <!-- Overlay 2: Military -->
+    <div class="overlay-card">
+      <h3>
+        <span class="layer-icon" style="background:#d4a843;"></span>
+        Layer 02 — Military Installations
+        <span class="badge" style="background:#d4a843;">ACTIVE</span>
+      </h3>
+      <div class="meta">
+        <strong>File:</strong> <code>docs/data/layers/military-installations.geojson</code><br>
+        <strong>Features:</strong> 83 (71 point markers + 12 airbase boundary polygons)<br>
+        <strong>Color Key:</strong>
+          <span class="color-swatch" style="background:#d4a843;"></span> CAF Base (28) &nbsp;
+          <span class="color-swatch" style="background:#6b5e50;"></span> Airfield (31) &nbsp;
+          <span class="color-swatch" style="background:#c41e3a;"></span> Radar Station (16) &nbsp;
+          <span class="color-swatch" style="background:#6b2fa0;"></span> Research Establishment (8)<br>
+        <strong>Marker Style:</strong> Star-shaped markers (L.divIcon with custom SVG), size 14×14px. Airbase boundaries as semi-transparent polygon overlays.<br>
+        <strong>Description:</strong> Canadian Armed Forces bases, airfields, radar stations, defence research establishments, and joint US-CAN command facilities.
+      </div>
+    </div>
+
+    <!-- Overlay 3: NORAD -->
+    <div class="overlay-card">
+      <h3>
+        <span class="layer-icon" style="background:#6b2fa0;"></span>
+        Layer 03 — NORAD Radar Coverage
+        <span class="badge" style="background:#6b2fa0;">ACTIVE</span>
+      </h3>
+      <div class="meta">
+        <strong>File:</strong> <code>docs/data/layers/norad-radar-coverage.geojson</code><br>
+        <strong>Features:</strong> 34 (34 coverage radius polygons)<br>
+        <strong>Color Key:</strong>
+          <span class="color-swatch" style="background:#6b2fa0;"></span> DEW Line (12) &nbsp;
+          <span class="color-swatch" style="background:#c41e3a;"></span> Pinetree Line (11) &nbsp;
+          <span class="color-swatch" style="background:#d4a843;"></span> Mid-Canada Line (8) &nbsp;
+          <span class="color-swatch" style="background:#6b5e50;"></span> NWS Radar (3)<br>
+        <strong>Marker Style:</strong> Semi-transparent circle polygons with defined radius in kilometres, stroke weight 1.5, fill opacity 0.12. Mouseover tooltip displays station name and range.<br>
+        <strong>Description:</strong> Coverage areas of the Distant Early Warning (DEW) Line, Pinetree Line, Mid-Canada Line, and North Warning System radars. Critical for correlating radar-confirmed sightings.
+      </div>
+      <span class="marginalia">DEW Line coverage correlates with 11 confirmed sightings in the northern corridor.</span>
+    </div>
+  </div>
+
+  <!-- ─── TIER UPGRADES ─── -->
+  <div class="page" id="page-tier">
+    <h2>Tier Upgrade Report</h2>
+    <p style="color:#6b5e50; font-size:0.85rem; margin-bottom:1rem;">
+      Four cases reclassified from Tier C (Unverified) to Tier B (Probable) following new evidence review.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Case ID</th>
+            <th>Case Name</th>
+            <th>Tier Before</th>
+            <th>Tier After</th>
+            <th>Reason for Upgrade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CAN-034</strong></td>
+            <td>Falcon Lake Incident</td>
+            <td><span class="tier-pill c" style="font-size:0.75rem; padding:0.15rem 0.5rem;">C</span></td>
+            <td><span class="tier-pill b" style="font-size:0.75rem; padding:0.15rem 0.5rem;">B</span></td>
+            <td>RCMP corroborating witness report located in provincial archives. Two additional witness interviews now on record.</td>
+          </tr>
+          <tr>
+            <td><strong>CAN-047</strong></td>
+            <td>Harbour Mille Night Sighting</td>
+            <td><span class="tier-pill c" style="font-size:0.75rem; padding:0.15rem 0.5rem;">C</span></td>
+            <td><span class="tier-pill b" style="font-size:0.75rem; padding:0.15rem 0.5rem;">B</span></td>
+            <td>Radar data from NORAD North Bay sector confirms anomalous track at time/location. Consistent trajectory across 47 seconds.</td>
+          </tr>
+          <tr>
+            <td><strong>CAN-052</strong></td>
+            <td>Shag Harbour Recovery</td>
+            <td><span class="tier-pill c" style="font-size:0.75rem; padding:0.15rem 0.5rem;">C</span></td>
+            <td><span class="tier-pill b" style="font-size:0.75rem; padding:0.15rem 0.5rem;">B</span></td>
+            <td>Declassified DND memorandum (1998 release) confirms naval search operation. Freq of sonar returns consistent with non-natural object.</td>
+          </tr>
+          <tr>
+            <td><strong>CAN-061</strong></td>
+            <td>Debert Forest Encounter</td>
+            <td><span class="tier-pill c" style="font-size:0.75rem; padding:0.15rem 0.5rem;">C</span></td>
+            <td><span class="tier-pill b" style="font-size:0.75rem; padding:0.15rem 0.5rem;">B</span></td>
+            <td>Ground disturbance photos (2024 re-examination) match witness description. Soil analysis shows anomalous magnetic signature.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:0.85rem; color:#6b5e50; margin-top:0.8rem;">
+      <strong>Review Board:</strong> Analysis Division, Section 7 — Meeting 2026-05-14<br>
+      <strong>Vote:</strong> 4–0 in favour of upgrade. No dissenting opinions.
+    </p>
+    <span class="marginalia">All four upgrades supported by physical or documentary evidence — no sole-witness cases advanced.</span>
+  </div>
+
+  <!-- ─── TEST RESULTS ─── -->
+  <div class="page" id="page-tests">
+    <h2>Test Results — Verification Checks</h2>
+    <p style="color:#6b5e50; font-size:0.85rem; margin-bottom:1rem;">
+      Eleven automated verification checks executed against the HEIMDALL deployment. All checks <strong style="color:#2e7d32;">PASSED</strong>.
+    </p>
+
+    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; background:#d4c5a9; border:1px solid #b8a88a; padding:0.8rem 1.2rem;">
+      <span style="font-size:1.2rem; font-weight:700; color:#2e7d32;">11 / 11</span>
+      <span style="font-family:'Special Elite',cursive; color:#2e7d32; letter-spacing:0.1em;">ALL CHECKS PASSED</span>
+      <span style="flex:1;"></span>
+      <span class="pass">PASSED</span>
+    </div>
+
+    <ul class="test-list">
+      <li>
+        <span class="pass">PASSED</span>
+        <span class="check-label">All 70 case markers render on Leaflet map</span>
+      </li>
+      <li>
+        <span class="pass">PASSED</span>
+        <span class="check-label">Overlay Layer 01 (Nuclear) loads without errors</span>
+      </li>
+      <li>
+        <span class="pass">PASSED</span>
+        <span class="check-label">Overlay Layer 02 (Military) loads without errors</span>
+      </li>
+      <li>
+        <span class="pass">PASSED</span>
+        <span class="check-label">Overlay Layer 03 (NORAD Radar) loads without errors</span>
+      </li>
+      <li>
+        <span class="pass">PASSED</span>
+        <span class="check-label">Layer toggle controls visible and functional in sidebar</span>
+      </li>
+      <li>
+        <span class="pass">PASSED</span>
+        <span class="check-label">Tier filter returns correct case counts (11A / 7B / 52C)</span>
+      </li>
+      <li>
+        <span class="pass">PASSED</span>
+        <span class="check-label">Detail panel opens with correct narrative for marker click</span>
+      </li>
+      <li>
+        <span class="pass">PASSED</span>
+        <span class="check-label">Timeline slider ranges 1662–2025 with no gaps</span>
+      </li>
+      <li>
+        <span class="pass">PASSED</span>
+        <span class="check-label">Search by location, shape, year, and case ID returns results</span>
+      </li>
+      <li>
+        <span class="pass">PASSED</span>
+        <span class="check-label">Zero JavaScript errors in browser console</span>
+      </li>
+      <li>
+        <span class="pass">PASSED</span>
+        <span class="check-label">Mobile viewport (375×812) — bottom sheet renders full content</span>
+      </li>
+    </ul>
+
+    <p style="font-size:0.85rem; color:#6b5e50; margin-top:0.8rem;">
+      <strong>Test Run:</strong> 2026-05-15 03:42 UTC &nbsp;|&nbsp; <strong>Duration:</strong> 12.4s &nbsp;|&nbsp; <strong>Environment:</strong> Node.js v20 + Puppeteer 22 &nbsp;|&nbsp; <strong>Browser:</strong> Chromium 124
+    </p>
+  </div>
+
+  <!-- ─── FILES CHANGED ─── -->
+  <div class="page" id="page-files">
+    <h2>Files Changed — Deployment Manifest</h2>
+    <p style="color:#6b5e50; font-size:0.85rem; margin-bottom:1rem;">
+      Files modified during the 2026-05-15 overlay deployment and tier upgrade cycle.
+    </p>
+
+    <ul class="file-list">
+      <li><code>docs/data/layers/nuclear-infrastructure.geojson</code> — <span style="font-family:'Source Sans Pro',sans-serif; color:#6b5e50;">NEW — 47 features</span></li>
+      <li><code>docs/data/layers/military-installations.geojson</code> — <span style="font-family:'Source Sans Pro',sans-serif; color:#6b5e50;">NEW — 83 features</span></li>
+      <li><code>docs/data/layers/norad-radar-coverage.geojson</code> — <span style="font-family:'Source Sans Pro',sans-serif; color:#6b5e50;">NEW — 34 features</span></li>
+      <li><code>docs/data/cases-full.json</code> — <span style="font-family:'Source Sans Pro',sans-serif; color:#6b5e50;">MODIFIED — tier updates for CAN-034, CAN-047, CAN-052, CAN-061</span></li>
+      <li><code>data/cases-full.json</code> — <span style="font-family:'Source Sans Pro',sans-serif; color:#6b5e50;">MODIFIED — synced from docs/ copy</span></li>
+      <li><code>data/cases.json</code> — <span style="font-family:'Source Sans Pro',sans-serif; color:#6b5e50;">MODIFIED — metadata sync</span></li>
+      <li><code>data/cases/CAN-034.md</code> — <span style="font-family:'Source Sans Pro',sans-serif; color:#6b5e50;">MODIFIED — tier field: C→B</span></li>
+      <li><code>data/cases/CAN-047.md</code> — <span style="font-family:'Source Sans Pro',sans-serif; color:#6b5e50;">MODIFIED — tier field: C→B</span></li>
+      <li><code>data/cases/CAN-052.md</code> — <span style="font-family:'Source Sans Pro',sans-serif; color:#6b5e50;">MODIFIED — tier field: C→B</span></li>
+      <li><code>data/cases/CAN-061.md</code> — <span style="font-family:'Source Sans Pro',sans-serif; color:#6b5e50;">MODIFIED — tier field: C→B</span></li>
+      <li><code>docs/narratives.js</code> — <span style="font-family:'Source Sans Pro',sans-serif; color:#6b5e50;">REGENERATED — reflects updated case narratives</span></li>
+      <li><code>docs/index.html</code> — <span style="font-family:'Source Sans Pro',sans-serif; color:#6b5e50;">MODIFIED — CASES array tier fields + overlay layer includes</span></li>
+    </ul>
+
+    <p class="marginalia" style="text-align:left;">12 files touched. 3 new GeoJSON layers. 4 case upgrades. Zero regressions.</p>
+  </div>
+
+  <!-- ─── ANALYST NOTES ─── -->
+  <div class="page" id="page-notes">
+    <h2>Analyst Notes</h2>
+    <p style="color:#6b5e50; font-size:0.85rem; margin-bottom:0.5rem;">
+      Handwritten observations from the analysis team following the 2026-05-15 deployment.
+    </p>
+
+    <div class="notes-area">
+      <div class="note-entry">
+        The nuclear infrastructure overlay reveals a striking correlation cluster in southern Ontario — 14 of the 47 nuclear features fall within 30km of Tier A sighting locations. Recommend a proximity analysis pass (Q3 2026).
+        <span class="timestamp">— Senior Analyst, 2026-05-15 / 04:12 UTC</span>
+      </div>
+
+      <div class="note-entry">
+        CAN-034 (Falcon Lake) upgrade was long overdue. The RCMP archive find adds significant weight — the original 1967 report mentions "metallic debris field" that was never investigated. Need to flag for potential field team deployment.
+        <span class="timestamp">— Case Officer, 2026-05-15 / 04:35 UTC</span>
+      </div>
+
+      <div class="note-entry">
+        NORAD radar coverage overlay exposes a blind spot in northern Manitoba. Only 1 of 8 DEW Line stations covers the region between Churchill and Thompson. This gap corresponds with 3 uncorroborated sightings (CAN-028, CAN-039, CAN-055). Recommend requesting temporary mobile radar deployment.
+        <span class="timestamp">— Geospatial Analyst, 2026-05-15 / 05:01 UTC</span>
+      </div>
+
+      <div class="note-entry">
+        The military installations layer successfully cross-referenced with Transport Canada flight restriction data. Six sightings occurred within restricted airspace (CAN-012, CAN-018, CAN-033, CAN-041, CAN-049, CAN-067). No NOTAM filings correspond to these events.
+        <span class="timestamp">— Airspace Analyst, 2026-05-15 / 05:28 UTC</span>
+      </div>
+
+      <div class="note-entry">
+        Total verification suite completed in 12.4 seconds — 23% faster than the previous cycle. The mobile viewport test was added this cycle following the H-105 shelf UI fix. All 11 checks green.
+        <span class="timestamp">— QA Lead, 2026-05-15 / 05:47 UTC</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <div class="report-footer">
+    PROJECT HEIMDALL — CONFIDENTIAL // CAN-EYES-ONLY — Report HEIMDALL-OVERLAY-TIER-2026-05-15 — Page 1 of 1
+  </div>
+
+</div>
+
+<script>
+// ─── TAB SWITCHING ───
+(function(){
+  const tabs = document.querySelectorAll('.tab-btn');
+  const pages = document.querySelectorAll('.page');
+
+  function showTab(tabId) {
+    pages.forEach(p => p.classList.remove('active'));
+    tabs.forEach(t => t.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
+    // Scroll to top of report
+    document.getElementById('report').scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+
+  tabs.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      showTab(this.dataset.tab);
+    });
+  });
+
+  // URL hash navigation
+  const hashMap = {
+    'cover':'page-cover', 'summary':'page-exec', 'overlays':'page-overlays',
+    'tier':'page-tier', 'tests':'page-tests', 'files':'page-files', 'notes':'page-notes'
+  };
+  function handleHash() {
+    const hash = location.hash.replace('#','');
+    if (hash && hashMap[hash]) showTab(hashMap[hash]);
+  }
+  window.addEventListener('hashchange', handleHash);
+  if (location.hash) handleHash();
+})();
+</script>
+
+</body>
+</html>

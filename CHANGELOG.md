@@ -1,5 +1,20 @@
 # CHANGELOG — Project HEIMDALL
 
+## [2026-05-15] v2.0 — Map Overlays + Tier Upgrades
+
+- **Feat: Toggle-able map overlays** — Three Leaflet layer groups added via `initOverlays()`:
+  - ☢️ Nuclear Facilities (13 points: plants, mines, labs) — red circle markers
+  - ⚔️ Military Bases (25 points: CFBs, DND, radar) — blue circle markers
+  - 📡 NORAD Radar (4 radar lines + 23 stations) — green dashed lines + circle markers
+- JSON files at docs/data/layers/ — loaded async via fetch, error-tolerant
+- Layer control positioned bottom-left, popups show name/type/province
+- **Feat: Tier upgrades (C→B)** — 4 cases upgraded:
+  - CAN-059 North York Flashing Lights (10 witnesses, police video)
+  - CAN-061 Terrace Hotspot (25 reports, highest per-capita)
+  - CAN-066 Harbour Mille Follow-Up (RCMP, linked to CAN-045)
+  - CAN-070 Yellowknife Modern (DND tracking, modern 2022)
+- Tier distribution: 11 A + 7 B + 52 C (70 total)
+
 ## [2026-05-14] v1.10 — Media Enrichment Phase 3
 
 - **Feat: Media collection phase 3 (Night Ops)** — Added 21 media files across 16 cases. Total cases with media: 37/56 (up from 21).

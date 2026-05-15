@@ -6,18 +6,18 @@ This file provides instructions for AI agents working on Project HEIMDALL. Load 
 
 ## Project Overview
 
-Project HEIMDALL is an interactive Leaflet.js map + classified-aesthetic archive of 56 Canadian UFO sightings (1662-2025). Deployed to GitHub Pages from the `docs/` folder. Single-page application, no build step, no frameworks.
+Project HEIMDALL is an interactive Leaflet.js map + classified-aesthetic archive of 70 Canadian UFO sightings (1662-2025). Deployed to GitHub Pages from the `docs/` folder. Single-page application, no build step, no frameworks.
 
 **Live site:** https://bayarddevries.github.io/project-heimdall/
 **Repo:** github.com/Bayarddevries/project-heimdall
-**Current version:** V5 — 56 cases, v1.9 deployed
+**Current version:** V5 — 70 cases, v2.0 deployed
 
 ---
 
 ## Critical Architecture Facts
 
 ### Data Flow
-1. Case narratives live in `data/cases/*.md` (56 files, CAN-001.md to CAN-056.md)
+1. Case narratives live in `data/cases/*.md` (70 files, CAN-001.md to CAN-070.md)
 2. Each .md file has YAML frontmatter + markdown body
 3. `docs/narratives.js` is a pre-generated JS object: `var NARRATIVES = {"CAN-001": "...", ...}`
 4. `docs/index.html` has a hardcoded `CASES` array for map metadata
@@ -126,7 +126,7 @@ The backup is stored in `scripts/media_backup.json`. Run `python3 scripts/restor
 
 Agents must verify:
 1. Map loads without errors in the browser console
-2. ALL 56 markers render on the map
+2. ALL 70 markers render on the map
 3. Sidebar shows all cases
 4. Clicking a marker opens the detail panel with narrative content
 5. Clicking a sidebar item opens the same detail panel
@@ -141,18 +141,19 @@ Agents must verify:
 
 | File | Purpose |
 |------|---------|
-| `docs/index.html` | Main app (all HTML/CSS/JS, ~2920 lines) |
-| `docs/narratives.js` | Embedded case narratives (generated, ~44KB) |
-| `data/cases/*.md` | Source markdown case files (56 files) |
-| `data/cases.json` | Metadata JSON (synced with CASES array) |
-| `data/cases-v5-master.json` | Full case data — master JSON (56 cases, 61 fields) |
-| `data/cases-full.json` | Full case data — root copy (sync to docs/) |
-| `docs/data/cases-full.json` | Full case data — served copy (GitHub Pages) |
-| `data/canadian_ufo_sightings_v5.csv` | Extended source CSV (56 rows) — ground truth |
-| `scripts/rebuild_v5.py` | CSV → master JSON pipeline |
-| `scripts/regenerate_markdown.py` | Master JSON → markdown files |
-| `scripts/generate_frontend.py` | Markdown → frontend assets |
-| `.github/workflows/regenerate.yml` | CI/CD — auto-runs pipeline on push |
+|| `docs/index.html` | Main app (all HTML/CSS/JS, ~3500 lines) |
+|| `docs/narratives.js` | Embedded case narratives (generated, ~57KB) |
+|| `data/cases/*.md` | Source markdown case files (70 files) |
+|| `data/cases.json` | Metadata JSON (synced with CASES array) |
+|| `data/cases-v5-master.json` | Full case data — master JSON (70 cases, 61 fields) |
+|| `data/cases-full.json` | Full case data — root copy (sync to docs/) |
+|| `docs/data/cases-full.json` | Full case data — served copy (GitHub Pages) |
+|| `data/canadian_ufo_sightings_v5.csv` | Extended source CSV (70 rows) — ground truth |
+|| `scripts/rebuild_v5.py` | CSV → master JSON pipeline |
+|| `scripts/regenerate_markdown.py` | Master JSON → markdown files |
+|| `scripts/generate_frontend.py` | Markdown → frontend assets |
+|| `.github/workflows/regenerate.yml` | CI/CD — auto-runs pipeline on push |
+|| `docs/data/layers/*.json` | 3 overlay GeoJSON files (nuclear, military, NORAD radar) |
 
 ---
 
@@ -238,5 +239,24 @@ The following CSS classes were added/refined in `docs/index.html`:
 ---
 
 ## Owner
+
+## v2.0 Features (Deployed 2026-05-15)
+
+| ID | Feature | Details |
+|----|---------|---------|
+| H-XXX | Map overlays | 3 toggle-able Leaflet layers: nuclear plants (red), military bases (blue), NORAD radar (green). Loaded via `initOverlays()` in `docs/index.html`. GeoJSON files in `docs/data/layers/`. Layer control at bottom-left. |
+| H-XXX | Tier upgrades | 4 cases C→B: CAN-059 North York, CAN-061 Terrace, CAN-066 Harbour Mille, CAN-070 Yellowknife. Now 11A + 7B + 52C. |
+
+## Map Overlay Layer Architecture
+
+Three GeoJSON overlay files in `docs/data/layers/` loaded asynchronously by `initOverlays()` in `docs/index.html`:
+
+| Layer | File | Features | Style | Color |
+|-------|------|----------|-------|-------|
+| ☢️ Nuclear Facilities | `nuclear_plants.json` | 13 points (plants, mines, labs) | circleMarker r=10 | Red (#c41e3a) |
+| ⚔️ Military Bases | `military_bases.json` | 25 points (CFBs, DND, signals) | circleMarker r=8 | Blue (#2d4a6a) |
+| 📡 NORAD Radar | `norad_radar.json` | 4 radar lines + 23 stations | circleMarker r=7 + dashed polylines | Green (#2d6a4f) |
+
+All layers: loaded via fetch() with error tolerance, popup on click shows name/type/province. Layer control positioned bottom-left. Compatible with Night Ops (dark mode).
 
 Created by Bayard deVries. Part of the Bayarddevries GitHub organization. Deployed at bayarddevries.github.io/project-heimdall.
