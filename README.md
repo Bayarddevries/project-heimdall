@@ -1,6 +1,6 @@
 # PROJECT HEIMDALL — Canadian UFO Sightings Archive
 
-An interactive, classified-aesthetic Leaflet.js map and archive of 56 documented Canadian UFO sightings spanning 1662 to 2025.
+An interactive, classified-aesthetic Leaflet.js map and archive of 70 documented Canadian UFO sightings spanning 1662 to 2025.
 
 **Live site:** https://bayarddevries.github.io/project-heimdall/
 
@@ -16,20 +16,20 @@ The visual aesthetic evokes declassified government files: paper grain textures,
 
 | Metric | Count |
 |--------|-------|
-|| Total Cases | 56 ||
+||| Total Cases | 70 ||
 || Time Span | 1662-2025 (364 years) ||
-|| Tier A (Priority) | 10 ||
-|| Tier B (Moderate) | 1 ||
-|| Tier C (Routine) | 45 ||
+||| Tier A (Priority) | 11 ||
+||| Tier B (Moderate) | 7 ||
+||| Tier C (Routine) | 50 ||
 || CE1 Encounters | 13 ||
 || CE2 Encounters | 7 ||
 || CE3 Encounters | 5 ||
 || CE4 Encounters | 1 ||
-|| Case File Narratives | 56/56 (complete) ||
+||| Case File Narratives | 70/70 (complete) ||
 
 ## Features
 
-- **Interactive Leaflet map** — 56 geolocated markers across Canadian territory
+- **Interactive Leaflet map** — 70 geolocated markers across Canadian territory
 - **Timeline slider** — filter cases by year range (1662 to 2025)
 - **Sidebar case list** — sortable, filterable by tier (A/B/C) and encounter type (CE1-CE4, CE2, CE3, CE4, DD, NL, RV)
 - **Detail panel** — right-side case file viewer with full markdown narrative, classification data, evidence, and source citations
@@ -43,12 +43,12 @@ The visual aesthetic evokes declassified government files: paper grain textures,
 project-heimdall/
 ├── docs/                    # GitHub Pages root (deployed from docs/ folder)
 │   ├── index.html          # Single-page app: map, sidebar, detail panel, all JS
-│   └── narratives.js       # All 54 case narratives as JS object (267KB)
+|   ├── narratives.js       # All 70 case narratives as JS object (57KB)
 ├── data/
 │   ├── raw_sightings.csv   # Original 50-row source CSV
-│   ├── cases.json          # Metadata JSON (54 entries, sync with index.html CASES array)
+|   ├── cases.json          # Metadata JSON (70 entries, sync with index.html CASES array)
 │   ├── cases-all.json      # Full case data with YAML frontmatter metadata
-│   ├── cases/              # 54 individual markdown case files (CAN-001.md to CAN-054.md)
+|   ├── cases/              # 70 individual markdown case files (CAN-001.md to CAN-070.md)
 │   ├── research_needs.json # Structured research gap tracking per case
 │   └── research_tasks.txt  # Research task queue
 ├── src/
