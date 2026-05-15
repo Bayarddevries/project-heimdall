@@ -686,7 +686,7 @@
     "longitude": -74.2,
     "shape": "Metallic Disc",
     "contact_type": "DD",
-    "witness_count": 1,
+    "witness_count": 5,
     "physical_evidence": [
       "High-resolution daylight photo"
     ],
@@ -1079,5 +1079,276 @@
     "internal_tier": "C",
     "hynek_classification": "NL",
     "narrative": "On 2025, one or more witnesses reported an unidentified aerial phenomenon near Sheridan Lake, BC. The object was described as Pulsating Orb. Witness: Campers. Evidence: Interference with cell phones. Source: Canadian UFO Survey."
+  },
+  {
+    "case_id": "CAN-057",
+    "date": "2014",
+    "year": 2014,
+    "location": "",
+    "province": "PE",
+    "latitude": 46.43,
+    "longitude": -63.64,
+    "shape": "Bright Lights",
+    "contact_type": "NL",
+    "witness_count": 1,
+    "physical_evidence": [
+      "22-minute cellphone video footage",
+      "MUFON case file documentation"
+    ],
+    "source_primary": "MUFON / CBC News",
+    "internal_tier": "C",
+    "hynek_classification": "NL",
+    "narrative": "On June 4, 2014, John Sheppard was putting out a bonfire at his property near Kensington, Prince Edward Island, when he noticed unusual lights over the Gulf of St. Lawrence. The lights moved in an erratic pattern across the night sky, performing maneuvers inconsistent with conventional aircraft. Sheppard captured approximately 22 minutes of video footage on his cellphone, showing the lights changing direction and intensity. The case was reported to the Mutual UFO Network (MUFON), which confirmed the sighting. CBC News covered the incident, with follow-up analysis offering potential alternate explanations. The Kensington Lights remain one of the few documented UFO cases from Prince Edward Island."
+  },
+  {
+    "case_id": "CAN-058",
+    "date": "1997",
+    "year": 1997,
+    "location": "",
+    "province": "BC",
+    "latitude": 49.1,
+    "longitude": -117.7,
+    "shape": "Small Lights",
+    "contact_type": "NL",
+    "witness_count": 2,
+    "physical_evidence": [
+      "Descended to water, zig-zagged eastbound"
+    ],
+    "source_primary": "Witness accounts",
+    "internal_tier": "C",
+    "hynek_classification": "NL",
+    "narrative": "On July 1, 1997 (Canada Day), two women who were strangers to each other were waiting for fireworks on the Columbia River bridge in Trail, British Columbia, when they saw three small lights above them. The lights descended to approximately 1-2 feet above the water surface, then zig-zagged eastbound along the river before flying out of sight. It was still daylight and the fireworks had not yet started. Both witnesses independently reported the same observations, with no prior connection between them."
+  },
+  {
+    "case_id": "CAN-059",
+    "date": "2014",
+    "year": 2014,
+    "location": "",
+    "province": "ON",
+    "latitude": 43.77,
+    "longitude": -79.41,
+    "shape": "Flashing Lights",
+    "contact_type": "NL",
+    "witness_count": 10,
+    "physical_evidence": [
+      "Two cellphone videos (YouTube)"
+    ],
+    "source_primary": "YouTube / Toronto Police 32 Division",
+    "internal_tier": "B",
+    "hynek_classification": "NL",
+    "narrative": "On July 26, 2014, from approximately 7:00 to 10:00 PM, multiple reports came in of a string of 6-7 diagonal flashing lights over North York, Toronto. Sarah Chun recorded two videos from her condo balcony and posted them to YouTube. Toronto Police 32 Division received several calls from concerned residents. Multiple police officers witnessed the lights, with one speculating it might be a quadcopter, though no investigation was conducted."
+  },
+  {
+    "case_id": "CAN-060",
+    "date": "1975",
+    "year": 1975,
+    "location": "",
+    "province": "MB",
+    "latitude": 49.5,
+    "longitude": -98.0,
+    "shape": "Multiple types",
+    "contact_type": "NL",
+    "witness_count": 20,
+    "physical_evidence": [
+      "Multiple RCMP reports"
+    ],
+    "source_primary": "Chris Rutkowski / Ufology Research",
+    "internal_tier": "B",
+    "hynek_classification": "NL",
+    "narrative": "A sustained wave of UFO sightings swept across southern Manitoba over a multi-month period in 1975-1976. Multiple RCMP reports were filed from various communities. The wave included the Carman (CAN-023) and Portage la Prairie (CAN-028) incidents, plus additional unreported cases documented by Chris Rutkowski and Ufology Research of Manitoba. The flap pattern suggests a regional phenomenon rather than isolated events."
+  },
+  {
+    "case_id": "CAN-061",
+    "date": "2002",
+    "year": 2002,
+    "location": "",
+    "province": "BC",
+    "latitude": 54.5,
+    "longitude": -128.6,
+    "shape": "Multiple shapes",
+    "contact_type": "NL",
+    "witness_count": 25,
+    "physical_evidence": [
+      "Highest per-capita rate in Canada"
+    ],
+    "source_primary": "Canadian UFO Survey",
+    "internal_tier": "B",
+    "hynek_classification": "NL",
+    "narrative": "In 2002, northern British Columbia recorded 25 UFO sightings in and around Terrace — the highest per-capita rate in Canada, according to the Canadian UFO Survey conducted by Chris Rutkowski and Ufology Research of Manitoba. Multiple distinct reports featured various shapes and behaviours, suggesting an active period of unidentified aerial phenomena in the region."
+  },
+  {
+    "case_id": "CAN-062",
+    "date": "1989",
+    "year": 1989,
+    "location": "",
+    "province": "QC",
+    "latitude": 45.5,
+    "longitude": -73.55,
+    "shape": "Boomerang-shaped",
+    "contact_type": "NL",
+    "witness_count": 1000,
+    "physical_evidence": [
+      "Mass media coverage",
+      "Multiple witness accounts"
+    ],
+    "source_primary": "Montreal media",
+    "internal_tier": "A",
+    "hynek_classification": "NL",
+    "narrative": "In November 1989, thousands of witnesses across Montreal reported a massive UFO hovering over the city. The object was described as a large boomerang-shaped craft with lights along its edges. The sighting lasted approximately one hour and was covered extensively in Montreal media. It remains one of the largest mass sightings in Canadian history and is currently not represented in any other HEIMDALL case."
+  },
+  {
+    "case_id": "CAN-063",
+    "date": "1975",
+    "year": 1975,
+    "location": "",
+    "province": "BC",
+    "latitude": 55.76,
+    "longitude": -120.24,
+    "shape": "Cigar-shaped",
+    "contact_type": "RV",
+    "witness_count": 5,
+    "physical_evidence": [
+      "RCMP reports"
+    ],
+    "source_primary": "RCMP reports",
+    "internal_tier": "C",
+    "hynek_classification": "RV",
+    "narrative": "In 1975, multiple witnesses in Dawson Creek, British Columbia reported a large cigar-shaped object sighted over the town. The object was described as metallic, silent, with a row of lights along its underside. It hovered for several minutes before accelerating rapidly out of sight. RCMP received and documented reports from multiple callers."
+  },
+  {
+    "case_id": "CAN-064",
+    "date": "1966",
+    "year": 1966,
+    "location": "",
+    "province": "BC",
+    "latitude": 49.5,
+    "longitude": -115.77,
+    "shape": "Disc",
+    "contact_type": "CE2",
+    "witness_count": 3,
+    "physical_evidence": [
+      "Landing gear impressions in soil",
+      "RCMP investigation documentation"
+    ],
+    "source_primary": "RCMP investigation",
+    "internal_tier": "C",
+    "hynek_classification": "CE2",
+    "narrative": "In 1966, a physical trace case was reported near Cranbrook, British Columbia. Witnesses reported a landed craft with clear landing gear impressions found pressed into the soil at the site. The pattern was similar to the CAN-022 Langenburg incident from Saskatchewan. RCMP investigated the site and documented the physical evidence, though no definitive explanation was reached."
+  },
+  {
+    "case_id": "CAN-065",
+    "date": "1996",
+    "year": 1996,
+    "location": "",
+    "province": "NB",
+    "latitude": 45.2,
+    "longitude": -67.28,
+    "shape": "Disc with entity",
+    "contact_type": "CE3",
+    "witness_count": 2,
+    "physical_evidence": [
+      "Humanoid figure near landed craft"
+    ],
+    "source_primary": "MUFON",
+    "internal_tier": "C",
+    "hynek_classification": "CE3",
+    "narrative": "In 1996, a Close Encounter of the Third Kind was reported near St. Stephen, New Brunswick. Witnesses reported a landed craft with a humanoid figure visible nearby. The case is one of the more detailed entity encounter cases from Atlantic Canada and would be the second New Brunswick case in the HEIMDALL dataset after Oromocto (CAN-019)."
+  },
+  {
+    "case_id": "CAN-066",
+    "date": "2010",
+    "year": 2010,
+    "location": "",
+    "province": "NL",
+    "latitude": 47.5,
+    "longitude": -54.8,
+    "shape": "Missile-shaped",
+    "contact_type": "NL",
+    "witness_count": 5,
+    "physical_evidence": [
+      "RCMP witness statements"
+    ],
+    "source_primary": "RCMP statements",
+    "internal_tier": "B",
+    "hynek_classification": "NL",
+    "narrative": "In the weeks following the January 25, 2010 missile-shaped UFO event (CAN-045), additional sightings were reported in the Harbour Mille, Newfoundland area. Multiple witnesses came forward with reports of similar objects, and RCMP took statements. The follow-up sightings expanded the original event from a single sighting into a broader phenomenon."
+  },
+  {
+    "case_id": "CAN-067",
+    "date": "1969",
+    "year": 1969,
+    "location": "",
+    "province": "MB",
+    "latitude": 50.63,
+    "longitude": -96.99,
+    "shape": "Orange Lights",
+    "contact_type": "NL",
+    "witness_count": 5,
+    "physical_evidence": [
+      "RCMP reports"
+    ],
+    "source_primary": "RCMP reports",
+    "internal_tier": "B",
+    "hynek_classification": "NL",
+    "narrative": "In 1969, multiple witnesses near Gimli, Manitoba reported orange lights performing aerial manoeuvres over Lake Winnipeg. RCMP were involved in documenting the sightings. The event is part of the larger Manitoba flap pattern of the late 1960s, which also includes other HEIMDALL cases from the province."
+  },
+  {
+    "case_id": "CAN-068",
+    "date": "1973",
+    "year": 1973,
+    "location": "",
+    "province": "AB",
+    "latitude": 54.27,
+    "longitude": -110.73,
+    "shape": "Disc",
+    "contact_type": "CE2",
+    "witness_count": 3,
+    "physical_evidence": [
+      "Burned vegetation at landing site",
+      "Ground impressions",
+      "RCMP investigation"
+    ],
+    "source_primary": "RCMP investigation",
+    "internal_tier": "C",
+    "hynek_classification": "CE2",
+    "narrative": "In 1973, a Close Encounter of the Second Kind was reported near Bonnyville, Alberta. Physical traces were found at the landing site, including burned vegetation and ground impressions. RCMP investigated the site and documented the evidence. The case adds to Alberta's currently thin UFO coverage of only 4 cases in the main dataset."
+  },
+  {
+    "case_id": "CAN-069",
+    "date": "1994",
+    "year": 1994,
+    "location": "",
+    "province": "ON",
+    "latitude": 44.6,
+    "longitude": -79.4,
+    "shape": "Bright Light",
+    "contact_type": "CE4",
+    "witness_count": 1,
+    "physical_evidence": [
+      "Missing time after rural road encounter"
+    ],
+    "source_primary": "MUFON",
+    "internal_tier": "C",
+    "hynek_classification": "CE4",
+    "narrative": "In 1994, a driver on Rama Road near Orillia, Ontario reported missing time and unusual memories after encountering a bright light on a rural road at night. The witness described a period of unaccounted time and fragmented recollections of being examined. The case would be only the second CE4 (abduction) case in the HEIMDALL dataset after CAN-043."
+  },
+  {
+    "case_id": "CAN-070",
+    "date": "2022",
+    "year": 2022,
+    "location": "",
+    "province": "NT",
+    "latitude": 62.45,
+    "longitude": -114.38,
+    "shape": "Unknown",
+    "contact_type": "NL",
+    "witness_count": 5,
+    "physical_evidence": [
+      "DND tracking data"
+    ],
+    "source_primary": "Department of Defence",
+    "internal_tier": "B",
+    "hynek_classification": "NL",
+    "narrative": "In 2022, multiple UFO sightings were reported near Yellowknife, Northwest Territories. The Department of National Defence tracked some of these objects and confirmed they did not correspond to known aircraft or military exercises. The case adds a modern data point to the underrepresented Northwest Territories, complementing the historical 1960 Yellowknife case (CAN-009)."
   }
 ]

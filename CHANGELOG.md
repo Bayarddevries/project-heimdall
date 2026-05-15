@@ -1,5 +1,28 @@
 # CHANGELOG — Project HEIMDALL
 
+## [2026-05-15] v2.0 — Map Overlays + Tier Upgrades
+
+- **Feat: Toggle-able map overlays** — Three Leaflet layer groups added via `initOverlays()`:
+  - ☢️ Nuclear Facilities (13 points: plants, mines, labs) — red circle markers
+  - ⚔️ Military Bases (25 points: CFBs, DND, radar) — blue circle markers
+  - 📡 NORAD Radar (4 radar lines + 23 stations) — green dashed lines + circle markers
+- JSON files at docs/data/layers/ — loaded async via fetch, error-tolerant
+- Layer control positioned bottom-left, popups show name/type/province
+- **Feat: Tier upgrades (C→B)** — 4 cases upgraded:
+  - CAN-059 North York Flashing Lights (10 witnesses, police video)
+  - CAN-061 Terrace Hotspot (25 reports, highest per-capita)
+  - CAN-066 Harbour Mille Follow-Up (RCMP, linked to CAN-045)
+  - CAN-070 Yellowknife Modern (DND tracking, modern 2022)
+- Tier distribution: 11 A + 7 B + 52 C (70 total)
+
+## [2026-05-14] v1.10 — Media Enrichment Phase 3
+
+- **Feat: Media collection phase 3 (Night Ops)** — Added 21 media files across 16 cases. Total cases with media: 37/56 (up from 21).
+- New location photos for CAN-015 (4x St. Paul UFO pad), CAN-017 (Prince George), CAN-021 (Granby), CAN-022 (Langenburg), CAN-023 (Carman 1908 historical), CAN-024 (Montreal), CAN-031 (Kelowna), CAN-033 (Shelburne), CAN-034 (Montreal), CAN-035 (Diefenbunker), CAN-042 (Mont Saint-Hilaire), CAN-047 (Hamilton), CAN-048 (Vancouver), CAN-049 (Oshawa), CAN-050 (Calgary), CAN-053 (Sudbury)
+- Added Project Blue Book reports (US Gov, public domain) for CAN-008 (Ramore/Clan Lake) and CAN-017 (Prince George)
+- **Fix: Pipeline media_urls preservation** — Created `scripts/restore_media.py` to restore media_urls after pipeline runs. Updated AGENTS.md with documentation.
+- **19 cases remain** without media (mostly remote locations / small towns without Wikipedia presence)
+
 ## [2026-05-15] v1.9 — Media Collection, CI/CD
 
 - **Feat: Media collection phase 2 (H-055)** — Added images for 8 new cases (CAN-001, CAN-003, CAN-006, CAN-010, CAN-014, CAN-016, CAN-020, CAN-032). Total: 18 cases with media, 32 image files. Removed 264MB PDF that exceeded GitHub's file size limit.

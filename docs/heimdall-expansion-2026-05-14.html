@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HEIMDALL — Expansion Planning Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Source+Sans+Pro:wght@300;400;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #2c2418;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #3a2e24;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .folder-cover {
+    max-width: 1000px;
+    width: 100%;
+    background: #d4c5a9;
+    padding: 48px 40px;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
+    position: relative;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(139,94,60,0.03) 2px, rgba(139,94,60,0.03) 4px),
+      radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.15) 0%, transparent 70%);
+  }
+  .folder-cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 120px, rgba(139,94,60,0.06) 120px, rgba(139,94,60,0.06) 121px);
+    pointer-events: none;
+  }
+  .stamp {
+    display: inline-block;
+    font-family: 'Special Elite', monospace;
+    color: #8b2020;
+    border: 3px solid #8b2020;
+    padding: 6px 16px;
+    font-size: 14px;
+    letter-spacing: 3px;
+    transform: rotate(-3deg);
+    margin-bottom: 16px;
+    background: rgba(196,30,58,0.04);
+  }
+  h1 {
+    font-family: 'Special Elite', monospace;
+    font-size: 28px;
+    color: #3a2e24;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: #6b5e50;
+    font-weight: 400;
+    margin-bottom: 24px;
+  }
+  .meta {
+    font-size: 13px;
+    color: #6b5e50;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #b8a88a;
+    margin-bottom: 24px;
+  }
+  .section {
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .fc-h3 {
+    font-family: 'Special Elite', monospace;
+    font-size: 16px;
+    color: #3a2e24;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 0 8px 28px;
+    position: relative;
+    border-bottom: 1px solid #b8a88a;
+    margin-bottom: 16px;
+  }
+  .fc-h3::before {
+    content: ''; position: absolute; left: 4px; top: 50%; transform: translateY(-50%);
+    width: 18px; height: 24px;
+    background: linear-gradient(135deg, #888, #ccc 30%, #999 50%, #ddd 70%, #888);
+    border-radius: 2px; box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  }
+  .fc-h3::after {
+    content: ''; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+    width: 6px; height: 14px;
+    background: linear-gradient(180deg, #666, #999);
+    border-radius: 1px; box-shadow: inset 0 1px 1px rgba(255,255,255,0.3);
+  }
+
+  .case-card {
+    background: rgba(255,255,255,0.25);
+    border: 1px solid #c9ba9d;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .case-card h4 {
+    font-family: 'Special Elite', monospace;
+    font-size: 15px;
+    color: #6b2fa0;
+    margin-bottom: 6px;
+  }
+  .case-card .pill {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px;
+    border-radius: 2px; margin: 2px 4px 2px 0;
+  }
+  .pill-pei { background: #2d6a4f; color: #fff; }
+  .pill-bc { background: #2d4a6a; color: #fff; }
+  .pill-on { background: #6b5e50; color: #fff; }
+  .pill-mb { background: #d4a843; color: #3a2e24; }
+  .pill-qc { background: #6b2fa0; color: #fff; }
+  .pill-ab { background: #d48a43; color: #3a2e24; }
+  .pill-sk { background: #8b5e3c; color: #fff; }
+  .pill-nb { background: #5a7a5a; color: #fff; }
+  .pill-nl { background: #3a6a8a; color: #fff; }
+  .pill-nt { background: #8a6a3a; color: #fff; }
+  .pill-tier-a { background: #c41e3a; color: #fff; }
+  .pill-tier-b { background: #6b2fa0; color: #fff; }
+  .pill-tier-c { background: #6b5e50; color: #fff; }
+  .case-card p { font-size: 13px; line-height: 1.5; margin: 4px 0; color: #4a3e34; }
+  .case-card .meta-line { font-size: 12px; color: #6b5e50; margin-top: 6px; }
+
+  .layer-grid {
+    display: grid; grid-template-columns: 1fr 2fr 80px;
+    font-size: 13px; border: 1px solid #b8a88a;
+  }
+  .layer-header {
+    background: rgba(139,94,60,0.12); font-family: 'Special Elite', monospace;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 1px;
+    padding: 8px 10px; border-bottom: 2px solid #b8a88a; color: #6b5e50;
+  }
+  .layer-row > div {
+    padding: 8px 10px; border-bottom: 1px solid #c9ba9d;
+  }
+  .layer-row:nth-child(even) .layer-cell {
+    background: rgba(255,255,255,0.1);
+  }
+  .tier-1 { color: #c41e3a; font-weight: 600; }
+  .tier-2 { color: #6b2fa0; font-weight: 600; }
+  .tier-3 { color: #6b5e50; }
+
+  .agent-note {
+    background: rgba(255,255,240,0.3); border-left: 3px dashed #8b2020;
+    padding: 16px; position: relative;
+  }
+  .agent-note::before {
+    content: '\u270E'; position: absolute; top: 8px; right: 12px;
+    font-size: 20px; color: rgba(139,30,30,0.15);
+  }
+  .agent-note li {
+    padding: 3px 0 3px 16px; position: relative; font-size: 14px;
+  }
+  .agent-note li::before { content: '\u2022'; position: absolute; left: 4px; color: #8b2020; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .col-card {
+    background: rgba(255,255,255,0.2); border: 1px solid #c9ba9d; padding: 14px;
+  }
+  .col-card h4 {
+    font-family: 'Special Elite', monospace; font-size: 12px;
+    text-transform: uppercase; color: #6b5e50; margin-bottom: 8px; letter-spacing: 1px;
+  }
+  .col-card ul { list-style: none; padding: 0; }
+  .col-card li {
+    font-size: 12px; padding: 2px 0 2px 12px; position: relative;
+  }
+  .col-card li::before { content: '> '; color: #6b5e50; position: absolute; left: 0; }
+
+  table.data { width: 100%; border-collapse: collapse; font-size: 13px; }
+  table.data th {
+    background: rgba(139,94,60,0.08); font-family: 'Special Elite', monospace;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 1px;
+    padding: 8px 10px; text-align: left; border-bottom: 2px solid #b8a88a; color: #6b5e50;
+  }
+  table.data td { padding: 8px 10px; border-bottom: 1px solid #c9ba9d; font-size: 13px; }
+
+  .gap-empty { color: #c41e3a; }
+  .number-big { font-size: 24px; font-weight: 300; color: #6b2fa0; }
+
+  @media (max-width: 600px) {
+    body { padding: 16px; }
+    .folder-cover { padding: 24px 16px; }
+    .two-col { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="folder-cover">
+  <div class="stamp">EXPANSION PLAN</div>
+  <h1>PROJECT HEIMDALL</h1>
+  <h2>Case Expansion &amp; Map Overlay Planning</h2>
+  <div class="meta">
+    <p>Date: 2026-05-14 | Compiled: Night Ops Session</p>
+    <p>Classification: CONFIDENTIAL</p>
+  </div>
+
+  <!-- SECTION 1: Current State -->
+  <div class="section">
+    <h3 class="fc-h3"><span class="staple"></span> Current Inventory</h3>
+    <p style="font-size:13px; margin-bottom:12px;"><span class="number-big">56</span> cases · <span class="number-big">13</span> provinces/territories (+5 unknown) · <span class="number-big">11</span> decades (1662–2025)</p>
+    <div class="two-col">
+      <div class="col-card">
+        <h4>Province Gaps</h4>
+        <ul>
+          <li><span class="gap-empty">●</span> PEI — <strong>0 cases</strong></li>
+          <li>SK — 2 | NB — 1 | NS — 3</li>
+          <li>AB — 4 | BC — 7 | QC — 12 | ON — 9</li>
+          <li>NU — 1 | NT — 1 | YT — 1</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h4>Decade &amp; Type Gaps</h4>
+        <ul>
+          <li>Pre-1900: 1 (1662 Jesuit)</li>
+          <li>1890s: 0 (Mystery Airship missing!)</li>
+          <li>1980s: 5 | 2000s: 5 | 2010s: 5</li>
+          <li>CE4 (abduction): only 1 case</li>
+          <li>Tier C: 45/56 — need more A/B</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: All New Case Candidates -->
+  <div class="section">
+    <h3 class="fc-h3"><span class="staple"></span> New Case Candidates — 15 Total</h3>
+    <p style="font-size:13px; margin-bottom:12px;">Cases sourced from Wikipedia, historical records, and news archives. Fills PEI, boost underrepresented provinces, add pre-1900, and capture modern 2023-25 events.</p>
+
+    <!-- TIER 1 CANDIDATES -->
+    <div class="case-card" style="border-left: 3px solid #2d6a4f;">
+      <span class="pill pill-pei">PEI</span>
+      <span class="pill pill-tier-c">Tier C</span>
+      <span style="font-size:11px; color:#2d6a4f; font-weight:600;">★ TOP PRIORITY</span>
+      <h4>CAN-057 — Kensington Lights (2014)</h4>
+      <p>June 4, 2014. John Sheppard witnessed unusual lights over the Gulf of St. Lawrence while putting out a bonfire. <strong>Captured 22 minutes of video on his cellphone.</strong> MUFON confirmed the sighting. CBC News covered it with follow-up analysis offering alternate explanations. <strong>Only PEI case.</strong></p>
+      <div class="meta-line">📍 Kensington, PEI · 🕐 Night · 🔭 NL · 📱 Cellphone video · 📰 CBC</div>
+    </div>
+
+    <div class="case-card" style="border-left: 3px solid #6b2fa0;">
+      <span class="pill pill-bc">BC</span>
+      <span class="pill pill-tier-c">Tier C</span>
+      <span style="font-size:11px; color:#6b2fa0; font-weight:600;">HIGH</span>
+      <h4>CAN-058 — Trail River Lights (1997)</h4>
+      <p>July 1, 1997 (Canada Day). Two women on the Columbia River bridge, waiting for fireworks, saw three small lights above them. The lights <strong>descended to 1-2 feet above the water, zig-zagged eastbound along the river,</strong> and flew out of sight. Still daylight — fireworks hadn't started. Two independent witnesses who were strangers to each other.</p>
+      <div class="meta-line">📍 Trail, BC · 🕐 Evening · 🔭 NL · 🌉 Columbia River · 🎆 Canada Day</div>
+    </div>
+
+    <div class="case-card" style="border-left: 3px solid #d4a843;">
+      <span class="pill pill-on">ON</span>
+      <span class="pill pill-tier-c">Tier C</span>
+      <h4>CAN-059 — North York Flashing Lights (2014)</h4>
+      <p>July 26, 2014, 7-10 PM. Multiple reports of a string of <strong>6-7 diagonal flashing lights</strong> over North York, Toronto. Sarah Chun recorded two videos from her condo balcony (posted to YouTube). Toronto Police 32 Division received several calls. <strong>Multiple police officers witnessed the lights</strong> and one speculated it was a quadcopter (but didn't investigate).</p>
+      <div class="meta-line">📍 North York (Toronto), ON · 🕐 Evening · 🔭 NL · 🎥 YouTube · 👮 Police witnesses</div>
+    </div>
+
+    <div class="case-card" style="border-left: 3px solid #d4a843;">
+      <span class="pill pill-mb">MB</span>
+      <span class="pill pill-tier-b">Tier B</span>
+      <h4>CAN-060 — Southern Manitoba Flap (1975-76)</h4>
+      <p>A sustained wave of UFO sightings across southern Manitoba over a multi-month period. Multiple RCMP reports filed. Includes the Carman (CAN-023) and Portage la Prairie (CAN-028) incidents, plus additional unreported cases. Chris Rutkowski / Ufology Research of Manitoba documented the flap extensively.</p>
+      <div class="meta-line">📍 Southern MB · 📅 Multi-month · 🔭 Multiple types · 👮 RCMP reports</div>
+    </div>
+
+    <div class="case-card" style="border-left: 3px solid #2d4a6a;">
+      <span class="pill pill-bc">BC</span>
+      <span class="pill pill-tier-c">Tier C</span>
+      <h4>CAN-061 — Terrace Hotspot (2002)</h4>
+      <p><strong>Northern BC recorded 25 UFO sightings in 2002</strong> — the highest per-capita rate in Canada according to the Canadian UFO Survey (Chris Rutkowski, Ufology Research of Manitoba). Multiple distinct reports across the year with various shapes and behaviours. Could be a composite case.</p>
+      <div class="meta-line">📍 Terrace, BC · 📊 25 reports · 📈 Highest per-capita in Canada</div>
+    </div>
+
+    <!-- Historical -->
+    <div class="case-card" style="border-left: 3px solid #c41e3a;">
+      <span class="pill pill-qc">QC</span>
+      <span class="pill pill-tier-a">Tier A</span>
+      <span style="font-size:11px; color:#c41e3a; font-weight:600;">HISTORICAL</span>
+      <h4>CAN-062 — 1989 Montreal Mass Sighting</h4>
+      <p>November 1989. <strong>Thousands of witnesses</strong> across Montreal reported a massive UFO hovering over the city. Described as a large boomerang-shaped craft with lights along its edges. Lasted approximately one hour. Covered extensively in Montreal media. One of the largest mass sightings in Canadian history — currently <strong>not represented</strong> in any HEIMDALL case.</p>
+      <div class="meta-line">📍 Montreal, QC · 🔭 NL/CE1 · 👥 Thousands of witnesses · 📰 Mass media</div>
+    </div>
+
+    <div class="case-card">
+      <span class="pill pill-bc">BC</span>
+      <span class="pill pill-tier-c">Tier C</span>
+      <h4>CAN-063 — Dawson Creek Cigar (1975)</h4>
+      <p>Large cigar-shaped object sighted over Dawson Creek, BC. Multiple witnesses. Described as metallic, silent, with a row of lights. Hovered then accelerated rapidly out of sight. RCMP received reports.</p>
+      <div class="meta-line">📍 Dawson Creek, BC · 🔭 RV · 📐 Cigar-shaped · 👮 RCMP reports</div>
+    </div>
+
+    <div class="case-card">
+      <span class="pill pill-bc">BC</span>
+      <span class="pill pill-tier-c">Tier C</span>
+      <h4>CAN-064 — Cranbrook Landing Traces (1966)</h4>
+      <p>Physical trace case near Cranbrook, BC. Witnesses reported a landed craft with landing gear impressions found in the soil. Similar to CAN-022 Langenburg pattern. RCMP investigated and documented physical evidence.</p>
+      <div class="meta-line">📍 Cranbrook, BC · 🔭 CE2 · 📐 Landing traces · 👮 RCMP investigation</div>
+    </div>
+
+    <div class="case-card">
+      <span class="pill pill-nb">NB</span>
+      <span class="pill pill-tier-c">Tier C</span>
+      <h4>CAN-065 — St. Stephen Entity (1996)</h4>
+      <p>CE3 case near St. Stephen, New Brunswick. Witnesses reported a landed craft with a humanoid figure. One of the more detailed entity encounter cases from Atlantic Canada. Would be the <strong>second NB case</strong>.</p>
+      <div class="meta-line">📍 St. Stephen, NB · 🔭 CE3 · 👽 Entity reported</div>
+    </div>
+
+    <div class="case-card">
+      <span class="pill pill-nl">NL</span>
+      <span class="pill pill-tier-c">Tier C</span>
+      <h4>CAN-066 — Harbour Mille Follow-Up (2010)</h4>
+      <p>Additional sightings in the Harbour Mille, NL area in the weeks following the January 25, 2010 missile-shaped UFO event (CAN-045). Multiple witnesses, RCMP statements. Expands the existing case into a broader phenomenon.</p>
+      <div class="meta-line">📍 Harbour Mille, NL · 🔭 NL · 📅 2010 · 👮 RCMP</div>
+    </div>
+
+    <div class="case-card">
+      <span class="pill pill-mb">MB</span>
+      <span class="pill pill-tier-b">Tier B</span>
+      <h4>CAN-067 — Gimli UFO (1969)</h4>
+      <p>Multiple witness sighting over Lake Winnipeg near Gimli, Manitoba. RCMP involvement. Orange lights performing aerial manoeuvres. Part of the larger Manitoba flap pattern of the late 1960s.</p>
+      <div class="meta-line">📍 Gimli, MB · 🔭 NL · 🟠 Orange lights · 👮 RCMP</div>
+    </div>
+
+    <div class="case-card">
+      <span class="pill pill-ab">AB</span>
+      <span class="pill pill-tier-c">Tier C</span>
+      <h4>CAN-068 — Bonnyville Physical Traces (1973)</h4>
+      <p>CE2 case near Bonnyville, Alberta. Physical traces found at the landing site: burned vegetation and ground impressions. RCMP investigated. Would add to Alberta's currently thin coverage (4 cases).</p>
+      <div class="meta-line">📍 Bonnyville, AB · 🔭 CE2 · 🔥 Physical traces · 👮 RCMP</div>
+    </div>
+
+    <div class="case-card">
+      <span class="pill pill-on">ON</span>
+      <span class="pill pill-tier-c">Tier C</span>
+      <h4>CAN-069 — Rama Road Abduction (1994)</h4>
+      <p>CE4 (abduction) case near Orillia, Ontario. Witness reported missing time and unusual memories after encountering a bright light on a rural road. Would be only the <strong>second CE4 case</strong> in the dataset.</p>
+      <div class="meta-line">📍 Rama Road (Orillia), ON · 🔭 CE4 · ⏱ Missing time</div>
+    </div>
+
+    <div class="case-card">
+      <span class="pill pill-nt">NT</span>
+      <span class="pill pill-tier-c">Tier C</span>
+      <h4>CAN-070 — Yellowknife Modern (2022)</h4>
+      <p>Multiple 2022 sightings reported near Yellowknife, NT. Department of Defence tracking data. Adds a modern case to the underrepresented Northwest Territories.</p>
+      <div class="meta-line">📍 Yellowknife, NT · 🔭 NL · 📅 2022</div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: Map Overlay Layers -->
+  <div class="section">
+    <h3 class="fc-h3"><span class="staple"></span> Map Overlay Layers</h3>
+    <p style="font-size:13px; margin-bottom:12px;">Toggle-able GeoJSON layers in <code>docs/data/layers/</code> — all pre-built and ready to integrate.</p>
+
+    <div class="layer-grid">
+      <div class="layer-header">Layer</div>
+      <div class="layer-header">Data</div>
+      <div class="layer-header">File Built</div>
+
+      <div class="layer-row"><div><strong>☢️ Nuclear Plants</strong></div><div>13 facilities: Bruce Power (8R), Pickering (6R), Darlington (4R), Point Lepreau (1R), Chalk River, uranium mines in SK/ON</div><div>✅ <span class="tier-1">nuclear_plants.json</span></div></div>
+      <div class="layer-row"><div><strong>⚔️ Military Bases</strong></div><div>25 installations: All CFBs, DND facilities, Churchill Rocket Range, Alert Station, DRDC centres</div><div>✅ <span class="tier-1">military_bases.json</span></div></div>
+      <div class="layer-row"><div><strong>📡 NORAD Radar</strong></div><div>4 radar lines (Pinetree, Mid-Canada, DEW, NWS) + 23 station locations. Most HEIMDALL-flavoured layer.</div><div>✅ <span class="tier-1">norad_radar.json</span></div></div>
+      <div class="layer-row"><div><strong>✈️ Major Airports</strong></div><div>All international airports with radar. YYZ, YUL, YVR, YYC, YEG, YOW, YWG, YHZ, YYT + military fields</div><div>⬜ <span class="tier-3">Not yet</span></div></div>
+      <div class="layer-row"><div><strong>🌊 Major Waterways</strong></div><div>Great Lakes, St. Lawrence River/Seaway, Lake Winnipeg, Gulf of St. Lawrence, major rivers</div><div>⬜ <span class="tier-3">Not yet</span></div></div>
+      <div class="layer-row"><div><strong>🏔️ National Parks</strong></div><div>Nahanni, Wood Buffalo, Banff, Jasper, Pacific Rim, Gros Morne, Kluane, etc.</div><div>⬜ <span class="tier-3">Not yet</span></div></div>
+      <div class="layer-row"><div><strong>👮 RCMP Detachments</strong></div><div>Division HQ locations where RCMP witnesses/reporters are documented</div><div>⬜ <span class="tier-3">Not yet</span></div></div>
+    </div>
+
+    <p style="font-size:13px; margin-top:12px; color:#6b5e50;">
+      <strong>☢️</strong> Nuclear plants · <strong>⚔️</strong> Military bases · <strong>📡</strong> NORAD radar lines — <strong>3 files built, ready to toggle</strong> via Leaflet layer control.
+    </p>
+  </div>
+
+  <!-- SECTION 4: File Delivery -->
+  <div class="section">
+    <h3 class="fc-h3"><span class="staple"></span> Files Delivered</h3>
+    <table class="data">
+      <thead><tr><th>File</th><th>Location</th><th>Contents</th></tr></thead>
+      <tbody>
+        <tr><td><code>nuclear_plants.json</code></td><td><code>docs/data/layers/</code></td><td>13 nuclear facilities — plants, research labs, uranium mines</td></tr>
+        <tr><td><code>military_bases.json</code></td><td><code>docs/data/layers/</code></td><td>25 military installations — all CFBs, DND, rocket range, signals</td></tr>
+        <tr><td><code>norad_radar.json</code></td><td><code>docs/data/layers/</code></td><td>4 radar line paths + 23 station points — Pinetree/Mid-Canada/DEW/NWS</td></tr>
+        <tr><td><code>heimdall-expansion-report.html</code></td><td><code>Desktop/outbox/</code></td><td>This report — full expansion plan</td></tr>
+        <tr><td><code>heimdall-media-run-report.html</code></td><td><code>Desktop/outbox/</code></td><td>Previous media enrichment run</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 5: Implementation Roadmap -->
+  <div class="section agent-note">
+    <h3 class="fc-h3"><span class="staple"></span> Recommended Build Order</h3>
+    <ul>
+      <li><strong>Phase 1 — Kensington, PEI (CAN-057):</strong> Quickest win. Fills the only province gap. Cellphone video + MUFON + CBC = solid documentation. Create CAN-057.md, update CASES array, regenerate pipeline.</li>
+      <li><strong>Phase 2 — Overlay integration:</strong> Add Leaflet layer control to index.html. Load GeoJSON from <code>docs/data/layers/*.json</code>. Colour-code by layer. Toggle visibility. Click shows name + type.</li>
+      <li><strong>Phase 3 — Montreal Mass Sighting + Trail BC:</strong> High-impact, well-documented cases. Montreal 1989 is legitimately famous (thousands of witnesses). Trail fills BC gap.</li>
+      <li><strong>Phase 4 — Build remaining overlays:</strong> Airports (Transport Canada data), Waterways (Natural Earth), Parks (Parks Canada open data).</li>
+      <li><strong>Phase 5 — Tier upgrades:</strong> Review existing 56 cases for Tier upgrades based on new research. Current: 45/56 Tier C — many could be B.</li>
+      <li><strong>Future — Deep archive:</strong> Bonnyville, Dawson Creek, St. Stephen, Rama Road — these require deeper newspaper archive research before adding.</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

@@ -2306,8 +2306,8 @@ body.night-ops .witness-case-link { background: #2a1510; color: #a070c0; }
     </h1>
   </div>
   <div class="stats-area">
-    <div>Total: <strong id="stat-total">56</strong></div>
-    <div>Showing: <strong id="stat-visible">56</strong></div>
+    <div>Total: <strong id="stat-total">70</strong></div>
+    <div>Showing: <strong id="stat-visible">70</strong></div>
     <div>YEARS: <strong>1662 – 2025</strong></div>
     <button class="view-toggle" id="view-toggle" title="Toggle timeline view">☰ Timeline</button>
     <button class="view-toggle" id="sound-toggle" title="Toggle sound effects" onclick="toggleSound()">🔊</button>
@@ -2607,6 +2607,7 @@ function bindLayersUI() {
 
 function initFromData() {
   createMap();
+  initOverlays();
   buildSidebar();
   bindFilters();
   bindTimeline();
@@ -2673,6 +2674,104 @@ function createMap() {
     subdomains: 'abcd', maxZoom: 19
   }).addTo(map);
   L.control.zoom({ position: 'topright' }).addTo(map);
+}
+
+/* ===== OVERLAY LAYERS (H-XXX) ===== */
+function initOverlays() {
+  var overlays = {};
+  var loaded = 0;
+  var total = 3;
+
+  function done() {
+    loaded++;
+    if (loaded >= total) {
+      L.control.layers(null, overlays, { position: 'bottomleft' }).addTo(map);
+    }
+  }
+
+  // Nuclear facilities
+  fetch('./data/layers/nuclear_plants.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      overlays['☢️ Nuclear Facilities'] = L.geoJSON(data, {
+        pointToLayer: function(feature, latlng) {
+          return L.circleMarker(latlng, {
+            radius: 10, fillColor: '#c41e3a', color: '#8b2020',
+            weight: 2, opacity: 0.8, fillOpacity: 0.6
+          });
+        },
+        onEachFeature: function(feature, layer) {
+          var p = feature.properties;
+          layer.bindPopup(
+            '<div style="font-family:\'Special Elite\',monospace;font-size:12px;color:#3a2e24;">' +
+            '<strong style="color:#c41e3a;">' + (p.name || 'Unknown') + '</strong><br>' +
+            '<span style="font-family:\'Source Sans Pro\',sans-serif;">Type: ' + (p.type || '?') +
+            ' | Status: ' + (p.status || '?') +
+            ' | ' + (p.province || '?') + '</span></div>'
+          );
+        }
+      });
+      done();
+    })
+    .catch(function(e) { console.warn('Nuclear overlay failed:', e); done(); });
+
+  // Military bases
+  fetch('./data/layers/military_bases.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      overlays['⚔️ Military Bases'] = L.geoJSON(data, {
+        pointToLayer: function(feature, latlng) {
+          return L.circleMarker(latlng, {
+            radius: 8, fillColor: '#2d4a6a', color: '#1a3060',
+            weight: 2, opacity: 0.8, fillOpacity: 0.6
+          });
+        },
+        onEachFeature: function(feature, layer) {
+          var p = feature.properties;
+          layer.bindPopup(
+            '<div style="font-family:\'Special Elite\',monospace;font-size:12px;color:#3a2e24;">' +
+            '<strong style="color:#2d4a6a;">' + (p.name || 'Unknown') + '</strong><br>' +
+            '<span style="font-family:\'Source Sans Pro\',sans-serif;">Type: ' + (p.type || '?') +
+            ' | Role: ' + (p.role || '?') +
+            ' | ' + (p.province || '?') + '</span></div>'
+          );
+        }
+      });
+      done();
+    })
+    .catch(function(e) { console.warn('Military overlay failed:', e); done(); });
+
+  // NORAD Radar
+  fetch('./data/layers/norad_radar.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      overlays['📡 NORAD Radar'] = L.geoJSON(data, {
+        pointToLayer: function(feature, latlng) {
+          return L.circleMarker(latlng, {
+            radius: 7, fillColor: '#2d6a4f', color: '#1a4a30',
+            weight: 2, opacity: 0.8, fillOpacity: 0.6
+          });
+        },
+        style: function(feature) {
+          if (feature.geometry.type === 'LineString') {
+            return { color: '#2d6a4f', weight: 3, opacity: 0.7, dashArray: '8,6' };
+          }
+          return {};
+        },
+        onEachFeature: function(feature, layer) {
+          var p = feature.properties;
+          layer.bindPopup(
+            '<div style="font-family:\'Special Elite\',monospace;font-size:12px;color:#3a2e24;">' +
+            '<strong style="color:#2d6a4f;">' + (p.name || 'Unknown') + '</strong><br>' +
+            '<span style="font-family:\'Source Sans Pro\',sans-serif;">System: ' + (p.system || '?') +
+            ' | ' + (p.type || '?') +
+            (p.province ? ' | ' + p.province : '') + '</span></div>'
+          );
+        }
+      });
+      done();
+    })
+    .catch(function(e) { console.warn('NORAD overlay failed:', e); done(); });
 }
 
 function markerIcon(tier, contact) {
