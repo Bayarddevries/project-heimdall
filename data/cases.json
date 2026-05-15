@@ -1079,5 +1079,25 @@
     "internal_tier": "C",
     "hynek_classification": "NL",
     "narrative": "On 2025, one or more witnesses reported an unidentified aerial phenomenon near Sheridan Lake, BC. The object was described as Pulsating Orb. Witness: Campers. Evidence: Interference with cell phones. Source: Canadian UFO Survey."
+  },
+  {
+    "case_id": "CAN-057",
+    "date": "2014",
+    "year": 2014,
+    "location": "",
+    "province": "PE",
+    "latitude": 46.43,
+    "longitude": -63.64,
+    "shape": "Bright Lights",
+    "contact_type": "NL",
+    "witness_count": 1,
+    "physical_evidence": [
+      "22-minute cellphone video footage",
+      "MUFON case file documentation"
+    ],
+    "source_primary": "MUFON / CBC News",
+    "internal_tier": "C",
+    "hynek_classification": "NL",
+    "narrative": "On June 4, 2014, John Sheppard was putting out a bonfire at his property near Kensington, Prince Edward Island, when he noticed unusual lights over the Gulf of St. Lawrence. The lights moved in an erratic pattern across the night sky, performing maneuvers inconsistent with conventional aircraft. Sheppard captured approximately 22 minutes of video footage on his cellphone, showing the lights changing direction and intensity. The case was reported to the Mutual UFO Network (MUFON), which confirmed the sighting. CBC News covered the incident, with follow-up analysis offering potential alternate explanations. The Kensington Lights remain one of the few documented UFO cases from Prince Edward Island."
   }
 ]

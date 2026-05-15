@@ -1,0 +1,18 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"name":"Bruce Power","type":"Nuclear Generating Station","status":"Active","reactors":8,"operator":"Bruce Power","province":"ON"},"geometry":{"type":"Point","coordinates":[-81.5424,44.3309]}},
+    {"type":"Feature","properties":{"name":"Pickering Nuclear","type":"Nuclear Generating Station","status":"Active","reactors":6,"operator":"OPG","province":"ON"},"geometry":{"type":"Point","coordinates":[-79.0894,43.8075]}},
+    {"type":"Feature","properties":{"name":"Darlington Nuclear","type":"Nuclear Generating Station","status":"Active","reactors":4,"operator":"OPG","province":"ON"},"geometry":{"type":"Point","coordinates":[-78.7342,43.8750]}},
+    {"type":"Feature","properties":{"name":"Point Lepreau","type":"Nuclear Generating Station","status":"Active","reactors":1,"operator":"NB Power","province":"NB"},"geometry":{"type":"Point","coordinates":[-66.4581,45.0744]}},
+    {"type":"Feature","properties":{"name":"Gentilly-2","type":"Nuclear Generating Station","status":"Decommissioned","reactors":1,"operator":"Hydro-Québec","province":"QC"},"geometry":{"type":"Point","coordinates":[-72.3633,46.3936]}},
+    {"type":"Feature","properties":{"name":"Douglas Point","type":"Nuclear Generating Station","status":"Decommissioned","reactors":1,"operator":"AECL","province":"ON"},"geometry":{"type":"Point","coordinates":[-81.3800,44.3100]}},
+    {"type":"Feature","properties":{"name":"Rolphton NPD","type":"Nuclear Generating Station","status":"Decommissioned","reactors":1,"operator":"AECL","province":"ON"},"geometry":{"type":"Point","coordinates":[-77.7070,46.1660]}},
+    {"type":"Feature","properties":{"name":"Chalk River Labs","type":"Nuclear Research","status":"Active","reactors":5,"operator":"AECL/CNL","province":"ON"},"geometry":{"type":"Point","coordinates":[-77.4186,46.0450]}},
+    {"type":"Feature","properties":{"name":"Whiteshell Labs","type":"Nuclear Research","status":"Decommissioned","reactors":1,"operator":"AECL/CNL","province":"MB"},"geometry":{"type":"Point","coordinates":[-95.7100,50.0900]}},
+    {"type":"Feature","properties":{"name":"Elliot Lake","type":"Uranium Mining","status":"Decommissioned","operator":"Rio Tinto","province":"ON"},"geometry":{"type":"Point","coordinates":[-82.6514,46.3853]}},
+    {"type":"Feature","properties":{"name":"Cigar Lake Mine","type":"Uranium Mining","status":"Active","operator":"Cameco","province":"SK"},"geometry":{"type":"Point","coordinates":[-104.5000,58.0667]}},
+    {"type":"Feature","properties":{"name":"Key Lake Mill","type":"Uranium Mining","status":"Active","operator":"Cameco","province":"SK"},"geometry":{"type":"Point","coordinates":[-105.5333,57.1833]}},
+    {"type":"Feature","properties":{"name":"McArthur River Mine","type":"Uranium Mining","status":"Care & Maintenance","operator":"Cameco","province":"SK"},"geometry":{"type":"Point","coordinates":[-105.0167,57.7500]}}
+  ]
+}

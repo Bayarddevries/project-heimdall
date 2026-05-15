@@ -271,6 +271,32 @@ RESEARCH_DATA = {
         "contact_type": "RV",
         "narrative": "In February 2025, a commercial pilot on approach over Vulcan County, Alberta reported a fast-moving, non-transponder object pacing the aircraft at a parallel altitude for approximately 12 miles. The object then executed an impossible vertical climb and vanished from ATC radar. Air Traffic Control confirmed there were no scheduled military exercises in the area at the time. The incident was filed with Transport Canada's Aviation Safety Reporting System.",
         "pattern_tags": ["radar-visual", "pilot-witness", "military-involvement"]
+    },
+    "CAN-057": {  # Kensington Lights PEI
+        "tier": "C",
+        "name": "Kensington Lights",
+        "location_full": "Kensington, Prince Edward Island",
+        "date": "June 4, 2014",
+        "latitude": 46.43,
+        "longitude": -63.64,
+        "time": "Night (~11:00 PM)",
+        "duration": "Several minutes",
+        "witness_count": 1,
+        "witness_primary": "John Sheppard",
+        "witness_occupation": "Local resident",
+        "witness_credibility": "Medium",
+        "contact_type": "NL",
+        "hynek_classification": "NL",
+        "being_count": 0,
+        "narrative": "On June 4, 2014, John Sheppard was putting out a bonfire at his property near Kensington, Prince Edward Island, when he noticed unusual lights over the Gulf of St. Lawrence. The lights moved in an erratic pattern across the night sky, performing maneuvers inconsistent with conventional aircraft. Sheppard captured approximately 22 minutes of video footage on his cellphone, showing the lights changing direction and intensity. The case was reported to the Mutual UFO Network (MUFON), which confirmed the sighting. CBC News covered the incident, with follow-up analysis offering potential alternate explanations. The Kensington Lights remain one of the few documented UFO cases from Prince Edward Island.",
+        "physical_evidence": [
+            "22-minute cellphone video footage",
+            "MUFON case file documentation"
+        ],
+        "media_urls": [
+            "https://www.cbc.ca/news/canada/prince-edward-island/pei-kensington-ufo-lights-1.2681283"
+        ],
+        "pattern_tags": ["nocturnal-light", "photographic-evidence", "mass-sighting"]
     }
 }
 
