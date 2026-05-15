@@ -1,30 +1,528 @@
 {
   "type": "FeatureCollection",
   "features": [
-    {"type":"Feature","properties":{"name":"Pinetree Line (Approximate Path)","type":"Radar Line","system":"Pinetree","era":"1950s-present"},"geometry":{"type":"LineString","coordinates":[[-141.0,60.5],[-138.0,60.5],[-135.0,60.0],[-132.0,59.5],[-128.0,58.0],[-124.0,54.0],[-122.0,52.0],[-120.0,51.0],[-118.0,50.5],[-114.0,50.0],[-110.0,50.0],[-106.0,50.0],[-102.0,49.5],[-98.0,49.5],[-96.0,50.0],[-94.0,50.0],[-90.0,49.5],[-86.0,48.0],[-82.0,46.5],[-78.0,45.5],[-74.0,45.5],[-70.0,46.0],[-66.0,45.5],[-64.0,44.5],[-60.0,47.0],[-57.0,47.5],[-53.0,46.5]]}},
-    {"type":"Feature","properties":{"name":"Mid-Canada Line (Approximate Path)","type":"Radar Line","system":"Mid-Canada","era":"1950s-1960s"},"geometry":{"type":"LineString","coordinates":[[-141.0,55.5],[-138.0,55.0],[-130.0,55.0],[-124.0,54.0],[-118.0,53.0],[-112.0,53.0],[-106.0,54.0],[-100.0,54.5],[-94.0,55.0],[-88.0,55.0],[-82.0,54.0],[-76.0,53.0],[-70.0,53.0],[-66.0,52.5],[-62.0,52.5],[-57.0,53.0]]}},
-    {"type":"Feature","properties":{"name":"DEW Line (Approximate Path)","type":"Radar Line","system":"DEW","era":"1950s-1990s"},"geometry":{"type":"LineString","coordinates":[[-166.0,67.5],[-160.0,68.0],[-150.0,69.0],[-140.0,69.5],[-132.0,70.0],[-124.0,70.5],[-116.0,71.0],[-108.0,70.5],[-100.0,70.0],[-92.0,70.0],[-84.0,69.5],[-76.0,68.0],[-68.0,66.0],[-62.0,65.0]]}},
-    {"type":"Feature","properties":{"name":"North Warning System (Approximate Path)","type":"Radar Line","system":"NWS","era":"1990s-present"},"geometry":{"type":"LineString","coordinates":[[-166.0,67.5],[-160.0,68.0],[-150.0,69.0],[-140.0,69.5],[-132.0,70.0],[-124.0,70.5],[-116.0,71.0],[-108.0,70.5],[-100.0,70.0],[-92.0,70.0],[-84.0,69.5],[-76.0,68.0],[-68.0,66.0],[-62.0,65.0]]}},
-    {"type":"Feature","properties":{"name":"CFS St. John's","type":"Radar Station","system":"Pinetree","province":"NL","status":"Active"},"geometry":{"type":"Point","coordinates":[-52.8833,47.5333]}},
-    {"type":"Feature","properties":{"name":"CFS Sydney","type":"Radar Station","system":"Pinetree","province":"NS","status":"Closed"},"geometry":{"type":"Point","coordinates":[-60.2167,46.1500]}},
-    {"type":"Feature","properties":{"name":"CFS Chatham","type":"Radar Station","system":"Pinetree","province":"NB","status":"Closed"},"geometry":{"type":"Point","coordinates":[-65.4500,47.0333]}},
-    {"type":"Feature","properties":{"name":"CFS Lac St-Denis","type":"Radar Station","system":"Pinetree","province":"QC","status":"Closed"},"geometry":{"type":"Point","coordinates":[-74.0500,45.4667]}},
-    {"type":"Feature","properties":{"name":"CFS Mount Apica","type":"Radar Station","system":"Pinetree","province":"QC","status":"Active"},"geometry":{"type":"Point","coordinates":[-70.8833,47.9667]}},
-    {"type":"Feature","properties":{"name":"CFS Moisie","type":"Radar Station","system":"Pinetree","province":"QC","status":"Closed"},"geometry":{"type":"Point","coordinates":[-66.0167,50.2000]}},
-    {"type":"Feature","properties":{"name":"CFS Falconbridge","type":"Radar Station","system":"Pinetree","province":"ON","status":"Closed"},"geometry":{"type":"Point","coordinates":[-80.8333,46.5833]}},
-    {"type":"Feature","properties":{"name":"CFS Ramore","type":"Radar Station","system":"Pinetree","province":"ON","status":"Closed"},"geometry":{"type":"Point","coordinates":[-80.5000,48.4167]}},
-    {"type":"Feature","properties":{"name":"CFS Armstrong","type":"Radar Station","system":"Pinetree","province":"ON","status":"Closed"},"geometry":{"type":"Point","coordinates":[-88.9167,50.2833]}},
-    {"type":"Feature","properties":{"name":"CFS Beausejour","type":"Radar Station","system":"Pinetree","province":"MB","status":"Closed"},"geometry":{"type":"Point","coordinates":[-96.5167,50.0667]}},
-    {"type":"Feature","properties":{"name":"CFS Gypsumville","type":"Radar Station","system":"Pinetree","province":"MB","status":"Closed"},"geometry":{"type":"Point","coordinates":[-98.3500,51.7667]}},
-    {"type":"Feature","properties":{"name":"CFS Dana","type":"Radar Station","system":"Pinetree","province":"SK","status":"Closed"},"geometry":{"type":"Point","coordinates":[-105.1833,52.6167]}},
-    {"type":"Feature","properties":{"name":"CFS Alsask","type":"Radar Station","system":"Pinetree","province":"SK","status":"Closed"},"geometry":{"type":"Point","coordinates":[-110.0000,51.3667]}},
-    {"type":"Feature","properties":{"name":"CFS Penhold","type":"Radar Station","system":"Pinetree","province":"AB","status":"Closed"},"geometry":{"type":"Point","coordinates":[-113.8667,52.1333]}},
-    {"type":"Feature","properties":{"name":"CFS Calgary","type":"Radar Station","system":"Pinetree","province":"AB","status":"Closed"},"geometry":{"type":"Point","coordinates":[-114.1000,51.0500]}},
-    {"type":"Feature","properties":{"name":"CFS Gander","type":"Radar Station","system":"Pinetree","province":"NL","status":"Closed"},"geometry":{"type":"Point","coordinates":[-54.5667,48.9500]}},
-    {"type":"Feature","properties":{"name":"CFS Holberg","type":"Radar Station","system":"Pinetree","province":"BC","status":"Closed"},"geometry":{"type":"Point","coordinates":[-128.0167,50.6500]}},
-    {"type":"Feature","properties":{"name":"CFS Baldy Hughes","type":"Radar Station","system":"Pinetree","province":"BC","status":"Closed"},"geometry":{"type":"Point","coordinates":[-122.9500,53.6167]}},
-    {"type":"Feature","properties":{"name":"CFS Kamloops","type":"Radar Station","system":"Pinetree","province":"BC","status":"Closed"},"geometry":{"type":"Point","coordinates":[-120.4333,50.6667]}},
-    {"type":"Feature","properties":{"name":"CFS Puntzi Mountain","type":"Radar Station","system":"Pinetree","province":"BC","status":"Closed"},"geometry":{"type":"Point","coordinates":[-124.0667,52.1667]}},
-    {"type":"Feature","properties":{"name":"CFS Whitehorse","type":"Radar Station","system":"Pinetree","province":"YT","status":"Closed"},"geometry":{"type":"Point","coordinates":[-135.1333,60.7167]}}
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - BAR-1 (Alaska border)",
+        "type": "DEW Line",
+        "province": "YT",
+        "status": "Decommissioned",
+        "description": "Distant Early Warning Line - Westernmost Canadian station."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -141.0,
+          69.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - BAR-2 (Komakuk Beach)",
+        "type": "DEW Line",
+        "province": "YT",
+        "status": "Decommissioned",
+        "description": "DEW Line station at Komakuk Beach."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -140.2,
+          69.5833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - BAR-3 (Shingle Point)",
+        "type": "DEW Line",
+        "province": "YT",
+        "status": "Decommissioned",
+        "description": "DEW Line auxiliary station."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -137.2167,
+          69.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - BAR-4 (Tuktoyaktuk)",
+        "type": "DEW Line",
+        "province": "NT",
+        "status": "Decommissioned",
+        "description": "DEW Line main station near Tuktoyaktuk."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -133.0167,
+          69.45
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - BAR-5 (Nicholson Peninsula)",
+        "type": "DEW Line",
+        "province": "NT",
+        "status": "Decommissioned",
+        "description": "DEW Line station at Cape Dalhousie."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -129.0333,
+          70.2
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - PIN-1 (Cape Parry)",
+        "type": "DEW Line",
+        "province": "NT",
+        "status": "Decommissioned",
+        "description": "DEW Line main station."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -124.7,
+          70.1667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - PIN-2 (Clinton Point)",
+        "type": "DEW Line",
+        "province": "NT",
+        "status": "Decommissioned",
+        "description": "DEW Line auxiliary station."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.0167,
+          69.6167
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - PIN-3 (Cape Young)",
+        "type": "DEW Line",
+        "province": "NU",
+        "status": "Decommissioned",
+        "description": "DEW Line main station."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.0333,
+          70.7333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - PIN-4 (Lady Franklin Point)",
+        "type": "DEW Line",
+        "province": "NU",
+        "status": "Decommissioned",
+        "description": "DEW Line auxiliary station."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.8833,
+          68.4833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - CAM-1 (Cambridge Bay)",
+        "type": "DEW Line",
+        "province": "NU",
+        "status": "Decommissioned",
+        "description": "DEW Line main station."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0833,
+          69.1167
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - CAM-B (Matheson Point)",
+        "type": "DEW Line",
+        "province": "NU",
+        "status": "Decommissioned",
+        "description": "DEW Line auxiliary station."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.0833,
+          68.8333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - CAM-3 (Jenny Lind Island)",
+        "type": "DEW Line",
+        "province": "NU",
+        "status": "Decommissioned",
+        "description": "DEW Line main station."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.5333,
+          68.7
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - CAM-4 (Gladman Point)",
+        "type": "DEW Line",
+        "province": "NU",
+        "status": "Decommissioned",
+        "description": "DEW Line auxiliary station."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.8167,
+          68.6667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - CAM-5 (Cape Adelaide)",
+        "type": "DEW Line",
+        "province": "NU",
+        "status": "Decommissioned",
+        "description": "DEW Line main station."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.4167,
+          68.4833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - CAM-6 (Pelly Bay/Kugaaruk)",
+        "type": "DEW Line",
+        "province": "NU",
+        "status": "Decommissioned",
+        "description": "DEW Line station."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.8333,
+          68.5333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - CAM-D (Simpson Lake)",
+        "type": "DEW Line",
+        "province": "NU",
+        "status": "Decommissioned",
+        "description": "DEW Line auxiliary station."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.5833,
+          68.55
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - CAM-E (Hall Beach)",
+        "type": "DEW Line",
+        "province": "NU",
+        "status": "Decommissioned",
+        "description": "DEW Line main station at Hall Beach."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.2333,
+          68.7833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - CAM-F (Longstaff Bluff)",
+        "type": "DEW Line",
+        "province": "NU",
+        "status": "Decommissioned",
+        "description": "DEW Line auxiliary station."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.3833,
+          68.9333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line - CAM-7 (Cape Hooper)",
+        "type": "DEW Line",
+        "province": "NU",
+        "status": "Decommissioned",
+        "description": "DEW Line main station."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.5833,
+          68.4833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NORAD - North Warning System (modern)",
+        "type": "North Warning System",
+        "province": "CA",
+        "status": "Active",
+        "description": "Dual radar: long-range AN/FPS-117 at MED-01 (resolution radar replacement sites)."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5,
+          72.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NWS - Resolution Island (RES-1)",
+        "type": "North Warning System",
+        "province": "NU",
+        "status": "Active",
+        "description": "Long-range radar, easternmost NWS site."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.9,
+          61.6
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFS Alert (CSEC)",
+        "type": "SIGINT",
+        "province": "NU",
+        "status": "Active",
+        "description": "Canadian Forces Station Alert. Signals intelligence facility. 817 km from the North Pole."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.35,
+          82.5
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CFS Leitrim",
+        "type": "SIGINT",
+        "province": "ON",
+        "status": "Active",
+        "description": "CSEC operations centre. Ottawa satellite station."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.6,
+          45.4
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DEW Line Corridor",
+        "type": "Radar Line",
+        "province": "CA",
+        "description": "Distant Early Warning Line: 69.5\u00b0N across Arctic coast. 1957-1993."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -141.0,
+            69.0
+          ],
+          [
+            -112.0,
+            69.5
+          ],
+          [
+            -80.0,
+            69.0
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mid-Canada Line Corridor",
+        "type": "Radar Line",
+        "province": "CA",
+        "description": "Mid-Canada Line: 55\u00b0N across Canada. 1957-1964."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -130.0,
+            55.0
+          ],
+          [
+            -100.0,
+            55.0
+          ],
+          [
+            -75.0,
+            53.0
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pinetree Line Corridor",
+        "type": "Radar Line",
+        "province": "CA",
+        "description": "Pinetree Line: ~50\u00b0N across southern Canada. 1951-1980s."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -128.0,
+            50.0
+          ],
+          [
+            -110.0,
+            50.5
+          ],
+          [
+            -95.0,
+            50.0
+          ],
+          [
+            -78.0,
+            46.0
+          ],
+          [
+            -66.0,
+            46.0
+          ],
+          [
+            -60.0,
+            47.0
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "North Warning System Corridor",
+        "type": "Radar Line",
+        "province": "CA",
+        "description": "North Warning System: Modern replacement for DEW Line. Active."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -141.0,
+            69.0
+          ],
+          [
+            -140.0,
+            69.5
+          ],
+          [
+            -133.0,
+            70.0
+          ],
+          [
+            -124.0,
+            70.5
+          ],
+          [
+            -105.0,
+            69.5
+          ],
+          [
+            -81.0,
+            69.0
+          ],
+          [
+            -65.0,
+            62.0
+          ]
+        ]
+      }
+    }
   ]
 }
