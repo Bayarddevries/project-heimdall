@@ -1,0 +1,429 @@
+     1|<!DOCTYPE html>
+     2|<html lang="en">
+     3|<head>
+     4|<meta charset="UTF-8">
+     5|<meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6|<title>HEIMDALL — Night Ops Media Run</title>
+     7|<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Source+Sans+Pro:wght@300;400;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+     8|<style>
+     9|  * { margin: 0; padding: 0; box-sizing: border-box; }
+    10|  body {
+    11|    background: #2c2418;
+    12|    font-family: 'Source Sans Pro', sans-serif;
+    13|    color: #3a2e24;
+    14|    padding: 40px;
+    15|    display: flex;
+    16|    justify-content: center;
+    17|  }
+    18|  .folder-cover {
+    19|    max-width: 960px;
+    20|    width: 100%;
+    21|    background: #d4c5a9;
+    22|    padding: 48px 40px;
+    23|    border-radius: 4px;
+    24|    box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
+    25|    position: relative;
+    26|    background-image:
+    27|      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(139,94,60,0.03) 2px, rgba(139,94,60,0.03) 4px),
+    28|      radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.15) 0%, transparent 70%);
+    29|  }
+    30|  .folder-cover::before {
+    31|    content: '';
+    32|    position: absolute;
+    33|    top: 0; left: 0; right: 0; bottom: 0;
+    34|    background:
+    35|      repeating-linear-gradient(0deg, transparent, transparent 120px, rgba(139,94,60,0.06) 120px, rgba(139,94,60,0.06) 121px);
+    36|    pointer-events: none;
+    37|  }
+    38|  .stamp {
+    39|    display: inline-block;
+    40|    font-family: 'Special Elite', monospace;
+    41|    color: #8b2020;
+    42|    border: 3px solid #8b2020;
+    43|    padding: 6px 16px;
+    44|    font-size: 14px;
+    45|    letter-spacing: 3px;
+    46|    transform: rotate(-3deg);
+    47|    margin-bottom: 16px;
+    48|    background: rgba(196,30,58,0.04);
+    49|  }
+    50|  h1 {
+    51|    font-family: 'Special Elite', monospace;
+    52|    font-size: 28px;
+    53|    color: #3a2e24;
+    54|    letter-spacing: 2px;
+    55|    text-transform: uppercase;
+    56|    margin-bottom: 4px;
+    57|  }
+    58|  h2 {
+    59|    font-family: 'Caveat', cursive;
+    60|    font-size: 22px;
+    61|    color: #6b5e50;
+    62|    font-weight: 400;
+    63|    margin-bottom: 24px;
+    64|  }
+    65|  .meta {
+    66|    font-size: 13px;
+    67|    color: #6b5e50;
+    68|    font-family: 'Source Sans Pro', sans-serif;
+    69|    text-transform: uppercase;
+    70|    letter-spacing: 1px;
+    71|    padding-bottom: 20px;
+    72|    border-bottom: 2px solid #b8a88a;
+    73|    margin-bottom: 24px;
+    74|  }
+    75|  .meta p { margin: 2px 0; }
+    76|
+    77|  .section {
+    78|    margin-bottom: 32px;
+    79|    position: relative;
+    80|  }
+    81|  .fc-h3 {
+    82|    font-family: 'Special Elite', monospace;
+    83|    font-size: 16px;
+    84|    color: #3a2e24;
+    85|    text-transform: uppercase;
+    86|    letter-spacing: 1px;
+    87|    padding: 8px 0 8px 28px;
+    88|    position: relative;
+    89|    border-bottom: 1px solid #b8a88a;
+    90|    margin-bottom: 16px;
+    91|  }
+    92|  .fc-h3::before {
+    93|    content: '';
+    94|    position: absolute;
+    95|    left: 4px;
+    96|    top: 50%;
+    97|    transform: translateY(-50%);
+    98|    width: 18px;
+    99|    height: 24px;
+   100|    background: linear-gradient(135deg, #888 0%, #ccc 30%, #999 50%, #ddd 70%, #888 100%);
+   101|    border-radius: 2px;
+   102|    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+   103|  }
+   104|  .fc-h3::after {
+   105|    content: '';
+   106|    position: absolute;
+   107|    left: 10px;
+   108|    top: 50%;
+   109|    transform: translateY(-50%);
+   110|    width: 6px;
+   111|    height: 14px;
+   112|    background: linear-gradient(180deg, #666, #999);
+   113|    border-radius: 1px;
+   114|    box-shadow: inset 0 1px 1px rgba(255,255,255,0.3);
+   115|  }
+   116|
+   117|  .stats-grid {
+   118|    display: grid;
+   119|    grid-template-columns: repeat(4, 1fr);
+   120|    gap: 12px;
+   121|    margin-bottom: 16px;
+   122|  }
+   123|  .stat {
+   124|    background: rgba(255,255,255,0.35);
+   125|    border: 1px solid #b8a88a;
+   126|    padding: 12px;
+   127|    text-align: center;
+   128|    font-family: 'Special Elite', monospace;
+   129|    font-size: 13px;
+   130|    color: #3a2e24;
+   131|  }
+   132|  .stat strong { display: block; font-size: 22px; color: #6b2fa0; font-family: 'Source Sans Pro', sans-serif; }
+   133|
+   134|  table {
+   135|    width: 100%;
+   136|    border-collapse: collapse;
+   137|    font-size: 13px;
+   138|  }
+   139|  th {
+   140|    background: rgba(139,94,60,0.08);
+   141|    font-family: 'Special Elite', monospace;
+   142|    font-size: 12px;
+   143|    text-transform: uppercase;
+   144|    letter-spacing: 1px;
+   145|    padding: 8px 10px;
+   146|    text-align: left;
+   147|    border-bottom: 2px solid #b8a88a;
+   148|    color: #6b5e50;
+   149|  }
+   150|  td {
+   151|    padding: 8px 10px;
+   152|    border-bottom: 1px solid #c9ba9d;
+   153|    font-size: 13px;
+   154|  }
+   155|  tr.success td { background: rgba(45,106,79,0.06); }
+   156|  tr.fail td { background: rgba(196,30,58,0.05); }
+   157|  .stamp-success { color: #2d6a4f; font-weight: 600; }
+   158|  .stamp-fail { color: #8b2020; font-family: 'Special Elite', monospace; font-size: 11px; letter-spacing: 1px; border: 1px solid #8b2020; padding: 1px 6px; }
+   159|  .badge-new { color: #6b2fa0; font-family: 'Caveat', cursive; font-size: 15px; font-weight: 600; }
+   160|
+   161|  .case-gallery {
+   162|    background: rgba(255,255,255,0.25);
+   163|    border: 1px solid #c9ba9d;
+   164|    padding: 16px;
+   165|    margin-bottom: 16px;
+   166|  }
+   167|  .case-gallery-header {
+   168|    font-family: 'Special Elite', monospace;
+   169|    font-size: 15px;
+   170|    color: #3a2e24;
+   171|    margin-bottom: 12px;
+   172|  }
+   173|  .gallery-grid {
+   174|    display: grid;
+   175|    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+   176|    gap: 16px;
+   177|  }
+   178|  .polaroid {
+   179|    background: #f5f0e8;
+   180|    padding: 10px 10px 30px;
+   181|    box-shadow: 2px 4px 12px rgba(0,0,0,0.15);
+   182|    transform: rotate(var(--rot, -1deg));
+   183|    transition: transform 0.2s;
+   184|    position: relative;
+   185|    filter: contrast(1.4) brightness(0.8) saturate(0.6) sepia(0.2);
+   186|  }
+   187|  .polaroid:nth-child(2n) { --rot: 1.5deg; }
+   188|  .polaroid:nth-child(3n) { --rot: -0.5deg; }
+   189|  .polaroid:hover { transform: rotate(0deg) scale(1.04); }
+   190|  .polaroid img {
+   191|    width: 100%;
+   192|    height: 140px;
+   193|    object-fit: cover;
+   194|    display: block;
+   195|  }
+   196|  .polaroid .caption {
+   197|    font-family: 'Caveat', cursive;
+   198|    font-size: 12px;
+   199|    color: #6b5e50;
+   200|    margin-top: 6px;
+   201|    line-height: 1.3;
+   202|  }
+   203|  .polaroid::before {
+   204|    content: '';
+   205|    position: absolute;
+   206|    top: 0; left: 0; right: 0; bottom: 0;
+   207|    background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 40%, transparent 60%, rgba(0,0,0,0.06) 100%);
+   208|    pointer-events: none;
+   209|  }
+   210|  .tape {
+   211|    position: absolute;
+   212|    top: -6px;
+   213|    left: 50%;
+   214|    transform: translateX(-50%);
+   215|    width: 40px;
+   216|    height: 14px;
+   217|    background: rgba(200,180,130,0.5);
+   218|    border: 1px solid rgba(180,160,110,0.3);
+   219|  }
+   220|
+   221|  .agent-note {
+   222|    background: rgba(255,255,240,0.3);
+   223|    border-left: 3px dashed #8b2020;
+   224|    padding: 16px;
+   225|    position: relative;
+   226|  }
+   227|  .agent-note::before {
+   228|    content: '\u270E';
+   229|    position: absolute;
+   230|    top: 8px;
+   231|    right: 12px;
+   232|    font-size: 20px;
+   233|    color: rgba(139,30,30,0.15);
+   234|  }
+   235|  .agent-note ul { list-style: none; padding-left: 0; }
+   236|  .agent-note li {
+   237|    padding: 3px 0;
+   238|    padding-left: 16px;
+   239|    position: relative;
+   240|    font-size: 14px;
+   241|  }
+   242|  .agent-note li::before {
+   243|    content: '\u2022';
+   244|    position: absolute;
+   245|    left: 4px;
+   246|    color: #8b2020;
+   247|  }
+   248|
+   249|  .files-changed ul {
+   250|    list-style: none;
+   251|    padding-left: 0;
+   252|  }
+   253|  .files-changed li {
+   254|    padding: 3px 0;
+   255|    padding-left: 16px;
+   256|    font-size: 13px;
+   257|    font-family: 'Source Sans Pro', sans-serif;
+   258|  }
+   259|  .files-changed li::before { content: '> '; color: #6b5e50; }
+   260|
+   261|  @media (max-width: 600px) {
+   262|    body { padding: 16px; }
+   263|    .folder-cover { padding: 24px 16px; }
+   264|    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+   265|    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+   266|    table { font-size: 12px; }
+   267|    th, td { padding: 6px 6px; }
+   268|  }
+   269|</style>
+   270|</head>
+   271|<body>
+   272|<div class="folder-cover">
+   273|  <div class="stamp">NIGHT OPS</div>
+   274|  <h1>PROJECT HEIMDALL</h1>
+   275|  <h2>Media Enrichment Report</h2>
+   276|  <div class="meta">
+   277|    <p>Run Date: 2026-05-14</p>
+   278|    <p>Classification: CONFIDENTIAL</p>
+   279|  </div>
+   280|
+   281|  <div class="section">
+   282|    <h3 class="fc-h3"><span class="staple"></span> Executive Summary</h3>
+   283|    <div class="stats-grid">
+   284|      <div class="stat"><strong>35</strong>Cases Targeted</div>
+   285|      <div class="stat"><strong>16</strong>New Media Added</div>
+   286|      <div class="stat"><strong>37/56</strong>Cases with Media</div>
+   287|      <div class="stat"><strong>21</strong>Files Downloaded</div>
+   288|    </div>
+   289|  </div>
+   290|
+   291|  <div class="section">
+   292|    <h3 class="fc-h3"><span class="staple"></span> Case-by-Case Results</h3>
+   293|    <table>
+   294|      <thead>
+   295|        <tr><th>Case</th><th>Location</th><th>Year</th><th>Images</th><th>Source</th><th>Status</th></tr>
+   296|      </thead>
+   297|      <tbody>
+   298|        <tr class="success"><td>CAN-008</td><td>Clan Lake, ON</td><td>1960</td><td>1</td><td>Commons (Blue Book)</td><td><span class="badge-new">1 doc</span></td></tr>
+   299|        <tr class="success"><td>CAN-015</td><td>St. Paul, AB</td><td>1967</td><td>4</td><td>Wikimedia Commons</td><td><span class="badge-new">4 new</span></td></tr>
+   300|        <tr class="success"><td>CAN-017</td><td>Prince George, BC</td><td>1969</td><td>2</td><td>Wikipedia + Blue Book</td><td><span class="badge-new">2 new</span></td></tr>
+   301|        <tr class="success"><td>CAN-021</td><td>Granby, QC</td><td>1973</td><td>1</td><td>Wikipedia</td><td><span class="badge-new">1 new</span></td></tr>
+   302|        <tr class="success"><td>CAN-022</td><td>Langenburg, SK</td><td>1974</td><td>1</td><td>Wikipedia</td><td><span class="badge-new">1 new</span></td></tr>
+   303|        <tr class="success"><td>CAN-023</td><td>Carman, MB</td><td>1975</td><td>1</td><td>Commons (British Library)</td><td><span class="badge-new">1 new</span></td></tr>
+   304|        <tr class="success"><td>CAN-024</td><td>Montreal, QC</td><td>1977</td><td>1</td><td>Wikipedia</td><td><span class="badge-new">1 new</span></td></tr>
+   305|        <tr class="success"><td>CAN-031</td><td>Kelowna, BC</td><td>1981</td><td>1</td><td>Wikipedia</td><td><span class="badge-new">1 new</span></td></tr>
+   306|        <tr class="success"><td>CAN-033</td><td>Shelburne, NS</td><td>1989</td><td>1</td><td>Wikipedia</td><td><span class="badge-new">1 new</span></td></tr>
+   307|        <tr class="success"><td>CAN-034</td><td>Montreal, QC</td><td>1990</td><td>1</td><td>Wikipedia</td><td><span class="badge-new">1 new</span></td></tr>
+   308|        <tr class="success"><td>CAN-035</td><td>Carp, ON</td><td>1991</td><td>2</td><td>Wikipedia</td><td><span class="badge-new">1 new</span></td></tr>
+   309|        <tr class="success"><td>CAN-042</td><td>Mont Saint-Hilaire, QC</td><td>2007</td><td>1</td><td>Wikipedia</td><td><span class="badge-new">1 new</span></td></tr>
+   310|        <tr class="success"><td>CAN-047</td><td>Hamilton, ON</td><td>2012</td><td>1</td><td>Wikipedia</td><td><span class="badge-new">1 new</span></td></tr>
+   311|        <tr class="success"><td>CAN-048</td><td>Vancouver, BC</td><td>2014</td><td>1</td><td>Wikipedia</td><td><span class="badge-new">1 new</span></td></tr>
+   312|        <tr class="success"><td>CAN-049</td><td>Oshawa, ON</td><td>2015</td><td>1</td><td>Wikipedia</td><td><span class="badge-new">1 new</span></td></tr>
+   313|        <tr class="success"><td>CAN-050</td><td>Calgary, AB</td><td>2016</td><td>1</td><td>Wikipedia</td><td><span class="badge-new">1 new</span></td></tr>
+   314|        <tr class="success"><td>CAN-053</td><td>Sudbury, ON</td><td>2025</td><td>1</td><td>Wikipedia</td><td><span class="badge-new">1 new</span></td></tr>
+   315|      </tbody>
+   316|    </table>
+   317|  </div>
+   318|
+   319|  <div class="section">
+   320|    <h3 class="fc-h3"><span class="staple"></span> No Media Found</h3>
+   321|    <p style="font-size:13px; margin-bottom:8px;">20 cases remain without media. These are predominantly small towns / remote locations without Wikipedia pages or Wikimedia Commons collections:</p>
+   322|    <table>
+   323|      <thead><tr><th>Case</th><th>Location</th><th>Challenge</th></tr></thead>
+   324|      <tbody>
+   325|        <tr class="fail"><td>CAN-004</td><td>Rivers, MB</td><td>Small town, RCAF base — no Commons collection</td></tr>
+   326|        <tr class="fail"><td>CAN-007</td><td>Ennadai Lake, NU</td><td>Remote lake, no Wikipedia page</td></tr>
+   327|        <tr class="fail"><td>CAN-019</td><td>Oromocto, NB</td><td>Small town, Commons has generic images only</td></tr>
+   328|        <tr class="fail"><td>CAN-025</td><td>Clarenville, NL</td><td>No Wikimedia Commons images found</td></tr>
+   329|        <tr class="fail"><td>CAN-026</td><td>Baskatong, QC</td><td>Reservoir, no Commons images</td></tr>
+   330|        <tr class="fail"><td>CAN-027</td><td>Saddle Lake, AB</td><td>First Nation reserve, no Wikipedia page</td></tr>
+   331|        <tr class="fail"><td>CAN-029</td><td>Nahanni Valley, NWT</td><td>Wikipedia has no thumbnail image</td></tr>
+   332|        <tr class="fail"><td>CAN-036</td><td>Saint-Zotique, QC</td><td>Small town, no Wikipedia page</td></tr>
+   333|        <tr class="fail"><td>CAN-037</td><td>l'Annonciation, QC</td><td>Small Quebec town, no Commons images</td></tr>
+   334|        <tr class="fail"><td>CAN-038</td><td>Port Colborne, ON</td><td>Has Commons images but CC-BY-SA (not public domain)</td></tr>
+   335|        <tr class="fail"><td>CAN-039</td><td>St-Jean-sur-Richelieu, QC</td><td>Wikipedia redirect issue</td></tr>
+   336|        <tr class="fail"><td>CAN-040</td><td>Fox Lake, YT</td><td>Remote, no Wikipedia page</td></tr>
+   337|        <tr class="fail"><td>CAN-041</td><td>Fort Erie, ON</td><td>Wikipedia has no thumbnail</td></tr>
+   338|        <tr class="fail"><td>CAN-045</td><td>Harbour Mille, NL</td><td>Remote, no Wikipedia page</td></tr>
+   339|        <tr class="fail"><td>CAN-051</td><td>Gulf of St. Lawrence</td><td>Water body — map images needed</td></tr>
+   340|        <tr class="fail"><td>CAN-052</td><td>Hafford, SK</td><td>Small town, no Wikipedia page</td></tr>
+   341|        <tr class="fail"><td>CAN-054</td><td>Northern Alberta</td><td>Broad region, no specific location</td></tr>
+   342|        <tr class="fail"><td>CAN-056</td><td>Sheridan Lake, BC</td><td>Small lake, no Wikipedia page</td></tr>
+   343|      </tbody>
+   344|    </table>
+   345|  </div>
+   346|
+   347|  <div class="section">
+   348|    <h3 class="fc-h3"><span class="staple"></span> Collected Media Gallery</h3>
+   349|
+   350|    <div class="case-gallery">
+   351|      <h4 class="case-gallery-header">CAN-015 — St. Paul, AB (UFO Landing Pad)</h4>
+   352|      <div class="gallery-grid">
+   353|        <div class="polaroid"><div class="tape"></div><img src="images/CAN-015/ufo-pad-opening-1967-01.jpg" alt="UFO Pad Opening 1967"><div class="caption">Official opening of UFO landing pad, 1967 (1)</div></div>
+   354|        <div class="polaroid"><div class="tape"></div><img src="images/CAN-015/ufo-pad-opening-1967-02.jpg" alt="UFO Pad Opening 1967"><div class="caption">Official opening of UFO landing pad, 1967 (2)</div></div>
+   355|        <div class="polaroid"><div class="tape"></div><img src="images/CAN-015/ufo-pad-opening-1967-03.jpg" alt="UFO Pad Opening 1967"><div class="caption">Official opening of UFO landing pad, 1967 (3)</div></div>
+   356|        <div class="polaroid"><div class="tape"></div><img src="images/CAN-015/ufo-landing-pad-modern.jpg" alt="UFO Pad Modern"><div class="caption">St. Paul UFO Landing Pad (modern)</div></div>
+   357|      </div>
+   358|    </div>
+   359|
+   360|    <div class="case-gallery">
+   361|      <h4 class="case-gallery-header">New Location Photos</h4>
+   362|      <div class="gallery-grid">
+   363|        <div class="polaroid"><img src="images/CAN-017/princegeorge.jpg" alt="Prince George BC"><div class="caption">CAN-017: Prince George, BC</div></div>
+   364|        <div class="polaroid"><img src="images/CAN-021/granby.jpg" alt="Granby QC"><div class="caption">CAN-021: Granby, QC</div></div>
+   365|        <div class="polaroid"><img src="images/CAN-022/langenburg.jpg" alt="Langenburg SK"><div class="caption">CAN-022: Langenburg, SK</div></div>
+   366|        <div class="polaroid"><img src="images/CAN-023/carman-1908.jpg" alt="Carman MB 1908"><div class="caption">CAN-023: Carman, MB (1908)</div></div>
+   367|        <div class="polaroid"><img src="images/CAN-024/montreal.jpg" alt="Montreal QC"><div class="caption">CAN-024: Montreal, QC</div></div>
+   368|        <div class="polaroid"><img src="images/CAN-031/kelowna.jpg" alt="Kelowna BC"><div class="caption">CAN-031: Kelowna, BC</div></div>
+   369|        <div class="polaroid"><img src="images/CAN-033/shelburne.jpg" alt="Shelburne NS"><div class="caption">CAN-033: Shelburne, NS</div></div>
+   370|        <div class="polaroid"><img src="images/CAN-035/diefenbunker.jpg" alt="Diefenbunker"><div class="caption">CAN-035: Carp/Diefenbunker, ON</div></div>
+   371|        <div class="polaroid"><img src="images/CAN-042/mont-saint-hilaire.jpg" alt="Mont Saint-Hilaire"><div class="caption">CAN-042: Mont Saint-Hilaire, QC</div></div>
+   372|        <div class="polaroid"><img src="images/CAN-047/hamilton.jpg" alt="Hamilton ON"><div class="caption">CAN-047: Hamilton, ON</div></div>
+   373|        <div class="polaroid"><img src="images/CAN-048/vancouver.jpg" alt="Vancouver BC"><div class="caption">CAN-048: Vancouver, BC</div></div>
+   374|        <div class="polaroid"><img src="images/CAN-049/oshawa.jpg" alt="Oshawa ON"><div class="caption">CAN-049: Oshawa, ON</div></div>
+   375|        <div class="polaroid"><img src="images/CAN-050/calgary.jpg" alt="Calgary AB"><div class="caption">CAN-050: Calgary, AB</div></div>
+   376|        <div class="polaroid"><img src="images/CAN-053/sudbury.jpg" alt="Sudbury ON"><div class="caption">CAN-053: Sudbury, ON</div></div>
+   377|      </div>
+   378|    </div>
+   379|
+   380|    <div class="case-gallery">
+   381|      <h4 class="case-gallery-header">New Documents (Blue Book Reports)</h4>
+   382|      <div class="gallery-grid">
+   383|        <div class="polaroid"><img src="images/CAN-008/blue-book-ramore-1953.pdf" alt="Blue Book Ramore"><div class="caption">CAN-008: Blue Book — Ramore, ON (near Clan Lake)</div></div>
+   384|        <div class="polaroid"><img src="images/CAN-017/blue-book-prince-george-1953.pdf" alt="Blue Book Prince George"><div class="caption">CAN-017: Blue Book — Prince George, BC</div></div>
+   385|      </div>
+   386|    </div>
+   387|  </div>
+   388|
+   389|  <div class="section agent-note">
+   390|    <h3 class="fc-h3"><span class="staple"></span> Analyst Notes</h3>
+   391|    <ul>
+   392|      <li><strong>21 files downloaded</strong> (19 images + 2 Project Blue Book documents) across 16 cases — 37/56 cases now have media (up from 21/56)</li>
+   393|      <li><strong>Biggest score:</strong> CAN-015 (St. Paul) got 4 images of the UFO landing pad opening ceremony from Provincial Archives of Alberta — public domain via Flickr Commons</li>
+   394|      <li><strong>New source:</strong> Wikimedia Commons category "UFO sightings in Canada" provided Project Blue Book PDF reports (US Gov, public domain) for CAN-008 (Clan Lake/Ramore, ON) and CAN-017 (Prince George, BC)</li>
+   395|      <li><strong>Pipeline fix:</strong> The 3-tier pipeline destroys media_urls in cases-full.json. Created `scripts/restore_media.py` and updated AGENTS.md with the fix. Run `python3 scripts/restore_media.py` after every pipeline run.</li>
+   396|      <li><strong>19 cases remain</strong> — mostly remote locations and small towns without Wikipedia presence. Best future approach: deeper Flickr Commons / Internet Archive searches, or YouTube caption cross-references for documentary footage</li>
+   397|    </ul>
+   398|  </div>
+   399|
+   400|  <div class="section files-changed">
+   401|    <h3 class="fc-h3"><span class="staple"></span> Files Changed</h3>
+   402|    <ul>
+   403|      <li>data/cases-full.json (+19 media_url entries)</li>
+   404|      <li>docs/data/cases-full.json (synced)</li>
+   405|      <li>docs/images/CAN-015/ (4 new files)</li>
+   406|      <li>docs/images/CAN-017/ (1 new file)</li>
+   407|      <li>docs/images/CAN-021/ (1 new file)</li>
+   408|      <li>docs/images/CAN-022/ (1 new file)</li>
+   409|      <li>docs/images/CAN-023/ (1 new file)</li>
+   410|      <li>docs/images/CAN-024/ (1 new file)</li>
+   411|      <li>docs/images/CAN-031/ (1 new file)</li>
+   412|      <li>docs/images/CAN-033/ (1 new file)</li>
+   413|      <li>docs/images/CAN-034/ (1 new file)</li>
+   414|      <li>docs/images/CAN-035/ (1 new file)</li>
+   415|      <li>docs/images/CAN-042/ (1 new file)</li>
+   416|      <li>docs/images/CAN-047/ (1 new file)</li>
+   417|      <li>docs/images/CAN-048/ (1 new file)</li>
+   418|      <li>docs/images/CAN-049/ (1 new file)</li>
+   419|      <li>docs/images/CAN-050/ (1 new file)</li>
+   420|      <li>docs/images/CAN-053/ (1 new file)</li>
+   421|      <li>docs/narratives.js (regenerated)</li>
+   422|      <li>docs/narratives.min.js (regenerated)</li>
+   423|      <li>data/cases-v5-master.json (regenerated)</li>
+   424|    </ul>
+   425|  </div>
+   426|</div>
+   427|</body>
+   428|</html>
+   429|

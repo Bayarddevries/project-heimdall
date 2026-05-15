@@ -52,6 +52,13 @@ cp data/cases-full.json docs/data/cases-full.json
 ```
 Or run the full pipeline which handles both copies.
 
+## MEDIA RESTORATION (CRITICAL)
+The 3-tier pipeline (`generate_frontend.py`) DESTROYS all `media_urls` in `cases-full.json` because markdown case files don't contain that field. After any pipeline run, always restore with:
+```
+python3 scripts/restore_media.py
+```
+The backup is stored in `scripts/media_backup.json`. Run `python3 scripts/restore_media.py save` to update the backup after adding new media.
+
 ---
 
 ## What NOT To Do
