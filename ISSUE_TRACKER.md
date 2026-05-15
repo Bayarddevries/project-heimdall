@@ -24,6 +24,12 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | H-053 | RCMP Form 63 deep scan | P0 | Blocked | Full scan of RCMP Form 63 for all case physical evidence details |
 | H-054 | Fill research_needs.json gaps | P1 | Open | Execute tasks in research_tasks.txt to fill missing fields |
 
+### UI/UX
+
+| ID | Title | Priority | Status | Description |
+|----|-------|----------|--------|-------------|
+| H-208 | Filter tooltips & keyword-based redesign | P2 | Open | Current tier (A/B/C) and Hynek (CE1-CE4, NL, RV, DD) filter labels use abbreviations with no explanation. Add tooltips or legend explaining what each code means. Also explore switching to keyword/tag-style multi-select filters (drop search entirely, make filters behave like keyword pills) so users can combine tier + encounter + shape + location keywords in any combination |
+
 ---
 
 ## Completed
@@ -70,20 +76,20 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 | H-200 | narratives.js sync automation | P1 | 2026-05-15 | GitHub Actions workflow auto-runs pipeline on push when case data changes |
 | H-201 | Reduce narratives.js file size | P2 | 2026-05-15 | Minified narratives.js generation in pipeline (narratives.min.js) |
 | H-202 | Fix cases-all.json generation | P1 | 2026-05-15 | Verified regex frontmatter stripping works on all 56 files (no YAML parser needed) |
-|| H-204 | Fix window.open onclick quote escaping | P1 | 2026-05-14 | Corrected broken string concatenation in search external link button
-|| H-205 | Fix witnesses TypeError in relationships tab | P0 | 2026-05-14 | witnesses field numeric causes TypeError; cast to String before toLowerCase() — fixes detail panel crash
-|
+| H-203 | Fix openDetail onclick quote escaping | P1 | 2026-05-14 | Corrected broken string concatenation in detail panel open button -- missing closing quote broke inline script parsing |
+| H-204 | Fix window.open onclick quote escaping | P1 | 2026-05-14 | Corrected broken string concatenation in search external link button |
+| H-205 | Fix witnesses TypeError in relationships tab | P0 | 2026-05-14 | witnesses field numeric causes TypeError; cast to String before toLowerCase() -- fixes detail panel crash |
+| H-207 | Map overlay toggle | P1 | 2026-05-15 | Three toggle-able Leaflet overlays (nuclear, military, NORAD radar) via header dropdown |
 
 ---
-
 ## Stats
 
 | Metric | Count |
 |--------|-------|
-| Total Issues | 43 |
-| Open | 4 |
-| Completed | 38 |
+| Total Issues | 49 |
+| Open | 5 |
+| Completed | 43 |
 | Blocked | 1 |
 | P0 Critical | 1 |
-| P1 High | 3 |
-| P2 Medium | 0 |
+| P1 High | 4 |
+| P2 Medium | 1 |

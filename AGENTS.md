@@ -247,6 +247,12 @@ The following CSS classes were added/refined in `docs/index.html`:
 | H-XXX | Map overlays | 3 toggle-able Leaflet layers: nuclear plants (red), military bases (blue), NORAD radar (green). Loaded via `initOverlays()` in `docs/index.html`. GeoJSON files in `docs/data/layers/`. Layer control at bottom-left. |
 | H-XXX | Tier upgrades | 4 cases C→B: CAN-059 North York, CAN-061 Terrace, CAN-066 Harbour Mille, CAN-070 Yellowknife. Now 11A + 7B + 52C. |
 
+## v2.1 Features (Deployed 2026-05-15)
+
+| ID | Feature | Details |
+|----|---------|---------|
+| H-207 | Layers dropdown fix | Overlay toggle button broken — layers loaded visible, toggle controls hidden from accessibility tree. Fix: `<label>`/`<input>` → `<div role="button" tabindex="0">`; `.addTo(map)` → `L.layerGroup()` (hidden by default). "🗺 LAYERS" dropdown in top-right header replaces old Leaflet layer control. |
+
 ## Map Overlay Layer Architecture
 
 Three GeoJSON overlay files in `docs/data/layers/` loaded asynchronously by `initOverlays()` in `docs/index.html`:

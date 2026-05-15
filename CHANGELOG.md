@@ -1,5 +1,10 @@
 # CHANGELOG — Project HEIMDALL
 
+## [2026-05-15] v2.1 — Layers Dropdown Fix
+
+- **Fix: Layers dropdown toggle (H-207)** — Overlay toggle was broken: page loaded with lines/markers already displayed and the toggle controls didn't work. Switched from hidden `<label>`/`<input>` pairs to `<div role="button">` elements with `tabindex="0"` for proper accessibility tree interaction. Changed layers from `.addTo(map)` (immediately visible) to `L.layerGroup()` (hidden until toggled). Custom "🗺 LAYERS" header dropdown replaces old Leaflet layer control buttons at bottom-left.
+- **Tier distribution**: 11 A + 7 B + 52 C (70 total)
+
 ## [2026-05-15] v2.0 — Map Overlays + Tier Upgrades
 
 - **Feat: Toggle-able map overlays** — Three Leaflet layer groups added via `initOverlays()`:

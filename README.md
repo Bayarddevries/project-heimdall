@@ -30,6 +30,7 @@ The visual aesthetic evokes declassified government files: paper grain textures,
 ## Features
 
 - **Interactive Leaflet map** — 70 geolocated markers across Canadian territory
+- **Map overlays** — Toggle-able layers from the header: ☢️ Nuclear Facilities (13), ⚔️ Military Bases (25), 📡 NORAD Radar (4 radar lines + 23 stations)
 - **Timeline slider** — filter cases by year range (1662 to 2025)
 - **Sidebar case list** — sortable, filterable by tier (A/B/C) and encounter type (CE1-CE4, CE2, CE3, CE4, DD, NL, RV)
 - **Detail panel** — right-side case file viewer with full markdown narrative, classification data, evidence, and source citations
@@ -69,6 +70,7 @@ project-heimdall/
 | `data/cases.json` | Metadata array synced with embedded `CASES` JS array |
 | `data/cases/*.md` | Rich markdown case files (source of narrative content) |
 | `data/cases-all.json` | Full case data aggregation with frontmatter |
+| `docs/data/layers/*.json` | 3 overlay GeoJSON files (nuclear, military, NORAD radar) |
 
 ## Data Sources
 
