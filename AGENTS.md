@@ -41,23 +41,16 @@ When `data/cases/*.md` files are updated, regenerate `docs/narratives.js` with t
 
 **Always run in order**: rebuild_v5.py → regenerate_markdown.py → generate_frontend.py → git push.
 
-### Dual-COPY BUG (CRITICAL)
-There are TWO copies of `cases-full.json`:
-- `data/cases-full.json` (source/root copy)
-- `docs/data/cases-full.json` (the one GitHub Pages ACTUALLY serves)
+### Dual-COPY BUG (FIXED — 2026-05-20)
+The `generate_frontend.py` script now writes `cases-full.json` to BOTH `data/` and `docs/data/` simultaneously, and auto-preserves `media_urls` from the existing files. No manual `cp` or `restore_media.py` step needed after running the pipeline.
 
-After ANY change to `cases-full.json`, immediately run:
+**If you ever suspect the sync is broken**, verify both copies match:
 ```
-cp data/cases-full.json docs/data/cases-full.json
+diff data/cases-full.json docs/data/cases-full.json
 ```
-Or run the full pipeline which handles both copies.
 
-## MEDIA RESTORATION (CRITICAL)
-The 3-tier pipeline (`generate_frontend.py`) DESTROYS all `media_urls` in `cases-full.json` because markdown case files don't contain that field. After any pipeline run, always restore with:
-```
-python3 scripts/restore_media.py
-```
-The backup is stored in `scripts/media_backup.json`. Run `python3 scripts/restore_media.py save` to update the backup after adding new media.
+## MEDIA RESTORATION (FIXED — 2026-05-20)
+The 3-tier pipeline (`generate_frontend.py`) now auto-preserves `media_urls` during generation. It reads existing `cases-full.json` files (from both `data/` and `docs/data/`), extracts `media_urls`, and restores them after writing the new master JSON. The backup at `scripts/media_backup.json` remains as a failsafe but is no longer needed for normal operation.
 
 ---
 
