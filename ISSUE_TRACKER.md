@@ -28,7 +28,7 @@ A markdown-based issue tracker for Project HEIMDALL. Migrate to GitHub Issues wh
 
 | ID | Title | Priority | Status | Description |
 |----|-------|----------|--------|-------------|
-| H-208 | Filter tooltips & keyword-based redesign | P2 | Open | Current tier (A/B/C) and Hynek (CE1-CE4, NL, RV, DD) filter labels use abbreviations with no explanation. Add tooltips or legend explaining what each code means. Also explore switching to keyword/tag-style multi-select filters (drop search entirely, make filters behave like keyword pills) so users can combine tier + encounter + shape + location keywords in any combination |
+| H-208 | Filter tooltips & keyword-based redesign | P2 | Done 2026-05-20 | Multi-select filter pills with hover tooltips for all Hynek types (CE1-CE4, NL, RV, DD) and tier labels (A/B/C). Section labels, divider between tier and hynek. Active filter summary in top bar. Toggle on/off, any combination. Native browser tooltips via `title` attribute + custom CSS tooltip on hover. |
 
 ---
 

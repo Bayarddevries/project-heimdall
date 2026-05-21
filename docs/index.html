@@ -508,32 +508,112 @@ body.night-ops .layers-dot { border-color: #6b5e50; }
   opacity: 1;
 }
 
+/* Filter summary bar in top stats */
+.filter-summary {
+  display: inline;
+  font-size: 10px;
+  font-family: 'Special Elite', monospace;
+  color: #6b2fa0;
+}
+.filter-summary.has-filters::before {
+  content: '⚑ ';
+}
+.filter-summary.has-filters {
+  color: #c41e3a;
+}
+
 /* Filter bar */
 .filter-bar {
   display: flex;
-  gap: 5px;
-  padding: 8px 12px;
+  gap: 3px;
+  padding: 6px 10px;
   border-bottom: 1px solid #d4c9a8;
   flex-wrap: wrap;
+  align-items: center;
+}
+.filter-section-label {
+  font-family: 'Special Elite', monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #8b7355;
+  text-transform: uppercase;
+  margin-right: 2px;
+  padding: 2px 3px;
+  border: 1px dashed #c4b89a;
+  border-radius: 1px;
+}
+.filter-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c4b89a, transparent);
+  margin: 2px 0;
 }
 .filter-btn {
   font-family: 'Source Sans 3', sans-serif;
   font-size: 10px;
-  padding: 3px 8px;
+  padding: 3px 7px;
   border: 1px solid #b8a88a;
   background: transparent;
   color: #6b5e50;
   cursor: pointer;
   border-radius: 2px;
-  transition: all 0.15s;
+  transition: all 0.2s;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 600;
+  line-height: 1.3;
+  position: relative;
+}
+.filter-desc {
+  display: block;
+  font-size: 8px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #8b7355;
+  opacity: 0.7;
+  transition: opacity 0.2s;
 }
 .filter-btn:hover, .filter-btn.active {
   background: #8b7355;
   color: #f5eed6;
-  border-color: #8b7355;
+  border-color: #6b5e50;
+}
+.filter-btn.active {
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.25);
+}
+.filter-btn.active .filter-desc,
+.filter-btn:hover .filter-desc {
+  color: #f5eed6;
+  opacity: 1;
+}
+.filter-btn:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2c2825;
+  color: #f5eed6;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 2px;
+  white-space: nowrap;
+  z-index: 100;
+  pointer-events: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.filter-btn:hover::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: #2c2825;
+  z-index: 100;
+  pointer-events: none;
 }
 
 /* Case list */
@@ -1870,12 +1950,13 @@ body.night-ops .layers-dot { border-color: #6b5e50; }
   .search-wrap { padding: 8px; }
   .search-input { padding: 10px 28px 10px 12px; font-size: 16px; }
   .search-clear { width: 36px; height: 36px; top: 8px; right: 8px; font-size: 16px; }
-  .filter-bar { flex-wrap: wrap; padding: 8px; gap: 6px; }
+  .filter-bar { flex-wrap: wrap; padding: 6px; gap: 4px; }
   .filter-btn {
-    padding: 8px 12px!important; font-size: clamp(11px,2.8vw,13px)!important;
+    padding: 6px 10px!important; font-size: clamp(10px,2.5vw,12px)!important;
     min-height: 44px; line-height: 1.2; flex: 1 1 auto; text-align: center; min-width: 48px;
   }
-  .filter-btn::before { font-size: 15px; margin-right: 3px; }
+  .filter-section-label { font-size: clamp(7px,1.8vw,8px)!important; padding: 4px 6px!important; }
+  .filter-desc { font-size: clamp(7px,2vw,8px)!important; }
 
   /* Case List ≥ 48px */
   .case-item { padding: 12px 16px; min-height: 48px; -webkit-tap-highlight-color: transparent; }
@@ -1949,6 +2030,13 @@ body.night-ops .filter-btn {
 body.night-ops .filter-btn.active {
   background: #2a1510 !important; color: #d4a050 !important;
   border-color: #4a2020 !important;
+}
+body.night-ops .filter-section-label {
+  border-color: #2a1810 !important;
+  color: #6a5040 !important;
+}
+body.night-ops .filter-summary {
+  color: #c8a070 !important;
 }
 body.night-ops .case-item { border-bottom-color: rgba(74,32,32,0.15) !important; }
 body.night-ops .case-item:hover { background: rgba(74,32,32,0.1) !important; }
@@ -2308,6 +2396,7 @@ body.night-ops .witness-case-link { background: #2a1510; color: #a070c0; }
   <div class="stats-area">
     <div>Total: <strong id="stat-total">70</strong></div>
     <div>Showing: <strong id="stat-visible">70</strong></div>
+    <div class="filter-summary" id="filter-summary"></div>
     <div>YEARS: <strong>1662 – 2025</strong></div>
     <button class="view-toggle" id="view-toggle" title="Toggle timeline view">☰ Timeline</button>
     <button class="view-toggle" id="sound-toggle" title="Toggle sound effects" onclick="toggleSound()">🔊</button>
@@ -2357,13 +2446,19 @@ body.night-ops .witness-case-link { background: #2a1510; color: #a070c0; }
     <button class="search-clear" id="search-clear" title="Clear search">✕</button>
   </div>
   <div class="filter-bar">
-    <button class="filter-btn active" data-f="all">All</button>
-    <button class="filter-btn" data-f="A">★★ A</button>
-    <button class="filter-btn" data-f="B">★ B</button>
-    <button class="filter-btn" data-f="C">C</button>
-    <button class="filter-btn" data-f="CE2">CE2</button>
-    <button class="filter-btn" data-f="CE3">CE3</button>
-    <button class="filter-btn" data-f="CE4">CE4</button>
+    <span class="filter-section-label" data-group="tier">TIER</span>
+    <button class="filter-btn" data-f="A" title="High-confidence cases with multiple witnesses, physical evidence, or official reports">★★ A <span class="filter-desc">Priority</span></button>
+    <button class="filter-btn" data-f="B" title="Moderate-confidence cases — credible witnesses, some documentation">★ B <span class="filter-desc">Moderate</span></button>
+    <button class="filter-btn" data-f="C" title="Low-confidence cases — single witness, minimal documentation">C <span class="filter-desc">Routine</span></button>
+    <div class="filter-divider"></div>
+    <span class="filter-section-label" data-group="hynek">HYNEK</span>
+    <button class="filter-btn" data-f="NL" title="Nocturnal Lights — lights or objects seen at night, no sound">NL <span class="filter-desc">Nocturnal Lights</span></button>
+    <button class="filter-btn" data-f="DD" title="Daylight Disc — disc-shaped objects seen in daylight">DD <span class="filter-desc">Daylight Disc</span></button>
+    <button class="filter-btn" data-f="RV" title="Radar-Visual — simultaneous radar and visual confirmation">RV <span class="filter-desc">Radar-Visual</span></button>
+    <button class="filter-btn" data-f="CE1" title="Close Encounter 1 — UFO within 500ft, no interaction with environment">CE1 <span class="filter-desc">Close Encounter 1</span></button>
+    <button class="filter-btn" data-f="CE2" title="Close Encounter 2 — UFO leaves physical traces (scorch marks, imprints, radiation)">CE2 <span class="filter-desc">Close Encounter 2</span></button>
+    <button class="filter-btn" data-f="CE3" title="Close Encounter 3 — occupant or entity sightings">CE3 <span class="filter-desc">Close Encounter 3</span></button>
+    <button class="filter-btn" data-f="CE4" title="Close Encounter 4 — abduction experiences">CE4 <span class="filter-desc">Close Encounter 4</span></button>
   </div>
   <div class="case-list-area">
     <ul class="case-list" id="case-list"></ul>
@@ -2421,7 +2516,7 @@ var CONTACT_LABELS = {
 /* ==============================================================
    STATE
    ============================================================== */
-var map, markers = {}, activeFilter = 'all', minYear = 1662, ALL_CASES = [], CASES = [];
+var map, markers = {}, activeFilters = [], minYear = 1662, ALL_CASES = [], CASES = [];
 var allCases = [];
 var deepLinkHandled = false;
 var searchQuery = '';
@@ -2681,9 +2776,10 @@ function updateView() {
   markers = {};
 
   var visible = allCases.filter(function(c) {
-    if (activeFilter !== 'all') {
-      if (['A','B','C'].indexOf(activeFilter) >= 0 && c.tier !== activeFilter) return false;
-      if (['A','B','C'].indexOf(activeFilter) < 0 && c.contact !== activeFilter) return false;
+    if (activeFilters.length > 0) {
+      var tierMatch = activeFilters.indexOf(c.tier) >= 0;
+      var hynekMatch = activeFilters.indexOf(c.contact) >= 0;
+      if (!tierMatch && !hynekMatch) return false;
     }
     if (c.year < minYear) return false;
     // Search filter
@@ -2705,6 +2801,19 @@ function updateView() {
   });
 
   document.getElementById('stat-visible').textContent = visible.length;
+
+  // Show active filter summary
+  var summary = document.getElementById('filter-summary');
+  if (summary) {
+    if (activeFilters.length > 0) {
+      summary.textContent = 'Filtered: ' + activeFilters.join(', ');
+      summary.classList.add('has-filters');
+    } else {
+      summary.textContent = '';
+      summary.classList.remove('has-filters');
+    }
+  }
+
   buildSidebar();
 }
 
@@ -2715,9 +2824,10 @@ function buildSidebar() {
   var list = document.getElementById('case-list');
   list.innerHTML = '';
   var sorted = allCases.filter(function(c) {
-    if (activeFilter !== 'all') {
-      if (['A','B','C'].indexOf(activeFilter) >= 0 && c.tier !== activeFilter) return false;
-      if (['A','B','C'].indexOf(activeFilter) < 0 && c.contact !== activeFilter) return false;
+    if (activeFilters.length > 0) {
+      var tierMatch = activeFilters.indexOf(c.tier) >= 0;
+      var hynekMatch = activeFilters.indexOf(c.contact) >= 0;
+      if (!tierMatch && !hynekMatch) return false;
     }
     return c.year >= minYear;
   }).sort(function(a,b){ return a.year - b.year; });
@@ -3402,9 +3512,15 @@ function bindFilters() {
   document.querySelectorAll('.filter-btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
       playClick();
-      document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
-      btn.classList.add('active');
-      activeFilter = btn.dataset.f;
+      var f = this.dataset.f;
+      var idx = activeFilters.indexOf(f);
+      if (idx >= 0) {
+        activeFilters.splice(idx, 1);
+        this.classList.remove('active');
+      } else {
+        activeFilters.push(f);
+        this.classList.add('active');
+      }
       updateView();
     });
   });
@@ -3474,9 +3590,10 @@ function buildTimeline() {
 
   // Get visible cases
   var visible = allCases.filter(function(c) {
-    if (activeFilter !== 'all') {
-      if (['A','B','C'].indexOf(activeFilter) >= 0 && c.tier !== activeFilter) return false;
-      if (['A','B','C'].indexOf(activeFilter) < 0 && c.contact !== activeFilter) return false;
+    if (activeFilters.length > 0) {
+      var tierMatch = activeFilters.indexOf(c.tier) >= 0;
+      var hynekMatch = activeFilters.indexOf(c.contact) >= 0;
+      if (!tierMatch && !hynekMatch) return false;
     }
     if (c.year < minYear) return false;
     if (searchQuery) {
